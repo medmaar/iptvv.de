@@ -136,10 +136,10 @@ section{padding:86px 0}
 .pcard{border-radius:18px;overflow:visible;transition:transform .3s,box-shadow .3s;position:relative}
 .pcard:hover{transform:translateY(-6px)}
 /* Germany flag gradient progression: card1=light/white, card2=gold tinted, card3=red tinted, card4=black/dark */
-.cw{background:linear-gradient(135deg,rgba(255,215,0,0.22) 0%,rgba(180,10,10,0.18) 55%,rgba(10,0,20,0.55) 100%);border:2px solid rgba(255,206,0,0.55);box-shadow:0 4px 28px rgba(255,180,0,0.18),0 1px 0 rgba(255,206,0,0.12) inset}
-.cl2{background:linear-gradient(135deg,rgba(255,215,0,0.22) 0%,rgba(180,10,10,0.18) 55%,rgba(10,0,20,0.55) 100%);border:2px solid rgba(255,206,0,0.55);box-shadow:0 4px 28px rgba(255,180,0,0.18),0 1px 0 rgba(255,206,0,0.12) inset}
-.cm{background:linear-gradient(135deg,rgba(255,215,0,0.22) 0%,rgba(180,10,10,0.18) 55%,rgba(10,0,20,0.55) 100%);border:2px solid rgba(255,206,0,0.55);box-shadow:0 4px 28px rgba(255,180,0,0.18),0 1px 0 rgba(255,206,0,0.12) inset}
-.cd{background:linear-gradient(135deg,rgba(255,215,0,0.22) 0%,rgba(180,10,10,0.18) 55%,rgba(10,0,20,0.55) 100%);border:2px solid rgba(255,206,0,0.75);box-shadow:0 6px 40px rgba(255,180,0,0.28),0 1px 0 rgba(255,206,0,0.2) inset}
+.cw{background:linear-gradient(135deg,rgba(255,206,0,0.38) 0%,rgba(160,0,0,0.32) 52%,rgba(8,0,18,0.72) 100%);border:2px solid rgba(255,206,0,0.55);box-shadow:0 4px 28px rgba(255,180,0,0.18),0 1px 0 rgba(255,206,0,0.12) inset}
+.cl2{background:linear-gradient(135deg,rgba(255,206,0,0.38) 0%,rgba(160,0,0,0.32) 52%,rgba(8,0,18,0.72) 100%);border:2px solid rgba(255,206,0,0.55);box-shadow:0 4px 28px rgba(255,180,0,0.18),0 1px 0 rgba(255,206,0,0.12) inset}
+.cm{background:linear-gradient(135deg,rgba(255,206,0,0.38) 0%,rgba(160,0,0,0.32) 52%,rgba(8,0,18,0.72) 100%);border:2px solid rgba(255,206,0,0.55);box-shadow:0 4px 28px rgba(255,180,0,0.18),0 1px 0 rgba(255,206,0,0.12) inset}
+.cd{background:linear-gradient(135deg,rgba(255,206,0,0.38) 0%,rgba(160,0,0,0.32) 52%,rgba(8,0,18,0.72) 100%);border:2px solid rgba(255,206,0,0.75);box-shadow:0 6px 40px rgba(255,180,0,0.28),0 1px 0 rgba(255,206,0,0.2) inset}
 /* Badge positioned above card */
 .cbdg-wrap{position:absolute;top:-14px;left:0;right:0;display:flex;justify-content:center;z-index:2;pointer-events:none}
 .cbdg{background:linear-gradient(135deg,#ffce00,#ff8c00);color:#1a0a0a;font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:900;padding:4px 14px;border-radius:99px;white-space:nowrap;letter-spacing:.06em;box-shadow:0 3px 12px rgba(255,206,0,.4)}
@@ -773,8 +773,8 @@ const durs=[
 const feats=['50.000+ Live-Kanäle','120.000+ Filme & Serien (VOD)','4K Ultra HD Qualität','Bundesliga · Sky · Dazn','PPV Events inklusive','EPG & Catch-Up TV','Alle Geräte','24/7 Deutscher Support'];
 
 /* Check colour: white card uses dark check, coloured cards use gold/light */
-const checkClr={cw:'#1a1a1a', cl2:'#ffce00', cm:'#ff9999', cd:'#ffce00'};
-const textClr={cw:'#333', cl2:'rgba(255,240,200,.9)', cm:'rgba(255,220,220,.85)', cd:'rgba(255,255,255,.85)'};
+const checkClr={cw:'#FFD700', cl2:'#FFD700', cm:'#FFD700', cd:'#FFD700'};
+const textClr={cw:'rgba(255,255,255,.9)', cl2:'rgba(255,255,255,.9)', cm:'rgba(255,255,255,.9)', cd:'rgba(255,255,255,.9)'};
 
 let aD=1;
 function renderPricing(){
