@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<title>Preise – IPTV kaufen | IPTVV.DE</title>
+<meta name="description" content="IPTV Preise bei IPTVV.DE – ab €15.99/Monat. 1 oder 2 Geräte, alle Pakete inkl. 20.000+ Kanäle und 120.000+ VOD."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800;900&family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#ff5266;--grad-from:#ff9a3e;--grad-to:#ff5266;--body-bg:#140438}
+html{scroll-behavior:smooth}
+body{background:#140438;color:#fff;font-family:'Lato',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:#fff;text-decoration:none}
+img{max-width:100%;height:auto}
+h1,h2,h3{font-family:'Inter Tight',sans-serif;font-weight:700;line-height:1.2;margin:0 0 15px}
+.container{max-width:1200px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--grad-from),var(--grad-to));color:#fff;font-family:'Inter Tight',sans-serif;font-weight:700;padding:0 38px;line-height:52px;border-radius:50px;border:none;cursor:pointer;font-size:15px;transition:opacity .3s,transform .2s;text-decoration:none}
+.btn:hover{opacity:.88;transform:translateY(-1px)}
+
+/* NAV */
+#navbar{position:fixed;top:0;left:0;right:0;z-index:1000;background:rgba(10,4,30,.97);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.06)}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:80px}
+.nav-logo{font-family:'Inter Tight',sans-serif;font-size:1.5rem;font-weight:900;background:linear-gradient(135deg,#ff9a3e,#ff5266);-webkit-background-clip:text;-webkit-text-fill-color:transparent}
+.nav-menu{display:flex;gap:32px;list-style:none}
+.nav-menu a{color:rgba(255,255,255,.8);font-size:15px;font-weight:600;transition:color .2s}
+.nav-menu a:hover,.nav-menu .active{color:#fff}
+.nav-cta{background:linear-gradient(135deg,#043fff,#00d4d6);color:#fff;font-family:'Inter Tight',sans-serif;font-weight:700;padding:0 30px;line-height:46px;border-radius:50px;font-size:15px}
+.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-hamburger span{width:26px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:80px;left:0;right:0;z-index:999;background:rgba(10,4,30,.97);padding:24px 20px;border-bottom:1px solid rgba(255,255,255,.1)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:12px 0;color:rgba(255,255,255,.8);font-size:16px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.07)}
+
+/* PAGE HERO */
+.page-hero{padding:140px 0 60px;background:linear-gradient(180deg,#0a0120 0%,#140438 100%);text-align:center;border-bottom:1px solid rgba(255,255,255,.06)}
+.page-hero .section-label{font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:700;letter-spacing:2px;text-transform:uppercase;background:linear-gradient(135deg,#ff9a3e,#ff5266);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px;display:block}
+.page-hero h1{font-size:clamp(28px,4vw,48px);color:#fff;margin-bottom:16px}
+.page-hero p{color:rgba(255,255,255,.6);max-width:600px;margin:0 auto}
+
+/* TABS */
+.tab-section{padding:60px 0 100px}
+.tab-wrap{text-align:center;margin-bottom:48px}
+.tabs{display:inline-flex;background:rgba(255,255,255,.06);border-radius:50px;padding:4px;border:1px solid rgba(255,255,255,.1)}
+.tab{padding:10px 32px;border-radius:50px;cursor:pointer;font-family:'Inter Tight',sans-serif;font-weight:700;font-size:15px;color:rgba(255,255,255,.5);transition:all .3s;border:none;background:none}
+.tab.active{background:linear-gradient(135deg,#043fff,#00d4d6);color:#fff;box-shadow:0 4px 20px rgba(4,63,255,.4)}
+
+/* PRICING GRID */
+.pricing-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.price-card{background:rgba(255,255,255,.77);border-radius:20px 20px 20px 0;overflow:hidden;transition:transform .3s,box-shadow .3s}
+.price-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.3)}
+.price-header{background:rgba(255,255,255,.77);padding:24px 20px;text-align:center;border-bottom:1px solid rgba(0,0,0,.08)}
+.price-name{font-family:'Inter Tight',sans-serif;font-size:22px;font-weight:700;color:#003bff}
+.price-plan{font-size:13px;color:#000;margin-top:4px}
+.price-amount{padding:28px 20px;text-align:center;background:#fff}
+.price-currency{font-size:.6em;color:#000;vertical-align:top;line-height:2}
+.price-number{font-family:'Inter Tight',sans-serif;font-size:56px;font-weight:900;color:#000;line-height:1}
+.price-period{font-size:13px;color:#666;margin-top:4px}
+.price-features{padding:0 20px;background:#fff}
+.price-features ul{list-style:none}
+.price-features li{display:flex;align-items:center;gap:10px;padding:9px 0;border-bottom:1px solid rgba(0,0,0,.07);font-size:13px;color:#333}
+.price-features li:last-child{border:none}
+.price-footer{padding:20px;background:#fff;text-align:center}
+.price-btn{display:block;background:linear-gradient(159deg,#007dff 18%,#3fc1f9 63%);color:#fff;font-family:'Inter Tight',sans-serif;font-weight:700;padding:12px;border-radius:20px;font-size:14px;transition:opacity .2s}
+.price-btn:hover{opacity:.85}
+.price-reviews{font-size:12px;color:#888;margin-top:8px}
+.hidden{display:none}
+
+/* FREE TEST */
+.free-test{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:20px;padding:48px;text-align:center;margin-top:60px}
+.free-test h3{font-size:clamp(20px,2.5vw,28px);color:#fff;margin-bottom:12px}
+.free-test p{color:rgba(255,255,255,.6);margin-bottom:28px}
+
+/* FOOTER */
+footer{background:#0a0120;padding:60px 0 32px;border-top:1px solid rgba(255,255,255,.06)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:40px}
+.footer-logo{font-family:'Inter Tight',sans-serif;font-size:1.8rem;font-weight:900;background:linear-gradient(135deg,#ff9a3e,#ff5266);-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:16px;display:block}
+.footer-desc{color:rgba(255,255,255,.5);font-size:14px;line-height:1.75;max-width:300px}
+.footer-col h4{font-family:'Inter Tight',sans-serif;font-size:16px;font-weight:700;color:#fff;text-transform:uppercase;margin-bottom:20px;letter-spacing:1px}
+.footer-links{list-style:none}
+.footer-links li{margin-bottom:10px}
+.footer-links a{color:rgba(200,200,210,.7);font-size:14px;display:flex;align-items:center;gap:8px;transition:color .2s}
+.footer-links a::before{content:'›';color:var(--primary);font-size:18px;line-height:1}
+.footer-links a:hover{color:#fff}
+.footer-divider{border:none;border-top:1px solid rgba(225,220,220,.1);margin-bottom:24px}
+.footer-bottom{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+.footer-copy{color:rgba(200,200,210,.5);font-size:13px}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:1024px){.pricing-grid{grid-template-columns:repeat(2,1fr)}.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:768px){.pricing-grid{grid-template-columns:1fr}.nav-menu,.nav-cta{display:none}.nav-hamburger{display:flex}.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<nav id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo">IPTVV.DE</a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Heim</a></li>
+      <li><a href="preise.html" class="active">Preise</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="kontakt.html">Kontaktiere uns</a></li>
+    </ul>
+    <a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+testen" target="_blank" class="nav-cta">Kostenloser Test</a>
+    <div class="nav-hamburger" onclick="document.getElementById('mm').classList.toggle('open')">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mm">
+  <a href="index.html">Heim</a><a href="preise.html">Preise</a><a href="faqs.html">FAQs</a><a href="kontakt.html">Kontaktiere uns</a>
+  <a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+testen" target="_blank" style="color:#fff;background:linear-gradient(135deg,#043fff,#00d4d6);border-radius:50px;text-align:center;margin-top:12px;display:block;padding:12px">Kostenloser Test</a>
+</div>
+
+<div class="page-hero">
+  <div class="container">
+    <span class="section-label">Preisgestaltung</span>
+    <h1>Sie können unsere Dienste auf allen Geräten nutzen</h1>
+    <p>Wählen Sie das perfekte Paket für sich – transparent, fair und ohne versteckte Kosten.</p>
+  </div>
+</div>
+
+<div class="tab-section">
+  <div class="container">
+    <div class="tab-wrap">
+      <div class="tabs">
+        <button class="tab active" onclick="switchTab('tab1',this)">1 Gerät</button>
+        <button class="tab" onclick="switchTab('tab2',this)">2 Geräte</button>
+      </div>
+    </div>
+
+    <!-- 1 Gerät -->
+    <div id="tab1" class="pricing-grid">
+      <div class="price-card reveal">
+        <div class="price-header"><div class="price-name">1 Monat</div><div class="price-plan">Basisplan</div></div>
+        <div class="price-amount"><span class="price-currency">€</span><span class="price-number">15.99</span><div class="price-period">1 Gerät</div></div>
+        <div class="price-features"><ul>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD (Filme &amp; Serien)</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li>
+        </ul></div>
+        <div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+ein+1-Monats-Abonnement+f%C3%BCr+1+Ger%C3%A4t+kaufen" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-header"><div class="price-name">3 Monate</div><div class="price-plan">Standardplan</div></div>
+        <div class="price-amount"><span class="price-currency">€</span><span class="price-number">25.99</span><div class="price-period">1 Gerät</div></div>
+        <div class="price-features"><ul>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD (Filme &amp; Serien)</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li>
+        </ul></div>
+        <div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+ein+3-Monats-Abonnement+f%C3%BCr+1+Ger%C3%A4t+kaufen" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-header"><div class="price-name">6 Monate</div><div class="price-plan">Premium Plan</div></div>
+        <div class="price-amount"><span class="price-currency">€</span><span class="price-number">39.99</span><div class="price-period">1 Gerät</div></div>
+        <div class="price-features"><ul>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD (Filme &amp; Serien)</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li>
+        </ul></div>
+        <div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+ein+6-Monats-Abonnement+f%C3%BCr+1+Ger%C3%A4t+kaufen" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div>
+      </div>
+      <div class="price-card reveal">
+        <div class="price-header"><div class="price-name">1 Jahr</div><div class="price-plan">Goldplan</div></div>
+        <div class="price-amount"><span class="price-currency">€</span><span class="price-number">59.99</span><div class="price-period">1 Gerät</div></div>
+        <div class="price-features"><ul>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD (Filme &amp; Serien)</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li>
+          <li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li>
+        </ul></div>
+        <div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+ein+1-Jahres-Abonnement+f%C3%BCr+1+Ger%C3%A4t+kaufen" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div>
+      </div>
+    </div>
+
+    <!-- 2 Geräte -->
+    <div id="tab2" class="pricing-grid hidden">
+      <div class="price-card reveal"><div class="price-header"><div class="price-name">1 Monat</div><div class="price-plan">Basisplan (2)</div></div><div class="price-amount"><span class="price-currency">€</span><span class="price-number">25.99</span><div class="price-period">2 Geräte</div></div><div class="price-features"><ul><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li></ul></div><div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=1+Monat+2+Ger%C3%A4te" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div></div>
+      <div class="price-card reveal"><div class="price-header"><div class="price-name">3 Monate</div><div class="price-plan">Standardplan (2)</div></div><div class="price-amount"><span class="price-currency">€</span><span class="price-number">45.99</span><div class="price-period">2 Geräte</div></div><div class="price-features"><ul><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li></ul></div><div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=3+Monate+2+Ger%C3%A4te" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div></div>
+      <div class="price-card reveal"><div class="price-header"><div class="price-name">6 Monate</div><div class="price-plan">Premium Plan (2)</div></div><div class="price-amount"><span class="price-currency">€</span><span class="price-number">69.99</span><div class="price-period">2 Geräte</div></div><div class="price-features"><ul><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li></ul></div><div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=6+Monate+2+Ger%C3%A4te" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div></div>
+      <div class="price-card reveal"><div class="price-header"><div class="price-name">1 Jahr</div><div class="price-plan">Gold Plan (2)</div></div><div class="price-amount"><span class="price-currency">€</span><span class="price-number">99.99</span><div class="price-period">2 Geräte</div></div><div class="price-features"><ul><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+20.000 Kanäle</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>+120.000 VOD</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>SD-HD-FHD-4K</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>EPG</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>M3U / Enigma2</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Schnelle Aktivierung</li><li><svg width="14" height="14" fill="#1900ff" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>24/7 Unterstützung</li></ul></div><div class="price-footer"><a href="https://api.whatsapp.com/send/?phone=4917600000000&text=1+Jahr+2+Ger%C3%A4te" target="_blank" class="price-btn">Jetzt kaufen</a><div class="price-reviews">1.090 Bewertungen ★★★★★</div></div></div>
+    </div>
+
+    <div class="free-test reveal">
+      <h3>✅ 24h kostenloser Testaccount verfügbar</h3>
+      <p>Kein Abo, keine Kreditkarte nötig. Überzeugen Sie sich selbst von der Qualität unseres Services.</p>
+      <a href="https://api.whatsapp.com/send/?phone=4917600000000&text=Hallo+IPTVV%2C+ich+m%C3%B6chte+den+kostenlosen+Test" target="_blank" class="btn">Jetzt kostenlos testen</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div><span class="footer-logo">IPTVV.DE</span><p class="footer-desc">Deutschlands führender IPTV-Service mit über 22.000 Kanälen und 120.000+ VOD-Titeln in 4K-Qualität.</p></div>
+      <div><h4>Schnelllinks</h4><ul class="footer-links"><li><a href="index.html">Heim</a></li><li><a href="preise.html">Preisgestaltung</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="#">Datenschutzrichtlinie</a></li><li><a href="#">Geschäftsbedingungen</a></li></ul></div>
+      <div><h4>Support</h4><ul class="footer-links"><li><a href="kontakt.html">Kontaktiere uns</a></li><li><a href="https://api.whatsapp.com/send/?phone=4917600000000" target="_blank">WhatsApp Support</a></li><li><a href="mailto:info@iptvv.de">info@iptvv.de</a></li></ul></div>
+    </div>
+    <hr class="footer-divider"/>
+    <div class="footer-bottom"><p class="footer-copy">Alle Rechte vorbehalten © 2026 IPTVV.DE</p><p class="footer-copy">⚠️ Nur für legale Inhalte.</p></div>
+  </div>
+</footer>
+
+<script>
+function switchTab(id,el){
+  document.getElementById('tab1').classList.add('hidden');
+  document.getElementById('tab2').classList.add('hidden');
+  document.getElementById(id).classList.remove('hidden');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+}
+const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.1});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
