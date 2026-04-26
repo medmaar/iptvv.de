@@ -136,35 +136,31 @@ section{padding:86px 0}
 .pcard{border-radius:18px;overflow:visible;transition:transform .3s,box-shadow .3s;position:relative}
 .pcard:hover{transform:translateY(-6px)}
 /* Germany flag gradient progression: card1=light/white, card2=gold tinted, card3=red tinted, card4=black/dark */
-/* Card 1 – Red slice (left of the gradient) */
-.cw{background:linear-gradient(90deg,rgba(255,0,21,0.92) 0%,rgba(180,10,20,0.88) 100%);border:2px solid rgba(255,60,60,.55);box-shadow:0 6px 28px rgba(255,0,21,.35)}
-/* Card 2 – Red → dark center transition */
-.cl2{background:linear-gradient(90deg,rgba(200,0,18,0.88) 0%,rgba(49,54,50,0.93) 100%);border:2px solid rgba(180,20,30,.5);box-shadow:0 6px 28px rgba(200,0,21,.25)}
-/* Card 3 – Dark center → gold emerging */
-.cm{background:linear-gradient(90deg,rgba(49,54,50,0.93) 0%,rgba(180,140,0,0.88) 100%);border:2px solid rgba(200,160,0,.45);box-shadow:0 6px 28px rgba(180,140,0,.22)}
-/* Card 4 – Gold slice (right of the gradient) – premium */
-.cd{background:linear-gradient(90deg,rgba(120,100,0,0.9) 0%,rgba(255,229,0,0.88) 100%);border:2px solid rgba(255,229,0,.7);box-shadow:0 8px 36px rgba(255,229,0,.35)}
+.cw{background:#ffffff;border:2px solid rgba(255,206,0,.35);box-shadow:0 4px 20px rgba(0,0,0,.15)}
+.cl2{background:linear-gradient(160deg,#221400 0%,#1a0e00 100%);border:2px solid rgba(255,206,0,.55);box-shadow:0 4px 24px rgba(255,206,0,.12)}
+.cm{background:linear-gradient(160deg,#220000 0%,#1a0000 100%);border:2px solid rgba(204,0,0,.55);box-shadow:0 4px 24px rgba(204,0,0,.15)}
+.cd{background:linear-gradient(160deg,#111111 0%,#0a0a0a 100%);border:2px solid rgba(255,206,0,.65);box-shadow:0 6px 32px rgba(255,206,0,.25)}
 /* Badge positioned above card */
 .cbdg-wrap{position:absolute;top:-14px;left:0;right:0;display:flex;justify-content:center;z-index:2;pointer-events:none}
 .cbdg{background:linear-gradient(135deg,#ffce00,#ff8c00);color:#1a0a0a;font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:900;padding:4px 14px;border-radius:99px;white-space:nowrap;letter-spacing:.06em;box-shadow:0 3px 12px rgba(255,206,0,.4)}
 .pin{padding:26px 20px 22px}
 .pdur{font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
-.cw .pdur{color:#fff}.cl2 .pdur{color:#fff}.cm .pdur{color:#ffee88}.cd .pdur{color:#1a0a0a}
+.cw .pdur{color:#1a0a0a}.cl2 .pdur{color:#ffce00}.cm .pdur{color:#ff8888}.cd .pdur{color:#ffce00}
 .ppr{display:flex;align-items:baseline;gap:3px;margin-bottom:2px}
 .pcu{font-size:.52em;font-family:'Inter Tight',sans-serif;font-weight:700;line-height:2;align-self:flex-start}
-.cw .pcu{color:rgba(255,255,255,.8)}.cl2 .pcu{color:rgba(255,255,255,.8)}.cm .pcu{color:#ffe566}.cd .pcu{color:rgba(20,10,0,.7)}
+.cw .pcu{color:#333}.cl2 .pcu{color:#ffce00}.cm .pcu{color:#ff9999}.cd .pcu{color:#ffce00}
 .pam{font-family:'Inter Tight',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:900;line-height:1}
-.cw .pam{color:#fff}.cl2 .pam{color:#fff}.cm .pam{color:#ffe566}.cd .pam{color:#1a0a0a}
+.cw .pam{color:#1a0a0a}.cl2 .pam{color:#ffce00}.cm .pam{color:#ff9999}.cd .pam{color:#ffce00}
 .pper{font-size:11px;font-weight:600;margin-bottom:16px}
-.cw .pper{color:rgba(255,255,255,.55)}.cl2 .pper{color:rgba(255,255,255,.5)}.cm .pper{color:rgba(255,230,100,.55)}.cd .pper{color:rgba(20,10,0,.55)}
+.cw .pper{color:rgba(60,40,0,.6)}.cl2 .pper{color:rgba(255,206,0,.5)}.cm .pper{color:rgba(255,180,180,.5)}.cd .pper{color:rgba(255,255,255,.4)}
 .pfts{list-style:none;margin:0 0 20px}
 .pfts li{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;margin-bottom:6px;line-height:1.4}
-.cw .pfts li{color:rgba(255,255,255,.88)}.cl2 .pfts li{color:rgba(255,255,255,.88)}.cm .pfts li{color:rgba(255,240,160,.9)}.cd .pfts li{color:rgba(20,10,0,.82)}
+.cw .pfts li{color:#333}.cl2 .pfts li{color:rgba(255,240,200,.85)}.cm .pfts li{color:rgba(255,220,220,.82)}.cd .pfts li{color:rgba(255,255,255,.82)}
 .pbtn{display:block;text-align:center;padding:12px;border-radius:10px;font-family:'Inter Tight',sans-serif;font-weight:800;font-size:13px;transition:all .25s;text-decoration:none;letter-spacing:.02em}
-.cw .pbtn{background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
-.cl2 .pbtn{background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
-.cm .pbtn{background:rgba(255,229,0,.25);color:#ffe100;border:1.5px solid rgba(255,229,0,.5)}
-.cd .pbtn{background:rgba(0,0,0,.25);color:#1a0a0a;border:1.5px solid rgba(0,0,0,.35)}
+.cw .pbtn{background:linear-gradient(135deg,#1a1a1a,#333);color:#fff}
+.cl2 .pbtn{background:linear-gradient(135deg,#ffce00,#ff8c00);color:#1a0a0a}
+.cm .pbtn{background:linear-gradient(135deg,#cc0000,#880000);color:#fff}
+.cd .pbtn{background:linear-gradient(135deg,#ffce00,#cc0000);color:#fff}
 .pbtn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
 .pnote{text-align:center;margin-top:20px;color:rgba(255,255,255,.28);font-size:12px}
 @media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}}
@@ -296,48 +292,362 @@ footer{background:#0a0120;padding:64px 0 26px;border-top:1px solid rgba(255,255,
 }
 @media(max-width:480px){.g-grid{grid-template-columns:1fr}.stgr{grid-template-columns:1fr 1fr}}
 
-/* ════ SHARED NAV + FOOTER ════ */
-/* Logo */
-.logo-a{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
-.logo-shield{width:38px;height:38px;flex-shrink:0;animation:logo-float 4s ease-in-out infinite}
-@keyframes logo-float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
-.logo-wordmark{display:flex;align-items:center;gap:0;font-family:'Inter Tight',sans-serif;font-weight:900;line-height:1;letter-spacing:.04em}
-.logo-iptv{font-size:20px;color:#fff}
-.logo-kaufen{font-size:20px;color:#fff;font-weight:400}
-/* Nav */
-#nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:74px;background:rgba(10,4,30,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,206,0,.1);transition:background .3s}
-.nav-inner{max-width:1260px;margin:0 auto;padding:0 24px;height:74px;display:flex;align-items:center;justify-content:space-between;gap:16px}
-.nav-links{display:flex;gap:26px;list-style:none}
-.nav-links a{color:rgba(255,255,255,.68);font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:600;transition:color .2s}
-.nav-links a:hover{color:#ffce00}
-.nav-cta{background:linear-gradient(135deg,#ffce00,#cc0000);color:#1a0a0a;font-family:'Inter Tight',sans-serif;font-weight:800;padding:0 22px;line-height:42px;border-radius:50px;font-size:13px;transition:all .2s;white-space:nowrap;flex-shrink:0}
-.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,206,0,.3)}
-.nav-hbg{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.nav-hbg span{width:23px;height:2px;background:#fff;border-radius:2px}
-.nav-mobile{display:none;position:fixed;top:74px;left:0;right:0;z-index:999;background:rgba(10,4,30,.99);padding:18px 22px;border-bottom:1px solid rgba(255,206,0,.12)}
-.nav-mobile.open{display:block}
-.nav-mobile a{display:block;padding:11px 0;color:rgba(255,255,255,.78);font-family:'Inter Tight',sans-serif;font-size:15px;font-weight:600;border-bottom:1px solid rgba(255,255,255,.06)}
-.nav-mobile a:last-child{border:none}
-/* Footer */
-.site-footer{background:#09001e;padding:60px 0 24px;border-top:1px solid rgba(255,206,0,.12)}
-.footer-wrap{max-width:1260px;margin:0 auto;padding:0 24px}
-.footer-grid{display:grid;grid-template-columns:2.2fr 1fr 1fr;gap:48px;margin-bottom:44px}
-.footer-brand .fdesc{color:rgba(255,255,255,.38);font-size:13px;line-height:1.75;max-width:270px;margin-top:12px}
-.footer-col h4{font-family:'Inter Tight',sans-serif;font-size:11px;font-weight:700;color:rgba(255,255,255,.3);text-transform:uppercase;letter-spacing:1.8px;margin-bottom:14px}
-.footer-col ul{list-style:none}
-.footer-col ul li{margin-bottom:8px}
-.footer-col ul a{color:rgba(255,255,255,.45);font-size:13px;transition:color .2s;display:flex;align-items:center;gap:5px}
-.footer-col ul a::before{content:'›';color:#ffce00;font-size:14px;line-height:1}
-.footer-col ul a:hover{color:#ffce00}
-.footer-cta-btn{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,rgba(255,206,0,.15),rgba(204,0,0,.12));border:1px solid rgba(255,206,0,.25);color:#ffce00;font-family:'Inter Tight',sans-serif;font-weight:700;padding:10px 20px;border-radius:50px;font-size:13px;margin-top:16px;transition:all .2s}
-.footer-cta-btn:hover{background:linear-gradient(135deg,rgba(255,206,0,.25),rgba(204,0,0,.2));transform:translateY(-1px)}
-.footer-divider{border:none;border-top:1px solid rgba(255,255,255,.06);margin-bottom:18px}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
-.footer-bottom p{color:rgba(255,255,255,.25);font-size:12px}
-@media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-cta{display:none}.nav-hbg{display:flex}}
-@media(max-width:640px){.footer-grid{grid-template-columns:1fr}}
+/* ════ GERMANY FLAG GRADIENT ON EVERY PRICING CARD ════ */
+.pcard.cw,
+.pcard.cl2,
+.pcard.cm,
+.pcard.cd {
+  background: linear-gradient(90deg, rgba(255,0,21,0.55) 0%, rgba(49,54,50,0.6) 50%, rgba(255,229,0,0.59) 100%) !important;
+  border: 1.5px solid rgba(255,229,0,0.38) !important;
+  box-shadow: 0 6px 32px rgba(255,0,21,0.2) !important;
+  border-radius: 18px !important;
+  overflow: visible !important;
+}
+.pcard.cw:hover,.pcard.cl2:hover,.pcard.cm:hover,.pcard.cd:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 40px rgba(255,0,21,0.3) !important;
+}
+/* All card text white — gradient bg is semi-transparent with dark midpoint */
+.pcard .pdur { color: #fff !important; }
+.pcard .pam  { color: #fff !important; }
+.pcard .pcu  { color: rgba(255,255,255,.8) !important; }
+.pcard .pper { color: rgba(255,255,255,.52) !important; }
+.pcard .pfts li { color: rgba(255,255,255,.88) !important; }
+/* Frosted glass button on each card */
+.pcard .pbtn {
+  background: rgba(255,255,255,0.15) !important;
+  color: #fff !important;
+  border: 1.5px solid rgba(255,255,255,0.38) !important;
+  backdrop-filter: blur(6px);
+}
+.pcard .pbtn:hover {
+  background: rgba(255,255,255,0.25) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.3) !important;
+}
+</style>
+</head>
+<body>
 
+<!-- NAV -->
+<nav id="nav">
+  <div class="ni">
+    <a href="index.html" class="logo-a">
+      <!-- Animated Germany Flag Logo -->
+      <svg width="40" height="40" viewBox="0 0 100 80" xmlns="http://www.w3.org/2000/svg" style="animation:float 3s ease-in-out infinite">
+        <defs>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <!-- Flag stripes -->
+        <rect x="10" y="15" width="80" height="20" fill="#000" filter="url(#glow)"/>
+        <rect x="10" y="35" width="80" height="20" fill="#d00000" filter="url(#glow)"/>
+        <rect x="10" y="55" width="80" height="20" fill="#ffce00" filter="url(#glow)"/>
+        <!-- Animated circle overlay -->
+        <circle cx="50" cy="45" r="25" fill="none" stroke="#ffce00" stroke-width="2" opacity="0.6">
+          <animate attributeName="r" values="25;35;25" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0.2;0.6" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </svg>
+      <div class="logo-txt" style="font-size:1.1rem"><span class="w">IPTV</span><span class="o" style="font-size:0.85em">KAUFEN</span></div>
+    </a>
+    <ul class="nmenu">
+      <li><a href="index.html">Heim</a></li>
+      <li><a href="/preise.html">Preise</a></li>
+      <li><a href="faqs.html">FAQs</a></li>
+      <li><a href="kontakt.html">Kontaktiere uns</a></li>
+    </ul>
+    <a href="/whatsapp-kontakt" target="_blank" class="ncta">Kostenloser Test</a>
+    <div class="hbg" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mmenu" id="mm">
+  <a href="index.html">Heim</a>
+  <a href="/preise.html">Preise</a>
+  <a href="faqs.html">FAQs</a>
+  <a href="kontakt.html">Kontaktiere uns</a>
+  <a href="/whatsapp-kontakt" target="_blank" style="background:linear-gradient(135deg,#043fff,#00d4d6);border-radius:50px;text-align:center;margin-top:12px;display:block;padding:11px 0;font-family:'Inter Tight',sans-serif;font-weight:700;font-size:14px;color:#fff;border-bottom:none">Kostenloser Test</a>
+</div>
 
+<!-- HERO WITH BACKGROUND IMAGE -->
+<section id="hero" style="background-image:url('iptv-kaufen.jpg');background-size:cover;background-position:center;background-attachment:fixed;position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;padding-top:74px">
+  <div style="position:absolute;inset:0;background:rgba(20,4,56,0.55);z-index:1"></div>
+  <div class="hero-in" style="position:relative;z-index:2;grid-template-columns:1fr;max-width:700px;text-align:center;gap:30px;padding:60px 22px">
+    <div class="revl">
+      <div class="h-badge"><span>Zufriedene Kunden &amp; Bewertung</span><span class="h-stars">★</span><strong>4.9 (500.000+)</strong></div>
+      <h1 class="h-title" style="font-size:clamp(28px,5vw,48px)">IPTV kaufen bei IPTVV.DE</h1>
+      <p class="h-desc" style="font-size:16px;max-width:100%">Zuverlässige Server ohne Einfrieren, kristallklare 4K&#8209;Qualität, täglich aktualisierte Inhalte mit Filmen, Serien, Sport und Live&#8209;TV.</p>
+      <div class="h-btns" style="justify-content:center">
+        <a href="/preise.html" class="btn">Jetzt starten</a>
+        <a href="/whatsapp-kontakt" class="btn-ol">WhatsApp Test</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BRANDS (SCROLLING CHANNELS) -->
+<div id="brands">
+  <div class="bt">
+    <div class="bi">DAS ERSTE</div><div class="bi">ZDF</div><div class="bi">SKY SPORT</div><div class="bi">DAZN</div><div class="bi">RTL</div><div class="bi">SAT.1</div><div class="bi">EUROSPORT</div><div class="bi">PROSIEBEN</div><div class="bi">KABEL EINS</div><div class="bi">SPORT1</div><div class="bi">BEIN SPORTS</div><div class="bi">CANAL+</div>
+    <div class="bi">DAS ERSTE</div><div class="bi">ZDF</div><div class="bi">SKY SPORT</div><div class="bi">DAZN</div><div class="bi">RTL</div><div class="bi">SAT.1</div><div class="bi">EUROSPORT</div><div class="bi">PROSIEBEN</div><div class="bi">KABEL EINS</div><div class="bi">SPORT1</div><div class="bi">BEIN SPORTS</div><div class="bi">CANAL+</div>
+  </div>
+</div>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="container">
+    <div class="rv-hd rev">
+      <span class="slbl">Verifizierte Bewertungen</span>
+      <h2 class="sttl">Was unsere Kunden sagen</h2>
+      <p style="color:rgba(255,255,255,.42);font-size:13px">Echte Bewertungen von Trustpilot, WhatsApp &amp; Google – direkt aus Deutschland.</p>
+      <div class="rv-stats">
+        <div class="rvs"><div class="rvs-v" style="color:#00b67a">5.0</div><div class="rvs-l">Trustpilot</div></div>
+        <div class="rvs"><div class="rvs-v" style="color:#fff">500K+</div><div class="rvs-l">Kunden</div></div>
+        <div class="rvs"><div class="rvs-v" style="color:#FBBC04">4.9 ★</div><div class="rvs-l">Google</div></div>
+        <div class="rvs"><div class="rvs-v" style="color:#f5a623">24/7</div><div class="rvs-l">Support</div></div>
+      </div>
+    </div>
+
+    <!-- Trustpilot slider -->
+    <div class="rvblk rev">
+      <div class="rv-src">
+        <div style="display:flex;gap:3px">
+          <div class="tp-star"><svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <div class="tp-star"><svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <div class="tp-star"><svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <div class="tp-star"><svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+          <div class="tp-star"><svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div>
+        </div>
+        <span style="font-family:'Inter Tight',sans-serif;font-weight:800;font-size:17px;color:#00b67a;margin-left:5px">Trustpilot</span>
+      </div>
+      <div class="sl-wrap">
+        <div class="sl-in" id="tpSlide">
+          <div class="tp-card">
+            <div class="tp-stars" id="tpStars"></div>
+            <div class="tp-ttl" id="tpTitle"></div>
+            <p class="tp-txt" id="tpText"></p>
+            <div class="tp-auth" id="tpAuth"></div>
+          </div>
+        </div>
+        <div class="pdots" id="tpDots"></div>
+      </div>
+    </div>
+
+    <!-- WhatsApp slider -->
+    <div class="rvblk rev">
+      <div class="rv-src">
+        <div style="width:32px;height:32px;border-radius:50%;background:#25D366;display:flex;align-items:center;justify-content:center">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.6 5.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        </div>
+        <span style="font-family:'Inter Tight',sans-serif;font-weight:800;font-size:17px;color:#25D366;margin-left:7px">WhatsApp</span>
+      </div>
+      <div class="sl-wrap">
+        <div class="sl-in" id="waSlide"><div class="wa-grid" id="waCards"></div></div>
+        <div class="pdots" id="waDots"></div>
+      </div>
+    </div>
+
+    <!-- Google slider -->
+    <div class="rvblk rev">
+      <div class="rv-src">
+        <span style="font-family:'Inter Tight',sans-serif;font-weight:900;font-size:18px"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
+        <span style="color:#FBBC04;font-size:16px;margin-left:6px">★★★★★</span>
+        <span style="color:rgba(255,255,255,.32);font-size:13px;margin-left:3px">4.9</span>
+      </div>
+      <div class="sl-wrap">
+        <div class="sl-in" id="gSlide"><div class="g-grid" id="gCards"></div></div>
+        <div class="pdots" id="gDots"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <div class="container">
+    <div class="ph rev">
+      <span class="slbl">Preisgestaltung</span>
+      <h2 class="sttl">Einfache, transparente Preise</h2>
+      <p style="color:rgba(255,255,255,.42);font-size:13px">Ohne Bindung. Keine versteckten Gebühren. Sofortige Aktivierung nach Bestellung.</p>
+    </div>
+    <div class="dsel" id="dSel"></div>
+    <div class="pgrid" id="pGrid"></div>
+    <p class="pnote">Alle Pakete inkl. +50.000 Kanäle · +120.000 Filme &amp; Serien (VOD) · EPG · 24/7 Support</p>
+  </div>
+</section>
+
+<!-- FEATURES -->
+<section id="features">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:46px" class="rev">
+      <span class="slbl">Was wir bieten</span>
+      <h2 class="sttl">Premium-Qualität auf allen Geräten</h2>
+      <p style="color:rgba(255,255,255,.45);font-size:14px;max-width:500px;margin:0 auto">Erleben Sie alle Lieblingsserien, Filme und Kanäle in höchster Qualität – jederzeit, überall.</p>
+    </div>
+    <div class="fg">
+      <div class="fc rev"><div class="fi"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8,21 12,17 16,21"/></svg></div><div class="ft">BESTE QUALITÄT</div><p class="fd">SD, HD, Full HD und 4K Ultra HD – kristallklares Bild ohne Puffern oder Einfrieren.</p></div>
+      <div class="fc rev"><div class="fi"><svg viewBox="0 0 24 24"><path d="M1 6l11 6 11-6-11-6z"/><path d="M1 12l11 6 11-6"/><path d="M1 18l11 6 11-6"/></svg></div><div class="ft">50.000+ PREMIUM-KANÄLE</div><p class="fd">50.000+ Live-Kanäle: Sport, Nachrichten, Unterhaltung und internationale Sender weltweit.</p></div>
+      <div class="fc rev"><div class="fi"><svg viewBox="0 0 24 24"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="ft">120.000+ VOD</div><p class="fd">Riesige Bibliothek mit Filmen und Serien. Täglich neue Inhalte – immer aktuell.</p></div>
+      <div class="fc rev"><div class="fi"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div><div class="ft">SOFORTIGE AKTIVIERUNG</div><p class="fd">Wenige Minuten nach der Bestellung einsatzbereit. Kein Warten, keine komplizierte Einrichtung.</p></div>
+      <div class="fc rev"><div class="fi"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><line x1="21.17" y1="8" x2="12" y2="8"/><line x1="3.95" y1="6.06" x2="8.54" y2="14"/><line x1="10.88" y1="21.94" x2="15.46" y2="14"/></svg></div><div class="ft">ALLE GERÄTE</div><p class="fd">Smart TV, Smartphone, Tablet, PC, Firestick, MAG-Box, Enigma2 – ein Konto für alle.</p></div>
+      <div class="fc rev"><div class="fi"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81a19.79 19.79 0 01-3.07-8.67A2 2 0 012 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg></div><div class="ft">24/7 SUPPORT</div><p class="fd">Unser deutschsprachiges Team ist rund um die Uhr über WhatsApp erreichbar.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="wg">
+      <!-- Left: device cards + uptime — NO emojis, clean SVG icons -->
+      <div class="wvis revl">
+        <div class="dev-card">
+          <div class="dev-ttl">Verfügbar auf allen Geräten</div>
+          <div class="dev-grid">
+            <div class="dev-item"><div class="dev-ico"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div><div class="dev-lbl">Smartphone</div></div>
+            <div class="dev-item"><div class="dev-ico"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><polyline points="8,21 12,17 16,21"/></svg></div><div class="dev-lbl">Smart TV</div></div>
+            <div class="dev-item"><div class="dev-ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1"/><polyline points="2,20 22,20"/></svg></div><div class="dev-lbl">PC / Mac</div></div>
+            <div class="dev-item"><div class="dev-ico"><svg viewBox="0 0 24 24"><rect x="4" y="2" width="16" height="20" rx="2"/><line x1="9" y1="18" x2="15" y2="18"/></svg></div><div class="dev-lbl">Tablet</div></div>
+            <div class="dev-item"><div class="dev-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="15" rx="2"/><polyline points="16,2 8,2 6,7"/></svg></div><div class="dev-lbl">Firestick</div></div>
+            <div class="dev-item"><div class="dev-ico"><svg viewBox="0 0 24 24"><path d="M5 17H3a2 2 0 01-2-2V5a2 2 0 012-2h16a2 2 0 012 2v3"/><rect x="11" y="11" width="12" height="10" rx="2"/></svg></div><div class="dev-lbl">MAG-Box</div></div>
+          </div>
+        </div>
+        <div class="up-card">
+          <div><div class="up-num">100<span style="font-size:.48em;opacity:.55">%</span></div><div class="up-lbl">Server-Verfügbarkeit</div></div>
+          <div class="up-ico"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        </div>
+      </div>
+      <!-- Right: text + check list + progress bars -->
+      <div class="revr">
+        <span class="slbl">Warum IPTVV.DE?</span>
+        <h2 class="sttl">Deutschlands führender IPTV-Service</h2>
+        <p style="color:rgba(255,255,255,.56);font-size:14px;line-height:1.8">Wir überwachen kontinuierlich unsere Server und bieten AntiFreeze-Technologie mit 99,9% Betriebszeit und 50.000+ Live-Kanäle. Kein Puffern, keine Unterbrechungen – nur reines Streaming-Vergnügen.</p>
+        <ul class="cl">
+          <li><span class="ci"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>+50.000 Kanäle weltweit</li>
+          <li><span class="ci"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>SD · HD · Full HD · 4K</li>
+          <li><span class="ci"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>+120.000 Filme &amp; Serien (VOD)</li>
+          <li><span class="ci"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>EPG – Elektronischer Programmführer</li>
+          <li><span class="ci"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>M3U · MAGAZIN · Enigma2</li>
+          <li><span class="ci"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>AntiFreeze-Technologie</li>
+        </ul>
+        <div class="pbars">
+          <div class="pb"><div class="pbh"><span class="pblbl">120.000+ Filme & Serien (VOD)</span><span class="pbpct">95%</span></div><div class="pbtr"><div class="pbfill" data-w="95"></div></div></div>
+          <div class="pb"><div class="pbh"><span class="pblbl">50.000+ Kanäle</span><span class="pbpct">92%</span></div><div class="pbtr"><div class="pbfill" data-w="92"></div></div></div>
+          <div class="pb"><div class="pbh"><span class="pblbl">Server-Stabilität</span><span class="pbpct">99%</span></div><div class="pbtr"><div class="pbfill" data-w="99"></div></div></div>
+        </div>
+        <a href="/preise.html" class="btn" style="margin-top:24px">Jetzt buchen</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HOW IT WORKS -->
+<section id="how">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:48px" class="rev">
+      <span class="slbl">Wie es funktioniert</span>
+      <h2 class="sttl">In 4 Schritten zu unbegrenzter Unterhaltung</h2>
+    </div>
+    <div class="sg">
+      <div class="step rev"><div class="sn">01</div><div class="sttlt">Paket wählen</div><p class="sdsc">Wählen Sie die passende Laufzeit und Gerätanzahl für Ihre Bedürfnisse.</p></div>
+      <div class="step rev"><div class="sn">02</div><div class="sttlt">Zahlung abschließen</div><p class="sdsc">Sichere Zahlung über WhatsApp – schnell und unkompliziert.</p></div>
+      <div class="step rev"><div class="sn">03</div><div class="sttlt">Zugangsdaten erhalten</div><p class="sdsc">Wir senden Ihnen alle Zugangsdaten mit Installationsanleitung.</p></div>
+      <div class="step rev"><div class="sn">04</div><div class="sttlt">Einloggen &amp; Genießen</div><p class="sdsc">Starten Sie sofort auf Ihrem Lieblingsgerät und genießen Sie alles.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats">
+  <div class="container">
+    <div class="sw rev">
+      <div class="stgr">
+        <div><span class="stn s1 ctr" data-t="500000">0</span><span class="stl">Zufriedene Kunden in Deutschland</span></div>
+        <div><span class="stn s2 ctr" data-t="6">0</span><span class="stl">Jahre Erfahrung</span></div>
+        <div><span class="stn s3">99%</span><span class="stl">Stabiler Server</span></div>
+        <div><span class="stn s4">120K+</span><span class="stl">Kanäle &amp; VOD</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SPORT -->
+<section id="sport">
+  <div class="container">
+    <div class="spinn">
+      <div class="revl">
+        <span class="slbl">Sport &amp; Live-Events</span>
+        <h2 class="sttl">Alle Spiele. Live. In 4K.</h2>
+        <p style="color:rgba(255,255,255,.6);font-size:14px;line-height:1.8;margin-bottom:8px">Feuern Sie Ihr Lieblingsteam zu Hause an. Mit IPTVV.DE haben Sie Zugriff auf über 5.000 Sportkanäle in 4K – ohne Einfrieren, auch bei den größten Events.</p>
+        <p style="color:rgba(255,255,255,.38);font-size:13px;line-height:1.68">Inklusive <strong style="color:rgba(255,255,255,.62)">DAZN</strong> und <strong style="color:rgba(255,255,255,.62)">Sky Sport</strong> – der IPTV-Anbieter Nr. 1 für Sport in Deutschland.</p>
+        <div class="sp-tags">
+          <span class="sp-tag">Bundesliga</span><span class="sp-tag">Champions League</span><span class="sp-tag">Basketball</span><span class="sp-tag">Boxen</span><span class="sp-tag">Tennis</span><span class="sp-tag">Formel 1</span>
+        </div>
+        <a href="/preise.html" class="btn" style="margin-top:24px">Zugriff erhalten</a>
+      </div>
+      <div class="revr">
+        <div class="sp-icons">
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/><path d="M2 12h20"/></svg></div><div class="spi-l">Bundesliga</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="16"/><line x1="8" y1="12" x2="16" y2="12"/></svg></div><div class="spi-l">Basketball</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></div><div class="spi-l">Boxen</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg></div><div class="spi-l">Champions</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><path d="M18 20V10"/><path d="M12 20V4"/><path d="M6 20v-6"/></svg></div><div class="spi-l">Formel 1</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10"/></svg></div><div class="spi-l">Tennis</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><polygon points="23,7 16,12 23,17"/><rect x="1" y="5" width="15" height="14" rx="2"/></svg></div><div class="spi-l">PPV Events</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div><div class="spi-l">4K Sport</div></div>
+          <div class="spi"><div class="spi-svg"><svg viewBox="0 0 24 24"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div><div class="spi-l">Live Stats</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="fg2">
+      <div>
+        <a href="index.html" class="fla">
+          <svg width="24" height="18" viewBox="0 0 5 3" fill="none">
+            <rect width="5" height="1" fill="white" opacity=".8"/>
+            <rect y="1" width="5" height="1" fill="#D00" opacity=".9"/>
+            <rect y="2" width="5" height="1" fill="#FFCE00" opacity=".9"/>
+          </svg>
+          <div class="fl-txt"><span class="w">IPTV</span><span class="o">KAUFEN</span></div>
+        </a>
+        <p class="fdesc">Deutschlands führender IPTV-Service mit über 50.000 Kanälen und 120.000+ Filme &amp; Serien (VOD) in 4K-Qualität.</p>
+      </div>
+      <div class="fc2">
+        <h4>Schnelllinks</h4>
+        <ul class="fl"><li><a href="/preise.html">Preisgestaltung</a></li><li><a href="faqs.html">FAQs</a></li><li><a href="#">Datenschutzrichtlinie</a></li><li><a href="#">Geschäftsbedingungen</a></li><li><a href="#">Rückerstattungsrichtlinie</a></li></ul>
+      </div>
+      <div class="fc2">
+        <h4>Support</h4>
+        <ul class="fl"><li><a href="kontakt.html">Kontaktiere uns</a></li><li><a href="/whatsapp-kontakt" target="_blank">WhatsApp Support</a></li><li><a href="/cdn-cgi/l/email-protection#87eee9e1e8c7eef7f3f1f1a9e3e2"><span class="__cf_email__" data-cfemail="10797e767f5079606466663e7475">[email&#160;protected]</span></a></li></ul>
+        <a href="/whatsapp-kontakt" target="_blank" class="fwa" style="margin-top:16px;display:inline-flex">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.6 5.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Kostenlos testen
+        </a>
+      </div>
+    </div>
+    <hr class="fdiv"/>
+    <div class="fbot">
+      <p class="fcp">Alle Rechte vorbehalten © 2026 IPTVV.DE</p>
+      <p class="fcp">Nur für legale Inhalte. Nutzung auf eigene Verantwortung.</p>
+    </div>
+  </div>
+</footer>
+
+<button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">
+  <svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15"/></svg>
+</button>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 /* ═══════════════════════════════════════
    REVIEW DATA  — German, country Germany
    Source: streambleu-fr repo, translated
@@ -423,8 +733,8 @@ const durs=[
 const feats=['50.000+ Live-Kanäle','120.000+ Filme & Serien (VOD)','4K Ultra HD Qualität','Bundesliga · Sky · Dazn','PPV Events inklusive','EPG & Catch-Up TV','Alle Geräte','24/7 Deutscher Support'];
 
 /* Check colour: white card uses dark check, coloured cards use gold/light */
-const checkClr={cw:'rgba(255,255,255,.9)',cl2:'rgba(255,255,255,.9)',cm:'#ffe566',cd:'rgba(20,10,0,.8)'};
-const textClr={cw:'rgba(255,255,255,.88)',cl2:'rgba(255,255,255,.88)',cm:'rgba(255,240,160,.9)',cd:'rgba(20,10,0,.82)'};
+const checkClr={cw:'#1a1a1a', cl2:'#ffce00', cm:'#ff9999', cd:'#ffce00'};
+const textClr={cw:'#333', cl2:'rgba(255,240,200,.9)', cm:'rgba(255,220,220,.85)', cd:'rgba(255,255,255,.85)'};
 
 let aD=1;
 function renderPricing(){
