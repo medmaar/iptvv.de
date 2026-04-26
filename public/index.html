@@ -136,31 +136,35 @@ section{padding:86px 0}
 .pcard{border-radius:18px;overflow:visible;transition:transform .3s,box-shadow .3s;position:relative}
 .pcard:hover{transform:translateY(-6px)}
 /* Germany flag gradient progression: card1=light/white, card2=gold tinted, card3=red tinted, card4=black/dark */
-.cw{background:#ffffff;border:2px solid rgba(255,206,0,.35);box-shadow:0 4px 20px rgba(0,0,0,.15)}
-.cl2{background:linear-gradient(160deg,#221400 0%,#1a0e00 100%);border:2px solid rgba(255,206,0,.55);box-shadow:0 4px 24px rgba(255,206,0,.12)}
-.cm{background:linear-gradient(160deg,#220000 0%,#1a0000 100%);border:2px solid rgba(204,0,0,.55);box-shadow:0 4px 24px rgba(204,0,0,.15)}
-.cd{background:linear-gradient(160deg,#111111 0%,#0a0a0a 100%);border:2px solid rgba(255,206,0,.65);box-shadow:0 6px 32px rgba(255,206,0,.25)}
+/* Card 1 – Red slice (left of the gradient) */
+.cw{background:linear-gradient(90deg,rgba(255,0,21,0.92) 0%,rgba(180,10,20,0.88) 100%);border:2px solid rgba(255,60,60,.55);box-shadow:0 6px 28px rgba(255,0,21,.35)}
+/* Card 2 – Red → dark center transition */
+.cl2{background:linear-gradient(90deg,rgba(200,0,18,0.88) 0%,rgba(49,54,50,0.93) 100%);border:2px solid rgba(180,20,30,.5);box-shadow:0 6px 28px rgba(200,0,21,.25)}
+/* Card 3 – Dark center → gold emerging */
+.cm{background:linear-gradient(90deg,rgba(49,54,50,0.93) 0%,rgba(180,140,0,0.88) 100%);border:2px solid rgba(200,160,0,.45);box-shadow:0 6px 28px rgba(180,140,0,.22)}
+/* Card 4 – Gold slice (right of the gradient) – premium */
+.cd{background:linear-gradient(90deg,rgba(120,100,0,0.9) 0%,rgba(255,229,0,0.88) 100%);border:2px solid rgba(255,229,0,.7);box-shadow:0 8px 36px rgba(255,229,0,.35)}
 /* Badge positioned above card */
 .cbdg-wrap{position:absolute;top:-14px;left:0;right:0;display:flex;justify-content:center;z-index:2;pointer-events:none}
 .cbdg{background:linear-gradient(135deg,#ffce00,#ff8c00);color:#1a0a0a;font-family:'Inter Tight',sans-serif;font-size:10px;font-weight:900;padding:4px 14px;border-radius:99px;white-space:nowrap;letter-spacing:.06em;box-shadow:0 3px 12px rgba(255,206,0,.4)}
 .pin{padding:26px 20px 22px}
 .pdur{font-family:'Inter Tight',sans-serif;font-size:14px;font-weight:700;margin-bottom:6px}
-.cw .pdur{color:#1a0a0a}.cl2 .pdur{color:#ffce00}.cm .pdur{color:#ff8888}.cd .pdur{color:#ffce00}
+.cw .pdur{color:#fff}.cl2 .pdur{color:#fff}.cm .pdur{color:#ffee88}.cd .pdur{color:#1a0a0a}
 .ppr{display:flex;align-items:baseline;gap:3px;margin-bottom:2px}
 .pcu{font-size:.52em;font-family:'Inter Tight',sans-serif;font-weight:700;line-height:2;align-self:flex-start}
-.cw .pcu{color:#333}.cl2 .pcu{color:#ffce00}.cm .pcu{color:#ff9999}.cd .pcu{color:#ffce00}
+.cw .pcu{color:rgba(255,255,255,.8)}.cl2 .pcu{color:rgba(255,255,255,.8)}.cm .pcu{color:#ffe566}.cd .pcu{color:rgba(20,10,0,.7)}
 .pam{font-family:'Inter Tight',sans-serif;font-size:clamp(34px,4vw,46px);font-weight:900;line-height:1}
-.cw .pam{color:#1a0a0a}.cl2 .pam{color:#ffce00}.cm .pam{color:#ff9999}.cd .pam{color:#ffce00}
+.cw .pam{color:#fff}.cl2 .pam{color:#fff}.cm .pam{color:#ffe566}.cd .pam{color:#1a0a0a}
 .pper{font-size:11px;font-weight:600;margin-bottom:16px}
-.cw .pper{color:rgba(60,40,0,.6)}.cl2 .pper{color:rgba(255,206,0,.5)}.cm .pper{color:rgba(255,180,180,.5)}.cd .pper{color:rgba(255,255,255,.4)}
+.cw .pper{color:rgba(255,255,255,.55)}.cl2 .pper{color:rgba(255,255,255,.5)}.cm .pper{color:rgba(255,230,100,.55)}.cd .pper{color:rgba(20,10,0,.55)}
 .pfts{list-style:none;margin:0 0 20px}
 .pfts li{display:flex;align-items:flex-start;gap:7px;font-size:12.5px;margin-bottom:6px;line-height:1.4}
-.cw .pfts li{color:#333}.cl2 .pfts li{color:rgba(255,240,200,.85)}.cm .pfts li{color:rgba(255,220,220,.82)}.cd .pfts li{color:rgba(255,255,255,.82)}
+.cw .pfts li{color:rgba(255,255,255,.88)}.cl2 .pfts li{color:rgba(255,255,255,.88)}.cm .pfts li{color:rgba(255,240,160,.9)}.cd .pfts li{color:rgba(20,10,0,.82)}
 .pbtn{display:block;text-align:center;padding:12px;border-radius:10px;font-family:'Inter Tight',sans-serif;font-weight:800;font-size:13px;transition:all .25s;text-decoration:none;letter-spacing:.02em}
-.cw .pbtn{background:linear-gradient(135deg,#1a1a1a,#333);color:#fff}
-.cl2 .pbtn{background:linear-gradient(135deg,#ffce00,#ff8c00);color:#1a0a0a}
-.cm .pbtn{background:linear-gradient(135deg,#cc0000,#880000);color:#fff}
-.cd .pbtn{background:linear-gradient(135deg,#ffce00,#cc0000);color:#fff}
+.cw .pbtn{background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.4)}
+.cl2 .pbtn{background:rgba(255,255,255,.18);color:#fff;border:1.5px solid rgba(255,255,255,.35)}
+.cm .pbtn{background:rgba(255,229,0,.25);color:#ffe100;border:1.5px solid rgba(255,229,0,.5)}
+.cd .pbtn{background:rgba(0,0,0,.25);color:#1a0a0a;border:1.5px solid rgba(0,0,0,.35)}
 .pbtn:hover{transform:translateY(-2px);box-shadow:0 6px 18px rgba(0,0,0,.35)}
 .pnote{text-align:center;margin-top:20px;color:rgba(255,255,255,.28);font-size:12px}
 @media(max-width:1100px){.pgrid{grid-template-columns:repeat(2,1fr)}}
@@ -332,6 +336,28 @@ footer{background:#0a0120;padding:64px 0 26px;border-top:1px solid rgba(255,255,
 .footer-bottom p{color:rgba(255,255,255,.25);font-size:12px}
 @media(max-width:900px){.footer-grid{grid-template-columns:1fr 1fr}.nav-links,.nav-cta{display:none}.nav-hbg{display:flex}}
 @media(max-width:640px){.footer-grid{grid-template-columns:1fr}}
+
+
+/* ════ PRICING CARD GRADIENTS – Germany flag ════ */
+.cw{background:linear-gradient(90deg,rgba(255,0,21,0.92) 0%,rgba(180,10,20,0.88) 100%) !important;border:2px solid rgba(255,60,60,.55) !important;box-shadow:0 6px 28px rgba(255,0,21,.35) !important}
+.cl2{background:linear-gradient(90deg,rgba(200,0,18,0.88) 0%,rgba(49,54,50,0.93) 100%) !important;border:2px solid rgba(180,20,30,.5) !important;box-shadow:0 6px 28px rgba(200,0,21,.25) !important}
+.cm{background:linear-gradient(90deg,rgba(49,54,50,0.93) 0%,rgba(180,140,0,0.88) 100%) !important;border:2px solid rgba(200,160,0,.45) !important;box-shadow:0 6px 28px rgba(180,140,0,.22) !important}
+.cd{background:linear-gradient(90deg,rgba(120,100,0,0.9) 0%,rgba(255,229,0,0.88) 100%) !important;border:2px solid rgba(255,229,0,.7) !important;box-shadow:0 8px 36px rgba(255,229,0,.35) !important}
+/* Text colours for each card */
+.cw .pdur,.cw .pam,.cw .pcu{color:#fff !important}
+.cl2 .pdur,.cl2 .pam,.cl2 .pcu{color:#fff !important}
+.cm .pdur,.cm .pam{color:#ffe566 !important}.cm .pcu{color:#ffe566 !important}
+.cd .pdur,.cd .pam,.cd .pcu{color:#1a0a0a !important}
+.cw .pper,.cl2 .pper{color:rgba(255,255,255,.55) !important}
+.cm .pper{color:rgba(255,230,100,.55) !important}
+.cd .pper{color:rgba(20,10,0,.55) !important}
+.cw .pfts li,.cl2 .pfts li{color:rgba(255,255,255,.88) !important}
+.cm .pfts li{color:rgba(255,240,160,.9) !important}
+.cd .pfts li{color:rgba(20,10,0,.85) !important}
+.cw .pbtn{background:rgba(255,255,255,.18) !important;color:#fff !important;border:1.5px solid rgba(255,255,255,.4) !important}
+.cl2 .pbtn{background:rgba(255,255,255,.18) !important;color:#fff !important;border:1.5px solid rgba(255,255,255,.35) !important}
+.cm .pbtn{background:rgba(255,229,0,.25) !important;color:#ffe100 !important;border:1.5px solid rgba(255,229,0,.5) !important}
+.cd .pbtn{background:rgba(0,0,0,.28) !important;color:#1a0a0a !important;border:1.5px solid rgba(0,0,0,.3) !important}
 
 </style>
 </head>
@@ -767,8 +793,8 @@ const durs=[
 const feats=['50.000+ Live-Kanäle','120.000+ Filme & Serien (VOD)','4K Ultra HD Qualität','Bundesliga · Sky · Dazn','PPV Events inklusive','EPG & Catch-Up TV','Alle Geräte','24/7 Deutscher Support'];
 
 /* Check colour: white card uses dark check, coloured cards use gold/light */
-const checkClr={cw:'#1a1a1a', cl2:'#ffce00', cm:'#ff9999', cd:'#ffce00'};
-const textClr={cw:'#333', cl2:'rgba(255,240,200,.9)', cm:'rgba(255,220,220,.85)', cd:'rgba(255,255,255,.85)'};
+const checkClr={cw:'rgba(255,255,255,.9)',cl2:'rgba(255,255,255,.9)',cm:'#ffe566',cd:'rgba(20,10,0,.8)'};
+const textClr={cw:'rgba(255,255,255,.88)',cl2:'rgba(255,255,255,.88)',cm:'rgba(255,240,160,.9)',cd:'rgba(20,10,0,.82)'};
 
 let aD=1;
 function renderPricing(){
