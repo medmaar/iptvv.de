@@ -291,54 +291,32 @@ footer{background:#0a0120;padding:64px 0 26px;border-top:1px solid rgba(255,255,
 }
 @media(max-width:480px){.g-grid{grid-template-columns:1fr}.stgr{grid-template-columns:1fr 1fr}}
 
-/* ════ PRICING CARD GRADIENT ════ */
-.pcard.cw,
-.pcard.cl2,
-.pcard.cm,
-.pcard.cd {
-  background: inherit !important;
-  border: 1.5px solid rgba(255,180,0,0.35) !important;
-  box-shadow: 0 4px 24px rgba(180,80,0,0.25) !important;
-  border-radius: 18px !important;
-  overflow: visible !important;
-  backdrop-filter: blur(2px);
-}
-.pcard.cd {
-  border-color: rgba(255,206,0,0.5) !important;
-  box-shadow: 0 6px 36px rgba(200,100,0,0.35) !important;
-}
-.pcard.cw:hover,.pcard.cl2:hover,.pcard.cm:hover,.pcard.cd:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 16px 44px rgba(200,100,0,0.4) !important;
-}
+/* ════ PRICING CARD COLORS ════ */
+.pcard.cw  { background: #003049 !important; border: 2px solid rgba(0,100,160,0.7) !important; box-shadow: 0 4px 28px rgba(0,48,73,0.5) !important; border-radius: 18px !important; overflow: visible !important; }
+.pcard.cl2 { background: #D62828 !important; border: 2px solid rgba(255,80,80,0.6) !important; box-shadow: 0 4px 28px rgba(214,40,40,0.45) !important; border-radius: 18px !important; overflow: visible !important; }
+.pcard.cm  { background: #F77F00 !important; border: 2px solid rgba(255,160,0,0.6) !important; box-shadow: 0 4px 28px rgba(247,127,0,0.45) !important; border-radius: 18px !important; overflow: visible !important; }
+.pcard.cd  { background: #FCBF49 !important; border: 2px solid rgba(255,220,100,0.8) !important; box-shadow: 0 6px 40px rgba(252,191,73,0.5) !important; border-radius: 18px !important; overflow: visible !important; }
+.pcard.cw:hover,.pcard.cl2:hover,.pcard.cm:hover { transform: translateY(-6px); }
+.pcard.cd:hover { transform: translateY(-6px); box-shadow: 0 14px 48px rgba(252,191,73,0.6) !important; }
+/* Text colors for dark-bg cards (cw, cl2, cm) */
 .pcard.cw .pdur,.pcard.cl2 .pdur,.pcard.cm .pdur { color: #FFD700 !important; }
+.pcard.cw .pam,.pcard.cl2 .pam,.pcard.cm .pam   { color: #fff !important; }
+.pcard.cw .pcu,.pcard.cl2 .pcu,.pcard.cm .pcu   { color: #FFD700 !important; }
+.pcard.cw .pper,.pcard.cl2 .pper,.pcard.cm .pper { color: rgba(255,220,120,0.7) !important; }
+.pcard.cw .pfts li,.pcard.cl2 .pfts li,.pcard.cm .pfts li { color: rgba(255,255,255,.9) !important; }
+.pcard.cw .pfts li::before,.pcard.cl2 .pfts li::before,.pcard.cm .pfts li::before { color: #FFD700 !important; }
+/* Text colors for light-bg card (cd = #FCBF49 yellow) */
 .pcard.cd .pdur { color: #1a0a00 !important; }
-.pcard.cw .pam,.pcard.cl2 .pam,.pcard.cm .pam { color: #fff !important; }
 .pcard.cd .pam  { color: #1a0a00 !important; }
-.pcard.cw .pcu,.pcard.cl2 .pcu,.pcard.cm .pcu { color: #FFD700 !important; }
 .pcard.cd .pcu  { color: #1a0a00 !important; }
-.pcard.cw .pper,.pcard.cl2 .pper,.pcard.cm .pper { color: rgba(255,220,120,0.6) !important; }
 .pcard.cd .pper { color: rgba(50,30,0,0.7) !important; }
-.pcard.cw .pfts li,.pcard.cl2 .pfts li,.pcard.cm .pfts li { color: rgba(255,255,255,.88) !important; }
 .pcard.cd .pfts li { color: rgba(30,15,0,.9) !important; }
-.pcard .pfts li::before { color: #FFD700 !important; }
-.pcard .pbtn {
-  background: rgba(0,0,0,0.35) !important;
-  color: #fff !important;
-  border: 1.5px solid rgba(255,180,0,0.4) !important;
-  backdrop-filter: blur(6px);
-}
-.pcard.cd .pbtn {
-  background: linear-gradient(135deg,#FFD700,#CC0000) !important;
-  border: none !important;
-  box-shadow: 0 4px 18px rgba(255,160,0,0.4) !important;
-}
-.pcard .pbtn:hover {
-  background: linear-gradient(135deg,#FFD700,#CC0000) !important;
-  border-color: transparent !important;
-  box-shadow: 0 6px 22px rgba(255,160,0,0.5) !important;
-  transform: translateY(-2px);
-}
+.pcard.cd .pfts li::before { color: #1a0a00 !important; }
+/* Buttons */
+.pcard.cw .pbtn,.pcard.cl2 .pbtn,.pcard.cm .pbtn { background: rgba(0,0,0,0.35) !important; color: #fff !important; border: 1.5px solid rgba(255,180,0,0.4) !important; }
+.pcard.cd .pbtn { background: #1a0a00 !important; color: #FCBF49 !important; border: none !important; box-shadow: 0 4px 18px rgba(0,0,0,0.4) !important; }
+.pcard.cw .pbtn:hover,.pcard.cl2 .pbtn:hover,.pcard.cm .pbtn:hover { background: rgba(0,0,0,0.55) !important; transform: translateY(-2px); }
+.pcard.cd .pbtn:hover { background: #2a1400 !important; transform: translateY(-2px); }
 
 /* ── CANONICAL NAV ── */
 #nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;background:rgba(20,4,56,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,206,0,0.12)}
