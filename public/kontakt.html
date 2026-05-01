@@ -174,6 +174,8 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
 @media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-mobile-btn{display:flex}.footer-top{flex-direction:column}.footer-links{gap:24px}}
 
 </style>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script>emailjs.init("pKiB2WLLYTKea3AR9");</script>
 </head>
 <body>
 <nav id="nav">
@@ -245,14 +247,20 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
           Jetzt schreiben
         </a>
       </div>
-      <div class="contact-card mail-card reveal">
+      <div class="contact-card mail-card reveal" style="text-align:left">
         <span class="ico">✉️</span>
-        <h3>E-Mail</h3>
-        <p>Schreiben Sie uns eine E-Mail für ausführlichere Anfragen oder Rückerstattungen.</p>
-        <a href="mailto:kontakt@iptvv.de" class="card-btn">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="white"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
-          E-Mail senden
-        </a>
+        <h3>E-Mail Kontaktformular</h3>
+        <p>Schreiben Sie uns direkt – wir antworten so schnell wie möglich.</p>
+        <form id="contactForm" onsubmit="sendContact(event)" style="margin-top:16px">
+          <div style="margin-bottom:12px"><input type="text" name="full_name" required placeholder="Ihr Name" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;font-family:Lato,sans-serif"/></div>
+          <div style="margin-bottom:12px"><input type="email" name="email" required placeholder="Ihre E-Mail" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;font-family:Lato,sans-serif"/></div>
+          <div style="margin-bottom:12px"><input type="tel" name="phone" placeholder="Telefon (optional)" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;font-family:Lato,sans-serif"/></div>
+          <div style="margin-bottom:12px"><textarea name="message" required placeholder="Ihre Nachricht" rows="4" style="width:100%;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:10px 14px;color:#fff;font-size:14px;outline:none;font-family:Lato,sans-serif;resize:vertical"></textarea></div>
+          <button type="submit" class="card-btn" style="background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a0a0a;width:100%;justify-content:center;border:none;cursor:pointer;font-size:14px;padding:11px 24px">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+            Absenden
+          </button>
+        </form>
       </div>
       <div class="contact-card tg-card reveal">
         <span class="ico">📱</span>
@@ -317,6 +325,31 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
   </footer>
 
 <script>
+function sendContact(e) {
+  e.preventDefault();
+  var btn = e.target.querySelector('button[type=submit]');
+  var d = new FormData(e.target);
+  btn.disabled = true;
+  btn.textContent = 'Senden...';
+  emailjs.send('service_rmnuog9', 'template_0qhdvki', {
+    plan:      'Kontaktanfrage',
+    full_name: d.get('full_name'),
+    email:     d.get('email'),
+    phone:     d.get('phone') || '—',
+    country:   '—',
+    device:    '—',
+    message:   d.get('message') || '—',
+    reply_to:  d.get('email'),
+  }).then(function() {
+    e.target.innerHTML = '<div style="text-align:center;padding:32px 0"><div style="font-size:40px;margin-bottom:12px">✅</div><div style="font-family:Inter Tight,sans-serif;font-size:18px;font-weight:800;color:#FFD700;margin-bottom:8px">Nachricht gesendet!</div><p style="color:rgba(255,255,255,.6);font-size:14px">Wir melden uns so schnell wie möglich.</p></div>';
+  }).catch(function(err) {
+    btn.disabled = false;
+    btn.textContent = 'Absenden';
+    alert('Fehler beim Senden. Bitte schreiben Sie uns direkt: kontakt@iptvv.de');
+    console.error(err);
+  });
+}
+
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
