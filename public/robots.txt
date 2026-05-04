@@ -2,5 +2,6 @@ User-agent: *
 Allow: /
 Disallow: /plan-page
 Disallow: /whatsapp-kontakt
+Disallow: /*-iptv.html
 
 Sitemap: https://iptvv.de/sitemap.xml
