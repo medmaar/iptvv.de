@@ -3,10 +3,10 @@
 
   <!-- Core pages -->
   <url><loc>https://mojo4k.de/</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://mojo4k.de/preise.html</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
+  <url><loc>https://mojo4k.de/preise/</loc><lastmod>2026-05-16</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url>
   <url><loc>https://mojo4k.de/kostenlos-testen.html</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.9</priority></url>
-  <url><loc>https://mojo4k.de/faqs.html</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://mojo4k.de/kontakt.html</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://mojo4k.de/faqs/</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://mojo4k.de/kontakt/</loc><lastmod>2026-05-16</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://mojo4k.de/impressum.html</loc><lastmod>2026-05-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
   <url><loc>https://mojo4k.de/datenschutz.html</loc><lastmod>2026-05-16</lastmod><changefreq>yearly</changefreq><priority>0.3</priority></url>
 
