@@ -180,40 +180,103 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
 <meta property="og:site_name" content="MOJO4K.DE"/>
 <meta property="og:locale" content="de_DE"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<script src="/nav.js"></script>
+<style id="shared-nav-css">
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--primary:#ff5266;--gfrom:#ff9a3e;--gto:#ff5266}
+html{scroll-behavior:smooth}
+body{background:#140438;color:#fff;font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+a{color:#fff;text-decoration:none}
+.nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.logo-a{display:flex;align-items:center;gap:10px;text-decoration:none;flex-shrink:0}
+.logo-icon{width:38px;height:38px;animation:float 4s ease-in-out infinite;flex-shrink:0}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.logo-text{display:flex;align-items:baseline;gap:2px;font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:900;line-height:1}
+.logo-main{font-size:18px;color:#fff;letter-spacing:0.04em}
+.logo-sub{font-size:11px;background:linear-gradient(135deg,#FFD700,#FFA500);-webkit-background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:0.08em;font-weight:900}
+.nav-links{display:flex;gap:22px;list-style:none}
+.nav-links a{color:rgba(255,255,255,0.82);font-size:13px;font-weight:600;transition:color 0.2s;font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif}
+.nav-links a:hover{color:#FFD700}
+.nav-cta{background:linear-gradient(135deg,#FFD700,#FFA500);color:#1a0a0a;font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-weight:800;padding:0 20px;line-height:40px;border-radius:50px;font-size:13px;transition:all 0.2s;white-space:nowrap;flex-shrink:0}
+.nav-cta:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(255,206,0,0.35)}
+.nav-mobile-btn{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.nav-mobile-btn span{width:22px;height:2px;background:#fff;border-radius:2px}
+.mobile-menu{display:none;position:fixed;top:72px;left:0;right:0;z-index:999;background:rgba(20,4,56,0.98);padding:18px 22px;border-bottom:1px solid rgba(255,206,0,0.12)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:11px 0;color:rgba(255,255,255,0.78);font-size:15px;font-weight:600;border-bottom:1px solid rgba(255,255,255,0.06);font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif}
+/* ── CANONICAL FOOTER ── */
+footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,206,0,0.1);position:relative;z-index:1}
+.footer-inner{max-width:1200px;margin:0 auto}
+.footer-top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;flex-wrap:wrap;padding-bottom:32px;margin-bottom:24px;border-bottom:1px solid rgba(255,255,255,0.06)}
+.footer-brand p{color:rgba(255,255,255,0.60);font-size:13px;max-width:260px;line-height:1.7;margin-top:10px}
+.footer-links{display:flex;gap:48px;flex-wrap:wrap}
+.footer-col h3,.footer-col h4{font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,0.65);margin-bottom:12px;line-height:1.2}
+.footer-col a{display:block;color:rgba(255,255,255,0.70);font-size:13px;margin-bottom:6px;transition:color 0.2s}
+.footer-col a:hover{color:#FFD700}
+.footer-col a::before{content:'›';color:#CC0000;margin-right:5px}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.footer-bottom p{font-size:11px;color:rgba(255,255,255,0.55)}
+@media(max-width:768px){.nav-links,.nav-cta{display:none}.nav-mobile-btn{display:flex}.footer-top{flex-direction:column}.footer-links{gap:24px}}
+/* scroll-top */
+#st{position:fixed;bottom:24px;right:24px;z-index:999;width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,var(--gfrom),var(--gto));display:flex;align-items:center;justify-content:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,transform .2s;box-shadow:0 3px 14px rgba(255,82,102,.28);border:none}
+#st.v{opacity:1;pointer-events:all}
+#st:hover{transform:scale(1.1)}
+#st svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+/* nav dropdown */
+.nav-drop{position:relative}
+.nav-drop>a::after{content:'▾';font-size:9px;margin-left:3px;opacity:0.6}
+.nav-drop-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(10,4,30,.98);border:1px solid rgba(255,206,0,.15);border-radius:10px;padding:8px 0;min-width:220px;z-index:2000;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+.nav-drop:hover .nav-drop-menu{display:block}
+.nav-drop-menu a{display:block;padding:9px 18px;color:rgba(255,255,255,.75);font-size:12px;font-weight:600;border-bottom:none!important;white-space:nowrap}
+.nav-drop-menu a:hover{color:#FFD700;background:rgba(255,206,0,.06)}
+</style>
 </head>
 <body>
 <nav id="nav">
   <div class="nav-inner">
-    <a href="/index.html" class="logo-a" aria-label="MOJO4K.DE – IPTV Kaufen Deutschland">
-        <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <linearGradient id="goldGrad" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD700"/><stop offset="100%" stop-color="#FFA500"/></linearGradient>
-          </defs>
-          <!-- Flag shield shape -->
-          <path d="M28 4 L50 14 L50 34 Q50 46 28 54 Q6 46 6 34 L6 14 Z" fill="#1a0a0a" stroke="rgba(255,206,0,0.3)" stroke-width="1"/>
-          <!-- Black stripe -->
-          <path d="M9 14 L47 14 L47 26 L9 26 Z" fill="#111" clip-path="url(#shield)"/>
-          <!-- Red stripe -->  
-          <path d="M9 26 L47 26 L47 38 L9 38 Z" fill="#CC0000"/>
-          <!-- Gold stripe -->
-          <path d="M9 38 L47 38 L47 50 L9 50 Z" fill="#FFD700"/>
-          <!-- Animated ring -->
-          <circle cx="28" cy="32" r="18" fill="none" stroke="url(#goldGrad)" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3">
-            <animateTransform attributeName="transform" type="rotate" from="0 28 32" to="360 28 32" dur="8s" repeatCount="indefinite"/>
-          </circle>
-          <!-- DE letters -->
-          <text x="28" y="36" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-weight="900" font-size="11" fill="white" opacity="0.9">.DE</text>
-        </svg>
-        <div class="logo-text">
-          <span class="logo-main">IPTV</span><span class="logo-sub">KAUFEN</span>
-        </div>
-      </a>
+    <a href="/" class="logo-a" aria-label="MOJO4K.DE – IPTV kaufen Deutschland">
+      <svg class="logo-icon" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs><linearGradient id="gg" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFD700"/><stop offset="100%" stop-color="#FFA500"/></linearGradient></defs>
+        <path d="M28 4 L50 14 L50 34 Q50 46 28 54 Q6 46 6 34 L6 14 Z" fill="#1a0a0a" stroke="rgba(255,206,0,0.3)" stroke-width="1"/>
+        <path d="M9 14 L47 14 L47 26 L9 26 Z" fill="#111"/>
+        <path d="M9 26 L47 26 L47 38 L9 38 Z" fill="#CC0000"/>
+        <path d="M9 38 L47 38 L47 50 L9 50 Z" fill="#FFD700"/>
+        <circle cx="28" cy="32" r="18" fill="none" stroke="url(#gg)" stroke-width="1.5" opacity="0.5" stroke-dasharray="4 3"><animateTransform attributeName="transform" type="rotate" from="0 28 32" to="360 28 32" dur="8s" repeatCount="indefinite"/></circle>
+        <text x="28" y="36" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-weight="900" font-size="11" fill="white" opacity="0.9">.DE</text>
+      </svg>
+      <div class="logo-text"><span class="logo-main">IPTV</span><span class="logo-sub">KAUFEN</span></div>
+    </a>
     <ul class="nav-links">
-      <li><a href="/index.html">Startseite</a></li>
-      <li><a href="/preise.html">Preise</a></li>
-      <li><a href="/faqs.html">FAQs</a></li>
-      <li><a href="/kontakt.html">Kontakt</a></li>
+      <li><a href="/">Startseite</a></li>
+      <li><a href="/preise/">Preise</a></li>
+      <li class="nav-drop"><a href="/bester-iptv-anbieter/">IPTV Kaufen</a>
+        <div class="nav-drop-menu">
+          <a href="/iptv-anbieter-vergleich/">Anbieter Vergleich</a>
+          <a href="/bester-iptv-anbieter/">Bester IPTV Anbieter</a>
+          <a href="/iptv-test/">IPTV Test</a>
+          <a href="/iptv-gratis-testen/">Gratis Testen</a>
+          <a href="/iptv-abo/">IPTV Abo</a>
+          <a href="/iptv-stick/">IPTV Stick</a>
+          <a href="/iptv-box/">IPTV Box</a>
+          <a href="/iptv-reseller-deutschland/">Reseller</a>
+        </div>
+      </li>
+      <li class="nav-drop"><a href="/iptv-fire-stick-deutschland/">Anleitungen</a>
+        <div class="nav-drop-menu">
+          <a href="/iptv-fire-stick-deutschland/">Fire TV Stick</a>
+          <a href="/iptv-samsung-tv-deutschland/">Samsung Smart TV</a>
+          <a href="/iptv-lg-tv-deutschland/">LG Smart TV</a>
+          <a href="/iptv-android-box-deutschland/">Android Box</a>
+          <a href="/iptv-smarters-pro-deutschland/">Smarters Pro</a>
+          <a href="/iptv-tivimate-deutschland/">TiviMate</a>
+          <a href="/iptv-receiver-deutschland/">MAG Receiver</a>
+          <a href="/iptv-m3u-playlist-deutschland/">M3U Playlist</a>
+          <a href="/iptv-player-android/">IPTV Android App</a>
+          <a href="/smart-iptv-deutschland/">Smart IPTV</a>
+          <a href="/iptv-kodi-deutschland/">Kodi</a>
+        </div>
+      </li>
+      <li><a href="/faqs/">FAQs</a></li>
+      <li><a href="/kontakt/">Kontakt</a></li>
     </ul>
     <a href="/whatsapp-kontakt.html" class="nav-cta">Kostenloser Test</a>
     <div class="nav-mobile-btn" onclick="document.getElementById('mobileMenu').classList.toggle('open')">
@@ -222,16 +285,19 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/index.html">Startseite</a>
-  <a href="/preise.html">Preise</a>
-  <a href="/faqs.html">FAQs</a>
-  <a href="/kontakt.html">Kontakt</a>
-  <a href="/whatsapp-kontakt.html" style="background:linear-gradient(135deg,#FFD700,#CC0000);color:#1a0a0a;text-align:center;border-radius:10px;margin-top:10px;font-weight:800;font-family:-apple-system,'Segoe UI',Arial,sans-serif;border-bottom:none;padding:12px 0;">Kostenloser Test</a>
+  <a href="/">Startseite</a>
+  <a href="/preise/">Preise</a>
+  <a href="/iptv-anbieter-vergleich/">Anbieter Vergleich</a>
+  <a href="/bester-iptv-anbieter/">Bester IPTV Anbieter</a>
+  <a href="/iptv-gratis-testen/">Gratis Testen</a>
+  <a href="/iptv-abo/">IPTV Abo</a>
+  <a href="/iptv-fire-stick-deutschland/">Fire Stick Anleitung</a>
+  <a href="/iptv-samsung-tv-deutschland/">Samsung TV</a>
+  <a href="/iptv-smarters-pro-deutschland/">Smarters Pro</a>
+  <a href="/faqs/">FAQs</a>
+  <a href="/kontakt/">Kontakt</a>
+  <a href="/whatsapp-kontakt.html" style="background:linear-gradient(135deg,#FFD700,#CC0000);color:#1a0a0a;text-align:center;border-radius:10px;margin-top:10px;font-weight:800;border-bottom:none;padding:12px 0;display:block">Kostenloser Test</a>
 </div>
-
-
-
-
 <div class="page-hero">
   <div class="container">
     <span class="section-label">FAQ</span>
@@ -379,5 +445,84 @@ function toggle(btn){
 const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target)}}),{threshold:.1});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 </script>
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="logo-a" style="margin-bottom:0">
+          <svg width="32" height="32" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M28 4 L50 14 L50 34 Q50 46 28 54 Q6 46 6 34 L6 14 Z" fill="#1a0a0a" stroke="rgba(255,206,0,0.3)" stroke-width="1"/>
+            <path d="M9 14 L47 14 L47 26 L9 26 Z" fill="#111"/>
+            <path d="M9 26 L47 26 L47 38 L9 38 Z" fill="#CC0000"/>
+            <path d="M9 38 L47 38 L47 50 L9 50 Z" fill="#FFD700"/>
+            <text x="28" y="36" text-anchor="middle" font-family="'Inter Tight',sans-serif" font-weight="900" font-size="11" fill="white" opacity="0.9">.DE</text>
+          </svg>
+          <div class="logo-text"><span class="logo-main">IPTV</span><span class="logo-sub">KAUFEN</span></div>
+        </a>
+        <p>Deutschlands bester IPTV Anbieter – Germany IPTV mit 50.000+ Kanälen in 4K. IPTV Abo, Stick &amp; Box kompatibel.</p>
+      </div>
+      <div class="footer-links">
+        <div class="footer-col">
+          <h3>Navigation</h3>
+          <a href="/">Startseite</a>
+          <a href="/preise/">Preise</a>
+          <a href="/faqs/">FAQs</a>
+          <a href="/kontakt/">Kontakt</a>
+          <a href="/blog/">Blog</a>
+          <a href="/iptv-reseller-deutschland/">Reseller</a>
+        </div>
+        <div class="footer-col">
+          <h3>IPTV Kaufen</h3>
+          <a href="/iptv-anbieter-vergleich/">Anbieter Vergleich</a>
+          <a href="/bester-iptv-anbieter/">Bester IPTV Anbieter</a>
+          <a href="/iptv-test/">IPTV Test</a>
+          <a href="/iptv-gratis-testen/">Gratis Testen</a>
+          <a href="/iptv-abo/">IPTV Abo</a>
+          <a href="/iptv-stick/">IPTV Stick</a>
+          <a href="/iptv-box/">IPTV Box</a>
+          <a href="/iptv-playlist-deutsch/">IPTV Playlist</a>
+        </div>
+        <div class="footer-col">
+          <h3>Anleitungen</h3>
+          <a href="/iptv-fire-stick-deutschland/">IPTV Fire Stick</a>
+          <a href="/iptv-samsung-tv-deutschland/">Samsung Smart TV</a>
+          <a href="/iptv-lg-tv-deutschland/">LG Smart TV</a>
+          <a href="/iptv-android-box-deutschland/">Android Box</a>
+          <a href="/iptv-smarters-pro-deutschland/">Smarters Pro</a>
+          <a href="/iptv-tivimate-deutschland/">TiviMate</a>
+          <a href="/iptv-receiver-deutschland/">MAG Receiver</a>
+          <a href="/iptv-m3u-playlist-deutschland/">M3U Playlist</a>
+          <a href="/iptv-player-android/">IPTV Android App</a>
+          <a href="/smart-iptv-deutschland/">Smart IPTV</a>
+          <a href="/iptv-kodi-deutschland/">IPTV Kodi</a>
+          <a href="/beste-iptv-app/">Beste IPTV App</a>
+        </div>
+        <div class="footer-col">
+          <h3>Städte</h3>
+          <a href="/iptv-berlin/">IPTV Berlin</a>
+          <a href="/iptv-hamburg/">IPTV Hamburg</a>
+          <a href="/iptv-muenchen/">IPTV München</a>
+          <a href="/iptv-koeln/">IPTV Köln</a>
+          <a href="/iptv-frankfurt/">IPTV Frankfurt</a>
+          <a href="/iptv-stuttgart/">IPTV Stuttgart</a>
+          <a href="/iptv-duesseldorf/">IPTV Düsseldorf</a>
+          <a href="/iptv-leipzig/">IPTV Leipzig</a>
+          <a href="/iptv-dortmund/">IPTV Dortmund</a>
+          <a href="/iptv-dresden/">IPTV Dresden</a>
+          <a href="/iptv-hannover/">IPTV Hannover</a>
+          <a href="/iptv-nuernberg/">IPTV Nürnberg</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 MOJO4K.DE – Bester IPTV Anbieter Deutschland | German IPTV | IPTV kaufen</p>
+      <p><a href="/impressum.html" style="color:#888;text-decoration:none;margin-right:16px">Impressum</a><a href="/datenschutz.html" style="color:#888;text-decoration:none;margin-right:16px">Datenschutz</a><a href="/blog/" style="color:#888;text-decoration:none">Blog</a></p>
+    </div>
+  </div>
+</footer>
+<button id="st" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Nach oben">
+  <svg viewBox="0 0 24 24"><polyline points="18,15 12,9 6,15"/></svg>
+</button>
+<script>window.addEventListener('scroll',function(){var b=document.getElementById('st');if(b)b.classList.toggle('v',window.scrollY>300)});</script>
 </body>
 </html>

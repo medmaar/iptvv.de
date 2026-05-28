@@ -355,6 +355,15 @@ footer{background:#0a0120;padding:64px 0 26px;border-top:1px solid rgba(255,255,
 .pcard.cd .pbtn { background: #1a0a00 !important; color: #FFD700 !important; border: none !important; font-weight: 800 !important; }
 .pcard.cd .pbtn:hover { background: #D62828 !important; color: #fff !important; transform: translateY(-2px); box-shadow: 0 6px 20px rgba(214,40,40,0.5) !important; }
 
+
+/* nav dropdowns */
+.nav-drop{position:relative}
+.nav-drop>a::after{content:'▾';font-size:9px;margin-left:3px;opacity:0.6}
+.nav-drop-menu{display:none;position:absolute;top:100%;left:50%;transform:translateX(-50%);background:rgba(10,4,30,.98);border:1px solid rgba(255,206,0,.15);border-radius:10px;padding:8px 0;min-width:220px;z-index:2000;box-shadow:0 12px 40px rgba(0,0,0,.6)}
+.nav-drop:hover .nav-drop-menu{display:block}
+.nav-drop-menu a{display:block;padding:9px 18px;color:rgba(255,255,255,.75);font-size:12px;font-weight:600;white-space:nowrap;border-bottom:none!important}
+.nav-drop-menu a:hover{color:#FFD700;background:rgba(255,206,0,.06)}
+
 /* ── CANONICAL NAV ── */
 #nav{position:fixed;top:0;left:0;right:0;z-index:100;height:72px;background:rgba(20,4,56,0.92);backdrop-filter:blur(16px);border-bottom:1px solid rgba(255,206,0,0.12)}
 .nav-inner{max-width:1200px;margin:0 auto;padding:0 24px;height:72px;display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -428,6 +437,33 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
     <ul class="nav-links">
       <li><a href="/">Startseite</a></li>
       <li><a href="/preise.html">Preise</a></li>
+      <li class="nav-drop"><a href="/bester-iptv-anbieter/">IPTV Kaufen</a>
+        <div class="nav-drop-menu">
+          <a href="/iptv-anbieter-vergleich/">Anbieter Vergleich</a>
+          <a href="/bester-iptv-anbieter/">Bester IPTV Anbieter</a>
+          <a href="/iptv-test/">IPTV Test</a>
+          <a href="/iptv-gratis-testen/">Gratis Testen</a>
+          <a href="/iptv-abo/">IPTV Abo</a>
+          <a href="/iptv-stick/">IPTV Stick</a>
+          <a href="/iptv-box/">IPTV Box</a>
+          <a href="/iptv-reseller-deutschland/">Reseller</a>
+        </div>
+      </li>
+      <li class="nav-drop"><a href="/iptv-fire-stick-deutschland/">Anleitungen</a>
+        <div class="nav-drop-menu">
+          <a href="/iptv-fire-stick-deutschland/">Fire TV Stick</a>
+          <a href="/iptv-samsung-tv-deutschland/">Samsung Smart TV</a>
+          <a href="/iptv-lg-tv-deutschland/">LG Smart TV</a>
+          <a href="/iptv-android-box-deutschland/">Android Box</a>
+          <a href="/iptv-smarters-pro-deutschland/">Smarters Pro</a>
+          <a href="/iptv-tivimate-deutschland/">TiviMate</a>
+          <a href="/iptv-receiver-deutschland/">MAG Receiver</a>
+          <a href="/iptv-m3u-playlist-deutschland/">M3U Playlist</a>
+          <a href="/iptv-player-android/">IPTV Android App</a>
+          <a href="/smart-iptv-deutschland/">Smart IPTV</a>
+          <a href="/iptv-kodi-deutschland/">Kodi</a>
+        </div>
+      </li>
       <li><a href="/faqs.html">FAQs</a></li>
       <li><a href="/kontakt.html">Kontakt</a></li>
     </ul>
@@ -440,6 +476,13 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
 <div class="mobile-menu" id="mobileMenu">
   <a href="/">Startseite</a>
   <a href="/preise.html">Preise</a>
+  <a href="/iptv-anbieter-vergleich/">Anbieter Vergleich</a>
+  <a href="/bester-iptv-anbieter/">Bester IPTV Anbieter</a>
+  <a href="/iptv-gratis-testen/">Gratis Testen</a>
+  <a href="/iptv-abo/">IPTV Abo</a>
+  <a href="/iptv-fire-stick-deutschland/">Fire Stick</a>
+  <a href="/iptv-samsung-tv-deutschland/">Samsung TV</a>
+  <a href="/iptv-smarters-pro-deutschland/">Smarters Pro</a>
   <a href="/faqs.html">FAQs</a>
   <a href="/kontakt.html">Kontakt</a>
   <a href="/whatsapp-kontakt.html" style="background:linear-gradient(135deg,#FFD700,#CC0000);color:#1a0a0a;text-align:center;border-radius:10px;margin-top:10px;font-weight:800;font-family:-apple-system,'Segoe UI','Helvetica Neue',Arial,sans-serif;border-bottom:none;padding:12px 0;">Kostenloser Test</a>
@@ -799,24 +842,49 @@ footer{background:#0a0010;padding:48px 24px 24px;border-top:1px solid rgba(255,2
             <a href="/preise.html">Preise</a>
             <a href="/faqs.html">FAQs</a>
             <a href="/kontakt.html">Kontakt</a>
+            <a href="/blog/">Blog</a>
+            <a href="/iptv-reseller-deutschland/">Reseller</a>
           </div>
           <div class="footer-col">
-            <h3>German IPTV Pakete</h3>
-            <a href="/1-monat-1-gerat.html">1 Monat · 1 Gerät</a>
-            <a href="/6-monate-1-gerat.html">6 Monate · 1 Gerät</a>
-            <a href="/1-jahr-1-gerat.html">1 Jahr · 1 Gerät</a>
-            <a href="/1-jahr-2-gerate.html">1 Jahr · 2 Geräte</a>
+            <h3>IPTV Kaufen</h3>
+            <a href="/iptv-anbieter-vergleich/">Anbieter Vergleich</a>
+            <a href="/bester-iptv-anbieter/">Bester IPTV Anbieter</a>
+            <a href="/iptv-test/">IPTV Test</a>
+            <a href="/iptv-gratis-testen/">Gratis Testen</a>
+            <a href="/iptv-abo/">IPTV Abo</a>
+            <a href="/iptv-stick/">IPTV Stick</a>
+            <a href="/iptv-box/">IPTV Box</a>
+            <a href="/iptv-playlist-deutsch/">IPTV Playlist</a>
           </div>
           <div class="footer-col">
             <h3>Anleitungen</h3>
             <a href="/iptv-fire-stick-deutschland/">IPTV Fire Stick</a>
-            <a href="/iptv-samsung-tv-deutschland/">IPTV Samsung TV</a>
-            <a href="/iptv-lg-tv-deutschland/">IPTV LG TV</a>
-            <a href="/iptv-android-box-deutschland/">IPTV Android Box</a>
-            <a href="/iptv-smarters-pro-deutschland/">IPTV Smarters Pro</a>
-            <a href="/iptv-tivimate-deutschland/">TiviMate IPTV</a>
-            <a href="/iptv-receiver-deutschland/">IPTV Receiver / MAG</a>
+            <a href="/iptv-samsung-tv-deutschland/">Samsung Smart TV</a>
+            <a href="/iptv-lg-tv-deutschland/">LG Smart TV</a>
+            <a href="/iptv-android-box-deutschland/">Android Box</a>
+            <a href="/iptv-smarters-pro-deutschland/">Smarters Pro</a>
+            <a href="/iptv-tivimate-deutschland/">TiviMate</a>
+            <a href="/iptv-receiver-deutschland/">MAG Receiver</a>
             <a href="/iptv-m3u-playlist-deutschland/">M3U Playlist</a>
+            <a href="/iptv-player-android/">IPTV Android App</a>
+            <a href="/smart-iptv-deutschland/">Smart IPTV</a>
+            <a href="/iptv-kodi-deutschland/">IPTV Kodi</a>
+            <a href="/beste-iptv-app/">Beste IPTV App</a>
+          </div>
+          <div class="footer-col">
+            <h3>Städte</h3>
+            <a href="/iptv-berlin/">IPTV Berlin</a>
+            <a href="/iptv-hamburg/">IPTV Hamburg</a>
+            <a href="/iptv-muenchen/">IPTV München</a>
+            <a href="/iptv-koeln/">IPTV Köln</a>
+            <a href="/iptv-frankfurt/">IPTV Frankfurt</a>
+            <a href="/iptv-stuttgart/">IPTV Stuttgart</a>
+            <a href="/iptv-duesseldorf/">IPTV Düsseldorf</a>
+            <a href="/iptv-leipzig/">IPTV Leipzig</a>
+            <a href="/iptv-dortmund/">IPTV Dortmund</a>
+            <a href="/iptv-dresden/">IPTV Dresden</a>
+            <a href="/iptv-hannover/">IPTV Hannover</a>
+            <a href="/iptv-nuernberg/">IPTV Nürnberg</a>
           </div>
         </div>
       </div>
