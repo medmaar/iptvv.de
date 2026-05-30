@@ -305,16 +305,7 @@ function submitWA(e) {
   var d = new FormData(e.target);
   btn.disabled = true;
   btn.innerHTML = '⏳ Wird gesendet...';
-  emailjs.send('service_c4wcbog', 'template_2rregej', {
-    plan:      d.get('plan'),
-    full_name: d.get('first_name'),
-    email:     'WhatsApp-Anfrage',
-    phone:     d.get('whatsapp'),
-    country:   'WhatsApp-Anfrage',
-    device:    'WhatsApp',
-    message:   'Kostenloser Test angefordert via WhatsApp-Kontakt',
-    reply_to:  'no-reply@mojo4k.de',
-  }).then(function() {
+  emailjs.sendForm('service_c4wcbog', 'template_2rregej', e.target).then(function() {
     document.getElementById('formCard').innerHTML = '<div style="text-align:center;padding:48px 20px"><div style="font-size:48px;margin-bottom:16px">✅</div><div style="font-size:20px;font-weight:900;color:#25D366;margin-bottom:10px">Anfrage erhalten!</div><p style="color:rgba(255,255,255,.6);font-size:14px;line-height:1.8">Wir melden uns <strong style="color:#FFD700">innerhalb von 5 Minuten</strong> auf WhatsApp.<br>Bitte halten Sie Ihr Handy bereit.</p><a href="/preise/" style="display:inline-block;margin-top:24px;background:linear-gradient(135deg,#FFD700,#CC0000);color:#1a0a0a;font-weight:800;padding:12px 28px;border-radius:50px;font-size:14px">Alle Pakete ansehen &rarr;</a></div>';
   }).catch(function(err) {
     btn.disabled = false;

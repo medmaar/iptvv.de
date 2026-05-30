@@ -572,21 +572,7 @@ function submitOrder(e) {
   var d = new FormData(e.target);
   btn.disabled = true;
   btn.textContent = 'Senden...';
-  emailjs.send('service_c4wcbog', 'template_2rregej', {
-    plan:      d.get('plan'),
-    full_name: d.get('full_name') || '—',
-    name:      d.get('full_name') || '—',
-    from_name: d.get('full_name') || '—',
-    email:        d.get('email') || '—',
-    user_email:   d.get('email') || '—',
-    email_address:d.get('email') || '—',
-    to_email:     d.get('email') || '—',
-    phone:     d.get('phone') || '—',
-    country:   d.get('country'),
-    device:    d.get('device') || '—',
-    message:   d.get('message') || '—',
-    reply_to:  d.get('email') || 'no-reply@mojo4k.de',
-  }).then(function() {
+  emailjs.sendForm('service_c4wcbog', 'template_2rregej', e.target).then(function() {
     e.target.innerHTML = '<div style="text-align:center;padding:32px 0"><div style="font-size:40px;margin-bottom:12px">✅</div><div style="font-family:Inter Tight,sans-serif;font-size:18px;font-weight:800;color:#FFD700;margin-bottom:8px">Bestellung eingegangen!</div><p style="color:rgba(255,255,255,.6);font-size:14px">Wir melden uns in wenigen Minuten per E-Mail.</p></div>';
   }).catch(function(err) {
     btn.disabled = false;
