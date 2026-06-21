@@ -255,59 +255,89 @@
         </div>
     </section>
 
-    <!-- ======== VORTEILE / FEATURES ======== -->
-    <section id="vorteile" class="py-24">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-16 slide-up">
-                <span class="text-sm font-semibold text-purple-400 uppercase tracking-wider">Warum IPTV Deutschland?</span>
+    <!-- ======== TESTIMONIALS ======== -->
+    <section class="py-24 relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="text-center mb-12 slide-up">
+                <span class="text-sm font-semibold text-purple-400 uppercase tracking-wider">Verifizierte Bewertungen</span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
-                    Ihr Bester <span class="text-gradient">IPTV Anbieter</span> in Deutschland
+                    Was unsere <span class="text-gradient">Kunden</span> sagen
                 </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Entdecken Sie warum tausende Kunden in Deutschland uns als ihren <strong>IPTV Anbieter</strong> vertrauen. Premium IPTV Deutsch – einfach, schnell und zuverlässig.</p>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8">Echte Bewertungen von Trustpilot, WhatsApp & Google – direkt von unseren Kunden in Deutschland.</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black" style="color:#00b67a">5.0</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Trustpilot</p>
+                    </div>
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black text-gradient">+1,5 Mio.</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Kunden</p>
+                    </div>
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black text-yellow-400">4.9 ★</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Google</p>
+                    </div>
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black text-white">24/7</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Support</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group">
-                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">📺</div>
-                    <h3 class="text-xl font-bold mb-3">+50.000 Live Kanäle</h3>
-                    <p class="text-gray-400 leading-relaxed">Alle deutschen Sender wie ARD, ZDF, RTL, SAT.1, ProSieben, Sky und tausende internationale IPTV Kanäle. Das komplette <strong>IPTV Deutschland</strong> Programm.</p>
+            <!-- Trustpilot slider -->
+            <div class="mb-16 slide-up">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="w-7 h-7 rounded flex items-center justify-center" style="background:#00b67a">
+                        <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
+                    </div>
+                    <span class="font-black text-lg" style="color:#00b67a">Trustpilot</span>
                 </div>
-                <!-- Feature 2 -->
-                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.1s">
-                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🎬</div>
-                    <h3 class="text-xl font-bold mb-3">+300.000 Filme & Serien</h3>
-                    <p class="text-gray-400 leading-relaxed">Riesige VOD-Bibliothek mit den neuesten Filmen und Serien auf Deutsch. Netflix, Amazon Prime Inhalte und vieles mehr in Ihrem <strong>IPTV Abo</strong>.</p>
+                <div class="overflow-hidden">
+                    <div id="tpSlide" class="review-slide max-w-2xl mx-auto">
+                        <div class="glass rounded-3xl p-8">
+                            <div id="tpStars" class="flex gap-1 mb-4"></div>
+                            <p id="tpTitle" class="font-bold text-white mb-2"></p>
+                            <p id="tpText" class="text-gray-400 leading-relaxed mb-4"></p>
+                            <p id="tpAuth" class="text-sm text-gray-400 font-semibold"></p>
+                        </div>
+                    </div>
+                    <div id="tpDots" class="flex justify-center gap-1.5 mt-5"></div>
                 </div>
-                <!-- Feature 3 -->
-                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.2s">
-                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">⚽</div>
-                    <h3 class="text-xl font-bold mb-3">Live Sport & Bundesliga</h3>
-                    <p class="text-gray-400 leading-relaxed">Bundesliga, Champions League, Formel 1, NFL und alle großen Sportevents live. <strong>IPTV Sport</strong> in bester Qualität auf Ihrem Bildschirm.</p>
+            </div>
+
+            <!-- WhatsApp slider -->
+            <div class="mb-16 slide-up">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.6 5.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                    </div>
+                    <span class="font-black text-lg text-green-400">WhatsApp</span>
                 </div>
-                <!-- Feature 4 -->
-                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group">
-                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🔥</div>
-                    <h3 class="text-xl font-bold mb-3">4K & Full HD Qualität</h3>
-                    <p class="text-gray-400 leading-relaxed">Kristallklares Bild in 4K Ultra HD und Full HD. Anti-Freeze Technologie für unterbrechungsfreies <strong>IPTV Streaming</strong> in Deutschland.</p>
+                <div class="overflow-hidden">
+                    <div id="waSlide" class="review-slide">
+                        <div id="waCards" class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto"></div>
+                    </div>
+                    <div id="waDots" class="flex justify-center gap-1.5 mt-5"></div>
                 </div>
-                <!-- Feature 5 -->
-                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.1s">
-                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">⚡</div>
-                    <h3 class="text-xl font-bold mb-3">Sofortige Aktivierung</h3>
-                    <p class="text-gray-400 leading-relaxed"><strong>IPTV Kaufen</strong> und sofort losschauen! Nach der Bestellung wird Ihr IPTV Abo innerhalb von wenigen Minuten aktiviert. Kein Warten, kein Stress.</p>
+            </div>
+
+            <!-- Google slider -->
+            <div class="slide-up">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <span class="font-black text-lg"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
+                    <span class="text-yellow-400 text-sm">★★★★★</span>
+                    <span class="text-gray-400 text-sm">4.9</span>
                 </div>
-                <!-- Feature 6 -->
-                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.2s">
-                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
-                    <h3 class="text-xl font-bold mb-3">24/7 Deutscher Support</h3>
-                    <p class="text-gray-400 leading-relaxed">Unser deutschsprachiges Support-Team hilft Ihnen rund um die Uhr. Bei IPTV Deutschland sind Sie nie allein – jederzeit über WhatsApp erreichbar.</p>
+                <div class="overflow-hidden">
+                    <div id="gSlide" class="review-slide">
+                        <div id="gCards" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    </div>
+                    <div id="gDots" class="flex justify-center gap-1.5 mt-5"></div>
                 </div>
             </div>
         </div>
     </section>
-
-
 
     <!-- ======== PRICING SECTION ======== -->
     <section id="preise" class="py-24">
@@ -510,6 +540,58 @@
         renderPricing();
     </script>
 
+    <!-- ======== VORTEILE / FEATURES ======== -->
+    <section id="vorteile" class="py-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 slide-up">
+                <span class="text-sm font-semibold text-purple-400 uppercase tracking-wider">Warum IPTV Deutschland?</span>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
+                    Ihr Bester <span class="text-gradient">IPTV Anbieter</span> in Deutschland
+                </h2>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Entdecken Sie warum tausende Kunden in Deutschland uns als ihren <strong>IPTV Anbieter</strong> vertrauen. Premium IPTV Deutsch – einfach, schnell und zuverlässig.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group">
+                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">📺</div>
+                    <h3 class="text-xl font-bold mb-3">+50.000 Live Kanäle</h3>
+                    <p class="text-gray-400 leading-relaxed">Alle deutschen Sender wie ARD, ZDF, RTL, SAT.1, ProSieben, Sky und tausende internationale IPTV Kanäle. Das komplette <strong>IPTV Deutschland</strong> Programm.</p>
+                </div>
+                <!-- Feature 2 -->
+                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.1s">
+                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🎬</div>
+                    <h3 class="text-xl font-bold mb-3">+300.000 Filme & Serien</h3>
+                    <p class="text-gray-400 leading-relaxed">Riesige VOD-Bibliothek mit den neuesten Filmen und Serien auf Deutsch. Netflix, Amazon Prime Inhalte und vieles mehr in Ihrem <strong>IPTV Abo</strong>.</p>
+                </div>
+                <!-- Feature 3 -->
+                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.2s">
+                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">⚽</div>
+                    <h3 class="text-xl font-bold mb-3">Live Sport & Bundesliga</h3>
+                    <p class="text-gray-400 leading-relaxed">Bundesliga, Champions League, Formel 1, NFL und alle großen Sportevents live. <strong>IPTV Sport</strong> in bester Qualität auf Ihrem Bildschirm.</p>
+                </div>
+                <!-- Feature 4 -->
+                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group">
+                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🔥</div>
+                    <h3 class="text-xl font-bold mb-3">4K & Full HD Qualität</h3>
+                    <p class="text-gray-400 leading-relaxed">Kristallklares Bild in 4K Ultra HD und Full HD. Anti-Freeze Technologie für unterbrechungsfreies <strong>IPTV Streaming</strong> in Deutschland.</p>
+                </div>
+                <!-- Feature 5 -->
+                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.1s">
+                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">⚡</div>
+                    <h3 class="text-xl font-bold mb-3">Sofortige Aktivierung</h3>
+                    <p class="text-gray-400 leading-relaxed"><strong>IPTV Kaufen</strong> und sofort losschauen! Nach der Bestellung wird Ihr IPTV Abo innerhalb von wenigen Minuten aktiviert. Kein Warten, kein Stress.</p>
+                </div>
+                <!-- Feature 6 -->
+                <div class="slide-up glass rounded-3xl p-8 hover:bg-white/10 transition-all group" style="transition-delay:0.2s">
+                    <div class="w-16 h-16 gradient-blue rounded-2xl flex items-center justify-center text-3xl mb-6 group-hover:scale-110 transition-transform">🛡️</div>
+                    <h3 class="text-xl font-bold mb-3">24/7 Deutscher Support</h3>
+                    <p class="text-gray-400 leading-relaxed">Unser deutschsprachiges Support-Team hilft Ihnen rund um die Uhr. Bei IPTV Deutschland sind Sie nie allein – jederzeit über WhatsApp erreichbar.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- ======== GERÄTE SECTION ======== -->
     <section id="gerate" class="py-24 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-blue-900/10 to-transparent"></div>
@@ -595,90 +677,6 @@
                     <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     IPTV Jetzt Bestellen per WhatsApp
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ======== TESTIMONIALS ======== -->
-    <section class="py-24 relative">
-        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-12 slide-up">
-                <span class="text-sm font-semibold text-purple-400 uppercase tracking-wider">Verifizierte Bewertungen</span>
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
-                    Was unsere <span class="text-gradient">Kunden</span> sagen
-                </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8">Echte Bewertungen von Trustpilot, WhatsApp & Google – direkt von unseren Kunden in Deutschland.</p>
-                <div class="flex flex-wrap justify-center gap-3">
-                    <div class="review-stat-card">
-                        <p class="text-lg font-black" style="color:#00b67a">5.0</p>
-                        <p class="text-xs text-gray-400 mt-0.5">Trustpilot</p>
-                    </div>
-                    <div class="review-stat-card">
-                        <p class="text-lg font-black text-gradient">+1,5 Mio.</p>
-                        <p class="text-xs text-gray-400 mt-0.5">Kunden</p>
-                    </div>
-                    <div class="review-stat-card">
-                        <p class="text-lg font-black text-yellow-400">4.9 ★</p>
-                        <p class="text-xs text-gray-400 mt-0.5">Google</p>
-                    </div>
-                    <div class="review-stat-card">
-                        <p class="text-lg font-black text-white">24/7</p>
-                        <p class="text-xs text-gray-400 mt-0.5">Support</p>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Trustpilot slider -->
-            <div class="mb-16 slide-up">
-                <div class="flex items-center justify-center gap-2 mb-6">
-                    <div class="w-7 h-7 rounded flex items-center justify-center" style="background:#00b67a">
-                        <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
-                    </div>
-                    <span class="font-black text-lg" style="color:#00b67a">Trustpilot</span>
-                </div>
-                <div class="overflow-hidden">
-                    <div id="tpSlide" class="review-slide max-w-2xl mx-auto">
-                        <div class="glass rounded-3xl p-8">
-                            <div id="tpStars" class="flex gap-1 mb-4"></div>
-                            <p id="tpTitle" class="font-bold text-white mb-2"></p>
-                            <p id="tpText" class="text-gray-400 leading-relaxed mb-4"></p>
-                            <p id="tpAuth" class="text-sm text-gray-400 font-semibold"></p>
-                        </div>
-                    </div>
-                    <div id="tpDots" class="flex justify-center gap-1.5 mt-5"></div>
-                </div>
-            </div>
-
-            <!-- WhatsApp slider -->
-            <div class="mb-16 slide-up">
-                <div class="flex items-center justify-center gap-2 mb-6">
-                    <div class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center">
-                        <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.6 5.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                    </div>
-                    <span class="font-black text-lg text-green-400">WhatsApp</span>
-                </div>
-                <div class="overflow-hidden">
-                    <div id="waSlide" class="review-slide">
-                        <div id="waCards" class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto"></div>
-                    </div>
-                    <div id="waDots" class="flex justify-center gap-1.5 mt-5"></div>
-                </div>
-            </div>
-
-            <!-- Google slider -->
-            <div class="slide-up">
-                <div class="flex items-center justify-center gap-2 mb-6">
-                    <span class="font-black text-lg"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
-                    <span class="text-yellow-400 text-sm">★★★★★</span>
-                    <span class="text-gray-400 text-sm">4.9</span>
-                </div>
-                <div class="overflow-hidden">
-                    <div id="gSlide" class="review-slide">
-                        <div id="gCards" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
-                    </div>
-                    <div id="gDots" class="flex justify-center gap-1.5 mt-5"></div>
-                </div>
             </div>
         </div>
     </section>
