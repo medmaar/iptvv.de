@@ -147,16 +147,16 @@
                 <form id="leadForm" class="space-y-5">
                     <div>
                         <label for="first_name" class="form-label">Vorname</label>
-                        <input type="text" id="first_name" name="first_name" class="form-field" placeholder="Ihr Vorname" required>
+                        <input type="text" id="first_name" name="from_name" class="form-field" placeholder="Ihr Vorname">
                     </div>
                     <div>
                         <label for="email" class="form-label">E-Mail Adresse</label>
-                        <input type="email" id="email" name="email" class="form-field" placeholder="ihre@email.de" required>
+                        <input type="email" id="email" name="from_email" class="form-field" placeholder="ihre@email.de">
                     </div>
                     <div>
                         <label for="whatsappNumber" class="form-label">WhatsApp Nummer</label>
                         <div class="flex gap-2">
-                            <select id="country" name="country" class="form-field" style="flex: 0 0 44%;" required>
+                            <select id="country" name="country" class="form-field" style="flex: 0 0 44%;">
                                 <option value="Deutschland" data-code="49" selected>Deutschland (+49)</option>
                                 <option value="Österreich" data-code="43">Österreich (+43)</option>
                                 <option value="Schweiz" data-code="41">Schweiz (+41)</option>
@@ -341,19 +341,21 @@
                                 <option value="Zypern" data-code="357">Zypern (+357)</option>
                                 <option value="Andere" data-code="">Andere</option>
                             </select>
-                            <input type="tel" id="whatsappNumber" class="form-field flex-1" placeholder="151 23456789" required>
+                            <input type="tel" id="whatsappNumber" class="form-field flex-1" placeholder="151 23456789">
                         </div>
-                        <input type="hidden" id="whatsapp" name="whatsapp">
+                        <input type="hidden" id="whatsapp" name="phone">
                         <p class="text-xs text-gray-500 mt-1.5">Vollständige Nummer: <span id="whatsappPreview" class="text-gray-400">+49</span></p>
                     </div>
                     <div>
-                        <label for="notes" class="form-label">Anmerkungen (optional)</label>
-                        <textarea id="notes" name="notes" class="form-field" rows="3" placeholder="z.B. gewünschtes Gerät, Fragen zur Aktivierung ..."></textarea>
+                        <label for="notes" class="form-label">Anmerkungen</label>
+                        <textarea id="notes" name="message" class="form-field" rows="3" placeholder="z.B. gewünschtes Gerät, Fragen zur Aktivierung ..."></textarea>
                     </div>
 
-                    <input type="hidden" name="plan_name" value="1 Monat IPTV Abo für 3 Geräte">
-                    <input type="hidden" name="plan_price" value="27 € (3 Geräte, 1 Monat)">
-                    <input type="hidden" name="to_email" value="kontakt@iptvv.de">
+                    <input type="hidden" id="nameMirror" name="name" value="">
+                    <input type="hidden" id="timeField" name="time" value="">
+                    <input type="hidden" name="site_name" value="IPTV Deutschland">
+                    <input type="hidden" name="device" value="3 Geräte">
+                    <input type="hidden" name="plan" value="1 Monat IPTV Abo für 3 Geräte – 27 € (3 Geräte, 1 Monat)">
 
                     <button type="submit" id="submitBtn" class="btn-submit w-full">Anfrage senden</button>
                     <p id="formStatus" class="text-sm text-center min-h-[1.25rem]"></p>
@@ -592,10 +594,15 @@ iptv kaufen · iptv anbieter · iptv deutschland · iptv box android · ip tv bo
         const formStatus = document.getElementById('formStatus');
         const formHeader = document.getElementById('formHeader');
         const formSuccessPanel = document.getElementById('formSuccessPanel');
+        const firstNameInput = document.getElementById('first_name');
+        const nameMirror = document.getElementById('nameMirror');
+        const timeField = document.getElementById('timeField');
 
         leadForm.addEventListener('submit', function (e) {
             e.preventDefault();
             updateWhatsappValue();
+            nameMirror.value = firstNameInput.value;
+            timeField.value = new Date().toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' });
             submitBtn.disabled = true;
             submitBtn.textContent = 'Wird gesendet ...';
             formStatus.textContent = '';
