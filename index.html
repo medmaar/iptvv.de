@@ -976,7 +976,7 @@
             }
             document.getElementById('tpTitle').textContent = r.t;
             document.getElementById('tpText').textContent = r.x;
-            document.getElementById('tpAuth').textContent = '— ' + r.n + ' 🇩🇪';
+            document.getElementById('tpAuth').innerHTML = '— ' + r.n + ' <img src="flag-de.png" alt="Deutschland" width="16" height="16" style="display:inline-block;border-radius:3px;vertical-align:middle;margin-left:2px">';
             mkDots('tpDots', tpR.length, tpI, (i) => {
                 tpPause = Date.now() + REVIEW_INTERVAL;
                 slideTransition('tpSlide', () => { tpI = i; renderTP(); });
@@ -994,7 +994,7 @@
                         <span class="text-green-400 font-bold text-sm">WhatsApp</span>
                     </div>
                     <p class="text-gray-400 text-sm leading-relaxed mb-3">${r.x}</p>
-                    <p class="text-xs text-gray-400 font-semibold">— ${r.n} 🇩🇪</p>
+                    <p class="text-xs text-gray-400 font-semibold">— ${r.n} <img src="flag-de.png" alt="Deutschland" width="16" height="16" style="display:inline-block;border-radius:3px;vertical-align:middle;margin-left:2px"></p>
                 </div>`).join('');
             mkDots('waDots', waPages, waI, (i) => {
                 waPause = Date.now() + REVIEW_INTERVAL;
