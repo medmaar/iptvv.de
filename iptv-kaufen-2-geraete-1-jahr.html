@@ -605,11 +605,14 @@ iptv kaufen · iptv anbieter · iptv deutschland · iptv abo · deutschland iptv
                     submitBtn.textContent = 'Anfrage senden';
                     submitBtn.disabled = false;
                 }, function (error) {
-                    formStatus.textContent = 'Es gab leider ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt über WhatsApp.';
+                    const code = error && error.status ? error.status : '?';
+                    const detail = error && error.text ? error.text : (error && error.message ? error.message : 'unbekannt');
+                    formStatus.innerHTML = 'Es gab leider ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt über WhatsApp.' +
+                        '<br><span class="text-gray-600 text-xs">(Fehlercode: ' + code + ' – ' + detail + ')</span>';
                     formStatus.classList.add('form-status-error');
                     submitBtn.textContent = 'Anfrage senden';
                     submitBtn.disabled = false;
-                    console.error('EmailJS error:', error);
+                    console.error('EmailJS error - status:', code, 'text:', detail, 'full object:', error);
                 });
         });
     </script>
