@@ -99,105 +99,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-        html { scroll-behavior: smooth; }
-
-        .gradient-bg { background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%); }
-        .gradient-blue { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); }
-        .gradient-card { background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 100%); }
-        .glass { background: rgba(255,255,255,0.06); backdrop-filter: blur(20px); border: 1px solid rgba(255,255,255,0.1); }
-        .glow { box-shadow: 0 0 40px rgba(102,126,234,0.3); }
-        .glow-green { box-shadow: 0 0 40px rgba(16,185,129,0.3); }
-        .text-gradient { background: linear-gradient(135deg, #667eea, #764ba2); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-        .text-gradient-gold { background: linear-gradient(135deg, #f5af19, #f12711); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-        .float-animation { animation: float 6s ease-in-out infinite; }
-        @keyframes float { 0%,100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
-
-        .pulse-glow { animation: pulseGlow 2s ease-in-out infinite; }
-        @keyframes pulseGlow { 0%,100% { box-shadow: 0 0 20px rgba(16,185,129,0.4); } 50% { box-shadow: 0 0 40px rgba(16,185,129,0.8); } }
-
-        .slide-up { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.16,1,0.3,1); }
-        .slide-up.visible { opacity: 1; transform: translateY(0); }
-
-        .hero-bg { position: relative; overflow: hidden; }
-        .hero-bg::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle at 30% 50%, rgba(102,126,234,0.15) 0%, transparent 50%),
-                        radial-gradient(circle at 70% 80%, rgba(118,75,162,0.1) 0%, transparent 50%);
-            animation: bgMove 20s linear infinite;
-        }
-        @keyframes bgMove { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-
-        .popular-badge {
-            position: absolute;
-            top: -14px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 10;
-        }
-
-        .whatsapp-float {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            z-index: 9999;
-            animation: bounceIn 1s ease, pulse 2s ease infinite 1s;
-        }
-        @keyframes bounceIn {
-            0% { transform: scale(0); }
-            50% { transform: scale(1.2); }
-            100% { transform: scale(1); }
-        }
-        @keyframes pulse {
-            0%,100% { transform: scale(1); }
-            50% { transform: scale(1.08); }
-        }
-
-        .channel-scroll {
-            display: flex;
-            animation: scroll 30s linear infinite;
-        }
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        .stats-counter { font-variant-numeric: tabular-nums; }
-
-        .pricing-card:hover { transform: translateY(-8px); transition: transform 0.3s ease; }
-        .pricing-card { transition: transform 0.3s ease; }
-
-        .navbar-scrolled { background: rgba(15,12,41,0.95) !important; backdrop-filter: blur(20px); box-shadow: 0 4px 30px rgba(0,0,0,0.3); }
-
-        .device-btn {
-            padding: 0.65rem 1.1rem;
-            border-radius: 9999px;
-            font-weight: 600;
-            font-size: 0.875rem;
-            color: #9ca3af;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            transition: all 0.25s ease;
-            white-space: nowrap;
-        }
-        .device-btn:hover { color: #fff; background: rgba(255,255,255,0.08); }
-        .device-btn.device-btn-active {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: #fff;
-            box-shadow: 0 4px 18px rgba(102,126,234,0.45);
-        }
-
-        @keyframes priceUpdate { 0% { transform: scale(0.94); opacity: 0.3; } 100% { transform: scale(1); opacity: 1; } }
-        .price-flash { animation: priceUpdate 0.3s ease; }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body class="gradient-bg text-white overflow-x-hidden">
 
@@ -447,6 +349,7 @@
                     <a id="cta-1mo" href="#" target="_blank" rel="noopener" class="block w-full text-center glass hover:bg-white/10 text-white py-3 rounded-full font-semibold transition-all">
                         Jetzt Kaufen
                     </a>
+                    <a href="iptv-kaufen-1-monat.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
 
                 <!-- 3 Monate -->
@@ -471,6 +374,7 @@
                     <a id="cta-3mo" href="#" target="_blank" rel="noopener" class="block w-full text-center glass hover:bg-white/10 text-white py-3 rounded-full font-semibold transition-all">
                         Jetzt Kaufen
                     </a>
+                    <a href="iptv-kaufen-3-monate.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
 
                 <!-- 6 Monate - POPULAR -->
@@ -498,6 +402,7 @@
                     <a id="cta-6mo" href="#" target="_blank" rel="noopener" class="block w-full text-center gradient-blue hover:opacity-90 text-white py-3 rounded-full font-bold transition-all hover:scale-105">
                         Jetzt Kaufen ⭐
                     </a>
+                    <a href="iptv-kaufen-6-monate.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
 
                 <!-- 1 Jahr -->
@@ -532,6 +437,7 @@
                     <a id="cta-12mo" href="#" target="_blank" rel="noopener" class="block w-full text-center bg-yellow-500 hover:bg-yellow-600 text-black py-3 rounded-full font-bold transition-all hover:scale-105">
                         Jetzt Kaufen 💰
                     </a>
+                    <a href="iptv-kaufen-1-jahr.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
             </div>
 
@@ -869,11 +775,10 @@
                 <div>
                     <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">IPTV Pakete</h4>
                     <ul class="space-y-3">
-                        <li><a href="#preise" onclick="selectedDevices=1;renderPricing();" class="text-gray-400 hover:text-white transition text-sm">1 Gerät</a></li>
-                        <li><a href="#preise" onclick="selectedDevices=2;renderPricing();" class="text-gray-400 hover:text-white transition text-sm">2 Geräte</a></li>
-                        <li><a href="#preise" onclick="selectedDevices=3;renderPricing();" class="text-gray-400 hover:text-white transition text-sm">3 Geräte</a></li>
-                        <li><a href="#preise" onclick="selectedDevices=4;renderPricing();" class="text-gray-400 hover:text-white transition text-sm">4 Geräte</a></li>
-                        <li><a href="#preise" onclick="selectedDevices=5;renderPricing();" class="text-gray-400 hover:text-white transition text-sm">5 Geräte</a></li>
+                        <li><a href="iptv-kaufen-1-monat.html" class="text-gray-400 hover:text-white transition text-sm">1 Monat IPTV Abo</a></li>
+                        <li><a href="iptv-kaufen-3-monate.html" class="text-gray-400 hover:text-white transition text-sm">3 Monate IPTV Abo</a></li>
+                        <li><a href="iptv-kaufen-6-monate.html" class="text-gray-400 hover:text-white transition text-sm">6 Monate IPTV Abo</a></li>
+                        <li><a href="iptv-kaufen-1-jahr.html" class="text-gray-400 hover:text-white transition text-sm">1 Jahr IPTV Abo</a></li>
                         <li><a href="https://wa.me/17828026280?text=Ich%20möchte%20einen%20kostenlosen%20IPTV%20Test" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kostenloser IPTV Test</a></li>
                     </ul>
                 </div>
