@@ -64,7 +64,12 @@
             "availability": "https://schema.org/InStock",
             "url": "https://iptvv.de"
         },
-        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3842", "bestRating": "5" }
+        "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3842", "bestRating": "5" },
+        "review": [
+            { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Thomas R." }, "reviewBody": "Ich habe mindestens vier IPTV-Anbieter getestet und keiner kam an IPTV Deutschland heran. Aktivierung war schnell, Support antwortete sofort, Live-Sport läuft endlich flüssig." },
+            { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Sandra K." }, "reviewBody": "Günstiger als andere Anbieter und mehr Kanäle. Einrichtung auf Samsung Smart TV in unter 5 Minuten." },
+            { "@type": "Review", "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" }, "author": { "@type": "Person", "name": "Vincent L." }, "reviewBody": "Ich nutze IPTV Deutschland seit Monaten – der stabilste Service den ich je hatte. Live-Sport einwandfrei, VOD lädt schnell, Support reaktionsschnell und freundlich." }
+        ]
     }
     </script>
 
@@ -598,47 +603,81 @@
     <section class="py-24 relative">
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"></div>
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-            <div class="text-center mb-16 slide-up">
-                <span class="text-sm font-semibold text-purple-400 uppercase tracking-wider">Kundenbewertungen</span>
+            <div class="text-center mb-12 slide-up">
+                <span class="text-sm font-semibold text-purple-400 uppercase tracking-wider">Verifizierte Bewertungen</span>
                 <h2 class="text-3xl sm:text-4xl lg:text-5xl font-black mt-3 mb-4">
                     Was unsere <span class="text-gradient">Kunden</span> sagen
                 </h2>
-                <p class="text-gray-400 max-w-2xl mx-auto text-lg">Über 1,5 Millionen zufriedene Kunden vertrauen IPTV Deutschland als ihren <strong>IPTV Anbieter in Deutschland</strong>.</p>
+                <p class="text-gray-400 max-w-2xl mx-auto text-lg mb-8">Echte Bewertungen von Trustpilot, WhatsApp & Google – direkt von unseren Kunden in Deutschland.</p>
+                <div class="flex flex-wrap justify-center gap-3">
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black" style="color:#00b67a">5.0</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Trustpilot</p>
+                    </div>
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black text-gradient">+1,5 Mio.</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Kunden</p>
+                    </div>
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black text-yellow-400">4.9 ★</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Google</p>
+                    </div>
+                    <div class="review-stat-card">
+                        <p class="text-lg font-black text-white">24/7</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Support</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="slide-up glass rounded-3xl p-8">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400">★★★★★</div>
-                    <p class="text-gray-300 mb-6 italic">"Bester IPTV Anbieter den ich je hatte! Alle deutschen Sender in perfekter Qualität. Bundesliga läuft ohne Ruckeln. IPTV Kaufen bei IPTV Deutschland war die beste Entscheidung!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-blue-500 flex items-center justify-center font-bold">M</div>
-                        <div>
-                            <p class="font-bold text-sm">Markus W.</p>
-                            <p class="text-xs text-gray-400">München · 12 Monate Abo</p>
-                        </div>
+            <!-- Trustpilot slider -->
+            <div class="mb-16 slide-up">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="w-7 h-7 rounded flex items-center justify-center" style="background:#00b67a">
+                        <svg viewBox="0 0 24 24" fill="white" width="14" height="14"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>
                     </div>
+                    <span class="font-black text-lg" style="color:#00b67a">Trustpilot</span>
                 </div>
-                <div class="slide-up glass rounded-3xl p-8" style="transition-delay:0.1s">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400">★★★★★</div>
-                    <p class="text-gray-300 mb-6 italic">"Endlich ein IPTV Deutschland Service der funktioniert! Über 50.000 Kanäle, super schnelle Aktivierung und der Support antwortet sofort auf WhatsApp. Absolut empfehlenswert!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-pink-500 flex items-center justify-center font-bold">S</div>
-                        <div>
-                            <p class="font-bold text-sm">Sandra K.</p>
-                            <p class="text-xs text-gray-400">Berlin · 6 Monate Abo</p>
+                <div class="overflow-hidden">
+                    <div id="tpSlide" class="review-slide max-w-2xl mx-auto">
+                        <div class="glass rounded-3xl p-8">
+                            <div id="tpStars" class="flex gap-1 mb-4"></div>
+                            <p id="tpTitle" class="font-bold text-white mb-2"></p>
+                            <p id="tpText" class="text-gray-400 leading-relaxed mb-4"></p>
+                            <p id="tpAuth" class="text-sm text-gray-400 font-semibold"></p>
                         </div>
                     </div>
+                    <div id="tpDots" class="flex justify-center gap-1.5 mt-5"></div>
                 </div>
-                <div class="slide-up glass rounded-3xl p-8" style="transition-delay:0.2s">
-                    <div class="flex items-center gap-1 mb-4 text-yellow-400">★★★★★</div>
-                    <p class="text-gray-300 mb-6 italic">"Ich habe viele IPTV Anbieter ausprobiert – IPTV Deutschland ist mit Abstand der Beste! 4K Qualität, riesige Filmauswahl und der Preis ist unschlagbar. German IPTV at its best!"</p>
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-green-500 flex items-center justify-center font-bold">T</div>
-                        <div>
-                            <p class="font-bold text-sm">Thomas H.</p>
-                            <p class="text-xs text-gray-400">Hamburg · 12 Monate Abo</p>
-                        </div>
+            </div>
+
+            <!-- WhatsApp slider -->
+            <div class="mb-16 slide-up">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <div class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center">
+                        <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.6 5.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
                     </div>
+                    <span class="font-black text-lg text-green-400">WhatsApp</span>
+                </div>
+                <div class="overflow-hidden">
+                    <div id="waSlide" class="review-slide">
+                        <div id="waCards" class="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto"></div>
+                    </div>
+                    <div id="waDots" class="flex justify-center gap-1.5 mt-5"></div>
+                </div>
+            </div>
+
+            <!-- Google slider -->
+            <div class="slide-up">
+                <div class="flex items-center justify-center gap-2 mb-6">
+                    <span class="font-black text-lg"><span style="color:#4285F4">G</span><span style="color:#EA4335">o</span><span style="color:#FBBC05">o</span><span style="color:#4285F4">g</span><span style="color:#34A853">l</span><span style="color:#EA4335">e</span></span>
+                    <span class="text-yellow-400 text-sm">★★★★★</span>
+                    <span class="text-gray-400 text-sm">4.9</span>
+                </div>
+                <div class="overflow-hidden">
+                    <div id="gSlide" class="review-slide">
+                        <div id="gCards" class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4"></div>
+                    </div>
+                    <div id="gDots" class="flex justify-center gap-1.5 mt-5"></div>
                 </div>
             </div>
         </div>
@@ -903,6 +942,104 @@
                 }
             });
         });
+
+        // ===== Review data (Trustpilot / WhatsApp / Google) =====
+        const tpR = [{"t": "Bester IPTV-Service – endlich ohne Aussetzer", "x": "Ich habe mindestens vier IPTV-Anbieter getestet und keiner kam an IPTV Deutschland heran. Aktivierung war schnell, Support antwortete sofort, Live-Sport läuft endlich flüssig.", "n": "Thomas R."}, {"t": "Support der wirklich hilft", "x": "Der Kundenservice hat mich bei IPTV Deutschland gehalten. Ich kam von einem Anbieter, der bei Problemen verschwand. Hier hört der Support wirklich zu und antwortet schnell.", "n": "Julian M."}, {"t": "Stabil seit dem ersten Tag", "x": "Ich war skeptisch, weil IPTV-Dienste mich bereits enttäuscht haben. Der Service ist seit dem ersten Tag stabil. Live-Matches getestet – keinerlei Probleme.", "n": "Anton B."}, {"t": "Qualität weit über den anderen", "x": "Nach dem Vergleich mit zwei Anbietern war der Unterschied offensichtlich. Die anderen waren unzuverlässig. IPTV Deutschland hat mir bei der Einrichtung geholfen und nachgehakt.", "n": "Peter L."}, {"t": "Meine Verbindung war nie das Problem", "x": "Mein alter Anbieter schob Einfrieren immer auf meine Verbindung. Mit diesem Service merkte ich: die Verbindung war nie das Problem. Stabile Streams, konstante HD-Qualität.", "n": "Niklas D."}, {"t": "Transparent – liefert genau was versprochen", "x": "Vor dem Abo hatte ich viele Fragen. Der Support gab ehrliche Antworten ohne zu übertreiben. Nach dem Abo stimmte alles überein.", "n": "Roman C."}, {"t": "Schnelle Aktivierung und echter Support", "x": "Ich wechselte zu IPTV Deutschland nachdem mein alter Service während eines Spiels abstürzte. Der Service aktivierte schnell und begleitete mich geduldig bei der Einrichtung.", "n": "Max P."}, {"t": "Bessere Stabilität und deutlich besserer Support", "x": "IPTV Deutschland bietet bessere Stabilität als andere. Bei anderen waren Antworten langsam oder generisch. Hier liest der Support wirklich Ihre Nachricht und hilft gezielt.", "n": "Lukas F."}, {"t": "Optimiert und zuverlässig", "x": "Ich schreibe selten Bewertungen, aber dieser Service verdient es. Der Service scheint wirklich optimiert zu sein und gibt hilfreiche statt kopierte Ratschläge.", "n": "Sebastian K."}, {"t": "Beständigkeit die andere nicht erreichen", "x": "Der größte Unterschied ist die Beständigkeit. Frühere Anbieter waren unberechenbar. IPTV Deutschland ist seit dem ersten Tag stabil und meldete sich nach Aktivierung von selbst.", "n": "Matthias C."}, {"t": "Der Vergleich war nicht mal knapp", "x": "IPTV Deutschland eine Woche parallel zum alten Anbieter getestet – nicht mal knapp. Bessere Bildqualität, schnellerer Kanalwechsel, keine zufälligen Unterbrechungen.", "n": "Florian D."}, {"t": "Stabilster IPTV-Service den ich je hatte", "x": "Ich nutze IPTV Deutschland seit Monaten – der stabilste Service den ich je hatte. Live-Sport einwandfrei, VOD lädt schnell, Support reaktionsschnell und freundlich.", "n": "Vincent L."}, {"t": "Solide Leistung und echter Kundensupport", "x": "Nach Vergleich günstigerer Alternativen wechselte ich. Bei denen gab es immer Abstriche. Der Anbieter liefert gute Leistung und echten Kundendienst.", "n": "Alex R."}, {"t": "Hat mein Vertrauen in IPTV zurückgegeben", "x": "Nach mehreren schlechten Erfahrungen war ich bereit, IPTV aufzugeben. IPTV Deutschland hat bewiesen, dass ein Service stabil, ehrlich und von echten Menschen unterstützt sein kann.", "n": "Chris A."}, {"t": "Premium und zuverlässig", "x": "Die Servicequalität ist klar überlegen. Kanäle stabil, VOD-Auswahl exzellent, Support erklärt Dinge korrekt. Das ist Premium und zuverlässig.", "n": "Stefan B."}];
+        const waR = [{"x": "Hallo, wollte nur sagen, der Service funktioniert super. Sport läuft flüssig und bisher keine Unterbrechung. Danke für die schnelle Hilfe gestern.", "n": "Thomas W."}, {"x": "Danke für den Support. Die Installation war einfach. Viel besser als mein alter IPTV der ständig eingefroren ist.", "n": "Julian C."}, {"x": "Bei mir läuft alles gut. Streams sind stabil, auch bei Spielen. Großer Unterschied zum alten Anbieter.", "n": "Peter F."}, {"x": "Funktioniert jetzt einwandfrei. Kundenservice war sehr geduldig, danke. Die Qualität stimmt.", "n": "Roman M."}, {"x": "Bestätigung: alles läuft gut. Live-Sender sind flüssig, VOD lädt schnell. Bisher sehr zufrieden.", "n": "Niklas T."}, {"x": "Danke für die schnelle Antwort. Ich hätte nicht erwartet, dass der Support so schnell reagiert. Der Service ist top.", "n": "Max A."}, {"x": "Nochmals danke für die Hilfe vorhin. Viel stabiler als das IPTV das ich vorher genutzt habe.", "n": "Lukas R."}, {"x": "Alles gut jetzt. Während des Spiels getestet – absolut kein Puffern. Wirklich beeindruckt.", "n": "Anton W."}, {"x": "Der Service läuft gut. Hatte Probleme mit dem alten Anbieter aber hier bisher nichts.", "n": "Sebastian B."}, {"x": "Installation erledigt und alles funktioniert. Danke, dass ihr mich Schritt für Schritt begleitet habt.", "n": "Matthias M."}, {"x": "Wollte euch wissen lassen: alles einwandfrei. Sender laden schnell, die Qualität ist gut.", "n": "Florian H."}, {"x": "Viel besser als vorher. Der Support reagiert wirklich und hilft – das ist selten bei IPTV.", "n": "Vincent P."}, {"x": "Keine Probleme heute. Sport und Filme ohne Probleme geschaut. Guter Service.", "n": "Alex C."}, {"x": "Läuft immer noch gut. Zufrieden mit dem Abo.", "n": "Chris G."}, {"x": "Gestern Abend zu Spitzenzeiten getestet. Kein Lag überhaupt. Große Verbesserung.", "n": "Stefan S."}, {"x": "Service ist solide. Hatte eine Frage und ihr habt schnell geantwortet. Danke.", "n": "Jonathan P."}, {"x": "Streams sind klar und stabil. Die Installation war einfacher als erwartet.", "n": "Benjamin H."}, {"x": "Bestätigung: es funktioniert super. Diese Stabilität hatte ich vorher nicht.", "n": "Paul E."}, {"x": "Danke für den Support. Alles funktioniert wie versprochen. Keine Beschwerden bisher.", "n": "David M."}, {"x": "Sehr zufrieden. Ehrlich gesagt hat der Kundenservice den Unterschied gemacht.", "n": "Damian F."}];
+        const gR = [{"x": "Viele IPTV-Services genutzt – IPTV Deutschland ist der erste der mich nach der ersten Woche nicht enttäuscht hat. Sender laden schnell, Sport ist flüssig, Qualität konstant.", "n": "Matthias C."}, {"x": "Von einem anderen Anbieter gewechselt der ständig gepuffert hat. IPTV Deutschland ist deutlich besser. Streams stabil und der Kundenservice reagiert wirklich.", "n": "Julian T."}, {"x": "Aktivierung war schnell und alles funktionierte wie erwartet. Für Sport und Filme – keine größeren Probleme. Support war höflich und hilfreich.", "n": "Anton M."}, {"x": "Nach schlechten Erfahrungen war ich zögerlich, aber IPTV Deutschland hat mich überrascht. Bildqualität gut, Sender frieren nicht ein, Support blieb verfügbar.", "n": "Roman W."}, {"x": "IPTV Deutschland war bisher zuverlässig. Zu Stoßzeiten getestet und alles lief gut. Beim alten Anbieter waren Wochenenden immer problematisch.", "n": "Niklas P."}, {"x": "Was mir am meisten gefällt ist die Beständigkeit. Bei anderen änderte sich die Qualität täglich. IPTV Deutschland ist seit dem Abo stabil geblieben.", "n": "Max J."}, {"x": "Schaue hauptsächlich Fußball und PPV-Events – IPTV Deutschland handhabt diese gut. Kein nennenswertes Puffern. Support beantwortete Fragen klar.", "n": "Peter O."}, {"x": "Installation einfach. Support antwortete schneller als erwartet. Streams sauber und VOD funktioniert gut. Professioneller als die meisten.", "n": "Sebastian H."}, {"x": "Auf Empfehlung ausprobiert. Im Vergleich zum alten Service stabiler und einfacher. Kundenservice verschwand nicht nach der Zahlung.", "n": "Lukas C."}, {"x": "Sender wechseln schnell, Qualität konstant. Hatte ein kleines Problem und Support löste es in wenigen Minuten. Insgesamt sehr zufrieden.", "n": "Florian R."}, {"x": "IPTV Deutschland seit Monaten genutzt. Live-Sport zuverlässig, Filme laden schnell. Support war jedes Mal reaktionsschnell.", "n": "Vincent A."}, {"x": "IPTV Deutschland macht was es verspricht. Keine übertriebenen Aussagen, nur stabiler Service. Beim alten Anbieter hatte ich fast täglich Pufferprobleme. Hier nicht.", "n": "Alex T."}, {"x": "Gute Stream-Qualität und schnelle Aktivierung. Kundenservice hilfreich. Im Vergleich zu anderen wirkt der Anbieter organisierter und vertrauenswürdiger.", "n": "Chris M."}, {"x": "Lasse selten Bewertungen, aber der Service war solide. Sport-Sender gut, VOD-Auswahl gut, Support antwortet schnell statt generische Nachrichten zu senden.", "n": "Stefan B."}, {"x": "Zu IPTV Deutschland gewechselt nach ständigen Problemen. Der Unterschied ist spürbar. Bessere Stabilität, deutlich besserer Support.", "n": "Jonathan L."}, {"x": "Aktivierung schnell, Support verfügbar bei Fragen. Hauptsächlich Serien und Filme – alles läuft problemlos. Guter zuverlässiger Service.", "n": "Daniel L."}, {"x": "IPTV Deutschland war zu Stoßzeiten stabil, was mein größtes Problem mit früheren Services war. Kundenservice reaktionsschnell und professionell.", "n": "David M."}, {"x": "Sender laden schnell, Qualität bleibt konstant. Support einmal kontaktiert – höflich gelöst. Dieser Service wirkt vertrauenswürdiger.", "n": "Damian P."}, {"x": "IPTV Deutschland parallel zu einem anderen Anbieter getestet – IPTV Deutschland hat klar besser abgeschnitten. Weniger Puffern, schnellerer Kanalwechsel.", "n": "Arndt W."}, {"x": "Zuverlässiger Service mit guter Bildqualität. Bei einer Installationsfrage war Kundenservice erreichbar. Viel flüssiger als mein letzter IPTV-Anbieter.", "n": "Benedikt T."}];
+
+        // ===== Review slider logic =====
+        let tpI = 0, waI = 0, gI = 0;
+        const REVIEW_INTERVAL = 7000;
+        let tpPause = 0, waPause = 0, gPause = 0;
+        const STAR_SVG = '<svg viewBox="0 0 24 24" fill="white" width="12" height="12"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"/></svg>';
+
+        function mkDots(id, total, current, onClick) {
+            document.getElementById(id).innerHTML = Array.from({ length: total }, (_, i) =>
+                `<button class="review-dot${i === current ? ' on' : ''}" aria-label="Bewertung ${i + 1}" data-i="${i}"></button>`
+            ).join('');
+            document.querySelectorAll(`#${id} .review-dot`).forEach(btn => {
+                btn.addEventListener('click', () => onClick(parseInt(btn.dataset.i, 10)));
+            });
+        }
+
+        function slideTransition(elId, cb) {
+            const el = document.getElementById(elId);
+            el.classList.add('sliding');
+            setTimeout(() => { cb(); el.classList.remove('sliding'); }, 420);
+        }
+
+        function renderTP() {
+            const r = tpR[tpI];
+            const starsEl = document.getElementById('tpStars');
+            starsEl.innerHTML = '';
+            for (let i = 0; i < 5; i++) {
+                const s = document.createElement('div');
+                s.style.cssText = 'width:22px;height:22px;background:#00b67a;border-radius:3px;display:flex;align-items:center;justify-content:center';
+                s.innerHTML = STAR_SVG;
+                starsEl.appendChild(s);
+            }
+            document.getElementById('tpTitle').textContent = r.t;
+            document.getElementById('tpText').textContent = r.x;
+            document.getElementById('tpAuth').textContent = '— ' + r.n + ' 🇩🇪';
+            mkDots('tpDots', tpR.length, tpI, (i) => {
+                tpPause = Date.now() + REVIEW_INTERVAL;
+                slideTransition('tpSlide', () => { tpI = i; renderTP(); });
+            });
+        }
+
+        function renderWA() {
+            const waPages = Math.ceil(waR.length / 2);
+            document.getElementById('waCards').innerHTML = waR.slice(waI * 2, waI * 2 + 2).map(r => `
+                <div class="glass rounded-2xl p-5">
+                    <div class="flex items-center gap-2 mb-3">
+                        <div class="w-7 h-7 rounded-full bg-green-500 flex items-center justify-center flex-shrink-0">
+                            <svg width="13" height="13" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a5.6 5.6 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+                        </div>
+                        <span class="text-green-400 font-bold text-sm">WhatsApp</span>
+                    </div>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-3">${r.x}</p>
+                    <p class="text-xs text-gray-400 font-semibold">— ${r.n} 🇩🇪</p>
+                </div>`).join('');
+            mkDots('waDots', waPages, waI, (i) => {
+                waPause = Date.now() + REVIEW_INTERVAL;
+                slideTransition('waSlide', () => { waI = i; renderWA(); });
+            });
+        }
+
+        function renderG() {
+            const gPages = Math.ceil(gR.length / 4);
+            document.getElementById('gCards').innerHTML = gR.slice(gI * 4, gI * 4 + 4).map(r => `
+                <div class="glass rounded-2xl p-4">
+                    <div class="flex gap-0.5 mb-2 text-yellow-400 text-xs">★★★★★</div>
+                    <p class="font-bold text-sm text-gray-200 mb-2">${r.n}</p>
+                    <p class="text-xs text-gray-400 leading-relaxed">${r.x}</p>
+                </div>`).join('');
+            mkDots('gDots', gPages, gI, (i) => {
+                gPause = Date.now() + REVIEW_INTERVAL;
+                slideTransition('gSlide', () => { gI = i; renderG(); });
+            });
+        }
+
+        renderTP();
+        renderWA();
+        renderG();
+
+        setInterval(() => {
+            if (Date.now() < tpPause) return;
+            slideTransition('tpSlide', () => { tpI = (tpI + 1) % tpR.length; renderTP(); });
+        }, REVIEW_INTERVAL);
+        setInterval(() => {
+            if (Date.now() < waPause) return;
+            const waPages = Math.ceil(waR.length / 2);
+            slideTransition('waSlide', () => { waI = (waI + 1) % waPages; renderWA(); });
+        }, REVIEW_INTERVAL + 600);
+        setInterval(() => {
+            if (Date.now() < gPause) return;
+            const gPages = Math.ceil(gR.length / 4);
+            slideTransition('gSlide', () => { gI = (gI + 1) % gPages; renderG(); });
+        }, REVIEW_INTERVAL + 1200);
     </script>
+
 </body>
 </html>
