@@ -139,7 +139,7 @@
     <section id="angebot" class="py-12">
         <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="glass rounded-3xl p-8 sm:p-10 slide-up">
-                <div class="text-center mb-8">
+                <div id="formHeader" class="text-center mb-8">
                     <h2 class="text-2xl sm:text-3xl font-black mb-2"><span class="text-gradient">Jetzt</span> unverbindlich anfragen</h2>
                     <p class="text-gray-400 text-sm">Füllen Sie das Formular aus – wir melden uns innerhalb weniger Minuten per WhatsApp oder E-Mail bei Ihnen.</p>
                 </div>
@@ -359,6 +359,18 @@
                     <p id="formStatus" class="text-sm text-center min-h-[1.25rem]"></p>
                     <p class="text-xs text-gray-500 text-center">Oder direkt per <a href="https://wa.me/17828026280?text=Hallo!%20Ich%20interessiere%20mich%20für%20das%203%20Monate%20IPTV%20Abo%20für%205%20Geräte." target="_blank" rel="noopener" class="text-green-400 hover:text-green-300 underline">WhatsApp bestellen</a></p>
                 </form>
+
+                <div id="formSuccessPanel" class="hidden text-center py-4">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-green-500/15 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-3">Anfrage erfolgreich gesendet!</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">Vielen Dank! Wir melden uns in Kürze bei Ihnen per WhatsApp oder E-Mail.</p>
+                    <p class="text-gray-400 leading-relaxed mb-6">Bitte schauen Sie in Kürze in Ihr <strong class="text-white">E-Mail-Postfach</strong> – dort finden Sie Ihre Zugangsdaten. Falls Sie dort nichts sehen, prüfen Sie bitte auch Ihren <strong class="text-white">Spam-/Junk-Ordner</strong>.</p>
+                    <a href="https://wa.me/17828026280?text=Hallo!%20Ich%20interessiere%20mich%20für%20das%203%20Monate%20IPTV%20Abo%20für%205%20Geräte." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-sm underline">Oder direkt per WhatsApp kontaktieren</a>
+                </div>
             </div>
         </div>
     </section>
@@ -578,6 +590,8 @@ iptv kaufen · iptv anbieter · iptv deutschland · bester iptv anbieter · iptv
         const leadForm = document.getElementById('leadForm');
         const submitBtn = document.getElementById('submitBtn');
         const formStatus = document.getElementById('formStatus');
+        const formHeader = document.getElementById('formHeader');
+        const formSuccessPanel = document.getElementById('formSuccessPanel');
 
         leadForm.addEventListener('submit', function (e) {
             e.preventDefault();
@@ -589,10 +603,10 @@ iptv kaufen · iptv anbieter · iptv deutschland · bester iptv anbieter · iptv
 
             emailjs.sendForm('service_rmnuog9', 'template_0qhdvki', leadForm)
                 .then(function () {
-                    formStatus.textContent = 'Vielen Dank! Wir melden uns in Kürze bei Ihnen per WhatsApp oder E-Mail.';
-                    formStatus.classList.add('form-status-success');
+                    formHeader.classList.add('hidden');
+                    leadForm.classList.add('hidden');
+                    formSuccessPanel.classList.remove('hidden');
                     leadForm.reset();
-                    updateWhatsappValue();
                     submitBtn.textContent = 'Anfrage senden';
                     submitBtn.disabled = false;
                 }, function (error) {
