@@ -348,10 +348,9 @@
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> VPN-freundlich</li>
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> 24/7 Deutscher Support</li>
                     </ul>
-                    <a id="cta-1mo" href="#" target="_blank" rel="noopener" class="block w-full text-center glass hover:bg-white/10 text-white py-3 rounded-full font-semibold transition-all">
+                    <a id="cta-1mo" href="iptv-kaufen-1-geraet-1-monat.html" class="block w-full text-center glass hover:bg-white/10 text-white py-3 rounded-full font-semibold transition-all">
                         Jetzt Kaufen
                     </a>
-                    <a id="details-1mo" href="iptv-kaufen-1-geraet-1-monat.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
 
                 <!-- 3 Monate -->
@@ -373,10 +372,9 @@
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> VPN-freundlich</li>
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> 24/7 Deutscher Support</li>
                     </ul>
-                    <a id="cta-3mo" href="#" target="_blank" rel="noopener" class="block w-full text-center glass hover:bg-white/10 text-white py-3 rounded-full font-semibold transition-all">
+                    <a id="cta-3mo" href="iptv-kaufen-1-geraet-3-monate.html" class="block w-full text-center glass hover:bg-white/10 text-white py-3 rounded-full font-semibold transition-all">
                         Jetzt Kaufen
                     </a>
-                    <a id="details-3mo" href="iptv-kaufen-1-geraet-3-monate.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
 
                 <!-- 6 Monate - POPULAR -->
@@ -401,10 +399,9 @@
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> VPN-freundlich</li>
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> 24/7 Deutscher Support</li>
                     </ul>
-                    <a id="cta-6mo" href="#" target="_blank" rel="noopener" class="block w-full text-center gradient-blue hover:opacity-90 text-white py-3 rounded-full font-bold transition-all hover:scale-105">
+                    <a id="cta-6mo" href="iptv-kaufen-1-geraet-6-monate.html" class="block w-full text-center gradient-blue hover:opacity-90 text-white py-3 rounded-full font-bold transition-all hover:scale-105">
                         Jetzt Kaufen ⭐
                     </a>
-                    <a id="details-6mo" href="iptv-kaufen-1-geraet-6-monate.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
 
                 <!-- 1 Jahr -->
@@ -436,10 +433,9 @@
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> VPN-freundlich</li>
                         <li class="flex items-center gap-2 text-gray-300"><span class="text-green-400">✓</span> 24/7 Deutscher Priority-Support</li>
                     </ul>
-                    <a id="cta-12mo" href="#" target="_blank" rel="noopener" class="block w-full text-center bg-yellow-500 hover:bg-yellow-600 text-black py-3 rounded-full font-bold transition-all hover:scale-105">
+                    <a id="cta-12mo" href="iptv-kaufen-1-geraet-1-jahr.html" class="block w-full text-center bg-yellow-500 hover:bg-yellow-600 text-black py-3 rounded-full font-bold transition-all hover:scale-105">
                         Jetzt Kaufen 💰
                     </a>
-                    <a id="details-12mo" href="iptv-kaufen-1-geraet-1-jahr.html" class="block text-center text-xs text-gray-500 hover:text-gray-300 transition mt-3">Mehr Details & Anfrageformular →</a>
                 </div>
             </div>
 
@@ -466,14 +462,6 @@
             return (total / months).toLocaleString('de-DE', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + ' €/Monat';
         }
 
-        function buildWaLink(devices, durationLabel, price) {
-            let text = 'Hallo! Ich möchte folgendes IPTV Abo bestellen: ' + deviceLabel(devices) + ', ' + durationLabel + ', ' + price + ' €.';
-            if (durationLabel === '1 Jahr') {
-                text += ' (inkl. IBO Player Pro Premium Abo gratis)';
-            }
-            return 'https://wa.me/17828026280?text=' + encodeURIComponent(text);
-        }
-
         function planPageSlug(devices, durationKey) {
             const deviceSlug = devices === 1 ? '1-geraet' : devices + '-geraete';
             const durationSlugs = { monthly: '1-monat', three: '3-monate', six: '6-monate', year: '1-jahr' };
@@ -491,15 +479,10 @@
             document.getElementById('price-12mo-amount').textContent = p.year;
             document.getElementById('price-12mo-rate').textContent = formatRate(p.year, 12);
 
-            document.getElementById('cta-1mo').href = buildWaLink(selectedDevices, '1 Monat', p.monthly);
-            document.getElementById('cta-3mo').href = buildWaLink(selectedDevices, '3 Monate', p.three);
-            document.getElementById('cta-6mo').href = buildWaLink(selectedDevices, '6 Monate', p.six);
-            document.getElementById('cta-12mo').href = buildWaLink(selectedDevices, '1 Jahr', p.year);
-
-            document.getElementById('details-1mo').href = planPageSlug(selectedDevices, 'monthly');
-            document.getElementById('details-3mo').href = planPageSlug(selectedDevices, 'three');
-            document.getElementById('details-6mo').href = planPageSlug(selectedDevices, 'six');
-            document.getElementById('details-12mo').href = planPageSlug(selectedDevices, 'year');
+            document.getElementById('cta-1mo').href = planPageSlug(selectedDevices, 'monthly');
+            document.getElementById('cta-3mo').href = planPageSlug(selectedDevices, 'three');
+            document.getElementById('cta-6mo').href = planPageSlug(selectedDevices, 'six');
+            document.getElementById('cta-12mo').href = planPageSlug(selectedDevices, 'year');
 
             document.getElementById('selectedDeviceLabel').textContent = deviceLabel(selectedDevices);
 
