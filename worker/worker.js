@@ -1,5 +1,5 @@
 /**
- * IPTVV.DE — Kostenlos Testen Worker
+ * IPTV Deutschland — Kostenlos Testen Worker
  * Sprache: Deutsch · Panel: Germany
  */
 
@@ -7,7 +7,7 @@ const API_BASE    = "https://activationpanel.ru/api/api.php";
 const API_KEY     = "35cf68cc83a3a82e1a0ac5361c7b6105";
 const HOST        = "http://terry.thecontentnest.com";
 const RESEND_KEY  = "re_g48VYx5C_KB6q5E9ivN21nrWkXEoxmCZf";
-const FROM_EMAIL  = "IPTVV.DE <kontakt@iptvv.de>";
+const FROM_EMAIL  = "IPTV Deutschland <kontakt@iptvv.de>";
 const ADMIN_EMAIL = "kontakt@iptvv.de";
 const SITE_URL    = "https://iptvv.de";
 const PACK_NAME   = "Germany";
@@ -47,13 +47,13 @@ function emailWrap(content) {
     <table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0"
            style="max-width:600px;background:#ffffff;border-radius:8px;overflow:hidden;box-shadow:0 2px 8px rgba(0,0,0,0.08);">
       <tr><td style="background:linear-gradient(135deg,#0f0c29 0%,#302b63 50%,#24243e 100%);padding:32px 40px;text-align:center;border-bottom:3px solid ${ACCENT};">
-        <h1 style="margin:0;font-family:Arial,sans-serif;font-size:26px;font-weight:bold;color:#ffffff;">IPTVV.DE</h1>
+        <h1 style="margin:0;font-family:Arial,sans-serif;font-size:26px;font-weight:bold;color:#ffffff;">IPTV Deutschland</h1>
         <p style="margin:6px 0 0;font-family:Arial,sans-serif;font-size:13px;color:rgba(255,255,255,0.70);">Premium IPTV Deutschland · 4K Streaming</p>
       </td></tr>
       <tr><td style="padding:36px 40px;">${content}</td></tr>
       <tr><td style="background-color:#f8f8f8;border-top:1px solid #eeeeee;padding:18px 40px;text-align:center;">
         <p style="margin:0;font-family:Arial,sans-serif;font-size:11px;color:#aaaaaa;">
-          © 2026 IPTVV.DE · <a href="${SITE_URL}" style="color:${ACCENT};text-decoration:none;">iptvv.de</a>
+          © 2026 IPTV Deutschland · <a href="${SITE_URL}" style="color:${ACCENT};text-decoration:none;">iptvv.de</a>
         </p>
       </td></tr>
     </table>
@@ -138,7 +138,7 @@ function welcomeEmail(name, username, password, m3uUrl) {
       Benötigen Sie Hilfe bei der Einrichtung? Antworten Sie auf diese E-Mail oder schreiben Sie uns auf WhatsApp:
       <a href="https://wa.me/${WA_NUMBER}" style="color:${ACCENT};text-decoration:none;font-weight:bold;">+1 782-802-6280</a>
     </p>
-    <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Mit freundlichen Grüßen,<br><strong>Das IPTVV.DE Team</strong></p>
+    <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Mit freundlichen Grüßen,<br><strong>Das IPTV Deutschland Team</strong></p>
   `);
 }
 
@@ -170,7 +170,7 @@ function reminderEmail(name, username, password, m3uUrl) {
       Fragen? Antworten Sie auf diese E-Mail oder schreiben Sie uns auf WhatsApp:
       <a href="https://wa.me/${WA_NUMBER}" style="color:${ACCENT};text-decoration:none;font-weight:bold;">+1 782-802-6280</a> — wir sind immer für Sie da.
     </p>
-    <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Mit freundlichen Grüßen,<br><strong>Das IPTVV.DE Team</strong></p>
+    <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Mit freundlichen Grüßen,<br><strong>Das IPTV Deutschland Team</strong></p>
   `);
 }
 
@@ -200,14 +200,14 @@ function followupEmail(name) {
       Eine Frage? Antworten Sie auf diese E-Mail oder schreiben Sie uns auf WhatsApp:
       <a href="https://wa.me/${WA_NUMBER}" style="color:${ACCENT};text-decoration:none;font-weight:bold;">+1 782-802-6280</a> — wir würden uns freuen, Sie zu behalten.
     </p>
-    <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Mit freundlichen Grüßen,<br><strong>Das IPTVV.DE Team</strong></p>
+    <p style="margin:0;font-family:Arial,sans-serif;font-size:14px;color:#555555;">Mit freundlichen Grüßen,<br><strong>Das IPTV Deutschland Team</strong></p>
   `);
 }
 
 function adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl) {
   return `<!DOCTYPE html><html lang="de"><head><meta charset="UTF-8"></head>
 <body style="font-family:Arial,sans-serif;font-size:14px;color:#333;padding:20px;">
-  <h2 style="color:${ACCENT};margin-top:0;">Neuer Testzugang — IPTVV.DE</h2>
+  <h2 style="color:${ACCENT};margin-top:0;">Neuer Testzugang — IPTV Deutschland</h2>
   <table cellpadding="6" cellspacing="0" border="0">
     <tr><td style="color:#888;width:120px;">Name</td><td><strong>${name}</strong></td></tr>
     <tr><td style="color:#888;">E-Mail</td><td>${email}</td></tr>
@@ -239,7 +239,7 @@ async function handleFetch(request, env) {
       const trials = await env.TRIALS.list();
       return jsonRes({ bouquet: bq.text.slice(0,400), kv_keys: trials.keys.length });
     }
-    return new Response("IPTVV.DE Trial Worker — OK", { status: 200 });
+    return new Response("IPTV Deutschland Trial Worker — OK", { status: 200 });
   }
 
   if (request.method !== "POST") return jsonRes({ success: false, error: "POST only" }, 405);
@@ -283,7 +283,7 @@ async function handleFetch(request, env) {
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
     step = "email_client";
-    await sendEmail(email, "Ihr IPTVV.DE Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl));
+    await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl));
 
     step = "email_admin";
     await sendEmail(ADMIN_EMAIL, `Automation / iptvv.de / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl));
@@ -317,7 +317,7 @@ async function handleScheduled(env) {
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "⏳ Ihr IPTVV.DE Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl));
+        await sendEmail(email, "⏳ Ihr IPTV Deutschland Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl));
         trial.reminder_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
         console.log(`[cron] Erinnerung → ${email}`);
@@ -326,7 +326,7 @@ async function handleScheduled(env) {
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Ihr IPTVV.DE Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name));
+        await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name));
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
         console.log(`[cron] Nachfass → ${email}`);
@@ -339,3 +339,4 @@ export default {
   async fetch(request, env) { return handleFetch(request, env); },
   async scheduled(event, env, ctx) { ctx.waitUntil(handleScheduled(env)); },
 };
+
