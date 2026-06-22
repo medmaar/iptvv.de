@@ -1,0 +1,10 @@
+name = "iptv-trial-iptvvde"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[[kv_namespaces]]
+binding = "TRIALS"
+id = "b9b7a479effb4f789e24e89abd75c2fa"
+
+[triggers]
+crons = ["0 * * * *"]
