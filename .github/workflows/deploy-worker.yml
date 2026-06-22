@@ -1,0 +1,52 @@
+name: Deploy Worker
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'worker/worker.js'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Deploy Worker via Cloudflare API
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+          WORKER_NAME: iptv-trial-iptvvde
+        run: |
+          METADATA=$(cat <<'METADATA'
+          {
+            "main_module": "worker.js",
+            "compatibility_date": "2024-01-01",
+            "bindings": [
+              {
+                "type": "kv_namespace",
+                "name": "TRIALS",
+                "namespace_id": "b9b7a479effb4f789e24e89abd75c2fa"
+              }
+            ]
+          }
+          METADATA
+          )
+          curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -F "metadata=${METADATA};type=application/json" \
+            -F "worker.js=@worker/worker.js;type=application/javascript+module"
+
+      - name: Set Cron Trigger
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+          WORKER_NAME: iptv-trial-iptvvde
+        run: |
+          curl -s -X PUT \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/schedules" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '[{"cron": "0 * * * *"}]'
