@@ -10,6 +10,8 @@ on:
 jobs:
   deploy:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
 
@@ -39,6 +41,18 @@ jobs:
             -F "metadata=${METADATA};type=application/json" \
             -F "worker.js=@worker/worker.js;type=application/javascript+module"
 
+      - name: Enable workers.dev subdomain
+        env:
+          CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
+          CF_ACCOUNT: ${{ secrets.CF_ACCOUNT_ID }}
+          WORKER_NAME: iptv-trial-iptvvde
+        run: |
+          curl -s -X POST \
+            "https://api.cloudflare.com/client/v4/accounts/${CF_ACCOUNT}/workers/scripts/${WORKER_NAME}/subdomain" \
+            -H "Authorization: Bearer ${CF_TOKEN}" \
+            -H "Content-Type: application/json" \
+            -d '{"enabled": true}'
+
       - name: Set Cron Trigger
         env:
           CF_TOKEN: ${{ secrets.CF_API_TOKEN }}
@@ -50,3 +64,21 @@ jobs:
             -H "Authorization: Bearer ${CF_TOKEN}" \
             -H "Content-Type: application/json" \
             -d '[{"cron": "0 * * * *"}]'
+
+      - name: Verify worker reachable
+        run: |
+          sleep 5
+          mkdir -p .debug
+          curl -s "https://iptv-trial-iptvvde.medmaar.workers.dev/" > .debug/check.txt
+          curl -s -X POST "https://iptv-trial-iptvvde.medmaar.workers.dev/" \
+            -H "Content-Type: application/json" \
+            -d '{"name":"Test","email":"test@example.com"}' >> .debug/check.txt
+          cat .debug/check.txt
+
+      - name: Commit check
+        run: |
+          git config user.name bot
+          git config user.email bot@example.com
+          git add .debug/check.txt
+          git commit -m "debug: subdomain check" || true
+          git push || true
