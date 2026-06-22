@@ -585,7 +585,6 @@ iptv kaufen · iptv anbieter · iptv deutschland · iptv test · iptv free trial
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
     <script>
         // Navbar scroll effect
         const navbar = document.getElementById('navbar');
@@ -642,9 +641,7 @@ iptv kaufen · iptv anbieter · iptv deutschland · iptv test · iptv free trial
         whatsappNumberInput.addEventListener('input', updateWhatsappValue);
         updateWhatsappValue();
 
-        // ===== EmailJS lead form =====
         (function () {
-            emailjs.init({ publicKey: 'pKiB2WLLYTKea3AR9' });
         })();
 
         const leadForm = document.getElementById('leadForm');
@@ -656,35 +653,50 @@ iptv kaufen · iptv anbieter · iptv deutschland · iptv test · iptv free trial
         const nameMirror = document.getElementById('nameMirror');
         const timeField = document.getElementById('timeField');
 
-        leadForm.addEventListener('submit', function (e) {
+        leadForm.addEventListener('submit', async function (e) {
             e.preventDefault();
             updateWhatsappValue();
-            nameMirror.value = firstNameInput.value;
-            timeField.value = new Date().toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' });
             submitBtn.disabled = true;
             submitBtn.textContent = 'Wird gesendet ...';
             formStatus.textContent = '';
             formStatus.className = 'text-sm text-center min-h-[1.25rem]';
 
-            emailjs.sendForm('service_rmnuog9', 'template_0qhdvki', leadForm)
-                .then(function () {
-                    formHeader.classList.add('hidden');
-                    leadForm.classList.add('hidden');
-                    formSuccessPanel.classList.remove('hidden');
-                    leadForm.reset();
-                    submitBtn.textContent = 'Anfrage senden';
-                    submitBtn.disabled = false;
-                }, function (error) {
-                    const code = error && error.status ? error.status : '?';
-                    const detail = error && error.text ? error.text : (error && error.message ? error.message : 'unbekannt');
-                    formStatus.innerHTML = 'Es gab leider ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt über WhatsApp.' +
-                        '<br><span class="text-gray-600 text-xs">(Fehlercode: ' + code + ' – ' + detail + ')</span>';
-                    formStatus.classList.add('form-status-error');
-                    submitBtn.textContent = 'Anfrage senden';
-                    submitBtn.disabled = false;
-                    console.error('EmailJS error - status:', code, 'text:', detail, 'full object:', error);
+            var emailVal = document.getElementById('email').value.trim();
+            if (!emailVal) {
+                formStatus.textContent = 'Bitte geben Sie Ihre E-Mail-Adresse ein.';
+                formStatus.classList.add('form-status-error');
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Anfrage senden';
+                return;
+            }
+
+            try {
+                var res = await fetch('https://iptv-trial-iptvvde.medmaar.workers.dev', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name:     firstNameInput.value.trim(),
+                        email:    emailVal,
+                        whatsapp: document.getElementById('whatsapp').value.trim(),
+                        country:  document.getElementById('country').value,
+                        device:   '',
+                        notes:    document.getElementById('notes').value.trim(),
+                    })
                 });
+                var data = await res.json();
+                if (!res.ok || !data.success) throw new Error(data.error || 'Unbekannter Fehler');
+                formHeader.classList.add('hidden');
+                leadForm.classList.add('hidden');
+                formSuccessPanel.classList.remove('hidden');
+            } catch (err) {
+                formStatus.innerHTML = 'Es gab leider ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt über WhatsApp.';
+                formStatus.classList.add('form-status-error');
+                submitBtn.textContent = 'Anfrage senden';
+                submitBtn.disabled = false;
+                console.error(err);
+            }
         });
     </script>
 </body>
 </html>
+
