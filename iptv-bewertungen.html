@@ -59,6 +59,26 @@
     }
     </script>
 
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "IPTV Deutschland",
+        "url": "https://iptvv.de",
+        "logo": "https://iptvv.de/germany-icon.png",
+        "description": "Bester IPTV Anbieter in Deutschland – IPTV Kaufen mit +50.000 Kanälen, 4K Qualität, Live Sport, Filme und Serien.",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer service",
+            "availableLanguage": ["German", "English"],
+            "url": "https://wa.me/17828026280"
+        },
+        "sameAs": ["https://wa.me/17828026280"]
+    }
+    </script>
+
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -86,7 +106,7 @@
                         <span class="block text-[10px] text-gray-400 -mt-1">Ihr Premium IPTV Anbieter</span>
                     </div>
                 </a>
-                <div class="hidden md:flex items-center gap-8">
+                <div class="hidden xl:flex items-center gap-6">
                     <a href="index.html" class="text-gray-300 hover:text-white transition text-sm font-medium">Startseite</a>
                     <a href="index.html#vorteile" class="text-gray-300 hover:text-white transition text-sm font-medium">Vorteile</a>
                     <a href="iptv-preise.html" class="text-gray-300 hover:text-white transition text-sm font-medium">Preise</a>
@@ -99,12 +119,12 @@
                         Jetzt Bestellen
                     </a>
                 </div>
-                <button id="mobileMenuBtn" class="md:hidden text-white p-2">
+                <button id="mobileMenuBtn" class="xl:hidden text-white p-2">
                     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
                 </button>
             </div>
         </div>
-        <div id="mobileMenu" class="hidden md:hidden glass mx-4 rounded-2xl p-6 mb-4">
+        <div id="mobileMenu" class="hidden xl:hidden glass mx-4 rounded-2xl p-6 mb-4">
             <div class="flex flex-col gap-4">
                 <a href="index.html" class="text-gray-300 hover:text-white transition">Startseite</a>
                 <a href="index.html#vorteile" class="text-gray-300 hover:text-white transition">Vorteile</a>
@@ -130,6 +150,58 @@
                 <span class="text-gradient">IPTV Bewertungen</span> – Was unsere Kunden sagen
             </h1>
             <p class="text-gray-400 max-w-2xl mx-auto text-lg">Echte Erfahrungen von echten Kunden – von <strong>bester iptv anbieter</strong> Bewertungen auf Trustpilot bis hin zu Nachrichten direkt über WhatsApp und Google.</p>
+        </div>
+    </section>
+
+    <!-- ======== STATIC INTRO (indexable content) ======== -->
+    <section class="py-16 bg-gradient-to-b from-transparent via-purple-900/5 to-transparent">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-6 mb-12">
+                <div class="glass rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black" style="color:#00b67a">5.0 ★</p>
+                    <p class="text-sm text-gray-400 mt-1">Trustpilot Bewertung</p>
+                    <p class="text-xs text-gray-500 mt-1">15 verifizierte Bewertungen</p>
+                </div>
+                <div class="glass rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black text-yellow-400">4.9 ★</p>
+                    <p class="text-sm text-gray-400 mt-1">Google Bewertung</p>
+                    <p class="text-xs text-gray-500 mt-1">Über 3.800 Bewertungen</p>
+                </div>
+                <div class="glass rounded-2xl p-6 text-center">
+                    <p class="text-3xl font-black text-green-400">+1,5 Mio.</p>
+                    <p class="text-sm text-gray-400 mt-1">Zufriedene Kunden</p>
+                    <p class="text-xs text-gray-500 mt-1">Weltweit & in Deutschland</p>
+                </div>
+            </div>
+
+            <h2 class="text-2xl sm:text-3xl font-black mb-6">Warum Kunden <span class="text-gradient">IPTV Deutschland</span> wählen</h2>
+            <div class="prose prose-invert max-w-none">
+                <p class="text-gray-400 leading-relaxed mb-4">Die Entscheidung für einen <strong>IPTV Anbieter</strong> ist für viele Kunden schwierig – das Internet ist voll von unzuverlässigen Services, die viel versprechen und wenig halten. Was unsere Bewertungen immer wieder zeigen: Der Unterschied liegt in der Kombination aus <strong>stabiler Streaming-Qualität</strong>, <strong>reaktionsschnellem Support</strong> und <strong>ehrlicher Kommunikation</strong>.</p>
+                <p class="text-gray-400 leading-relaxed mb-4">Besonders beim Thema <strong>Live-Sport</strong> – Bundesliga, Champions League, Formel 1 und PPV-Events – scheiden sich die Geister. Viele günstige Anbieter versagen genau dann, wenn es darauf ankommt: kurz vor dem Anpfiff oder bei hohem Traffic. Unsere Server sind auf parallele Streams ausgelegt, damit auch in Stoßzeiten alles reibungslos läuft.</p>
+                <p class="text-gray-400 leading-relaxed mb-4">Kunden loben außerdem die <strong>schnelle Aktivierung</strong> – in der Regel innerhalb weniger Minuten nach Zahlungseingang. Kein tagelantes Warten, keine anonymen Support-Formulare. Fragen werden direkt über WhatsApp beantwortet, auf Deutsch, von echten Menschen.</p>
+                <p class="text-gray-400 leading-relaxed mb-4">Wer zuerst einen <strong>kostenlosen IPTV Test</strong> machen möchte, bevor er kauft, kann das ebenfalls anfragen – viele unserer zufriedensten Langzeit-Kunden haben genau so begonnen.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mt-10">
+                <div class="glass rounded-2xl p-6">
+                    <h3 class="font-bold mb-3 text-white">Was Kunden am häufigsten erwähnen</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Stabiles Streaming auch zu Stoßzeiten</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Schnelle Aktivierung nach Bestellung</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Echter deutschsprachiger Support via WhatsApp</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Zuverlässiger Live-Sport ohne Puffern</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> Ehrliche Kommunikation bei Problemen</li>
+                    </ul>
+                </div>
+                <div class="glass rounded-2xl p-6">
+                    <h3 class="font-bold mb-3 text-white">Bewertungsquellen</h3>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li class="flex items-start gap-2"><span class="text-white mt-0.5">★</span> <strong class="text-white">Trustpilot</strong> – 5.0/5 (verifizierte Käufer)</li>
+                        <li class="flex items-start gap-2"><span class="text-yellow-400 mt-0.5">★</span> <strong class="text-white">Google Reviews</strong> – 4.9/5 (3.800+ Bewertungen)</li>
+                        <li class="flex items-start gap-2"><span class="text-green-400 mt-0.5">✓</span> <strong class="text-white">WhatsApp</strong> – direkte Kundennachrichten</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </section>
 
