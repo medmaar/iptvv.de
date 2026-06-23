@@ -293,7 +293,7 @@ async function handleFetch(request, env) {
     await env.TRIALS.put(
       `trial:${email}`,
       JSON.stringify({ name, email, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false }),
-      { expirationTtl: 4 * 24 * 60 * 60 }
+      { expirationTtl: 30 * 24 * 60 * 60 }
     );
 
     return jsonRes({ success: true });
@@ -319,7 +319,7 @@ async function handleScheduled(env) {
       try {
         await sendEmail(email, "⏳ Ihr IPTV Deutschland Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl));
         trial.reminder_sent = true;
-        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
+        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Erinnerung → ${email}`);
       } catch (e) { console.error(`[cron] Fehler Erinnerung:`, e.message); }
     }
@@ -328,7 +328,7 @@ async function handleScheduled(env) {
       try {
         await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name));
         trial.followup_sent = true;
-        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 4 * 24 * 60 * 60 });
+        await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Nachfass → ${email}`);
       } catch (e) { console.error(`[cron] Fehler Nachfass:`, e.message); }
     }
