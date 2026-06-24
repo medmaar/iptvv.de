@@ -292,7 +292,7 @@ async function handleFetch(request, env) {
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false }),
+      JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
 
