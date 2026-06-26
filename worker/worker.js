@@ -295,6 +295,14 @@ async function handleFetch(request, env) {
       JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
+    // Notify central KV reader (single-key design, no list ops)
+    try {
+      await fetch('https://iptv-kv-reader.medmaar.workers.dev/add', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, whatsapp, site: SITE, phone: whatsapp, created_at: Date.now() })
+      });
+    } catch(_) {}
 
     return jsonRes({ success: true });
 
