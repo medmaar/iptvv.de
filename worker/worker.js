@@ -300,7 +300,7 @@ async function handleFetch(request, env) {
       await fetch('https://iptv-kv-reader.medmaar.workers.dev/add', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, whatsapp, site: SITE, phone: whatsapp, created_at: Date.now() })
+        body: JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', phone: whatsapp, created_at: Date.now() })
       });
     } catch(_) {}
 
