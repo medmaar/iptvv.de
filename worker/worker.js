@@ -295,6 +295,14 @@ async function handleFetch(request, env) {
       JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
+    // Update __keys__ index (read op, not list op — keeps KV list quota safe)
+    try {
+      const _existingKeys = JSON.parse(await env.TRIALS.get('__keys__') || '[]');
+      if (!_existingKeys.includes(email)) {
+        _existingKeys.push(email);
+        await env.TRIALS.put('__keys__', JSON.stringify(_existingKeys), { expirationTtl: 90 * 24 * 60 * 60 });
+      }
+    } catch(_) {}
     // Notify central KV reader (single-key design, no list ops)
     const _kvBody = JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', phone: whatsapp, created_at: Date.now() });
     const _kvPost = () => fetch('https://iptv-kv-reader.medmaar.workers.dev/add',
@@ -313,7 +321,9 @@ async function handleFetch(request, env) {
 async function handleScheduled(env) {
   const now = Date.now();
   const FOUR_HOURS = 4 * 60 * 60 * 1000;
-  const { keys } = await env.TRIALS.list({ prefix: "trial:" });
+  const _keysRaw = await env.TRIALS.get('__keys__') || '[]';
+  const _keyEmails = JSON.parse(_keysRaw);
+  const keys = _keyEmails.map(e => ({ name: `trial:${e}` }));
   console.log(`[cron] ${keys.length} Tests geprüft`);
 
   for (const { name: key } of keys) {
