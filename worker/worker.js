@@ -296,13 +296,11 @@ async function handleFetch(request, env) {
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
     // Notify central KV reader (single-key design, no list ops)
-    try {
-      await fetch('https://iptv-kv-reader.medmaar.workers.dev/add', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', phone: whatsapp, created_at: Date.now() })
-      });
-    } catch(_) {}
+    const _kvBody = JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', phone: whatsapp, created_at: Date.now() });
+    const _kvPost = () => fetch('https://iptv-kv-reader.medmaar.workers.dev/add',
+      { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: _kvBody });
+    try { await _kvPost(); }
+    catch(_) { try { await new Promise(r => setTimeout(r, 1500)); await _kvPost(); } catch(__) {} }
 
     return jsonRes({ success: true });
 
