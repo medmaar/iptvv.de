@@ -236,7 +236,10 @@ async function handleFetch(request, env) {
     const u = new URL(request.url);
     if (u.searchParams.has("debug")) {
       const bq = await apiGet({ action: "bouquet" });
-      const trials = await env.TRIALS.list();
+      // Zero list ops: read __keys__ index instead of kv.list()
+      const _kr = await env.TRIALS.get('__keys__') || '[]';
+      const _ke = JSON.parse(_kr);
+      const trials = { keys: _ke.map(e => ({ name: 'trial:' + e })) };
       return jsonRes({ bouquet: bq.text.slice(0,400), kv_keys: trials.keys.length });
     }
     return new Response("IPTV Deutschland Trial Worker — OK", { status: 200 });
