@@ -18,7 +18,7 @@ const BRAND_GREETING = 'Hallo IPTV Deutschland!';
 
 function buildMessage(raw) {
   if (!raw) return BRAND_GREETING;
-  let rest = raw.replace(/^Hallo[^!.,]*[!,.]?\s*/i, '').trim();
+  let rest = raw.replace(/^Hallo[^!.,]{0,40}[!,.]\s*/i, '').trim();
   if (rest) {
     rest = rest.charAt(0).toUpperCase() + rest.slice(1);
     return `${BRAND_GREETING} ${rest}`;
