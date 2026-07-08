@@ -6,6 +6,7 @@ Disallow: /impressum.html
 Disallow: /datenschutz.html
 Disallow: /agb.html
 Disallow: /dmca.html
+Disallow: /kontakt/wa
 
 # Sitemap
 Sitemap: https://iptvv.de/sitemap.xml
