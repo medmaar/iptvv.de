@@ -689,5 +689,85 @@ iptv kaufen · iptv anbieter · iptv deutschland · ip tv app · smart ip tv · 
                 });
         });
     </script>
+<style>
+.sales-banner{position:fixed;left:18px;bottom:18px;z-index:79;max-width:266px;display:flex;align-items:center;gap:11px;padding:11px 30px 11px 11px;border-radius:12px;background:#ffffff;border:1px solid rgba(0,0,0,0.06);box-shadow:0 16px 34px -12px rgba(0,0,0,0.45),0 2px 6px rgba(0,0,0,0.08);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s cubic-bezier(.4,0,.2,1);}
+.sales-banner.show{transform:translateY(0);opacity:1;}
+.sales-banner-icon{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#FFE9A8 0%,#DFAD05 100%);box-shadow:0 0 0 2px rgba(223,173,5,0.15);}
+.sales-banner-title{font-weight:700;font-size:12.5px;line-height:1.35;color:#1A1A1A;}
+.sales-banner-title b{font-weight:800;}
+.sales-banner-text{font-size:10.5px;color:#8A8A8A;margin-top:2px;display:flex;align-items:center;gap:4px;}
+.sales-banner-text::before{content:"";width:6px;height:6px;border-radius:50%;background:#2ECC71;display:inline-block;flex-shrink:0;}
+.sales-banner-close{position:absolute;top:6px;right:8px;background:none;border:none;color:#B8B8B8;font-size:14px;line-height:1;cursor:pointer;padding:3px;}
+.sales-banner-close:hover{color:#666;}
+@media (max-width:600px){.sales-banner{left:12px;bottom:12px;max-width:calc(100% - 96px);padding:10px 26px 10px 10px;}}
+</style>
+<div class="sales-banner" id="salesBanner">
+  <button class="sales-banner-close" id="salesBannerClose" aria-label="Schliessen">&times;</button>
+  <div class="sales-banner-icon">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+      <path d="M6 7h12l-1 12.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 7z" stroke="#1A1400" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="#1A1400" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9.5 12.5l1.8 1.8L14.8 11" stroke="#1A1400" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="sales-banner-body">
+    <div class="sales-banner-title" id="salesBannerTitle">Neuer Kauf</div>
+    <div class="sales-banner-text" id="salesBannerText">gerade eben</div>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('salesBanner');
+  var closeBtn = document.getElementById('salesBannerClose');
+  var titleEl = document.getElementById('salesBannerTitle');
+  var textEl = document.getElementById('salesBannerText');
+  if(!banner || !titleEl || !textEl) return;
+  if(sessionStorage.getItem('ivde_sales_banner_dismissed') === '1') return;
+
+  var names = ["Alex", "Lukas", "Max", "Jonas", "Felix", "Niklas", "Tim", "Leon", "Julian", "Finn", "Sarah", "Lena", "Julia", "Laura", "Anna", "Nina", "Sophie", "Marie", "Lisa", "Katrin"];
+  var cities = ["München", "Berlin", "Hamburg", "Köln", "Frankfurt", "Stuttgart", "Düsseldorf", "Leipzig", "Dortmund", "Essen", "Bremen", "Dresden", "Hannover", "Nürnberg", "Duisburg", "Bochum", "Wuppertal", "Mannheim", "Karlsruhe", "Münster"];
+  var plans = ["1-Monats-Abo", "3-Monats-Abo", "3-Monats-Abo", "6-Monats-Abo", "6-Monats-Abo", "1-Jahres-Abo", "1-Jahres-Abo", "1-Jahres-Abo", "1-Jahres-Abo", "1-Jahres-Abo"];
+  var timeAgo = ["gerade eben", "vor 2 Minuten", "vor 5 Minuten", "vor 9 Minuten"];
+
+  function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+  var dismissed = false;
+  var lastName = null;
+  var timers = [];
+  function setT(fn, ms){ var id = setTimeout(fn, ms); timers.push(id); return id; }
+
+  function nextNotification(){
+    var name = pick(names);
+    while(name === lastName){ name = pick(names); }
+    lastName = name;
+    var city = pick(cities);
+    var plan = pick(plans);
+    titleEl.innerHTML = '<b>' + name + '</b> aus ' + city + ' hat ein ' + plan + ' gekauft';
+    textEl.textContent = pick(timeAgo);
+  }
+
+  function cycle(){
+    if(dismissed) return;
+    nextNotification();
+    banner.classList.add('show');
+    setT(function(){
+      if(dismissed) return;
+      banner.classList.remove('show');
+      setT(cycle, 3000);
+    }, 5000);
+  }
+
+  setT(cycle, 2000 + Math.floor(Math.random() * 2000));
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      dismissed = true;
+      banner.classList.remove('show');
+      sessionStorage.setItem('ivde_sales_banner_dismissed', '1');
+      timers.forEach(clearTimeout);
+    });
+  }
+})();
+</script>
 </body>
 </html>
