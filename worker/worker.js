@@ -286,10 +286,10 @@ async function handleFetch(request, env) {
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
     step = "email_client";
-    await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl, RESEND_KEY));
+    await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
 
     step = "email_admin";
-    await sendEmail(ADMIN_EMAIL, `Automation / iptvv.de / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl, RESEND_KEY));
+    await sendEmail(ADMIN_EMAIL, `Automation / iptvv.de / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
 
     step = "kv_store";
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
@@ -337,7 +337,7 @@ async function handleScheduled(env) {
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "⏳ Ihr IPTV Deutschland Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl, RESEND_KEY));
+        await sendEmail(email, "⏳ Ihr IPTV Deutschland Testzugang läuft in 4 Stunden ab", reminderEmail(name, username, password, m3uUrl), RESEND_KEY);
         trial.reminder_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Erinnerung → ${email}`);
@@ -346,7 +346,7 @@ async function handleScheduled(env) {
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name, RESEND_KEY));
+        await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist abgelaufen — Jetzt weiterschauen 🎬", followupEmail(name), RESEND_KEY);
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Nachfass → ${email}`);
