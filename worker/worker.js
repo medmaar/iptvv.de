@@ -5,7 +5,7 @@
 
 const API_BASE    = "https://activationpanel.ru/api/api.php";
 const API_KEY     = "35cf68cc83a3a82e1a0ac5361c7b6105";
-const HOST        = "http://mag.trexlive.me";
+const HOST        = "http://line.truthdaily.me";
 const FROM_EMAIL  = "IPTV Deutschland <kontakt@iptvv.de>";
 const ADMIN_EMAIL = "kontakt@iptvv.de";
 const SITE_URL    = "https://iptvv.de";
