@@ -279,23 +279,39 @@ async function handleFetch(request, env) {
     }
 
     step = "create_demo";
-    const crRes = await apiGet({
-      action: "new", type: "m3u", sub: "99", pack: packId,
-      note: `Trial / iptvv.de / ${email} | ${whatsapp || ""}`,
-    });
-    if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
-      throw new Error(`Panel kein JSON: ${crRes.text.slice(0, 200)}`);
-    }
-    const crData = JSON.parse(crRes.text);
-    const item = Array.isArray(crData) ? crData[0] : crData;
-    if (!item || String(item.status) !== "true") {
-      throw new Error(`Panel: ${item?.message || JSON.stringify(item)}`);
+    let username = "", password = "";
+
+    try {
+      step = "create_demo";
+      const crRes = await apiGet({
+        action: "new", type: "m3u", sub: "99", pack: packId,
+        note: `Trial / iptvv.de / ${email} | ${whatsapp || ""}`,
+      });
+      if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
+        throw new Error(`Panel kein JSON: ${crRes.text.slice(0, 200)}`);
+      }
+      const crData = JSON.parse(crRes.text);
+      const item = Array.isArray(crData) ? crData[0] : crData;
+      if (!item || String(item.status) !== "true") {
+        throw new Error(`Panel: ${item?.message || JSON.stringify(item)}`);
+      }
+
+      step = "extract";
+      const rawUrl = item.url || "";
+      try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
+
+    } catch (panelErr) {
+      const _dU = env.DEMO_USERNAME;
+      const _dP = env.DEMO_PASSWORD;
+      if (_dU && _dP) {
+        username = _dU;
+        password = _dP;
+        console.log(`[fallback] Panel failed (${panelErr.message}) — using shared demo credentials`);
+      } else {
+        throw panelErr;
+      }
     }
 
-    step = "extract";
-    const rawUrl = item.url || "";
-    let username = "", password = "";
-    try { const u = new URL(rawUrl); username = u.searchParams.get("username") || ""; password = u.searchParams.get("password") || ""; } catch {}
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
     step = "email_client";
