@@ -43,10 +43,6 @@ async function sendEmail(to, subject, html, resendKey, inReplyTo = null) {
   if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
   const data = await res.json();
   return data.id || null;
-}`, "Content-Type": "application/json" },
-    body: JSON.stringify({ from: FROM_EMAIL, to, subject, html }),
-  });
-  if (!res.ok) throw new Error(`Resend (${res.status}): ${await res.text()}`);
 }
 
 function emailWrap(content) {
