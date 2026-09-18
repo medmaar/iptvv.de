@@ -316,6 +316,14 @@ async function handleFetch(request, env) {
 
     step = "email_client";
     const welcomeEmailId = await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+    // Update KV with Resend email ID for threaded follow-ups
+    if (welcomeEmailId) {
+      try {
+        const _t = JSON.parse(await env.TRIALS.get(`trial:${email}`) || '{}');
+        _t.welcome_email_id = welcomeEmailId;
+        await env.TRIALS.put(`trial:${email}`, JSON.stringify(_t), { expirationTtl: 30 * 24 * 60 * 60 });
+      } catch (_) {}
+    }
 
     step = "email_admin";
     await sendEmail(ADMIN_EMAIL, `Automation / iptvv.de / trial / ${name || "—"} / ${email}`, adminEmail(name, email, country, device, whatsapp, notes, username, password, m3uUrl), RESEND_KEY);
@@ -324,7 +332,7 @@ async function handleFetch(request, env) {
     const expiry = Date.now() + 24 * 60 * 60 * 1000;
     await env.TRIALS.put(
       `trial:${email}`,
-      JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: welcomeEmailId || null, created_at: Date.now() }),
+      JSON.stringify({ name, email, whatsapp, site: 'iptvv.de', username, password, m3uUrl, expiry, reminder_sent: false, followup_sent: false, welcome_email_id: null, created_at: Date.now() }),
       { expirationTtl: 30 * 24 * 60 * 60 }
     );
     // Update __keys__ index (read op, not list op — keeps KV list quota safe)
