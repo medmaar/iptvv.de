@@ -444,6 +444,14 @@ print("\nDone — 20 plan pages + 1 trial page = 21 total")
 
 # ============================================================
 # GENERATE CITY PAGES
+#
+# WARNING: this generator predates several manual SEO passes applied
+# directly to the output HTML (hreflang, Product+AggregateRating
+# schema, WebPage/BreadcrumbList schema, custom OG images, expanded
+# FAQ, lazy loading — see commits ddc9dbd/14e8372/9d7bb4f). Re-running
+# this section overwrites those with an older, weaker version. Do not
+# run it against existing city pages without first updating the
+# template logic above to match iptv-berlin.html's current output.
 # ============================================================
 def slugify_city(name):
     repl = {'ü': 'ue', 'ö': 'oe', 'ä': 'ae', 'ß': 'ss', 'Ü': 'Ue', 'Ö': 'Oe', 'Ä': 'Ae'}
@@ -453,7 +461,11 @@ def slugify_city(name):
     return s.lower().replace(' ', '-')
 
 CITIES = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt', 'Stuttgart',
-          'Düsseldorf', 'Leipzig', 'Dortmund', 'Dresden', 'Hannover', 'Nürnberg']
+          'Düsseldorf', 'Leipzig', 'Dortmund', 'Dresden', 'Hannover', 'Nürnberg',
+          'Essen', 'Bremen', 'Duisburg', 'Bochum', 'Wuppertal', 'Bielefeld',
+          'Bonn', 'Münster', 'Mannheim', 'Karlsruhe', 'Augsburg', 'Wiesbaden',
+          'Mönchengladbach', 'Gelsenkirchen', 'Braunschweig', 'Chemnitz',
+          'Kiel', 'Aachen', 'Halle', 'Magdeburg']
 
 city_slugs = [(c, f'iptv-{slugify_city(c)}') for c in CITIES]
 
