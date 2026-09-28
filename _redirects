@@ -18,3 +18,9 @@
 # Brand-name variant consolidated onto iptv-telekom.html
 /iptv-magentatv.html /iptv-telekom.html 301
 /iptv-entertain.html /iptv-telekom.html 301
+
+# Plausible guessed slugs for newer pages
+/iptv-1and1.html /iptv-1und1.html 301
+/iptv-1-und-1.html /iptv-1und1.html 301
+/iptv-smart-iptv.html /iptv-siptv.html 301
+/iptv-set-iptv.html /iptv-siptv.html 301
