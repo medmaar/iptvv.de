@@ -281,7 +281,7 @@ async function handleFetch(request, env) {
       step = "create_demo";
       const crRes = await apiGet({
         action: "new", type: "m3u", sub: "99", pack: packId,
-        note: `Trial / iptvv.de / ${email} | ${whatsapp || ""}`,
+        notes: `Trial / iptvv.de / ${email} | ${whatsapp || ""}`,
       });
       if (!crRes.text.trim().startsWith("[") && !crRes.text.trim().startsWith("{")) {
         throw new Error(`Panel kein JSON: ${crRes.text.slice(0, 200)}`);
