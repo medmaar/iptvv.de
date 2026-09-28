@@ -34,6 +34,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IPTV Deutschland",
+  "url": "https://iptvv.de/de/",
+  "logo": "https://iptvv.de/germany-icon.png",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": ["German", "English"],
+    "url": "https://iptvv.de/kontakt/wa"
+  }
+}</script>
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://iptvv.de/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Impressum",
+      "item": "https://iptvv.de/impressum.html"
+    }
+  ]
+}</script>
 </head>
 <body class="gradient-bg text-white overflow-x-hidden">
 
