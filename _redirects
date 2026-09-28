@@ -5,3 +5,16 @@
 # Homepage moved to /de (redirect straight to the canonical trailing-slash URL)
 / /de/ 301
 /index.html /de/ 301
+
+# Brand-name variants consolidated onto iptv-vodafone.html (Vodafone
+# absorbed Unitymedia and Kabel Deutschland; O2/NetCologne content
+# also lives there) — catch plausible guessed slugs for these terms
+/iptv-unitymedia.html /iptv-vodafone.html 301
+/iptv-kabel-deutschland.html /iptv-vodafone.html 301
+/iptv-kabeldeutschland.html /iptv-vodafone.html 301
+/iptv-o2.html /iptv-vodafone.html 301
+/iptv-netcologne.html /iptv-vodafone.html 301
+
+# Brand-name variant consolidated onto iptv-telekom.html
+/iptv-magentatv.html /iptv-telekom.html 301
+/iptv-entertain.html /iptv-telekom.html 301
