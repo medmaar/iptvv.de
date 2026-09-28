@@ -1,0 +1,7 @@
+# ═══════════════════════════════════════════════════════════
+# Cloudflare Pages _redirects
+# ═══════════════════════════════════════════════════════════
+
+# Homepage moved to /de (redirect straight to the canonical trailing-slash URL)
+/ /de/ 301
+/index.html /de/ 301
