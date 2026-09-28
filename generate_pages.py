@@ -470,11 +470,16 @@ CITIES = ['Berlin', 'Hamburg', 'München', 'Köln', 'Frankfurt', 'Stuttgart',
           'Rostock', 'Kassel', 'Hagen', 'Saarbrücken', 'Hamm', 'Mülheim',
           'Potsdam', 'Ludwigshafen', 'Oldenburg', 'Leverkusen', 'Osnabrück',
           'Solingen', 'Heidelberg', 'Herne', 'Darmstadt', 'Neuss',
-          'Paderborn', 'Regensburg']
+          'Paderborn', 'Regensburg',
+          'Ingolstadt', 'Würzburg', 'Fürth', 'Wolfsburg', 'Offenbach', 'Ulm',
+          'Heilbronn', 'Pforzheim', 'Göttingen', 'Bottrop', 'Trier',
+          'Recklinghausen', 'Reutlingen', 'Bremerhaven', 'Koblenz',
+          'Bergisch Gladbach', 'Jena', 'Remscheid', 'Erlangen', 'Moers']
 
 # German states (Bundesländer), excluding the 3 city-states already covered above
 REGIONS = ['Bayern', 'Baden-Württemberg', 'Nordrhein-Westfalen', 'Niedersachsen',
            'Hessen', 'Sachsen', 'Rheinland-Pfalz', 'Schleswig-Holstein',
+           'Sachsen-Anhalt', 'Mecklenburg-Vorpommern', 'Saarland',
            'Brandenburg', 'Thüringen']
 
 city_slugs = [(c, f'iptv-{slugify_city(c)}') for c in CITIES]
