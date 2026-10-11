@@ -275,8 +275,14 @@ def faq_jsonld(items):
 def keyword_footer(keywords):
     return ' · '.join(dedupe(keywords))
 
-def render_page(replacements, out_path):
+# Near-duplicate pages (plan variants, city/region pages) stay live for
+# visitors but are kept out of Google's index and out of sitemap.xml.
+NOINDEX_META = '<meta name="robots" content="noindex, follow">'
+
+def render_page(replacements, out_path, noindex=False):
     html = TEMPLATE
+    if noindex:
+        html = re.sub(r'<meta name="robots" content="[^"]*">', NOINDEX_META, html, count=1)
     for token, value in replacements.items():
         html = html.replace(token, value)
     leftover = re.findall(r'__[A-Z_]+__', html)
@@ -302,7 +308,7 @@ for slug, plan_name, price, device, duration in ALL_SLUGS:
     duc = DURATION_CONTENT[duration]
     months = DURATION_MONTHS[duration]
 
-    canonical_url = f'https://iptvv.de/{slug}.html'
+    canonical_url = f'https://iptvv.de/{slug}'
     title = f'{plan_name} – {price}€ | IPTV Deutschland'
     meta_desc = f'{DURATION_LABEL[duration]} IPTV Abo für {device_label(device)} – {price}€. +50.000 Kanäle, +300.000 Filme & Serien, 4K Qualität, VPN-freundlich. Jetzt unverbindlich anfragen!'
     meta_keywords = ', '.join(dedupe(CORE_KEYWORDS + DEVICE_KEYWORDS[device] + DURATION_KEYWORDS[duration]))
@@ -335,7 +341,7 @@ for slug, plan_name, price, device, duration in ALL_SLUGS:
     other_plans_html_parts = []
     for s2, name2, price2 in other_links[:6]:
         other_plans_html_parts.append(
-            f'                <a href="{s2}.html" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
+            f'                <a href="/{s2}" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
             f'                    <span class="block font-bold text-sm">{name2}</span>\n'
             f'                    <span class="block text-xs text-gray-400">{price2}€</span>\n'
             f'                </a>'
@@ -367,7 +373,7 @@ for slug, plan_name, price, device, duration in ALL_SLUGS:
         '__COUNTRY_OPTIONS__': COUNTRY_OPTIONS_HTML,
     }
 
-    render_page(replacements, f'{slug}.html')
+    render_page(replacements, f'{slug}.html', noindex=True)
 
 print(f"\nGenerated {len(ALL_SLUGS)} device x duration pages")
 
@@ -399,13 +405,13 @@ trial_seo_html = '''
                 <li class="flex items-start gap-2"><span class="text-green-400 mt-1">✓</span><span>4K Ultra HD Qualität mit Anti-Freeze-Technologie</span></li>
                 <li class="flex items-start gap-2"><span class="text-green-400 mt-1">✓</span><span>Kompatibel mit Smart TV, Fire TV Stick, Android, iOS & mehr</span></li>
             </ul>
-            <p class="text-gray-400 leading-relaxed mb-4">Überzeugt? Im Anschluss können Sie ganz einfach eines unserer <a href="index.html#preise" class="text-green-400 hover:text-green-300 underline">IPTV Abos</a> ab 9€ buchen – mit Laufzeiten von 1 Monat bis 1 Jahr und 1 bis 5 Geräten gleichzeitig.</p>
+            <p class="text-gray-400 leading-relaxed mb-4">Überzeugt? Im Anschluss können Sie ganz einfach eines unserer <a href="/de/#preise" class="text-green-400 hover:text-green-300 underline">IPTV Abos</a> ab 9€ buchen – mit Laufzeiten von 1 Monat bis 1 Jahr und 1 bis 5 Geräten gleichzeitig.</p>
 ''' + SHARED_COMPAT_HTML
 
 trial_other_links = []
 for s2, name2, price2 in [(slug, pn, pr) for slug, pn, pr, d, dur in ALL_SLUGS if d == 1]:
     trial_other_links.append(
-        f'                <a href="{s2}.html" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
+        f'                <a href="/{s2}" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
         f'                    <span class="block font-bold text-sm">{name2}</span>\n'
         f'                    <span class="block text-xs text-gray-400">{price2}€</span>\n'
         f'                </a>'
@@ -415,7 +421,7 @@ trial_replacements = {
     '__TITLE__': trial_title,
     '__META_DESC__': trial_meta_desc,
     '__META_KEYWORDS__': trial_meta_keywords,
-    '__CANONICAL_URL__': 'https://iptvv.de/iptv-kostenlos-testen.html',
+    '__CANONICAL_URL__': 'https://iptvv.de/iptv-kostenlos-testen',
     '__OG_TITLE__': trial_og_title,
     '__OG_DESC__': trial_og_desc,
     '__PLAN_NAME__': 'IPTV Kostenlos Testen',
@@ -494,7 +500,7 @@ city_faq_template = [
 ]
 
 for city, slug in city_slugs:
-    canonical_url = f'https://iptvv.de/{slug}.html'
+    canonical_url = f'https://iptvv.de/{slug}'
     title = f'IPTV {city} – IPTV Anbieter in {city} | iptvv.de'
     meta_desc = f'IPTV {city} ab 9€/Monat. Über +50.000 Kanäle, +300.000 Filme & Serien in 4K Qualität. Bester IPTV Anbieter in {city} – jetzt unverbindlich anfragen!'
     meta_keywords = ', '.join(dedupe(CORE_KEYWORDS + [
@@ -520,12 +526,12 @@ for city, slug in city_slugs:
     other_plans_html_parts = []
     for s2, name2, _ in other_links:
         other_plans_html_parts.append(
-            f'                <a href="{s2}.html" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
+            f'                <a href="/{s2}" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
             f'                    <span class="block font-bold text-sm">{name2}</span>\n'
             f'                </a>'
         )
     other_plans_html_parts.append(
-        '                <a href="iptv-preise.html" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
+        '                <a href="/iptv-preise" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">\n'
         '                    <span class="block font-bold text-sm">Alle Preise & Pakete</span>\n'
         '                </a>'
     )
@@ -559,6 +565,6 @@ for city, slug in city_slugs:
         '__COUNTRY_OPTIONS__': COUNTRY_OPTIONS_HTML,
     }
 
-    render_page(replacements, f'{slug}.html')
+    render_page(replacements, f'{slug}.html', noindex=True)
 
 print(f"\nGenerated {len(city_slugs)} city pages")
