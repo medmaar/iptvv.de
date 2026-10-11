@@ -38,6 +38,20 @@
 <h3>Liegt es am Browser oder am Zugang?</h3>
 <p>Diese Frage klären Sie in zwei Minuten: Kopieren Sie Ihren M3U-Link und öffnen Sie ihn auf einem anderen Gerät, etwa in VLC am Handy oder am heimischen PC. Spielt der Sender dort sofort, ist Ihr Zugang in Ordnung und der Browser ist die Ursache. Bleibt er auch dort schwarz, prüfen Sie die Laufzeit Ihres Abos und ob gerade ein anderes Gerät denselben Zugang nutzt. Dieses Vorgehen spart Zeit, denn im Browser gibt es kaum aussagekräftige Fehlermeldungen; die Entwicklerkonsole zeigt Hinweise wie „Mixed Content“ oder „CORS“ nur, wenn man gezielt danach sucht.</p>
 
+<h2>M3U online abspielen: Playlist, m3u8-Stream und einzelner Sender</h2>
+<p>Wer „M3U online“ sucht, meint oft zwei verschiedene Dinge. Der Unterschied entscheidet darüber, ob ein Browser überhaupt etwas abspielen kann:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Was Sie haben</th><th>Was es ist</th><th>Im Browser</th></tr></thead>
+<tbody>
+<tr><td>M3U-Playlist-Link (Ihre Senderliste)</td><td>Textdatei mit Hunderten oder Tausenden Einträgen: Sendername, Gruppe, Logo und Stream-Adresse</td><td>Der Browser zeigt den Text an oder lädt die Datei herunter – abspielen kann erst ein Web-Player, der die Liste einliest</td></tr>
+<tr><td>Einzelne <code>.m3u8</code>-Adresse (HLS)</td><td>Steuerdatei für genau einen Stream, der in kurzen Abschnitten geladen wird</td><td>Safari spielt sie direkt ab; andere Browser je nach Version direkt oder nur über einen Web-Player mit HLS-Bibliothek</td></tr>
+<tr><td>Einzelne <code>.ts</code>-Adresse</td><td>Durchgehender MPEG-TS-Stream eines Senders</td><td>Ohne Web-Player mit Umwandlung meist nur Download statt Bild</td></tr>
+</tbody></table></div>
+<p>Für einen schnellen Funktionstest eines einzelnen Senders ist eine HLS-Adresse im Browser also durchaus brauchbar, solange die Seite selbst nicht über <code>https://</code> läuft und den Stream über <code>http://</code> nachladen will. Ganze Senderlisten mit Gruppen und Programmzeitschrift bleiben dagegen Sache einer IPTV-Site mit Player oder besser einer App. Prüfen möchten Sie nur, ob Link und Zugang funktionieren? Dafür ist unser <a href="/iptv-checker">IPTV Checker</a> der direktere Weg.</p>
+
+<h3>Was eine gute IPTV-Site im Web-Browser ausmacht</h3>
+<p>Ob eine IPTV-Site im Web-Browser taugt, sehen Sie an wenigen Merkmalen: Sie nennt einen Betreiber mit Impressum, erklärt, ob Streams über einen eigenen Server laufen, verlangt keine Zahlungsdaten für das reine Abspielen und lässt sich wieder abmelden, sodass gespeicherte Zugangsdaten verschwinden. Seiten, die eigene Sender „gratis“ anbieten, sind keine Player, sondern selbst Anbieter – mit allen Fragen, die wir unter <a href="/iptv-legal">IPTV und Rechtslage</a> neutral einordnen.</p>
+
 <h2>Datenschutz: Wo Sie Ihre Zugangsdaten eingeben sollten</h2>
 <div class="callout callout-warn"><p><strong>Vorsicht bei unbekannten IPTV-Websites:</strong> Wer Ihren M3U-Link oder Ihre Xtream-Daten kennt, kann Ihren Zugang selbst nutzen. Das belegt dann Ihre gleichzeitigen Verbindungen, und Ihre Sender brechen ab. Geben Sie Ihre Daten nicht auf beliebigen Seiten ein, die Sie über eine Suchmaschine finden, und schon gar nicht auf Seiten, die zusätzlich Zahlungsdaten oder eine Registrierung mit Ihrer E-Mail verlangen.</p></div>
 <p>Prüfen Sie vor der Eingabe, wer die Seite betreibt (Impressum), ob sie verschlüsselt ist und ob sie eine Datenschutzerklärung hat. Haben Sie Ihre Daten bereits auf einer zweifelhaften Seite eingegeben und laufen Ihre Streams seitdem unruhig oder brechen mit „maximale Verbindungen“ ab, melden Sie sich bei unserem <a href="/kontakt/wa">WhatsApp-Support</a>. Wir prüfen Ihren Zugang und besprechen mit Ihnen, wie er wieder abgesichert wird.</p>
@@ -82,3 +96,5 @@
 <p>Die eingebauten Browser von Fernsehern sind für Video-Streams meist zu eingeschränkt. Deutlich besser läuft eine IPTV-App direkt auf dem TV. Welche Apps auf welchem Fernseher verfügbar sind, zeigt unsere Übersicht zu <a href="/iptv-smart-tv">IPTV auf dem Smart-TV</a>.</p>
 <h3>Welcher Browser eignet sich am besten für IPTV?</h3>
 <p>Am häufigsten funktionieren Web-Player in aktuellen Versionen von Chrome, Edge und Safari. Safari kann HLS-Streams direkt abspielen, Chrome und Edge profitieren von guter Hardware-Beschleunigung. Firefox unterstützt je nach System nicht alle Videoformate.</p>
+<h3>Was ist der Unterschied zwischen M3U und M3U8?</h3>
+<p>Beide sind Textformate für Wiedergabelisten. „M3U8“ bedeutet zunächst nur, dass die Datei in UTF-8 kodiert ist; im Streaming steht die Endung aber fast immer für HLS-Streams, die in kleinen Abschnitten geladen werden. Ihre Senderliste ist eine M3U-Playlist, die einzelnen Sender darin können als HLS oder TS vorliegen.</p>

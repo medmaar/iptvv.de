@@ -176,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "MAG Box",
+  "headline": "MAG Box IPTV einrichten – Portal, MAC-Adresse und Modellübersicht",
   "url": "https://iptvv.de/iptv-mag-box",
   "description": "MAG Box für IPTV einrichten: Portal-URL eintragen, MAC-Adresse freischalten und das passende Infomir-Modell von MAG 254 bis 524 finden. Jetzt testen.",
   "inLanguage": "de-DE",
@@ -190,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "MAG Box"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -345,6 +366,7 @@
                 <ol>
                     <li><a href="#was-eine-mag-box-von-einer-android-box-unterscheidet">Was eine MAG Box von einer Android-Box unterscheidet</a></li>
                     <li><a href="#mag-modelle-im-ueberblick-welche-box-passt">MAG-Modelle im Überblick: Welche Box passt?</a></li>
+                    <li><a href="#mag-254-mag-256-oder-mag-322-lohnt-sich-der-umstieg">MAG 254, MAG 256 oder MAG 322: Lohnt sich der Umstieg?</a></li>
                     <li><a href="#mac-adresse-der-mag-box-finden">MAC-Adresse der MAG Box finden</a></li>
                     <li><a href="#portal-url-eintragen-schritt-fuer-schritt">Portal-URL eintragen – Schritt für Schritt</a></li>
                     <li><a href="#bedienung-und-einstellungen-im-alltag">Bedienung und Einstellungen im Alltag</a></li>
@@ -373,6 +395,19 @@
 <tr><td>MAG 524</td><td>4K UHD</td><td>Ja</td><td>Aktuelle Generation, empfehlenswert für Neukauf</td></tr>
 </tbody></table></div>
 <p>Unsere Empfehlung: Wer neu kauft, wählt ein 4K-Modell der aktuellen Generation. Ältere Boxen ohne HEVC spielen viele Sender weiterhin in HD ab, können aber Streams im sparsamen H.265-Format nicht dekodieren. Was 4K-Empfang technisch voraussetzt, erklärt der Ratgeber <a href="/iptv-4k">IPTV in 4K</a>.</p>
+
+<h2 id="mag-254-mag-256-oder-mag-322-lohnt-sich-der-umstieg">MAG 254, MAG 256 oder MAG 322: Lohnt sich der Umstieg?</h2>
+<p>Die meisten MAG-IPTV-Boxen, die heute noch in deutschen Wohnzimmern stehen, sind eine Infomir MAG 254, eine MAG 256 oder eine MAG 322. Für alle drei gilt: Die Einrichtung mit Portal-URL und MAC-Adresse ist identisch, und die Senderoberfläche sieht gleich aus, weil sie vom Portal kommt und nicht von der Box. Der Unterschied liegt im Video-Chip. MAG 254 und 256 gehören zur älteren HD-Generation ohne HEVC; die MAG 322 dekodiert zusätzlich H.265 und spielt dadurch mehr Streams ab, bleibt aber bei Full HD.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Ihre Situation</th><th>Vorhandene Box</th><th>Empfehlung</th></tr></thead>
+<tbody>
+<tr><td>Full-HD-Fernseher, vor allem deutsche Free-TV-Sender</td><td>MAG 254 / 256</td><td>Weiter nutzen; einzelne HEVC-Sender bleiben schwarz</td></tr>
+<tr><td>Einige Sender starten nicht, andere laufen</td><td>MAG 254 / 256</td><td>Umstieg auf MAG 322/324 oder ein 4K-Modell</td></tr>
+<tr><td>Full-HD-Fernseher, stabile Wiedergabe gewünscht</td><td>MAG 322</td><td>Kein Wechsel nötig</td></tr>
+<tr><td>Neuer 4K-Fernseher</td><td>MAG 254, 256 oder 322</td><td>Neueres 4K-Modell wie MAG 424 oder 524</td></tr>
+<tr><td>WLAN statt Kabel am Fernseher</td><td>Modell ohne „w“</td><td>w-Variante wählen oder Powerline-Adapter nutzen</td></tr>
+</tbody></table></div>
+<p>Beim Wechsel auf eine neue MAG TV Box übertragen Sie nichts: Sie tragen dieselbe Portal-URL ein und schicken uns die neue MAC. Ob Ihr Zugang selbst erreichbar ist, können Sie unabhängig von der Box mit dem <a href="/iptv-checker">IPTV Checker</a> prüfen – praktisch, wenn unklar ist, ob ein Fehler an der alten Box oder an der Verbindung liegt.</p>
 
 <h2 id="mac-adresse-der-mag-box-finden">MAC-Adresse der MAG Box finden</h2>
 <p>Die MAC-Adresse ist die Kennung, mit der sich Ihre Box am Portal anmeldet. Bei MAG-Geräten beginnt sie immer mit <code>00:1A:79</code>. Sie finden sie an zwei Stellen:</p>
@@ -585,6 +620,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -644,6 +680,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

@@ -168,8 +168,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "Android TV Box",
+  "headline": "IPTV auf der Android TV Box",
   "url": "https://iptvv.de/iptv-android-box",
   "description": "IPTV auf der Android TV Box: welche Box sich lohnt, welche App passt, wie Sie den Zugang einrichten und Bildfehler beheben. 24 Stunden kostenlos testen.",
   "inLanguage": "de-DE",
@@ -182,7 +186,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Android TV Box"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -338,6 +359,8 @@
                     <li><a href="#android-tv-google-tv-oder-android-box-wo-ist-der-unterschied">Android TV, Google TV oder „Android Box“ – wo ist der Unterschied?</a></li>
                     <li><a href="#beliebte-android-tv-boxen-fuer-iptv-im-vergleich">Beliebte Android-TV-Boxen für IPTV im Vergleich</a></li>
                     <li><a href="#iptv-auf-der-android-box-einrichten">IPTV auf der Android Box einrichten</a></li>
+                    <li><a href="#iptv-auf-der-nvidia-shield-was-die-box-besonders-macht">IPTV auf der Nvidia Shield: was die Box besonders macht</a></li>
+                    <li><a href="#iptv-auf-google-tv-besonderheiten-bei-streamer-chromecast-un">IPTV auf Google TV: Besonderheiten bei Streamer, Chromecast und Xiaomi</a></li>
                     <li><a href="#bildqualitaet-optimieren-die-wichtigsten-einstellungen">Bildqualität optimieren: die wichtigsten Einstellungen</a></li>
                     <li><a href="#fehler-auf-der-android-box-beheben">Fehler auf der Android Box beheben</a></li>
                     <li><a href="#checkliste-darauf-achten-sie-beim-kauf-einer-iptv-android-bo">Checkliste: Darauf achten Sie beim Kauf einer IPTV Android Box</a></li>
@@ -359,15 +382,16 @@
 <p>Ob eine Box zertifiziert ist, sehen Sie am vorinstallierten Play Store mit TV-Oberfläche und an der Angabe „Android TV“ oder „Google TV“ in der Produktbeschreibung. Steht dort nur „Android 11“ oder „Android 13“ ohne den Zusatz TV, handelt es sich meist um ein Gerät mit Smartphone-System.</p>
 
 <h2 id="beliebte-android-tv-boxen-fuer-iptv-im-vergleich">Beliebte Android-TV-Boxen für IPTV im Vergleich</h2>
-<p>Die folgenden Geräte sind in Deutschland verbreitet und laufen mit allen gängigen IPTV-Playern. Preise ändern sich häufig, deshalb nennen wir hier nur die Einordnung.</p>
+<p>Die folgenden Geräte sind in Deutschland verbreitet und laufen mit allen gängigen IPTV-Playern. Preise und Ausstattungsdetails ändern sich mit jeder Modellgeneration, deshalb nennen wir hier nur die Einordnung. Prüfen Sie vor dem Kauf im Datenblatt, ob LAN und HEVC-Unterstützung an Bord sind.</p>
 <div class="table-wrap"><table>
-<thead><tr><th>Gerät</th><th>System</th><th>Besonderheiten</th><th>Für wen?</th></tr></thead>
+<thead><tr><th>Gerät</th><th>System</th><th>4K</th><th>Besonderheiten</th><th>Für wen?</th></tr></thead>
 <tbody>
-<tr><td>Nvidia Shield TV / Shield TV Pro</td><td>Android TV</td><td>Sehr starker Prozessor, gutes KI-Upscaling, Gigabit-LAN; die Pro-Version hat mehr Arbeitsspeicher und USB-Anschlüsse</td><td>Vielseher, Aufnahmen, Plex-Server</td></tr>
-<tr><td>Homatics Box (z. B. Box R 4K Plus)</td><td>Android TV, zertifiziert</td><td>Kompakt, LAN, gute Codec-Unterstützung</td><td>Solider Allrounder</td></tr>
-<tr><td>Ugoos (z. B. AM6B Plus, AM8)</td><td>Android TV</td><td>Viele Einstellmöglichkeiten, beliebt bei Technikfans, auch für alternative Systeme wie CoreELEC genutzt</td><td>Bastler mit Anspruch an Bildqualität</td></tr>
-<tr><td>Google TV Streamer / Chromecast mit Google TV</td><td>Google TV</td><td>Einfache Bedienung, Streamer mit LAN-Port</td><td>Einsteiger; Details auf unserer <a href="/iptv-chromecast">Chromecast-Seite</a></td></tr>
-<tr><td>Xiaomi TV Box S</td><td>Google TV</td><td>Günstiger Einstieg in 4K</td><td>Zweit-Fernseher, kleines Budget</td></tr>
+<tr><td>Nvidia Shield TV / Shield TV Pro</td><td>Android TV</td><td>ja</td><td>Sehr starker Prozessor, KI-Upscaling, Gigabit-LAN; die Pro-Version hat mehr Arbeitsspeicher und USB-Anschlüsse</td><td>Vielseher, Aufnahmen, Plex-Server</td></tr>
+<tr><td>Homatics Box R 4K Plus, Homatics Box Q</td><td>Android TV</td><td>ja</td><td>Kompakte Bauform, LAN, gute Codec-Unterstützung</td><td>Solider Allrounder</td></tr>
+<tr><td>Ugoos AM6B Plus, AM7, AM8</td><td>Android TV</td><td>ja</td><td>Viele Einstellmöglichkeiten, beliebt bei Technikfans, teils auch mit alternativen Systemen wie CoreELEC genutzt</td><td>Bastler mit Anspruch an Bildqualität</td></tr>
+<tr><td>Google TV Streamer</td><td>Google TV</td><td>ja</td><td>Kleine Box mit LAN-Port, einfache Bedienung</td><td>Einsteiger am Hauptfernseher</td></tr>
+<tr><td>Chromecast mit Google TV</td><td>Google TV</td><td>4K-Version ja, HD-Version nein</td><td>Stick-Format, kein LAN ohne Adapter; Details auf unserer <a href="/iptv-chromecast">Chromecast-Seite</a></td><td>Zweit-Fernseher</td></tr>
+<tr><td>Xiaomi TV Box S</td><td>Google TV (neuere Generation), Android TV (ältere)</td><td>ja</td><td>Günstiger Einstieg, ohne LAN-Buchse</td><td>Kleines Budget, gutes WLAN vorausgesetzt</td></tr>
 </tbody></table></div>
 <p>Wer eine spezielle IPTV-Box mit eigener Oberfläche sucht, findet Alternativen auf unseren Seiten zu <a href="/iptv-formuler">Formuler</a> (Android-basiert mit der App MyTVOnline) und zur <a href="/iptv-mag-box">MAG Box</a> (Linux, Portal-Zugang).</p>
 
@@ -380,6 +404,18 @@
 <li><strong>EPG laden und sortieren:</strong> Die Programmzeitschrift wird bei Xtream automatisch geladen. Danach unnötige Sendergruppen ausblenden und Favoriten anlegen.</li>
 </ol>
 <p>Tipp für die Eingabe langer Adressen: Verbinden Sie eine USB- oder Bluetooth-Tastatur mit der Box, oder nutzen Sie die Google-TV-App auf dem Smartphone als Fernbedienung mit Tastatur.</p>
+
+<h2 id="iptv-auf-der-nvidia-shield-was-die-box-besonders-macht">IPTV auf der Nvidia Shield: was die Box besonders macht</h2>
+<p>Die Shield ist seit Jahren die Box, an der sich andere Android-TV-Geräte messen lassen müssen. Für IPTV auf der Nvidia Shield lohnen sich drei Einstellungen, die es so nicht auf jedem Gerät gibt:</p>
+<ul>
+<li><strong>Bildrate an Inhalt anpassen:</strong> In den Display-Einstellungen unter den erweiterten Optionen lässt sich die Ausgabe automatisch auf die Bildrate des Senders umschalten. In TiviMate zusätzlich die gleichnamige Wiedergabe-Option aktivieren.</li>
+<li><strong>KI-Upscaling:</strong> Rechnet HD-Sender auf 4K hoch. Im Bildmenü lässt sich die Stärke einstellen; bei verrauschten Quellen ist eine mittlere Stufe meist angenehmer als die höchste.</li>
+<li><strong>Speicher für Aufnahmen:</strong> Die Pro-Version nimmt über USB eine Festplatte auf, das kleinere Röhrenmodell hat stattdessen einen microSD-Steckplatz. Für Aufnahmen mit TiviMate ist eine USB-Festplatte an der Pro die bequemere Lösung.</li>
+</ul>
+
+<h2 id="iptv-auf-google-tv-besonderheiten-bei-streamer-chromecast-un">IPTV auf Google TV: Besonderheiten bei Streamer, Chromecast und Xiaomi</h2>
+<p>Google TV ist eine Oberfläche auf Basis von Android TV, deshalb laufen dort dieselben Player. Unterschiede gibt es in der Bedienung: Der Startbildschirm zeigt vor allem Empfehlungen, installierte Apps finden Sie im Reiter „Apps“ oder über die Suche. IPTV-Player installieren Sie über die Suche nach dem App-Namen und den Eintrag aus Google Play. Bei manchen Geräten ist zunächst der „Nur-Apps-Modus“ oder ein Basismodus ohne Google-Konto aktiv – dann fehlt der Play Store, bis Sie sich mit einem Google-Konto anmelden.</p>
+<p>Viele Geräte mit Google TV haben wenig internen Speicher. Löschen Sie vorinstallierte Apps, die Sie nicht nutzen, und leeren Sie bei Problemen den Cache des Players unter Einstellungen → Apps. Gerade bei einer IPTV-Box mit Google TV ohne LAN-Buchse ist ein Ethernet-Adapter für USB-C der einfachste Weg zu stabilem 4K. Welche Zugangsdaten Sie in welcher App eintragen, zeigt die allgemeine Anleitung <a href="/iptv-einrichten">IPTV einrichten</a>.</p>
 
 <h2 id="bildqualitaet-optimieren-die-wichtigsten-einstellungen">Bildqualität optimieren: die wichtigsten Einstellungen</h2>
 <h3>Bildwiederholrate an den Sender anpassen</h3>
@@ -566,6 +602,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -625,6 +662,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

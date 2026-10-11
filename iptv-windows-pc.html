@@ -106,6 +106,14 @@
         "@type": "Answer",
         "text": "Für HD-Sender reicht nahezu jeder Laptop der letzten Jahre. Für 4K in HEVC sollte die Grafikeinheit HEVC in Hardware dekodieren können. Wichtiger als die Rechenleistung ist meist eine stabile Verbindung mit rund 10 Mbit/s für HD und 25 Mbit/s für 4K."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich IPTV am PC auch ohne Installation schauen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja, mit Einschränkungen. Manche Streams lassen sich in einem Web-Player im Browser abspielen, doch Programmzeitschrift, Filme und Serien fehlen dann meist, und nicht jedes Streamformat läuft. Für den Alltag ist ein installierter Player zuverlässiger. Die Grenzen beschreibt unsere Seite IPTV im Browser."
+      }
     }
   ]
 }</script>
@@ -168,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "Windows PC",
+  "headline": "IPTV auf dem Windows-PC und Laptop",
   "url": "https://iptvv.de/iptv-windows-pc",
   "description": "IPTV auf dem Windows-PC oder Laptop: passende IPTV-Player für Windows 10/11, Smarters-Download, TiviMate-Frage, HEVC und Fehlerhilfe. Kostenlos testen.",
   "inLanguage": "de-DE",
@@ -182,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Windows PC"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -340,6 +369,7 @@
                     <li><a href="#myiptv-player-senderliste-mit-epg-aus-dem-microsoft-store">MyIPTV Player: Senderliste mit EPG aus dem Microsoft Store</a></li>
                     <li><a href="#tivimate-fuer-pc-gibt-es-das">TiviMate für PC: Gibt es das?</a></li>
                     <li><a href="#hevc-grafiktreiber-und-leistung">HEVC, Grafiktreiber und Leistung</a></li>
+                    <li><a href="#iptv-auf-dem-laptop-wlan-akku-und-bildschirm">IPTV auf dem Laptop: WLAN, Akku und Bildschirm</a></li>
                     <li><a href="#vom-pc-auf-den-fernseher-bringen">Vom PC auf den Fernseher bringen</a></li>
                     <li><a href="#fehler-am-windows-pc-beheben">Fehler am Windows-PC beheben</a></li>
                 </ol>
@@ -358,6 +388,7 @@
 <tr><td><a href="/iptv-perfect-player">Perfect Player</a></td><td>Offizielle Website des Entwicklers</td><td>M3U-Link + EPG</td><td>Ja</td><td>Klassische TV-Optik mit Tastatursteuerung</td></tr>
 </tbody></table></div>
 <p>Laden Sie die Programme direkt beim Hersteller oder aus dem Microsoft Store. Seiten mit Namen wie „IPTV Smarters Pro Windows Download kostenlos“ bieten oft umverpackte Installer an, die Werbung oder unerwünschte Software mitbringen. Prüft Windows SmartScreen eine Datei als unbekannt, ist das ein Warnsignal, keine Formalität.</p>
+<p>Wer nach einem „IPTV Player Win“ für Windows 10 oder 11 sucht, ist mit dieser Tabelle gut bedient: Alle genannten Programme laufen auf aktuellen Windows-Versionen, auf Desktop-PCs genauso wie auf Laptops und Mini-PCs.</p>
 
 <h2 id="iptv-smarters-pro-auf-dem-pc-einrichten">IPTV Smarters Pro auf dem PC einrichten</h2>
 <ol class="steps">
@@ -389,6 +420,19 @@
 <li><strong>Der Player nutzt Windows-Codecs:</strong> Store-Apps greifen oft auf die Video-Schnittstelle von Windows zurück. Dann braucht der PC die „HEVC-Videoerweiterungen“ aus dem Microsoft Store, die je nach Gerät vorinstalliert oder kostenpflichtig nachzurüsten sind. Fehlen sie, hören Sie Ton, sehen aber kein Bild.</li>
 </ul>
 <p>Grafikkarten und Prozessoren der letzten Jahre dekodieren HEVC in Hardware. Ältere Laptops schaffen 4K-HEVC dagegen nur per Software und geraten dabei ins Schwitzen. Halten Sie den Grafiktreiber aktuell (über Windows Update oder die Seite des Grafikkarten-Herstellers) und wählen Sie bei schwacher Hardware die HD-Variante eines Senders. Mehr zu Auflösungen und Codecs steht auf der Seite <a href="/iptv-4k">IPTV in 4K</a>.</p>
+
+<h2 id="iptv-auf-dem-laptop-wlan-akku-und-bildschirm">IPTV auf dem Laptop: WLAN, Akku und Bildschirm</h2>
+<p>Ein Laptop ist der flexibelste IPTV-Bildschirm im Haushalt – er wandert vom Schreibtisch aufs Sofa und in den Garten. Damit es dabei ruckelfrei bleibt, gibt es einige Besonderheiten gegenüber dem Desktop-PC:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Thema</th><th>Was passiert?</th><th>Empfehlung</th></tr></thead>
+<tbody>
+<tr><td>WLAN-Empfang</td><td>Zwei Räume vom Router entfernt sinkt die Datenrate stark</td><td>Im 5-GHz-Netz bleiben; für 4K-Abende ein USB-LAN-Adapter, falls kein LAN-Anschluss vorhanden</td></tr>
+<tr><td>Akkubetrieb</td><td>Windows drosselt im Energiesparmodus Prozessor und Grafik</td><td>Für 4K das Netzteil anschließen; HD läuft auch im Akkubetrieb meist sauber</td></tr>
+<tr><td>Deckel zuklappen</td><td>Laptop wechselt in den Ruhezustand, der Stream bricht ab</td><td>In den Energieoptionen festlegen, was beim Zuklappen passiert, wenn ein externer Bildschirm genutzt wird</td></tr>
+<tr><td>Bildschirmschoner und Standby</td><td>Nicht jeder Player verhindert das Abschalten des Displays</td><td>Zeit bis zum Ausschalten des Bildschirms verlängern oder Player im Vollbild nutzen</td></tr>
+<tr><td>Kleines Display</td><td>4K bringt auf 14 oder 15 Zoll kaum sichtbaren Gewinn</td><td>HD-Variante eines Senders wählen, spart Leistung und Bandbreite</td></tr>
+</tbody></table></div>
+<p>Auf dem Laptop bewährt sich außerdem eine Arbeitsteilung: VLC für einen schnellen Blick in einen Sender, Smarters oder Kodi, wenn Sie einen ganzen Abend mit Programmzeitschrift fernsehen. Für reine Nachrichten nebenbei im Büro genügt oft ein kleines VLC-Fenster, das Sie über das Menü „Ansicht“ immer im Vordergrund halten können.</p>
 
 <h2 id="vom-pc-auf-den-fernseher-bringen">Vom PC auf den Fernseher bringen</h2>
 <div class="table-wrap"><table>
@@ -477,6 +521,15 @@
                         <p>Für HD-Sender reicht nahezu jeder Laptop der letzten Jahre. Für 4K in HEVC sollte die Grafikeinheit HEVC in Hardware dekodieren können. Wichtiger als die Rechenleistung ist meist eine stabile Verbindung mit rund 10 Mbit/s für HD und 25 Mbit/s für 4K.</p>
                     </div>
                 </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Kann ich IPTV am PC auch ohne Installation schauen?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Ja, mit Einschränkungen. Manche Streams lassen sich in einem Web-Player im Browser abspielen, doch Programmzeitschrift, Filme und Serien fehlen dann meist, und nicht jedes Streamformat läuft. Für den Alltag ist ein installierter Player zuverlässiger. Die Grenzen beschreibt unsere Seite <a href="/iptv-browser">IPTV im Browser</a>.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -558,6 +611,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -617,6 +671,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

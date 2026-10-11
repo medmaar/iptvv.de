@@ -176,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "Article"
+  ],
   "name": "Xtream Codes",
+  "headline": "Xtream Codes IPTV: Login und Server erklärt",
   "url": "https://iptvv.de/iptv-xtream-codes",
   "description": "Xtream Codes einfach erklärt: Server-URL mit Port, Benutzername, Passwort, Umwandlung in einen M3U-Link, Vorteile für EPG und VOD sowie Fehlerhilfe.",
   "inLanguage": "de-DE",
@@ -190,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Xtream Codes"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -350,6 +371,7 @@
                     <li><a href="#welche-apps-unterstuetzen-den-xtream-login">Welche Apps unterstützen den Xtream-Login?</a></li>
                     <li><a href="#xtream-m3u-oder-portal-url-welcher-zugang-fuer-welches-gerae">Xtream, M3U oder Portal-URL: welcher Zugang für welches Gerät?</a></li>
                     <li><a href="#was-mit-iptv-server-gemeint-ist">Was mit „IPTV-Server“ gemeint ist</a></li>
+                    <li><a href="#iptv-lines-und-testline-den-zugang-vor-dem-kauf-pruefen">IPTV-Lines und Testline: den Zugang vor dem Kauf prüfen</a></li>
                     <li><a href="#fehlermeldungen-beim-xtream-login">Fehlermeldungen beim Xtream-Login</a></li>
                 </ol>
             </nav>
@@ -380,6 +402,23 @@
 <p>Xtream-Daten und M3U-Link sind zwei Darstellungen desselben Zugangs. Aus Ihren Login-Daten können Sie den M3U-Link selbst zusammensetzen:</p>
 <p><code>http://server-adresse:8080/get.php?username=BENUTZER&amp;password=PASSWORT&amp;type=m3u_plus&amp;output=ts</code></p>
 <p>Umgekehrt funktioniert es genauso: Haben Sie nur einen M3U-Link, finden Sie darin den Server vor <code>/get.php</code> sowie Benutzername und Passwort hinter <code>username=</code> und <code>password=</code>. Diese drei Werte tragen Sie in eine App mit Xtream-Login ein. Die Programmzeitschrift im XMLTV-Format liegt bei den meisten Servern unter <code>/xmltv.php</code> mit denselben Parametern.</p>
+<h3>Xtream IPTV als M3U: den Link Schritt für Schritt bauen</h3>
+<p>Brauchen Sie für einen Player wie VLC oder Kodi eine M3U-Adresse, haben aber nur die Xtream-Daten, gehen Sie so vor:</p>
+<ol class="steps">
+<li><strong>Server-URL übernehmen:</strong> genau wie geliefert, mit <code>http://</code> und Port, ohne Schrägstrich am Ende, z. B. <code>http://server-adresse:8080</code>.</li>
+<li><strong>Pfad anhängen:</strong> direkt dahinter <code>/get.php?</code> schreiben.</li>
+<li><strong>Zugangsdaten einsetzen:</strong> <code>username=BENUTZER&amp;password=PASSWORT</code> – Groß- und Kleinschreibung exakt übernehmen.</li>
+<li><strong>Format festlegen:</strong> <code>&amp;type=m3u_plus&amp;output=ts</code> anhängen. Den fertigen Link im Browser aufzurufen ist nicht nötig; fügen Sie ihn direkt in den Player ein.</li>
+</ol>
+<div class="table-wrap"><table>
+<thead><tr><th>Parameter</th><th>Wert</th><th>Wirkung</th></tr></thead>
+<tbody>
+<tr><td><code>type</code></td><td><code>m3u_plus</code></td><td>Liste mit Logo, Gruppe und EPG-Kennung – für fast alle Apps richtig</td></tr>
+<tr><td><code>type</code></td><td><code>m3u</code></td><td>Schlanke Liste ohne Zusatzangaben, nur für sehr alte Player</td></tr>
+<tr><td><code>output</code></td><td><code>ts</code></td><td>Streams als MPEG-TS, Standard für Boxen, Android und VLC</td></tr>
+<tr><td><code>output</code></td><td><code>m3u8</code></td><td>Streams als HLS, hilfreich bei manchen Smart-TV- und Apple-Playern</td></tr>
+</tbody></table></div>
+<p>Enthält Ihr Passwort Sonderzeichen wie <code>&amp;</code>, <code>#</code> oder <code>+</code>, können diese den Link „zerbrechen“, weil sie in Web-Adressen eine eigene Bedeutung haben. Schicken Sie uns in diesem Fall eine kurze Nachricht – wir senden Ihnen den fertigen M3U-Link, der bei jeder Bestellung ohnehin mitgeliefert wird.</p>
 <div class="callout"><p><strong>Hinter den Kulissen:</strong> Apps mit Xtream-Login sprechen den Server über die Adresse <code>player_api.php</code> an. Ohne weitere Angaben liefert sie Kontoinformationen wie Ablaufdatum, erlaubte und aktive Verbindungen. Mit Zusatzparametern fragt die App Kategorien, Sender, Filme, Serien und Kurz-EPG getrennt ab. Genau deshalb laden große Kataloge per Xtream schneller als eine riesige M3U-Datei.</p></div>
 
 <h2 id="xtream-codes-oder-m3u-was-ist-besser">Xtream Codes oder M3U: Was ist besser?</h2>
@@ -418,8 +457,20 @@
 <p>Ihre Xtream-Daten sind so wertvoll wie ein Schlüssel. Wer sie kennt, kann Ihren Zugang auf einem eigenen Gerät nutzen – Ihre Streams brechen dann mit dem Hinweis auf zu viele Verbindungen ab. Speichern Sie die Daten in einem Passwort-Manager oder einer privaten Notiz, schicken Sie keine Bildschirmfotos der Login-Maske weiter und tragen Sie sie nicht auf unbekannten Websites ein. Haben Sie den Verdacht, dass jemand Ihren Zugang mitbenutzt, melden Sie sich bei unserem <a href="/kontakt/wa">Support per WhatsApp</a>.</p>
 
 <h2 id="was-mit-iptv-server-gemeint-ist">Was mit „IPTV-Server“ gemeint ist</h2>
-<p>Ein IPTV-Server ist die Gegenstelle, mit der Ihre App spricht. Er prüft Ihre Zugangsdaten, liefert die Senderliste und leitet beim Umschalten den Stream weiter. Größere Anbieter verteilen die Last auf mehrere Server; die Server-URL in Ihrem Login ist dabei nur der Einstiegspunkt. Fällt einer aus oder ändert sich die Adresse, informieren seriöse Anbieter ihre Kunden und nennen eine neue URL. Ihr Benutzername und Ihr Passwort bleiben in diesem Fall gleich.</p>
+<p>Ein IPTV-Server ist die Gegenstelle, mit der Ihre App spricht. Er prüft Ihre Zugangsdaten, liefert die Senderliste und leitet beim Umschalten den Stream weiter. Größere Anbieter verteilen die Last auf mehrere Server; die Server-URL in Ihrem Login ist dabei nur der Einstiegspunkt. Fällt einer aus oder ändert sich die Adresse, informieren seriöse Anbieter ihre Kunden und nennen eine neue URL. Ihr Benutzername und Ihr Passwort bleiben in diesem Fall gleich. Wenn Sie in Anleitungen von „IPTV-Servern“ im Plural lesen, sind meist genau diese verteilten Einstiegs- und Streaming-Server gemeint, nicht verschiedene Abos.</p>
 <p>Für Sie spürbar ist die Qualität eines Servers vor allem an zwei Stellen: an der Umschaltzeit zwischen zwei Sendern und daran, ob Streams zur Hauptsendezeit am Abend genauso stabil laufen wie am Nachmittag. Beides lässt sich nur im praktischen Einsatz beurteilen, deshalb lohnt ein Test zu genau den Uhrzeiten, zu denen Sie normalerweise fernsehen.</p>
+
+<h2 id="iptv-lines-und-testline-den-zugang-vor-dem-kauf-pruefen">IPTV-Lines und Testline: den Zugang vor dem Kauf prüfen</h2>
+<p>Im IPTV-Jargon ist eine <strong>Line</strong> ein einzelnes Konto auf dem Server. Eine <strong>Testline</strong> (auch „Test Line“) ist dasselbe Konto mit kurzer Laufzeit, meist 24 Stunden. Technisch unterscheidet sie sich nicht von einer bezahlten Line: gleiche Server-URL-Struktur, gleiche Apps, gleiche Senderliste. Deshalb ist sie der verlässlichste Weg, einen Anbieter mit Ihrem Gerät und Ihrem Internetanschluss zu beurteilen.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Begriff</th><th>Bedeutung</th><th>Was Sie damit tun</th></tr></thead>
+<tbody>
+<tr><td>Line</td><td>Konto mit Benutzername, Passwort, Ablaufdatum, Verbindungszahl</td><td>Dauerhaft in Ihrer App nutzen</td></tr>
+<tr><td>Testline</td><td>Line mit kurzer Laufzeit zum Ausprobieren</td><td>Gerät, App und Abendstabilität prüfen</td></tr>
+<tr><td>Line-Test / Line-Check</td><td>Abfrage des Kontostatus beim Server</td><td>Ablaufdatum, aktive und erlaubte Verbindungen sehen</td></tr>
+<tr><td>Verbindungen (Connections)</td><td>Anzahl gleichzeitig laufender Streams</td><td>Passend zur Zahl der Fernseher buchen</td></tr>
+</tbody></table></div>
+<p>Eine kostenlose Testline mit Xtream-Daten, M3U-Link und Portal-URL fordern Sie über die Seite <a href="/iptv-kostenlos-testen">IPTV kostenlos testen</a> an. Wie Sie den Status einer Line prüfen – etwa ob sie schon aktiv ist, wann sie abläuft oder ob gerade eine andere Verbindung läuft –, erklärt der Ratgeber <a href="/iptv-checker">IPTV Checker</a>. Viele Apps mit Xtream-Login zeigen dieselben Angaben zusätzlich im Kontobereich.</p>
 
 <h2 id="fehlermeldungen-beim-xtream-login">Fehlermeldungen beim Xtream-Login</h2>
 <div class="table-wrap"><table>
@@ -586,6 +637,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -645,6 +697,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

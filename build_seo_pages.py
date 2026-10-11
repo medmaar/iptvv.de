@@ -99,6 +99,10 @@ PAGES = {
     'iptv-telekom': ('Telekom MagentaTV', 'ratgeber', 'IPTV statt MagentaTV'),
     'iptv-vodafone': ('Vodafone TV', 'ratgeber', 'IPTV statt Vodafone Kabel'),
     'iptv-1und1': ('1&1 TV', 'ratgeber', 'IPTV statt 1&1 TV-Paket'),
+    'iptv-einrichten': ('IPTV einrichten', 'ratgeber', 'Zugangsdaten in jede App eintragen'),
+    'iptv-checker': ('IPTV Checker', 'ratgeber', 'Line, M3U und Server prüfen'),
+    'iptv-senderliste': ('IPTV Senderliste', 'ratgeber', 'Sendergruppen und Kategorien'),
+    'german-iptv': ('German IPTV (English)', 'kauf', 'Guide for English speakers'),
 
     'iptv-bundesliga': ('Bundesliga', 'sender', ''),
     'iptv-champions-league': ('Champions League', 'sender', ''),
@@ -247,13 +251,14 @@ def add_heading_ids(body):
 # RENDERING
 # ============================================================
 def render_content(meta, body, faqs, slug):
+    en = meta.get('lang') == 'en'
     body, toc = add_heading_ids(body)
     toc_html = ''
     if len(toc) >= 4:
         lis = '\n'.join(f'                    <li><a href="#{i}">{esc(t)}</a></li>' for i, t in toc)
         toc_html = f'''
-            <nav class="toc" aria-label="Inhaltsverzeichnis">
-                <p class="toc-title">Inhalt</p>
+            <nav class="toc" aria-label="{'Contents' if en else 'Inhaltsverzeichnis'}">
+                <p class="toc-title">{'Contents' if en else 'Inhalt'}</p>
                 <ol>
 {lis}
                 </ol>
@@ -281,7 +286,7 @@ def render_content(meta, body, faqs, slug):
     <!-- ======== RELATED ======== -->
     <section class="py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl sm:text-3xl font-black mb-6 text-center">Passende Anleitungen</h2>
+            <h2 class="text-2xl sm:text-3xl font-black mb-6 text-center">{'Related guides' if en else 'Passende Anleitungen'}</h2>
             <div class="related-grid">
 {cards}
             </div>
@@ -291,7 +296,7 @@ def render_content(meta, body, faqs, slug):
     return f'''<!-- ======== SEO CONTENT ======== -->
     <section class="py-12">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <p class="updated-note">Aktualisiert am {TODAY[8:10]}.{TODAY[5:7]}.{TODAY[0:4]} · Redaktion IPTV Deutschland</p>{toc_html}
+            <p class="updated-note">{'Updated' if en else 'Aktualisiert am'} {TODAY[8:10]}.{TODAY[5:7]}.{TODAY[0:4]} · {'IPTV Deutschland editorial team' if en else 'Redaktion IPTV Deutschland'}</p>{toc_html}
             <article class="seo-prose">
 {body}
             </article>
@@ -301,7 +306,7 @@ def render_content(meta, body, faqs, slug):
     <!-- ======== FAQ ======== -->
     <section class="py-12">
         <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-            <h2 class="text-2xl sm:text-3xl font-black mb-8 text-center slide-up">Häufige Fragen</h2>
+            <h2 class="text-2xl sm:text-3xl font-black mb-8 text-center slide-up">{'Frequently asked questions' if en else 'Häufige Fragen'}</h2>
             <div class="space-y-4">
 {faq_items}
             </div>
@@ -334,8 +339,52 @@ def breadcrumb_schema(slug, meta):
     }
 
 
+def about_entity(slug, meta):
+    if 'about' in meta:
+        a = dict(meta['about'])
+        t = a.pop('type', 'Thing')
+        out = {'@type': t, 'name': a.pop('name', meta['breadcrumb'])}
+        if 'os' in a:
+            out['operatingSystem'] = a.pop('os')
+        if t == 'SoftwareApplication':
+            out['applicationCategory'] = 'MultimediaApplication'
+        out.update(a)
+        return out
+    hub = PAGES.get(slug, ('', '', ''))[1]
+    if hub == 'apps':
+        return {'@type': 'SoftwareApplication', 'name': meta['breadcrumb'], 'applicationCategory': 'MultimediaApplication'}
+    return {'@type': 'Thing', 'name': meta['breadcrumb']}
+
+
+def webpage_schema(page, slug, meta):
+    pub = re.search(r'"datePublished": "([^"]*)"', page)
+    hub = PAGES.get(slug, ('', '', ''))[1]
+    obj = {
+        '@context': 'https://schema.org',
+        '@type': 'WebPage',
+        'name': meta['breadcrumb'],
+        'headline': meta.get('h1', meta['title']),
+        'url': f'{SITE}/{slug}',
+        'description': meta['description'],
+        'inLanguage': 'en' if meta.get('lang') == 'en' else 'de-DE',
+        'datePublished': pub.group(1) if pub else TODAY,
+        'dateModified': TODAY,
+        'isPartOf': {'@type': 'WebSite', 'name': 'iptvv.de', 'url': f'{SITE}/de/'},
+        'publisher': {'@type': 'Organization', 'name': 'IPTV Deutschland', 'url': f'{SITE}/de/',
+                      'logo': {'@type': 'ImageObject', 'url': f'{SITE}/germany-icon.png'}},
+        'about': about_entity(slug, meta),
+    }
+    img = re.search(r'<meta property="og:image" content="([^"]*)"', page)
+    if img:
+        obj['primaryImageOfPage'] = {'@type': 'ImageObject', 'url': img.group(1)}
+    if hub in ('apps', 'geraete', 'ratgeber'):
+        obj['@type'] = ['WebPage', 'TechArticle'] if hub != 'ratgeber' else ['WebPage', 'Article']
+        obj['author'] = {'@type': 'Organization', 'name': 'Redaktion IPTV Deutschland', 'url': f'{SITE}/de/'}
+    return obj
+
+
 def replace_ld(page, typ, obj):
-    pat = re.compile(r'<script type="application/ld\+json">\{\s*"@context": "https://schema.org",\s*"@type": "' + typ + r'".*?</script>', re.S)
+    pat = re.compile(r'<script type="application/ld\+json">\{\s*"@context": "https://schema.org",\s*"@type": (?:"' + typ + r'"|\[\s*"' + typ + r'"[^\]]*\]).*?</script>', re.S)
     if not pat.search(page):
         raise SystemExit(f'no {typ} JSON-LD found')
     return pat.sub(lambda m: json_block(obj), page, count=1)
@@ -393,10 +442,11 @@ def build(slug):
                   r'\1index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\2', page, count=1)
     page = re.sub(r'("@type": "Product",\s*"name": "[^"]*",\s*"description": )"[^"]*"',
                   lambda m: m.group(1) + json.dumps(meta['description'], ensure_ascii=False), page, count=1)
-    page = re.sub(r'("@type": "WebPage",\s*"name": )"[^"]*"(,\s*"url": "[^"]*",\s*"description": )"[^"]*"',
-                  lambda m: m.group(1) + json.dumps(meta['breadcrumb'], ensure_ascii=False) + m.group(2)
-                  + json.dumps(meta['description'], ensure_ascii=False), page, count=1)
-    page = re.sub(r'"dateModified": "[^"]*"', f'"dateModified": "{TODAY}"', page, count=1)
+    page = replace_ld(page, 'WebPage', webpage_schema(page, slug, meta))
+    lang = meta.get('lang', 'de')
+    page = re.sub(r'<html lang="[^"]*">', f'<html lang="{lang}">', page, count=1)
+    page = re.sub(r'<link rel="alternate" hreflang="(de|en)" href=', f'<link rel="alternate" hreflang="{lang}" href=', page, count=1)
+    page = re.sub(r'(<meta property="og:locale" content=")[^"]*(">)', r'\g<1>' + ('en_GB' if lang == 'en' else 'de_DE') + r'\g<2>', page, count=1)
     page = replace_ld(page, 'FAQPage', faq_schema(faqs))
     page = replace_ld(page, 'BreadcrumbList', breadcrumb_schema(slug, meta))
     if 'href="content.css"' not in page:

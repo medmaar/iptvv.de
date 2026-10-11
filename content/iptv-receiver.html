@@ -13,7 +13,7 @@
 -->
 <div class="answer-box"><p><strong>Kurz gesagt:</strong> Wer bereits einen Linux-Sat-Receiver mit Enigma2 besitzt, kann IPTV-Sender als Bouquet in die gewohnte Senderliste einbinden. Wer neu kauft und nur IPTV braucht, ist mit einer Android-TV-Box oder einer IPTV-Box mit Portal-Login meist einfacher und günstiger unterwegs. Für 4K sollte jeder Receiver H.265/HEVC hardwareseitig dekodieren.</p></div>
 
-<h2>Welche Arten von IPTV-Receivern gibt es?</h2>
+<h2>Set-Top-Box IPTV: Welche Arten von Receivern gibt es?</h2>
 <p>Der Begriff „IPTV Receiver“ – oder englisch „IPTV set top box“ – wird für sehr unterschiedliche Geräte verwendet. Technisch unterscheiden sie sich vor allem durch das Betriebssystem und die Art, wie Sie Ihren Zugang eintragen:</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Bauart</th><th>Beispiele</th><th>Zugang</th><th>Stärken</th><th>Schwächen</th></tr></thead>
@@ -46,6 +46,23 @@
 <h2>Android-Boxen als IPTV-Receiver</h2>
 <p>Android-TV- und Google-TV-Boxen sind heute die häufigste Wahl für reines IPTV. Geräte wie die <strong>Homatics Box Q</strong> oder die <strong>Ugoos AM7</strong> laufen mit zertifiziertem Android TV, haben Zugang zum Play Store und dekodieren 4K mit HEVC. Darauf installieren Sie eine IPTV-App wie <a href="/iptv-tivimate">TiviMate</a> und melden sich mit Ihren Xtream-Daten an – ohne MAC-Freischaltung, ohne Plugins.</p>
 <p>Wichtig beim Kauf: Achten Sie auf ein zertifiziertes Android TV bzw. Google TV. No-Name-Boxen mit „Android“ auf Smartphone-Basis bekommen oft keine Sicherheitsupdates und haben Probleme mit Streaming-Apps. Mehr Kaufkriterien stehen unter <a href="/iptv-android-box">IPTV auf der Android-Box</a>.</p>
+
+<h2>IPTV Receiver in 4K: was das Gerät können muss</h2>
+<p>Ein IPTV Receiver für 4K braucht mehr als die Aufschrift „UHD“ auf der Verpackung. Die meisten 4K-Streams sind in H.265/HEVC kodiert; ältere Enigma2-Receiver mit HD-Chip spielen sie nicht ab, selbst wenn der Fernseher 4K kann. Bei Enigma2 erkennen Sie die passenden Geräte meist am Zusatz „4K“ oder „UHD“ im Modellnamen – etwa bei VU+, bei der Dreambox-Reihe oder bei der UHD-Serie von GigaBlue. Für den GigaBlue-IPTV-Betrieb gilt dasselbe wie für jedes Enigma2-Gerät: Plugin aus dem Image-Feed, Bouquet erzeugen, EPG zuordnen.</p>
+<p>Bei Linux-IPTV-Boxen wie TVIP oder Dreamlink, die ihr eigenes Portal-Menü mitbringen, unterscheiden sich ältere HD- und neuere 4K-Generationen ebenfalls deutlich. Und auch die beste Set-Top-Box für IPTV kann eine schwache Leitung nicht ausgleichen: Rechnen Sie mit rund 25 Mbit/s pro 4K-Stream und schließen Sie den Receiver nach Möglichkeit per LAN an.</p>
+
+<h2>IPTV Receiver im Test: so prüfen Sie Ihr Gerät</h2>
+<p>Ob Sie einen gebrauchten Receiver übernehmen oder ein neues Gerät ausprobieren – diese Prüfpunkte zeigen schnell, ob er für IPTV taugt. Ideal ist ein Test mit echten Zugangsdaten, denn erst mit einer großen Senderliste zeigen sich Schwächen.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Prüfpunkt</th><th>Enigma2-Receiver</th><th>Linux-Box mit Portal</th><th>Android-Box</th></tr></thead>
+<tbody>
+<tr><td>Zugang eintragen</td><td>Plugin im Image-Feed vorhanden und aktuell?</td><td>Portal-Feld im Menü, MAC gut ablesbar?</td><td>Gewünschte App im Play Store?</td></tr>
+<tr><td>Umschaltzeit</td><td>Mit verschiedenen Service-Typen vergleichen</td><td>Meist sehr schnell</td><td>Je nach App und Pufferung</td></tr>
+<tr><td>EPG</td><td>Werden IPTV-Sender dem EPG korrekt zugeordnet?</td><td>Kommt über das Portal automatisch</td><td>Bei Xtream-Login automatisch</td></tr>
+<tr><td>4K-Wiedergabe</td><td>Nur bei 4K-Modellen mit HEVC</td><td>Nur bei neueren 4K-Generationen</td><td>HEVC in Hardware prüfen</td></tr>
+<tr><td>Updates</td><td>Wird das Image noch gepflegt?</td><td>Firmware vom Hersteller aktuell?</td><td>Letztes Sicherheitsupdate prüfen</td></tr>
+</tbody></table></div>
+<p>Den Zugang selbst können Sie unabhängig vom Gerät prüfen: Mit dem <a href="/iptv-checker">IPTV Checker</a> sehen Sie, ob Ihre Line und der M3U-Link erreichbar sind – so trennen Sie Gerätefehler von Zugangsproblemen.</p>
 
 <h2>SAT&gt;IP ist nicht dasselbe wie IPTV</h2>
 <p>Bei der Suche nach „Sat IP TV“ stoßen viele auf SAT&gt;IP. Dabei handelt es sich um einen Standard, der das Satellitensignal im Heimnetz verteilt: Ein SAT&gt;IP-Server hängt an der Schüssel und reicht die Programme per Netzwerk an Fernseher, Tablets oder Receiver weiter. Die Inhalte kommen also weiterhin vom Satelliten, nur die Verteilung im Haus läuft über das Netzwerk.</p>

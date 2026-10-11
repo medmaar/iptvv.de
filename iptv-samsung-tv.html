@@ -109,6 +109,14 @@
     },
     {
       "@type": "Question",
+      "name": "Kann ich auf dem Samsung TV Apps außerhalb des Stores installieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Für den normalen Gebrauch nicht. Tizen lässt nur Apps aus dem Samsung-Store zu; der Entwicklermodus dient dem Testen eigener Programme und ist kein Weg für Android-Player. Fehlt Ihre Wunsch-App im Store, ist ein Streaming-Stick am HDMI-Eingang die saubere Lösung."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Läuft IPTV auch auf älteren Samsung-Fernsehern?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -176,8 +184,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "Samsung TV",
+  "headline": "IPTV auf dem Samsung Smart TV einrichten",
   "url": "https://iptvv.de/iptv-samsung-tv",
   "description": "IPTV auf dem Samsung Smart TV: welche Apps unter Tizen laufen, wie Sie die Playlist per MAC-Adresse hinterlegen und Fehler lösen. Jetzt 24 h gratis testen.",
   "inLanguage": "de-DE",
@@ -190,7 +202,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Samsung TV"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -344,6 +373,7 @@
                 <p class="toc-title">Inhalt</p>
                 <ol>
                     <li><a href="#welche-samsung-fernseher-sind-geeignet">Welche Samsung-Fernseher sind geeignet?</a></li>
+                    <li><a href="#iptv-auf-samsung-tizen-was-das-system-kann-und-was-nicht">IPTV auf Samsung Tizen: was das System kann und was nicht</a></li>
                     <li><a href="#iptv-apps-fuer-samsung-tizen-im-ueberblick">IPTV-Apps für Samsung Tizen im Überblick</a></li>
                     <li><a href="#anleitung-iptv-auf-dem-samsung-tv-mit-ibo-player-pro">Anleitung: IPTV auf dem Samsung TV mit IBO Player Pro</a></li>
                     <li><a href="#smart-iptv-auf-samsung-besonderheiten">Smart IPTV auf Samsung: Besonderheiten</a></li>
@@ -358,6 +388,23 @@
 <h2 id="welche-samsung-fernseher-sind-geeignet">Welche Samsung-Fernseher sind geeignet?</h2>
 <p>Alle Samsung Smart TVs mit Tizen eignen sich grundsätzlich für IPTV – das sind praktisch alle Modelle seit dem Jahrgang 2015. Ältere Smart TVs mit dem Vorgängersystem werden von den aktuellen IPTV-Apps nicht mehr unterstützt. Wie flüssig es läuft, hängt vom Prozessor ab: Neuere Geräte blättern durch große Senderlisten deutlich schneller als Einstiegsmodelle von vor einigen Jahren.</p>
 <p>Ob Ihr Gerät Tizen nutzt, sehen Sie an der Samsung-Leiste am unteren Bildschirmrand mit den Kacheln „Apps“ und „Quelle“. Das genaue Modell steht unter <strong>Einstellungen → Support → Über dieses TV-Gerät</strong>.</p>
+
+<h2 id="iptv-auf-samsung-tizen-was-das-system-kann-und-was-nicht">IPTV auf Samsung Tizen: was das System kann und was nicht</h2>
+<p>Wer nach „IPTV for Samsung TV“ sucht, landet oft bei englischen Anleitungen für Android-Apps – auf einem Samsung Smart TV gelten aber eigene Regeln. Tizen ist ein von Samsung gepflegtes Linux-System, dessen Apps meist auf Webtechnik aufbauen. Daraus ergeben sich drei Besonderheiten für IPTV:</p>
+<ul>
+<li><strong>Nur Apps aus dem Samsung-Store:</strong> Installationsdateien aus dem Internet lassen sich auf Tizen nicht einfach einspielen. Es gibt zwar einen Entwicklermodus, der ist aber für App-Entwickler gedacht und für den Alltag ungeeignet. Sie nutzen also, was der Store für Ihr Land und Modelljahr anbietet.</li>
+<li><strong>Wiedergabe über den TV-eigenen Player:</strong> Tizen-Apps spielen Streams in der Regel über den eingebauten Mediaplayer des Fernsehers ab. Deshalb hängt es stärker vom Gerät als von der App ab, welche Video- und Tonformate funktionieren. Aktuelle Modelle dekodieren HEVC für 4K-Sender in Hardware.</li>
+<li><strong>Playlist oft in der Cloud des App-Anbieters:</strong> Viele Tizen-Apps speichern Ihren Zugang auf ihrem eigenen Server und ordnen ihn per Gerätekennung zu. Das erspart das Tippen mit der Fernbedienung, bedeutet aber auch, dass Sie den Zugang nur über die offizielle Website der App eintragen sollten.</li>
+</ul>
+<p>Für den Weg zum fertigen Bild haben Sie am Samsung damit drei realistische Optionen:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Weg</th><th>Vorteil</th><th>Nachteil</th><th>Passt für</th></tr></thead>
+<tbody>
+<tr><td>Tizen-App direkt auf dem TV</td><td>Kein Zusatzgerät, eine Fernbedienung</td><td>Kleinere App-Auswahl, Aktivierungsgebühr der App</td><td>Die meisten Haushalte mit TV ab etwa 2018</td></tr>
+<tr><td>Fire TV Stick oder Google-TV-Gerät am HDMI</td><td>TiviMate, XCIPTV und Co., meist flotter</td><td>Anschaffung, Eingang wechseln</td><td>Ältere oder langsame Samsung-Modelle, Fans von TiviMate</td></tr>
+<tr><td>AirPlay vom iPhone oder iPad</td><td>Sofort nutzbar, keine Installation am TV</td><td>Handy bleibt belegt, nur für zwischendurch</td><td>Kurzer Test, einzelne Sendung</td></tr>
+</tbody></table></div>
+<p>Wie Sie Ihre Zugangsdaten in jeder dieser Apps eintragen, fasst die Anleitung <a href="/iptv-einrichten">IPTV einrichten</a> zusammen.</p>
 
 <h2 id="iptv-apps-fuer-samsung-tizen-im-ueberblick">IPTV-Apps für Samsung Tizen im Überblick</h2>
 <p>Das App-Angebot im Samsung-Store unterscheidet sich je nach Land und Modelljahr und ändert sich gelegentlich. Diese Apps sind unter Tizen verbreitet:</p>
@@ -484,6 +531,15 @@
                 </div>
                 <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
                     <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Kann ich auf dem Samsung TV Apps außerhalb des Stores installieren?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Für den normalen Gebrauch nicht. Tizen lässt nur Apps aus dem Samsung-Store zu; der Entwicklermodus dient dem Testen eigener Programme und ist kein Weg für Android-Player. Fehlt Ihre Wunsch-App im Store, ist ein Streaming-Stick am HDMI-Eingang die saubere Lösung.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
                         <span>Läuft IPTV auch auf älteren Samsung-Fernsehern?</span>
                         <span class="faq-icon text-2xl transition-transform">+</span>
                     </button>
@@ -572,6 +628,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -631,6 +688,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

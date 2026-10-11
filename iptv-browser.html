@@ -106,6 +106,14 @@
         "@type": "Answer",
         "text": "Am häufigsten funktionieren Web-Player in aktuellen Versionen von Chrome, Edge und Safari. Safari kann HLS-Streams direkt abspielen, Chrome und Edge profitieren von guter Hardware-Beschleunigung. Firefox unterstützt je nach System nicht alle Videoformate."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen M3U und M3U8?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Beide sind Textformate für Wiedergabelisten. „M3U8“ bedeutet zunächst nur, dass die Datei in UTF-8 kodiert ist; im Streaming steht die Endung aber fast immer für HLS-Streams, die in kleinen Abschnitten geladen werden. Ihre Senderliste ist eine M3U-Playlist, die einzelnen Sender darin können als HLS oder TS vorliegen."
+      }
     }
   ]
 }</script>
@@ -168,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "Browser",
+  "headline": "IPTV im Browser schauen",
   "url": "https://iptvv.de/iptv-browser",
   "description": "IPTV im Webbrowser schauen: wie Web-Player funktionieren, warum Ton oder Bild oft fehlen, wo Ihre Zugangsdaten sicher sind und bessere Alternativen.",
   "inLanguage": "de-DE",
@@ -182,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Browser"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -337,6 +366,7 @@
                 <ol>
                     <li><a href="#wie-funktioniert-ein-iptv-web-player">Wie funktioniert ein IPTV-Web-Player?</a></li>
                     <li><a href="#warum-iptv-im-browser-oft-nicht-richtig-laeuft">Warum IPTV im Browser oft nicht richtig läuft</a></li>
+                    <li><a href="#m3u-online-abspielen-playlist-m3u8-stream-und-einzelner-send">M3U online abspielen: Playlist, m3u8-Stream und einzelner Sender</a></li>
                     <li><a href="#datenschutz-wo-sie-ihre-zugangsdaten-eingeben-sollten">Datenschutz: Wo Sie Ihre Zugangsdaten eingeben sollten</a></li>
                     <li><a href="#browser-vlc-oder-app-der-vergleich">Browser, VLC oder App: der Vergleich</a></li>
                     <li><a href="#gibt-es-iptv-smarters-als-web-version">Gibt es IPTV Smarters als Web-Version?</a></li>
@@ -370,6 +400,20 @@
 
 <h3>Liegt es am Browser oder am Zugang?</h3>
 <p>Diese Frage klären Sie in zwei Minuten: Kopieren Sie Ihren M3U-Link und öffnen Sie ihn auf einem anderen Gerät, etwa in VLC am Handy oder am heimischen PC. Spielt der Sender dort sofort, ist Ihr Zugang in Ordnung und der Browser ist die Ursache. Bleibt er auch dort schwarz, prüfen Sie die Laufzeit Ihres Abos und ob gerade ein anderes Gerät denselben Zugang nutzt. Dieses Vorgehen spart Zeit, denn im Browser gibt es kaum aussagekräftige Fehlermeldungen; die Entwicklerkonsole zeigt Hinweise wie „Mixed Content“ oder „CORS“ nur, wenn man gezielt danach sucht.</p>
+
+<h2 id="m3u-online-abspielen-playlist-m3u8-stream-und-einzelner-send">M3U online abspielen: Playlist, m3u8-Stream und einzelner Sender</h2>
+<p>Wer „M3U online“ sucht, meint oft zwei verschiedene Dinge. Der Unterschied entscheidet darüber, ob ein Browser überhaupt etwas abspielen kann:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Was Sie haben</th><th>Was es ist</th><th>Im Browser</th></tr></thead>
+<tbody>
+<tr><td>M3U-Playlist-Link (Ihre Senderliste)</td><td>Textdatei mit Hunderten oder Tausenden Einträgen: Sendername, Gruppe, Logo und Stream-Adresse</td><td>Der Browser zeigt den Text an oder lädt die Datei herunter – abspielen kann erst ein Web-Player, der die Liste einliest</td></tr>
+<tr><td>Einzelne <code>.m3u8</code>-Adresse (HLS)</td><td>Steuerdatei für genau einen Stream, der in kurzen Abschnitten geladen wird</td><td>Safari spielt sie direkt ab; andere Browser je nach Version direkt oder nur über einen Web-Player mit HLS-Bibliothek</td></tr>
+<tr><td>Einzelne <code>.ts</code>-Adresse</td><td>Durchgehender MPEG-TS-Stream eines Senders</td><td>Ohne Web-Player mit Umwandlung meist nur Download statt Bild</td></tr>
+</tbody></table></div>
+<p>Für einen schnellen Funktionstest eines einzelnen Senders ist eine HLS-Adresse im Browser also durchaus brauchbar, solange die Seite selbst nicht über <code>https://</code> läuft und den Stream über <code>http://</code> nachladen will. Ganze Senderlisten mit Gruppen und Programmzeitschrift bleiben dagegen Sache einer IPTV-Site mit Player oder besser einer App. Prüfen möchten Sie nur, ob Link und Zugang funktionieren? Dafür ist unser <a href="/iptv-checker">IPTV Checker</a> der direktere Weg.</p>
+
+<h3>Was eine gute IPTV-Site im Web-Browser ausmacht</h3>
+<p>Ob eine IPTV-Site im Web-Browser taugt, sehen Sie an wenigen Merkmalen: Sie nennt einen Betreiber mit Impressum, erklärt, ob Streams über einen eigenen Server laufen, verlangt keine Zahlungsdaten für das reine Abspielen und lässt sich wieder abmelden, sodass gespeicherte Zugangsdaten verschwinden. Seiten, die eigene Sender „gratis“ anbieten, sind keine Player, sondern selbst Anbieter – mit allen Fragen, die wir unter <a href="/iptv-legal">IPTV und Rechtslage</a> neutral einordnen.</p>
 
 <h2 id="datenschutz-wo-sie-ihre-zugangsdaten-eingeben-sollten">Datenschutz: Wo Sie Ihre Zugangsdaten eingeben sollten</h2>
 <div class="callout callout-warn"><p><strong>Vorsicht bei unbekannten IPTV-Websites:</strong> Wer Ihren M3U-Link oder Ihre Xtream-Daten kennt, kann Ihren Zugang selbst nutzen. Das belegt dann Ihre gleichzeitigen Verbindungen, und Ihre Sender brechen ab. Geben Sie Ihre Daten nicht auf beliebigen Seiten ein, die Sie über eine Suchmaschine finden, und schon gar nicht auf Seiten, die zusätzlich Zahlungsdaten oder eine Registrierung mit Ihrer E-Mail verlangen.</p></div>
@@ -465,6 +509,15 @@
                         <p>Am häufigsten funktionieren Web-Player in aktuellen Versionen von Chrome, Edge und Safari. Safari kann HLS-Streams direkt abspielen, Chrome und Edge profitieren von guter Hardware-Beschleunigung. Firefox unterstützt je nach System nicht alle Videoformate.</p>
                     </div>
                 </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Was ist der Unterschied zwischen M3U und M3U8?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Beide sind Textformate für Wiedergabelisten. „M3U8“ bedeutet zunächst nur, dass die Datei in UTF-8 kodiert ist; im Streaming steht die Endung aber fast immer für HLS-Streams, die in kleinen Abschnitten geladen werden. Ihre Senderliste ist eine M3U-Playlist, die einzelnen Sender darin können als HLS oder TS vorliegen.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -546,6 +599,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -605,6 +659,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

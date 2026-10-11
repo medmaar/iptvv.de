@@ -168,8 +168,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "SS IPTV",
+  "headline": "SS IPTV einrichten – Playlist auf LG & Samsung laden",
   "url": "https://iptvv.de/iptv-ss-iptv",
   "description": "SS IPTV auf LG- und Samsung-Fernsehern: M3U-Playlist als externe Liste oder per Code über ss-iptv.com laden, Einstellungen und Fehlerhilfe.",
   "inLanguage": "de-DE",
@@ -182,7 +186,25 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "SoftwareApplication",
+    "name": "SS IPTV",
+    "applicationCategory": "MultimediaApplication"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -339,6 +361,7 @@
                     <li><a href="#ss-iptv-installieren">SS IPTV installieren</a></li>
                     <li><a href="#weg-1-m3u-link-als-externe-playlist-eintragen">Weg 1: M3U-Link als externe Playlist eintragen</a></li>
                     <li><a href="#weg-2-playlist-ueber-ss-iptv-com-und-verbindungscode">Weg 2: Playlist über ss-iptv.com und Verbindungscode</a></li>
+                    <li><a href="#ss-iptv-com-was-die-website-fuer-ihre-liste-leistet">ss-iptv.com: was die Website für Ihre Liste leistet</a></li>
                     <li><a href="#welcher-weg-passt-zu-ihnen">Welcher Weg passt zu Ihnen?</a></li>
                     <li><a href="#stabiles-bild-netzwerk-und-fernseher-richtig-vorbereiten">Stabiles Bild: Netzwerk und Fernseher richtig vorbereiten</a></li>
                     <li><a href="#probleme-mit-ss-iptv-beheben">Probleme mit SS IPTV beheben</a></li>
@@ -349,7 +372,7 @@
 <div class="answer-box"><p><strong>Kurz gesagt:</strong> SS IPTV („Simple Smart IPTV“) ist ein kostenlos nutzbarer Player, der vor allem auf LG-Fernsehern verbreitet ist. Die App spielt M3U-Listen ab, kennt aber keinen Xtream-Login. Für unseren Dienst tragen Sie den M3U-Link ein, den wir Ihnen zusammen mit den übrigen Zugangsdaten senden.</p></div>
 
 <h2 id="was-ss-iptv-kann-und-was-nicht">Was SS IPTV kann – und was nicht</h2>
-<p>SS IPTV wurde ursprünglich für Smart-TVs entwickelt, als es dort kaum andere Player gab. Entsprechend ist die Oberfläche auf die Fernbedienung zugeschnitten: Kacheln für Playlists, eine Senderleiste mit Logos und eine einfache Programmanzeige. Die App liefert selbst keine Inhalte, sondern spielt ausschließlich die Liste ab, die Sie hinterlegen.</p>
+<p>SS IPTV wurde ursprünglich für Smart-TVs entwickelt, als es dort kaum andere Player gab. Entsprechend ist die Oberfläche auf die Fernbedienung zugeschnitten: Kacheln für Playlists, eine Senderleiste mit Logos und eine einfache Programmanzeige. Die App liefert selbst keine Inhalte, sondern spielt ausschließlich die Liste ab, die Sie hinterlegen. Oft wird sie auch in einem Wort als „SSIPTV“ gesucht; gemeint ist dieselbe App.</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Merkmal</th><th>SS IPTV</th></tr></thead>
 <tbody>
@@ -387,6 +410,16 @@
 </ol>
 <p>Beachten Sie: Eine so hochgeladene Liste ist eine Momentaufnahme. Ändert sich das Senderangebot, müssen Sie sie im Editor erneut einlesen. Für einen laufenden IPTV-Zugang ist die externe Playlist deshalb meist praktischer.</p>
 
+<h2 id="ss-iptv-com-was-die-website-fuer-ihre-liste-leistet">ss-iptv.com: was die Website für Ihre Liste leistet</h2>
+<p>Die Website des Entwicklers ist kein Webplayer, über den Sie fernsehen. Sie dient als Werkzeug, um eine SS-IPTV-Liste vorzubereiten und an den Fernseher zu schicken. Die App unterscheidet dabei zwei Arten von Playlists:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Playlist-Art</th><th>Wie sie auf den Fernseher kommt</th><th>Anzahl</th></tr></thead>
+<tbody>
+<tr><td>Interne Playlist („Meine Playlist“)</td><td>Upload oder Link über den Editor auf ss-iptv.com, gekoppelt per Verbindungscode</td><td>Eine pro Gerät</td></tr>
+<tr><td>Externe Playlist</td><td>Link direkt in den App-Einstellungen eingetragen</td><td>Mehrere möglich, jede als eigene Kachel</td></tr>
+</tbody></table></div>
+<p>Für die SS-IPTV-Liste akzeptiert die App Dateien und Links im Format M3U bzw. M3U8. Unser Link in der Variante <code>type=m3u_plus</code> enthält Gruppen, Senderlogos und die EPG-Zuordnung, die SS IPTV auswertet. Laden Sie eine Datei über die Website hoch, achten Sie auf eine UTF-8-Kodierung, sonst werden Umlaute in Sendernamen falsch dargestellt. Sehr umfangreiche Listen mit Filmen und Serien lassen sich im Editor zudem nur zäh bearbeiten; eine reine Live-TV-Liste ist hier deutlich handlicher.</p>
+
 <h2 id="welcher-weg-passt-zu-ihnen">Welcher Weg passt zu Ihnen?</h2>
 <div class="table-wrap"><table>
 <thead><tr><th>Situation</th><th>Externe Playlist (Link)</th><th>Editor mit Verbindungscode</th></tr></thead>
@@ -420,7 +453,8 @@
 <p>Um auszuschließen, dass der Link selbst schuld ist, öffnen Sie ihn am Rechner im <a href="/iptv-vlc">VLC Player</a>. Spielt VLC die Sender ab, liegt die Ursache in der Eingabe am Fernseher. Den Aufbau einer M3U-Liste erklärt <a href="/iptv-m3u-playlist">unser Ratgeber zu M3U-Playlists</a>.</p>
 
 <h2 id="ss-iptv-auf-android-und-die-alternativen">SS IPTV auf Android und die Alternativen</h2>
-<p>Auf Android-Handys, Android-TV-Boxen oder dem Fire TV stehen Ihnen Player mit Xtream-Login offen, die Filme und Serien übersichtlich darstellen und Catch-up unterstützen. Dort lohnt SS IPTV nur, wenn Sie die Bedienung vom Fernseher gewohnt sind. Auf LG- und Samsung-Geräten sind <a href="/iptv-siptv">Smart IPTV</a> und <a href="/iptv-smartone">SmartOne IPTV</a> die naheliegenden Alternativen – beide arbeiten mit MAC-Adresse und Web-Upload, verlangen nach einer Testphase aber eine einmalige Aktivierung. SS IPTV hat hier den Vorteil, dass die App ohne Gebühr nutzbar ist.</p>
+<p>Für Android ist SS IPTV nicht in jedem Land im Play Store zu finden; welche Bezugsquellen aktuell gelten, nennt der Entwickler auf ss-iptv.com. Läuft die App bei Ihnen, ist die Einrichtung identisch mit der am Fernseher: Zahnrad, Inhalte, Externe Playlists, Link einfügen. Auf dem Handy bedienen Sie die Kacheln per Touch, für Fernseher mit Android TV gilt die gewohnte Steuerung per Fernbedienung.</p>
+<p>Ehrlich gesagt lohnt sich SS IPTV auf Android nur, wenn Sie die Oberfläche bereits vom LG-Fernseher kennen. Auf Android-Handys, Android-TV-Boxen oder dem Fire TV stehen Ihnen Player mit Xtream-Login offen, die Filme und Serien übersichtlich darstellen und Catch-up unterstützen, etwa <a href="/iptv-tivimate">TiviMate</a> am Fernseher oder Smarters auf dem Handy, siehe <a href="/iptv-android">IPTV auf Android</a>. Auf LG- und Samsung-Geräten sind <a href="/iptv-siptv">Smart IPTV</a> und <a href="/iptv-smartone">SmartOne IPTV</a> die naheliegenden Alternativen – beide arbeiten mit MAC-Adresse und Web-Upload, verlangen nach einer Testphase aber eine einmalige Aktivierung. SS IPTV hat hier den Vorteil, dass die App ohne Gebühr nutzbar ist.</p>
 
 <div class="cta-inline"><p>Tragen Sie unseren Test-Link als externe Playlist in SS IPTV ein und prüfen Sie Sender und Bild 24 Stunden lang auf Ihrem Fernseher.</p><a href="/iptv-kostenlos-testen">Jetzt kostenlos testen</a></div>
             </article>
@@ -567,6 +601,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -626,6 +661,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

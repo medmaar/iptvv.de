@@ -176,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "Android Handy & Tablet",
+  "headline": "IPTV auf Android-Smartphone und Tablet",
   "url": "https://iptvv.de/iptv-android",
   "description": "IPTV auf Android-Handy und Tablet: passende App, Einrichtung in 5 Schritten, Datenverbrauch im Mobilfunk und Streaming zum Fernseher. Gratis testen.",
   "inLanguage": "de-DE",
@@ -190,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Android Handy & Tablet"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -343,11 +364,12 @@
             <nav class="toc" aria-label="Inhaltsverzeichnis">
                 <p class="toc-title">Inhalt</p>
                 <ol>
-                    <li><a href="#welche-iptv-app-eignet-sich-fuer-android-handys">Welche IPTV-App eignet sich für Android-Handys?</a></li>
+                    <li><a href="#iptv-player-android-welche-app-passt-aufs-handy">IPTV Player Android: welche App passt aufs Handy?</a></li>
                     <li><a href="#einrichtung-auf-dem-android-smartphone-in-fuenf-schritten">Einrichtung auf dem Android-Smartphone in fünf Schritten</a></li>
+                    <li><a href="#handy-tablet-oder-box-welches-android-geraet-wofuer">Handy, Tablet oder Box: welches Android-Gerät wofür?</a></li>
+                    <li><a href="#empfohlene-einstellungen-in-android-playern">Empfohlene Einstellungen in Android-Playern</a></li>
                     <li><a href="#datenverbrauch-wie-viel-volumen-braucht-iptv-unterwegs">Datenverbrauch: Wie viel Volumen braucht IPTV unterwegs?</a></li>
                     <li><a href="#vom-handy-auf-den-fernseher-streamen">Vom Handy auf den Fernseher streamen</a></li>
-                    <li><a href="#tablet-tipps-grosses-display-mehr-komfort">Tablet-Tipps: Großes Display, mehr Komfort</a></li>
                     <li><a href="#android-ohne-google-play-huawei-und-andere-geraete">Android ohne Google Play: Huawei und andere Geräte</a></li>
                     <li><a href="#typische-probleme-auf-android-geraeten">Typische Probleme auf Android-Geräten</a></li>
                 </ol>
@@ -355,7 +377,7 @@
             <article class="seo-prose">
 <div class="answer-box"><p><strong>Kurz gesagt:</strong> Android-Smartphones und -Tablets eignen sich gut für IPTV, weil es im Play Store viele Player gibt. Für Einsteiger ist <a href="/iptv-smarters-pro">IPTV Smarters Pro</a> die einfachste Wahl. Unterwegs zählt vor allem der Datenverbrauch: Eine Stunde in HD kann mehrere Gigabyte kosten. Stellen Sie die Qualität deshalb im Mobilfunk bewusst niedriger ein.</p></div>
 
-<h2 id="welche-iptv-app-eignet-sich-fuer-android-handys">Welche IPTV-App eignet sich für Android-Handys?</h2>
+<h2 id="iptv-player-android-welche-app-passt-aufs-handy">IPTV Player Android: welche App passt aufs Handy?</h2>
 <p>Viele bekannte Player sind für Fernseher entwickelt und lassen sich auf dem Smartphone nur umständlich bedienen. Auf dem Handy brauchen Sie eine App mit Touch-Oberfläche, Hochkant- und Querformat sowie Bild-in-Bild. Diese Optionen haben sich bewährt:</p>
 <div class="table-wrap"><table>
 <thead><tr><th>App</th><th>Zugang</th><th>Auf dem Handy</th></tr></thead>
@@ -363,10 +385,14 @@
 <tr><td><a href="/iptv-smarters-pro">IPTV Smarters Pro</a></td><td>Xtream, M3U</td><td>Klare Kacheln für Live-TV, Filme, Serien; mehrere Profile möglich</td></tr>
 <tr><td><a href="/iptv-xciptv">XCIPTV</a></td><td>Xtream</td><td>Schnelle Senderliste, eingebauter Programmführer</td></tr>
 <tr><td><a href="/iptv-gse-smart-iptv">GSE Smart IPTV</a></td><td>M3U, Xtream</td><td>Viele Einstellmöglichkeiten, für erfahrene Nutzer</td></tr>
+<tr><td>OTT Navigator</td><td>Xtream, M3U, Portal</td><td>Sehr viele Einstellungen und Ansichten, kostenpflichtiges Premium-Upgrade; eher für Fortgeschrittene</td></tr>
 <tr><td><a href="/iptv-vlc">VLC</a></td><td>M3U</td><td>Zum schnellen Prüfen eines Links, ohne EPG</td></tr>
 <tr><td><a href="/iptv-tivimate">TiviMate</a></td><td>–</td><td>Für Android TV gebaut; auf dem Handy gibt es nur eine Begleit-App zur Verwaltung des Premium-Kontos</td></tr>
 </tbody></table></div>
-<p>Die App „Smart IPTV“ (siptv) ist in erster Linie für Smart-TVs gedacht; auf dem Handy sind die genannten Player komfortabler. Weitere Vergleiche finden Sie in unserer Übersicht <a href="/iptv-apps-vergleich">Bester IPTV Player für Android</a>.</p>
+<p>Die App „Smart IPTV“ (siptv) ist in erster Linie für Smart-TVs gedacht; auf dem Handy sind die genannten Player komfortabler. Weitere Vergleiche finden Sie in unserer Übersicht <a href="/iptv-apps-vergleich">Bester IPTV Player für Android</a>. Ob man von IPTV-App, IPTV Player oder – wie im Englischen und Französischen üblich – von einer „Application IPTV“ für Android spricht: Gemeint ist immer ein Abspielprogramm, das selbst keine Sender mitbringt, sondern Ihre Zugangsdaten nutzt.</p>
+
+<h3>So wählen Sie zwischen den Playern</h3>
+<p>Wer nur Live-TV mit Programmzeitschrift sucht, ist mit XCIPTV schnell am Ziel. Wer viele Filme und Serien schaut, profitiert von den Cover-Ansichten in IPTV Smarters Pro. Wer Sendergruppen sortieren, Logos anpassen und mehrere Zugänge parallel verwalten möchte, greift zu OTT Navigator. Probieren Sie mit dem Testzugang ruhig zwei Player nacheinander aus – die Zugangsdaten bleiben dieselben, und jede App lässt sich ohne Folgen wieder deinstallieren.</p>
 
 <h2 id="einrichtung-auf-dem-android-smartphone-in-fuenf-schritten">Einrichtung auf dem Android-Smartphone in fünf Schritten</h2>
 <ol class="steps">
@@ -377,6 +403,29 @@
 <li><strong>EPG aktualisieren:</strong> Im Bereich Live-TV oder in den Einstellungen die Programmzeitschrift laden, damit Sendungstitel und Uhrzeiten erscheinen.</li>
 </ol>
 <p>Ihre Zugangsdaten bekommen Sie nach der Bestellung oder im <a href="/iptv-kostenlos-testen">kostenlosen 24-Stunden-Test</a>. Was hinter Server-URL, Port und Benutzername steckt, erklärt unser Ratgeber <a href="/iptv-xtream-codes">Xtream Codes</a>.</p>
+
+<h2 id="handy-tablet-oder-box-welches-android-geraet-wofuer">Handy, Tablet oder Box: welches Android-Gerät wofür?</h2>
+<p>Android steckt nicht nur in Smartphones, sondern auch in Streaming-Boxen, Sticks und vielen Fernsehern. Die Bedienung unterscheidet sich stark, deshalb lohnt ein kurzer Vergleich, bevor Sie sich auf eine App festlegen:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Gerät</th><th>Typische Nutzung</th><th>Passende App</th><th>Bedienung</th></tr></thead>
+<tbody>
+<tr><td>Android-Smartphone</td><td>Unterwegs, Nachrichten, kurze Sendungen</td><td>IPTV Smarters Pro, XCIPTV</td><td>Touch, Hoch- und Querformat</td></tr>
+<tr><td>Android-Tablet</td><td>Küche, Kinderzimmer, Garten</td><td>IPTV Smarters Pro, OTT Navigator</td><td>Touch, Querformat mit Senderliste</td></tr>
+<tr><td>Box IPTV Android (TV-Box am HDMI)</td><td>Hauptfernseher im Wohnzimmer</td><td><a href="/iptv-tivimate">TiviMate</a>, iMPlayer</td><td>Fernbedienung, EPG-Raster</td></tr>
+<tr><td>Fire TV Stick</td><td>Zweitfernseher, Hotel, Ferienwohnung</td><td>TiviMate, IPTV Smarters Pro</td><td>Fernbedienung mit Sprachsuche</td></tr>
+</tbody></table></div>
+<p>Eine Android-Box am Fernseher ist für den täglichen Gebrauch meist die bessere Wahl als ein gespiegeltes Handy: Sie läuft per LAN-Kabel stabiler, hat eine Fernbedienung und blockiert kein Smartphone. Welche Boxen sich eignen und wie Sie sie einrichten, beschreibt die Seite <a href="/iptv-android-box">IPTV auf der Android-Box</a>; einen Überblick über alle Zusatzgeräte gibt <a href="/iptv-box">IPTV-Box und Stick</a>.</p>
+<h3>Tablet-Tipps: großes Display, mehr Komfort</h3>
+<p>Auf einem Android-Tablet nutzen die meisten Player das Querformat besser aus: Senderliste links, Vorschaubild rechts, darunter das laufende Programm. Einige Apps bieten auf dem Tablet eine Multiscreen-Ansicht, in der mehrere Sender gleichzeitig laufen – das zählt allerdings als mehrere Verbindungen. Für die Küche oder das Kinderzimmer ist ein Tablet mit IPTV oft die günstigere Alternative zu einem zweiten Fernseher. Achten Sie bei älteren Tablets darauf, dass sie HEVC dekodieren können, sonst bleiben einige HD- und 4K-Sender schwarz.</p>
+
+<h2 id="empfohlene-einstellungen-in-android-playern">Empfohlene Einstellungen in Android-Playern</h2>
+<p>Die Grundeinstellungen der meisten Apps funktionieren, doch drei Punkte machen auf Android-Geräten oft den Unterschied:</p>
+<ul>
+<li><strong>Decoder:</strong> Hardware-Decodierung schont Akku und Prozessor. Zeigt ein Sender nur Ton oder Bildfehler, testen Sie für diesen Fall den Software-Decoder.</li>
+<li><strong>Puffer:</strong> Unterwegs hilft ein größerer Puffer gegen kurze Funklöcher; zu Hause im stabilen WLAN darf er klein bleiben, damit der Senderwechsel schnell geht.</li>
+<li><strong>Externer Player:</strong> Einige Apps bieten an, Streams in einem externen Player wie VLC zu öffnen. Das ist nützlich, wenn ein Sender im eingebauten Player Probleme macht.</li>
+</ul>
+<p>Die genauen Menübezeichnungen unterscheiden sich je nach App und Version; meist finden Sie die Optionen in den Einstellungen unter „Player“. Die Eingabe der Zugangsdaten in den gängigen Apps fasst die Anleitung <a href="/iptv-einrichten">IPTV einrichten</a> zusammen.</p>
 
 <h2 id="datenverbrauch-wie-viel-volumen-braucht-iptv-unterwegs">Datenverbrauch: Wie viel Volumen braucht IPTV unterwegs?</h2>
 <p>Zu Hause im WLAN spielt der Datenverbrauch kaum eine Rolle. Im Mobilfunknetz kann ein Fußballabend dagegen schnell einen großen Teil des Monatsvolumens aufbrauchen. Die tatsächliche Menge hängt von der Bitrate des jeweiligen Senders ab, die folgenden Werte sind deshalb grobe Richtwerte:</p>
@@ -403,9 +452,6 @@
 <li><strong>App direkt am Fernseher:</strong> Für den Dauerbetrieb ist ein eigener Player am TV die beste Lösung, etwa auf dem <a href="/iptv-fire-stick">Fire TV Stick</a> oder einer Android-TV-Box. So bleibt das Handy frei.</li>
 </ul>
 <div class="callout"><p><strong>Gerätelimit beachten:</strong> Wenn Handy und Fernseher gleichzeitig unterschiedliche Sender abspielen, sind das zwei laufende Verbindungen. Ein Zugang für ein Gerät reicht dafür nicht aus – wählen Sie dann ein Paket für zwei oder mehr Geräte. Die Staffelung zeigt unsere Seite <a href="/iptv-preise">IPTV-Preise</a>.</p></div>
-
-<h2 id="tablet-tipps-grosses-display-mehr-komfort">Tablet-Tipps: Großes Display, mehr Komfort</h2>
-<p>Auf einem Android-Tablet nutzen die meisten Player das Querformat besser aus: Senderliste links, Vorschaubild rechts, darunter das laufende Programm. Einige Apps bieten auf dem Tablet eine Multiscreen-Ansicht, in der mehrere Sender gleichzeitig laufen – das zählt allerdings als mehrere Verbindungen. Für die Küche oder das Kinderzimmer ist ein Tablet mit IPTV oft die günstigere Alternative zu einem zweiten Fernseher. Achten Sie bei älteren Tablets darauf, dass sie HEVC dekodieren können, sonst bleiben einige HD- und 4K-Sender schwarz.</p>
 
 <h2 id="android-ohne-google-play-huawei-und-andere-geraete">Android ohne Google Play: Huawei und andere Geräte</h2>
 <p>Nicht jedes Android-Gerät hat Zugriff auf Google Play. Neuere Huawei-Smartphones nutzen stattdessen die AppGallery, manche günstigen Tablets haben einen eigenen Hersteller-Store. In diesem Fall gehen Sie so vor:</p>
@@ -582,6 +628,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -641,6 +688,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

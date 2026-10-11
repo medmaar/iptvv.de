@@ -22,14 +22,25 @@
 <tr><td>Android-TV-Box, Nvidia Shield, Google TV</td><td>Ja, über Google Play</td><td>Beste Leistung, besonders mit LAN</td></tr>
 <tr><td>Fernseher mit Google TV / Android TV (z. B. viele Sony-, Philips-, TCL-Modelle)</td><td>Ja, direkt im Play Store des Fernsehers</td><td>Kein Zusatzgerät nötig</td></tr>
 <tr><td>Samsung (Tizen), LG (webOS), Hisense (VIDAA)</td><td>Nein</td><td>Fire TV Stick anschließen oder TV-eigene Player nutzen</td></tr>
-<tr><td>Apple TV, iPhone, iPad</td><td>Nein</td><td>Apps wie Smarters oder GSE aus dem App Store</td></tr>
+<tr><td>Apple TV</td><td>Nein</td><td>Player aus dem App Store auf tvOS, siehe <a href="/iptv-apple-tv">IPTV auf Apple TV</a></td></tr>
+<tr><td>iPhone, iPad</td><td>Nein, auch keine Companion-App</td><td>Apps wie Smarters Player Lite oder GSE aus dem App Store</td></tr>
 <tr><td>Android-Handy</td><td>Nur als „TiviMate Companion“</td><td>Companion dient zur Verwaltung, nicht zum Fernsehen</td></tr>
-<tr><td>Windows, Mac</td><td>Nein</td><td><a href="/iptv-smarters-pro">IPTV Smarters Pro</a> oder VLC verwenden</td></tr>
+<tr><td>Windows-PC</td><td>Nein</td><td><a href="/iptv-smarters-pro">IPTV Smarters Pro</a> oder VLC, mehr unter <a href="/iptv-windows-pc">IPTV am PC</a></td></tr>
+<tr><td>Mac, MacBook</td><td>Nein</td><td>VLC oder ein Player aus dem Mac App Store, siehe <a href="/iptv-mac">IPTV auf dem Mac</a></td></tr>
+<tr><td>Chromecast (ältere Modelle ohne Fernbedienung)</td><td>Nein</td><td>Nur Übertragung vom Handy möglich; Chromecast mit Google TV installiert TiviMate dagegen direkt</td></tr>
 </tbody></table></div>
 <p>Android-Emulatoren am PC werden manchmal als Umweg genannt. Da TiviMate eine Fernsehoberfläche voraussetzt, ist das umständlich und wenig zuverlässig – wir raten davon ab.</p>
 
-<h2>TiviMate installieren</h2>
-<p>Auf Geräten mit Google TV oder Android TV suchen Sie im Play Store nach „TiviMate“ und installieren den Player des Entwicklers AR Mobile Dev. Auf dem Fire TV prüfen Sie zuerst den Amazon Appstore. Ist die App dort nicht gelistet, nutzen Sie die offizielle Download-Adresse des Entwicklers über Amazons App „Downloader“. Laden Sie TiviMate niemals als angeblich „freigeschaltete“ Version aus Foren: Solche Dateien sind manipuliert und können Zugangsdaten abgreifen.</p>
+<h2>TiviMate auf dem Fire TV Stick installieren</h2>
+<p>Auf Geräten mit Google TV oder Android TV suchen Sie im Play Store nach „TiviMate“ und installieren den Player des Entwicklers AR Mobile Dev. Die App wird auch als „Tivi Mate“ gesucht – gemeint ist immer derselbe Player. Auf dem Fire TV oder Firestick ist der Weg etwas länger, weil TiviMate nicht in jeder Region im Amazon Appstore steht:</p>
+<ol class="steps">
+<li>Im Amazon Appstore zuerst nach <strong>„TiviMate“</strong> suchen. Ist die App gelistet, direkt installieren.</li>
+<li>Falls nicht: <strong>„Downloader“</strong> aus dem Amazon Appstore installieren.</li>
+<li>Unter <strong>Einstellungen → Mein Fire TV → Entwickleroptionen</strong> die Installation unbekannter Apps für Downloader zulassen. Sind die Entwickleroptionen versteckt, unter „Info“ mehrfach auf den Gerätenamen klicken.</li>
+<li>In Downloader die Download-Adresse eintippen, die der Entwickler auf seiner offiziellen Website tivimate.com nennt, und die Installation bestätigen.</li>
+<li>Die heruntergeladene Datei anschließend löschen und TiviMate über „Ihre Apps &amp; Spiele“ an den Anfang des Startbildschirms verschieben.</li>
+</ol>
+<p>Laden Sie TiviMate niemals als angeblich „freigeschaltete“ Version aus Foren oder Gruppen: Solche Dateien sind manipuliert und können Zugangsdaten abgreifen. Für ruckelfreien Betrieb empfiehlt sich ein Stick der neueren 4K-Generation; ältere HD-Modelle werden bei großen Senderlisten spürbar träge.</p>
 
 <h2>Playlist hinzufügen: Xtream Codes oder M3U</h2>
 <p>Nach dem ersten Start fragt TiviMate direkt nach einer Playlist. Halten Sie die Zugangsdaten bereit, die Sie nach der Bestellung oder beim <a href="/iptv-kostenlos-testen">Gratis-Test über 24 Stunden</a> von uns erhalten haben.</p>
@@ -41,10 +52,26 @@
 <li>Einen <strong>Playlist-Namen</strong> vergeben und festlegen, ob Filme und Serien mitgeladen werden sollen.</li>
 <li>Mit <strong>„Fertig“</strong> abschließen. Die Programmzeitschrift füllt sich in den nächsten Minuten.</li>
 </ol>
-<p>Wer lieber mit einem M3U-Link arbeitet, wählt im zweiten Schritt „M3U-Playlist“ und fügt die Adresse ein. Die EPG-Quelle wird dann aus der Liste übernommen oder muss unter Einstellungen → EPG ergänzt werden. Unterschiede beider Formate erklärt <a href="/iptv-m3u-playlist">unser Ratgeber zur M3U-Playlist</a>.</p>
+<p>Wer lieber mit einem M3U-Link arbeitet, wählt im zweiten Schritt „M3U-Playlist“ und fügt die Adresse ein. Die EPG-Quelle wird dann aus der Liste übernommen oder muss unter Einstellungen → EPG ergänzt werden. So unterscheiden sich beide Wege in TiviMate:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>In TiviMate</th><th>Xtream Codes</th><th>M3U-Playlist</th></tr></thead>
+<tbody>
+<tr><td>Eingabe</td><td>Server-Adresse, Benutzername, Passwort</td><td>Ein einzelner langer Link</td></tr>
+<tr><td>TV-Guide</td><td>Wird automatisch zugeordnet</td><td>Über die EPG-Angabe in der Liste oder manuell ergänzt</td></tr>
+<tr><td>Filme und Serien</td><td>Eigene Bereiche, beim Einrichten abwählbar</td><td>Werden je nach Liste mit eingelesen, weniger geordnet</td></tr>
+<tr><td>Catch-up (mit Premium)</td><td>Funktioniert ohne weitere Angaben</td><td>Nur, wenn die Liste Archiv-Angaben enthält</td></tr>
+<tr><td>Ablaufdatum des Zugangs</td><td>In den Playlist-Infos sichtbar</td><td>Nicht sichtbar</td></tr>
+</tbody></table></div>
+<p>Unsere Empfehlung bleibt deshalb Xtream Codes. Einzelheiten zu beiden Formaten erklärt <a href="/iptv-m3u-playlist">unser Ratgeber zur M3U-Playlist</a>.</p>
 
-<h2>TiviMate Premium: was es bringt und was es kostet</h2>
-<p>TiviMate selbst ist kostenlos, viele Komfortfunktionen stecken aber im Premium-Paket. Premium wird in der Companion-App auf einem Android-Handy gekauft und anschließend über das TiviMate-Konto auf dem Fernsehgerät aktiviert. Der Entwickler bietet dafür ein Jahresabo und eine einmalige Lizenz an; ein Konto deckt mehrere Geräte ab. Aktuelle Preise sehen Sie in der Companion-App.</p>
+<h2>TiviMate Premium und TiviMate Account: was es bringt und was es kostet</h2>
+<p>TiviMate selbst ist kostenlos, viele Komfortfunktionen stecken aber im Premium-Paket. Premium wird in der Companion-App auf einem Android-Handy gekauft und anschließend über das TiviMate-Konto auf dem Fernsehgerät aktiviert. Der Entwickler bietet dafür ein Jahresabo und eine einmalige Lizenz an; ein Konto deckt mehrere Geräte ab. Aktuelle Preise und Kosten sehen Sie in der Companion-App. Der Ablauf in Kurzform:</p>
+<ol class="steps">
+<li><strong>TiviMate Companion</strong> aus Google Play auf einem Android-Handy installieren.</li>
+<li>Dort ein <strong>TiviMate-Konto</strong> anlegen und Premium als Jahresabo oder Einmallizenz kaufen.</li>
+<li>Am Fernseher in TiviMate unter <strong>Einstellungen</strong> den Premium-Bereich öffnen und sich mit demselben Konto anmelden.</li>
+<li>Für jeden weiteren Fernseher die Anmeldung wiederholen, solange das Gerätekontingent des Kontos reicht.</li>
+</ol>
 <div class="table-wrap"><table>
 <thead><tr><th>Funktion</th><th>Kostenlos</th><th>Premium</th></tr></thead>
 <tbody>
@@ -106,3 +133,7 @@
 <p>Eine eigene „Pro“-App existiert nicht. Mit TiviMate Pro ist meist das Premium-Upgrade gemeint. Angebote, die eine fertige „Pro-APK“ ohne Lizenz versprechen, sind veränderte Dateien aus unsicheren Quellen und sollten nicht installiert werden.</p>
 <h3>Warum zeigt TiviMate keine Filme und Serien an?</h3>
 <p>Entweder wurde die Playlist als M3U ohne Mediathek hinzugefügt oder beim Einrichten wurde das Laden von Filmen und Serien abgewählt. Bearbeiten Sie die Playlist in den Einstellungen oder legen Sie sie als Xtream-Codes-Zugang neu an.</p>
+<h3>Gibt es TiviMate Companion für das iPhone?</h3>
+<p>Nach unserem Kenntnisstand bietet der Entwickler die Companion-App nur für Android an. Mit einem iPhone allein lässt sich Premium daher nicht über den üblichen Weg kaufen. Ob es einen alternativen Kaufweg gibt, beschreibt der Entwickler auf seiner Website. Fernsehen mit TiviMate funktioniert ohnehin nur auf Android-TV-Geräten, nicht auf dem iPhone.</p>
+<h3>Was kostet TiviMate Premium?</h3>
+<p>Den aktuellen Preis legt der Entwickler fest und zeigt ihn in der Companion-App an, getrennt für Jahresabo und Einmallizenz. Diese Kosten sind unabhängig von Ihrem IPTV-Zugang. Unsere Pakete beginnen bei 9 € für einen Monat; was längere Laufzeiten kosten, sehen Sie auf der Seite <a href="/iptv-abo">IPTV-Abo kaufen</a>.</p>

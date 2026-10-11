@@ -176,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "Article"
+  ],
   "name": "Vodafone & GigaTV",
+  "headline": "Vodafone IPTV: GigaTV, Kabel-TV und IPTV-Abo am Vodafone-Anschluss",
   "url": "https://iptvv.de/iptv-vodafone",
   "description": "Vodafone IPTV verständlich erklärt: GigaTV, Kabelfernsehen und ein IPTV-Abo am Vodafone-Kabel- oder DSL-Anschluss. Mit Tipps gegen Abend-Ruckler.",
   "inLanguage": "de-DE",
@@ -190,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Vodafone & GigaTV"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -346,6 +367,7 @@
                     <li><a href="#vodafone-kabel-deutschland-und-unitymedia-kurz-eingeordnet">Vodafone, Kabel Deutschland und Unitymedia: kurz eingeordnet</a></li>
                     <li><a href="#die-drei-wege-zum-fernsehen-am-vodafone-anschluss">Die drei Wege zum Fernsehen am Vodafone-Anschluss</a></li>
                     <li><a href="#gigatv-oder-iptv-abo-was-unterscheidet-sich">GigaTV oder IPTV-Abo: was unterscheidet sich?</a></li>
+                    <li><a href="#ist-vodafone-fernsehen-ip-tv">Ist Vodafone-Fernsehen IP-TV?</a></li>
                     <li><a href="#besonderheit-kabel-internet-warum-es-abends-ruckeln-kann">Besonderheit Kabel-Internet: warum es abends ruckeln kann</a></li>
                     <li><a href="#iptv-am-vodafone-router-einrichten-und-optimieren">IPTV am Vodafone-Router einrichten und optimieren</a></li>
                     <li><a href="#kabel-tv-bei-vodafone-behalten-oder-ersetzen">Kabel-TV bei Vodafone behalten oder ersetzen?</a></li>
@@ -381,9 +403,20 @@
 </tbody></table></div>
 <p>Wenn Sie überlegen, den Kabelanschluss ganz aufzugeben, hilft der ausführliche Vergleich <a href="/iptv-vs-kabel">IPTV vs. Kabel</a>. Dort ist auch erklärt, was das Ende der Abrechnung über die Nebenkosten im Juli 2024 für Mieter bedeutet.</p>
 
+<h2 id="ist-vodafone-fernsehen-ip-tv">Ist Vodafone-Fernsehen IP-TV?</h2>
+<p>Wer nach „Vodafone IP TV“ sucht, erwartet oft ein Gegenstück zu MagentaTV der Telekom. Die Antwort ist: teilweise. Vodafone ist historisch ein Kabelnetzbetreiber, und das Kabelfernsehen über die Antennendose ist kein IPTV, sondern klassischer DVB-C-Rundfunk. Bei GigaTV hängt es von der Variante ab: Am Kabelanschluss kommt das Live-Bild in der Regel weiterhin über das Kabelnetz, während Zusatzfunktionen wie Mediatheken, Aufnahmen in der Cloud oder die App über das Internet laufen. In der App auf Handy, Tablet oder Streaming-Gerät ist GigaTV dagegen reines Internet-Fernsehen.</p>
+<ul>
+<li><strong>Kabel-TV:</strong> Rundfunk über Koaxialkabel, kein IPTV, läuft unabhängig vom Router.</li>
+<li><strong>GigaTV mit Box am Kabel:</strong> Mischform aus Kabelempfang und Internetdiensten.</li>
+<li><strong>GigaTV-App:</strong> Streaming über das Internet, ähnlich wie OTT-IPTV.</li>
+<li><strong>IPTV-Abo:</strong> vollständig über das Internet, an jedem Anschluss und mit einer App Ihrer Wahl.</li>
+</ul>
+<p>Anders als bei der Telekom gibt es bei Vodafone also kein flächendeckendes Fernsehen per Multicast über die Internetleitung. Für ein IPTV-Abo ist das unerheblich: Es braucht nur ausreichend Bandbreite, egal auf welchem Weg Ihr Internet ankommt. Wie Managed IPTV im Telekom-Netz funktioniert, steht zum Vergleich auf der Seite <a href="/iptv-telekom">IPTV und MagentaTV</a>.</p>
+
 <h2 id="besonderheit-kabel-internet-warum-es-abends-ruckeln-kann">Besonderheit Kabel-Internet: warum es abends ruckeln kann</h2>
 <p>Internet über das Kabelnetz basiert auf DOCSIS. Dabei teilen sich die Haushalte eines Netzsegments die verfügbare Kapazität. Tagsüber merken Sie davon nichts; zur Hauptsendezeit, wenn viele Nachbarn gleichzeitig streamen, kann die tatsächlich verfügbare Bandbreite aber spürbar sinken. Für ein IPTV-Abo bedeutet das: Ein Speedtest am Vormittag ist wenig aussagekräftig. Messen Sie zwischen 20 und 22 Uhr, und rechnen Sie pro laufendem Stream mit etwa 10 Mbit/s für HD und 25 Mbit/s für 4K.</p>
 <p>Bei DSL- und Glasfaseranschlüssen von Vodafone tritt dieser Effekt in der Form nicht auf, weil die Leitung bis zum Verteiler nicht geteilt wird. Unabhängig vom Anschluss gilt: Das WLAN im eigenen Haushalt ist häufiger die Engstelle als die Leitung selbst.</p>
+<p>So messen Sie aussagekräftig: Schließen Sie einen Laptop per LAN-Kabel direkt an die Vodafone Station oder Ihren Router an, beenden Sie andere Downloads im Haushalt und messen Sie an drei verschiedenen Abenden zur Hauptsendezeit. Für eine dokumentierte Messung eignet sich die Breitbandmessung der Bundesnetzagentur (breitbandmessung.de). Liegen die Werte am Abend deutlich unter dem, was Ihr Vertrag verspricht, ist das ein Thema für Vodafone – und ein Hinweis, eher auf HD statt 4K zu setzen. Liegen die LAN-Werte gut, das Bild am Fernseher aber stockt, ist das WLAN die Ursache.</p>
 
 <h2 id="iptv-am-vodafone-router-einrichten-und-optimieren">IPTV am Vodafone-Router einrichten und optimieren</h2>
 <ol class="steps">
@@ -571,6 +604,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -630,6 +664,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

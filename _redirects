@@ -559,3 +559,35 @@
 /iptv-m3u.html /iptv-m3u-playlist 301
 /m3u /iptv-m3u-playlist 301
 /m3u.html /iptv-m3u-playlist 301
+
+# Round 2 aliases
+/iptv-germany /german-iptv 301
+/iptv-germany.html /german-iptv 301
+/germany-iptv /german-iptv 301
+/germany-iptv.html /german-iptv 301
+/german-iptv-subscription /german-iptv 301
+/german-iptv-subscription.html /german-iptv 301
+/iptv-english /german-iptv 301
+/iptv-english.html /german-iptv 301
+/iptv-sender /iptv-senderliste 301
+/iptv-sender.html /iptv-senderliste 301
+/iptv-kanalliste /iptv-senderliste 301
+/iptv-kanalliste.html /iptv-senderliste 301
+/iptv-kanaele /iptv-senderliste 301
+/iptv-kanaele.html /iptv-senderliste 301
+/iptv-alle-sender /iptv-senderliste 301
+/iptv-alle-sender.html /iptv-senderliste 301
+/iptv-setup /iptv-einrichten 301
+/iptv-setup.html /iptv-einrichten 301
+/iptv-installieren /iptv-einrichten 301
+/iptv-installieren.html /iptv-einrichten 301
+/iptv-installation /iptv-einrichten 301
+/iptv-installation.html /iptv-einrichten 301
+/iptv-tester /iptv-checker 301
+/iptv-tester.html /iptv-checker 301
+/iptv-check /iptv-checker 301
+/iptv-check.html /iptv-checker 301
+/m3u-checker /iptv-checker 301
+/m3u-checker.html /iptv-checker 301
+/iptv-line-checker /iptv-checker 301
+/iptv-line-checker.html /iptv-checker 301

@@ -176,8 +176,12 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "TechArticle"
+  ],
   "name": "IPTV Receiver",
+  "headline": "IPTV Receiver – Enigma2, Linux-Box oder Android-Set-Top-Box?",
   "url": "https://iptvv.de/iptv-receiver",
   "description": "Welcher IPTV Receiver passt? Enigma2 (VU+, GigaBlue, Edision), TVIP, Dreamlink und Android-Boxen im Vergleich – mit Einrichtung, Tabelle und Fehlerhilfe.",
   "inLanguage": "de-DE",
@@ -190,7 +194,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "IPTV Receiver"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -343,10 +364,12 @@
             <nav class="toc" aria-label="Inhaltsverzeichnis">
                 <p class="toc-title">Inhalt</p>
                 <ol>
-                    <li><a href="#welche-arten-von-iptv-receivern-gibt-es">Welche Arten von IPTV-Receivern gibt es?</a></li>
+                    <li><a href="#set-top-box-iptv-welche-arten-von-receivern-gibt-es">Set-Top-Box IPTV: Welche Arten von Receivern gibt es?</a></li>
                     <li><a href="#iptv-auf-enigma2-receivern-einrichten">IPTV auf Enigma2-Receivern einrichten</a></li>
                     <li><a href="#reine-iptv-receiver-ohne-tuner">Reine IPTV-Receiver ohne Tuner</a></li>
                     <li><a href="#android-boxen-als-iptv-receiver">Android-Boxen als IPTV-Receiver</a></li>
+                    <li><a href="#iptv-receiver-in-4k-was-das-geraet-koennen-muss">IPTV Receiver in 4K: was das Gerät können muss</a></li>
+                    <li><a href="#iptv-receiver-im-test-so-pruefen-sie-ihr-geraet">IPTV Receiver im Test: so prüfen Sie Ihr Gerät</a></li>
                     <li><a href="#sat-ip-ist-nicht-dasselbe-wie-iptv">SAT&gt;IP ist nicht dasselbe wie IPTV</a></li>
                     <li><a href="#entscheidungshilfe-welcher-receiver-passt-zu-ihnen">Entscheidungshilfe: Welcher Receiver passt zu Ihnen?</a></li>
                     <li><a href="#typische-receiver-probleme-und-loesungen">Typische Receiver-Probleme und Lösungen</a></li>
@@ -355,7 +378,7 @@
             <article class="seo-prose">
 <div class="answer-box"><p><strong>Kurz gesagt:</strong> Wer bereits einen Linux-Sat-Receiver mit Enigma2 besitzt, kann IPTV-Sender als Bouquet in die gewohnte Senderliste einbinden. Wer neu kauft und nur IPTV braucht, ist mit einer Android-TV-Box oder einer IPTV-Box mit Portal-Login meist einfacher und günstiger unterwegs. Für 4K sollte jeder Receiver H.265/HEVC hardwareseitig dekodieren.</p></div>
 
-<h2 id="welche-arten-von-iptv-receivern-gibt-es">Welche Arten von IPTV-Receivern gibt es?</h2>
+<h2 id="set-top-box-iptv-welche-arten-von-receivern-gibt-es">Set-Top-Box IPTV: Welche Arten von Receivern gibt es?</h2>
 <p>Der Begriff „IPTV Receiver“ – oder englisch „IPTV set top box“ – wird für sehr unterschiedliche Geräte verwendet. Technisch unterscheiden sie sich vor allem durch das Betriebssystem und die Art, wie Sie Ihren Zugang eintragen:</p>
 <div class="table-wrap"><table>
 <thead><tr><th>Bauart</th><th>Beispiele</th><th>Zugang</th><th>Stärken</th><th>Schwächen</th></tr></thead>
@@ -388,6 +411,23 @@
 <h2 id="android-boxen-als-iptv-receiver">Android-Boxen als IPTV-Receiver</h2>
 <p>Android-TV- und Google-TV-Boxen sind heute die häufigste Wahl für reines IPTV. Geräte wie die <strong>Homatics Box Q</strong> oder die <strong>Ugoos AM7</strong> laufen mit zertifiziertem Android TV, haben Zugang zum Play Store und dekodieren 4K mit HEVC. Darauf installieren Sie eine IPTV-App wie <a href="/iptv-tivimate">TiviMate</a> und melden sich mit Ihren Xtream-Daten an – ohne MAC-Freischaltung, ohne Plugins.</p>
 <p>Wichtig beim Kauf: Achten Sie auf ein zertifiziertes Android TV bzw. Google TV. No-Name-Boxen mit „Android“ auf Smartphone-Basis bekommen oft keine Sicherheitsupdates und haben Probleme mit Streaming-Apps. Mehr Kaufkriterien stehen unter <a href="/iptv-android-box">IPTV auf der Android-Box</a>.</p>
+
+<h2 id="iptv-receiver-in-4k-was-das-geraet-koennen-muss">IPTV Receiver in 4K: was das Gerät können muss</h2>
+<p>Ein IPTV Receiver für 4K braucht mehr als die Aufschrift „UHD“ auf der Verpackung. Die meisten 4K-Streams sind in H.265/HEVC kodiert; ältere Enigma2-Receiver mit HD-Chip spielen sie nicht ab, selbst wenn der Fernseher 4K kann. Bei Enigma2 erkennen Sie die passenden Geräte meist am Zusatz „4K“ oder „UHD“ im Modellnamen – etwa bei VU+, bei der Dreambox-Reihe oder bei der UHD-Serie von GigaBlue. Für den GigaBlue-IPTV-Betrieb gilt dasselbe wie für jedes Enigma2-Gerät: Plugin aus dem Image-Feed, Bouquet erzeugen, EPG zuordnen.</p>
+<p>Bei Linux-IPTV-Boxen wie TVIP oder Dreamlink, die ihr eigenes Portal-Menü mitbringen, unterscheiden sich ältere HD- und neuere 4K-Generationen ebenfalls deutlich. Und auch die beste Set-Top-Box für IPTV kann eine schwache Leitung nicht ausgleichen: Rechnen Sie mit rund 25 Mbit/s pro 4K-Stream und schließen Sie den Receiver nach Möglichkeit per LAN an.</p>
+
+<h2 id="iptv-receiver-im-test-so-pruefen-sie-ihr-geraet">IPTV Receiver im Test: so prüfen Sie Ihr Gerät</h2>
+<p>Ob Sie einen gebrauchten Receiver übernehmen oder ein neues Gerät ausprobieren – diese Prüfpunkte zeigen schnell, ob er für IPTV taugt. Ideal ist ein Test mit echten Zugangsdaten, denn erst mit einer großen Senderliste zeigen sich Schwächen.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Prüfpunkt</th><th>Enigma2-Receiver</th><th>Linux-Box mit Portal</th><th>Android-Box</th></tr></thead>
+<tbody>
+<tr><td>Zugang eintragen</td><td>Plugin im Image-Feed vorhanden und aktuell?</td><td>Portal-Feld im Menü, MAC gut ablesbar?</td><td>Gewünschte App im Play Store?</td></tr>
+<tr><td>Umschaltzeit</td><td>Mit verschiedenen Service-Typen vergleichen</td><td>Meist sehr schnell</td><td>Je nach App und Pufferung</td></tr>
+<tr><td>EPG</td><td>Werden IPTV-Sender dem EPG korrekt zugeordnet?</td><td>Kommt über das Portal automatisch</td><td>Bei Xtream-Login automatisch</td></tr>
+<tr><td>4K-Wiedergabe</td><td>Nur bei 4K-Modellen mit HEVC</td><td>Nur bei neueren 4K-Generationen</td><td>HEVC in Hardware prüfen</td></tr>
+<tr><td>Updates</td><td>Wird das Image noch gepflegt?</td><td>Firmware vom Hersteller aktuell?</td><td>Letztes Sicherheitsupdate prüfen</td></tr>
+</tbody></table></div>
+<p>Den Zugang selbst können Sie unabhängig vom Gerät prüfen: Mit dem <a href="/iptv-checker">IPTV Checker</a> sehen Sie, ob Ihre Line und der M3U-Link erreichbar sind – so trennen Sie Gerätefehler von Zugangsproblemen.</p>
 
 <h2 id="sat-ip-ist-nicht-dasselbe-wie-iptv">SAT&gt;IP ist nicht dasselbe wie IPTV</h2>
 <p>Bei der Suche nach „Sat IP TV“ stoßen viele auf SAT&gt;IP. Dabei handelt es sich um einen Standard, der das Satellitensignal im Heimnetz verteilt: Ein SAT&gt;IP-Server hängt an der Schüssel und reicht die Programme per Netzwerk an Fernseher, Tablets oder Receiver weiter. Die Inhalte kommen also weiterhin vom Satelliten, nur die Verteilung im Haus läuft über das Netzwerk.</p>
@@ -572,6 +612,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -631,6 +672,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>

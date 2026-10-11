@@ -87,6 +87,14 @@
     },
     {
       "@type": "Question",
+      "name": "Kann ich bei IPTV live zurückspulen oder pausieren?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Bei Sendern mit Catch-up ja: Über das Archiv starten Sie eine bereits laufende oder vergangene Sendung von vorn. Ob sich das laufende Programm direkt pausieren lässt, hängt von der App ab; einige Player bieten dafür eine Timeshift-Funktion. Ohne Catch-up läuft ein Live-Sender wie beim normalen Fernsehen weiter."
+      }
+    },
+    {
+      "@type": "Question",
       "name": "Ist MagentaTV auch IPTV?",
       "acceptedAnswer": {
         "@type": "Answer",
@@ -172,13 +180,17 @@
 
 <script type="application/ld+json">{
   "@context": "https://schema.org",
-  "@type": "WebPage",
+  "@type": [
+    "WebPage",
+    "Article"
+  ],
   "name": "Was ist IPTV?",
+  "headline": "Was ist IPTV? Internet-Fernsehen einfach erklärt",
   "url": "https://iptvv.de/was-ist-iptv",
   "description": "Was ist IPTV? Wie Internet Protocol Television funktioniert, der Unterschied zwischen Provider-IPTV und OTT, was Sie brauchen und für wen es sich lohnt.",
   "inLanguage": "de-DE",
-  "datePublished": "2026-01-01",
-  "dateModified": "2026-07-19",
+  "datePublished": "2026-09-28",
+  "dateModified": "2026-10-11",
   "isPartOf": {
     "@type": "WebSite",
     "name": "iptvv.de",
@@ -186,7 +198,24 @@
   },
   "publisher": {
     "@type": "Organization",
-    "name": "iptvv.de",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "Was ist IPTV?"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
     "url": "https://iptvv.de/de/"
   }
 }</script>
@@ -339,7 +368,9 @@
             <nav class="toc" aria-label="Inhaltsverzeichnis">
                 <p class="toc-title">Inhalt</p>
                 <ol>
-                    <li><a href="#wie-funktioniert-internet-protocol-television">Wie funktioniert Internet Protocol Television?</a></li>
+                    <li><a href="#iptv-tv-einfach-erklaert-wie-funktioniert-internet-protocol">IPTV TV einfach erklärt: Wie funktioniert Internet Protocol Television?</a></li>
+                    <li><a href="#live-auf-abruf-nachtraeglich-drei-arten-iptv-zu-schauen">Live, auf Abruf, nachträglich: drei Arten, IPTV zu schauen</a></li>
+                    <li><a href="#fernsehen-und-internet-ueber-eine-leitung">Fernsehen und Internet über eine Leitung</a></li>
                     <li><a href="#zwei-arten-von-iptv-provider-iptv-und-ott">Zwei Arten von IPTV: Provider-IPTV und OTT</a></li>
                     <li><a href="#was-brauchen-sie-fuer-iptv">Was brauchen Sie für IPTV?</a></li>
                     <li><a href="#iptv-im-vergleich-zu-kabel-satellit-und-antenne">IPTV im Vergleich zu Kabel, Satellit und Antenne</a></li>
@@ -352,7 +383,8 @@
             <article class="seo-prose">
 <div class="answer-box"><p><strong>Kurz gesagt:</strong> Bei IPTV wird das Fernsehbild in kleine Datenpakete zerlegt, über das Internet übertragen und auf Ihrem Gerät wieder zusammengesetzt – genauso wie bei einem Videoanruf oder einer Mediathek, nur als laufendes Programm. Sie brauchen dafür einen Internetanschluss, ein Wiedergabegerät mit passender App und einen IPTV-Zugang. Eine Satellitenschüssel oder ein Kabelanschluss ist nicht nötig.</p></div>
 
-<h2 id="wie-funktioniert-internet-protocol-television">Wie funktioniert Internet Protocol Television?</h2>
+<h2 id="iptv-tv-einfach-erklaert-wie-funktioniert-internet-protocol">IPTV TV einfach erklärt: Wie funktioniert Internet Protocol Television?</h2>
+<p>Der Name erklärt sich aus seinen Teilen: <strong>IP</strong> steht für Internet Protocol, das Regelwerk, nach dem Daten im Internet in Pakete aufgeteilt, mit einer Absender- und Zieladresse versehen und zugestellt werden. <strong>TV</strong> steht für Television, also Fernsehen. Internet Protocol Television – im Englischen auch kurz „IP Television“ – ist demnach Fernsehen, das mit denselben Regeln transportiert wird wie eine Webseite oder eine E-Mail.</p>
 <p>Beim klassischen Fernsehen sendet ein Sender sein Signal gleichzeitig an alle Empfänger, ob über Satellit, Kabel oder Antenne. Ihr Receiver wählt daraus den gewünschten Kanal. Beim IP-Fernsehen läuft es anders: Erst wenn Sie einen Sender auswählen, fordert Ihr Gerät den passenden Datenstrom bei einem Server an. Der Weg vom Studio bis zum Bildschirm sieht vereinfacht so aus:</p>
 <ol class="steps">
 <li><strong>Empfang und Kodierung:</strong> Das Fernsehsignal wird empfangen und mit einem Videocodec wie H.264 oder HEVC komprimiert, damit es über normale Internetleitungen passt.</li>
@@ -361,6 +393,29 @@
 <li><strong>Wiedergabe:</strong> Eine App oder Set-Top-Box fordert den Stream an, puffert einige Sekunden und dekodiert das Bild für Ihren Fernseher.</li>
 </ol>
 <p>Weil jeder Zuschauer einen eigenen Datenstrom bekommt, kann IPTV Funktionen anbieten, die klassisches Fernsehen nicht kennt: Sendungen nachträglich ansehen (Catch-up), Filme auf Abruf (Video on Demand) und dieselben Sender auf Fernseher, Handy und Laptop.</p>
+
+<h2 id="live-auf-abruf-nachtraeglich-drei-arten-iptv-zu-schauen">Live, auf Abruf, nachträglich: drei Arten, IPTV zu schauen</h2>
+<p>Ein IPTV-Zugang ist mehr als eine Senderliste. Er vereint drei Nutzungsarten, die in den meisten Apps als getrennte Bereiche erscheinen:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Bereich</th><th>Was Sie sehen</th><th>Typische Bezeichnung in der App</th><th>Besonderheit</th></tr></thead>
+<tbody>
+<tr><td>IPTV live</td><td>Das laufende Programm eines Senders, genau wie beim klassischen Fernsehen</td><td>Live TV, Live-Sender, Kanäle</td><td>Programmzeitschrift (EPG) zeigt, was gerade läuft und was als Nächstes kommt</td></tr>
+<tr><td>Video on Demand</td><td>Filme und Serien, die Sie jederzeit starten, pausieren und fortsetzen</td><td>Filme, Serien, VOD</td><td>Unabhängig vom Sendeplan, oft mit Cover und Beschreibung</td></tr>
+<tr><td>Catch-up</td><td>Bereits gelaufene Sendungen der letzten Tage</td><td>Catch-up, Archiv, Replay (Symbol meist eine Uhr)</td><td>Nur bei Sendern, für die das Archiv angeboten wird</td></tr>
+</tbody></table></div>
+<p>Technisch ist jeder dieser Inhalte ein IPTV-Stream: ein fortlaufender Datenstrom, den die App vom Server anfordert und abspielt. Wer „Stream IPTV“ oder „IP TV Streaming“ liest, meint genau diesen Vorgang. Der Unterschied liegt nur darin, ob der Stream ein laufendes Programm (live) oder eine gespeicherte Datei (VOD, Catch-up) ist. Welche Sendergruppen und Kategorien es im Live-Bereich gibt, zeigt unsere <a href="/iptv-senderliste">IPTV-Senderliste</a>.</p>
+
+<h2 id="fernsehen-und-internet-ueber-eine-leitung">Fernsehen und Internet über eine Leitung</h2>
+<p>Bei IPTV teilen sich Fernsehen und Internet denselben Anschluss. Das ist praktisch, weil keine zweite Leitung nötig ist, bedeutet aber auch: Was der Fernseher an Bandbreite belegt, steht in diesem Moment nicht für andere Geräte zur Verfügung – und umgekehrt. Jeder laufende Stream zählt einzeln, auch wenn zwei Fernseher denselben Sender zeigen.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Situation im Haushalt</th><th>Bedarf fürs Fernsehen</th><th>Sinnvoller Anschluss</th></tr></thead>
+<tbody>
+<tr><td>Ein Fernseher in HD, nebenbei Surfen und E-Mails</td><td>ca. 10 Mbit/s</td><td>ab etwa 25 Mbit/s</td></tr>
+<tr><td>Ein 4K-Fernseher plus Handy im WLAN</td><td>ca. 25 Mbit/s</td><td>ab etwa 50 Mbit/s</td></tr>
+<tr><td>Zwei HD-Fernseher, Homeoffice mit Videokonferenz</td><td>ca. 20 Mbit/s</td><td>50 bis 100 Mbit/s</td></tr>
+<tr><td>4K im Wohnzimmer, zwei HD-Streams in anderen Räumen, große Downloads</td><td>ca. 45 Mbit/s</td><td>100 Mbit/s oder mehr</td></tr>
+</tbody></table></div>
+<p>Entscheidend ist die Rate, die zur Hauptsendezeit tatsächlich am Gerät ankommt, nicht der Wert im Tarif. Ein LAN-Kabel zum Fernseher und das Pausieren großer Downloads während einer Live-Sendung helfen mehr als ein teurer Tarifwechsel.</p>
 
 <h2 id="zwei-arten-von-iptv-provider-iptv-und-ott">Zwei Arten von IPTV: Provider-IPTV und OTT</h2>
 <p>Unter „IPTV“ werden in Deutschland zwei technisch verschiedene Angebote zusammengefasst. Der Unterschied erklärt, warum manche IPTV-Dienste nur an einem bestimmten Anschluss funktionieren und andere überall.</p>
@@ -384,7 +439,7 @@
 <tr><td>IPTV-App</td><td>Ein Player wie TiviMate, IPTV Smarters Pro oder VLC</td><td><a href="/iptv-apps-vergleich">IPTV-Apps-Vergleich</a></td></tr>
 <tr><td>Zugangsdaten</td><td>M3U-Link, Xtream-Codes-Login oder Portal-URL</td><td><a href="/iptv-m3u-playlist">M3U-Playlist</a>, <a href="/iptv-xtream-codes">Xtream Codes</a></td></tr>
 </tbody></table></div>
-<p>Die App selbst enthält keine Sender. Sie ist wie ein leerer Fernseher, den Sie mit Ihren Zugangsdaten „füttern“. Deshalb funktionieren dieselben Zugangsdaten in vielen verschiedenen Apps, und Sie können die App wechseln, ohne Ihr Abo zu ändern.</p>
+<p>Die App selbst enthält keine Sender. Sie ist wie ein leerer Fernseher, den Sie mit Ihren Zugangsdaten „füttern“. Deshalb funktionieren dieselben Zugangsdaten in vielen verschiedenen Apps, und Sie können die App wechseln, ohne Ihr Abo zu ändern. Wie das Eintragen in den gängigen Apps konkret aussieht, zeigt die Anleitung <a href="/iptv-einrichten">IPTV einrichten</a>. Für englischsprachige Mitbewohner oder Kollegen gibt es eine eigene Übersicht auf Englisch: <a href="/german-iptv">German IPTV for English speakers</a>.</p>
 
 <h2 id="iptv-im-vergleich-zu-kabel-satellit-und-antenne">IPTV im Vergleich zu Kabel, Satellit und Antenne</h2>
 <div class="table-wrap"><table>
@@ -459,6 +514,15 @@
                     </button>
                     <div class="faq-content hidden px-6 pb-5 faq-answer">
                         <p>Die Grenze ist fließend. Mit Streaming meint man oft Mediatheken und Videoportale mit Inhalten auf Abruf. IPTV bezeichnet vor allem lineares Fernsehen, also laufende Sender mit Programmzeitschrift, ergänzt um Abrufinhalte. Technisch nutzen beide das Internet.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Kann ich bei IPTV live zurückspulen oder pausieren?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Bei Sendern mit Catch-up ja: Über das Archiv starten Sie eine bereits laufende oder vergangene Sendung von vorn. Ob sich das laufende Programm direkt pausieren lässt, hängt von der App ab; einige Player bieten dafür eine Timeshift-Funktion. Ohne Catch-up läuft ein Live-Sender wie beim normalen Fernsehen weiter.</p>
                     </div>
                 </div>
                 <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
@@ -578,6 +642,7 @@
                         <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
                         <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
                         <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
                         <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
@@ -637,6 +702,9 @@
                         <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
                         <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
                         <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
                     </ul>
                 </div>
                 <div>
