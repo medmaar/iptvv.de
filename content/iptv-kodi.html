@@ -1,0 +1,94 @@
+<!--meta
+{
+  "title": "Kodi IPTV einrichten: PVR IPTV Simple Client mit EPG",
+  "description": "Kodi IPTV mit dem PVR IPTV Simple Client einrichten: M3U-Link und XMLTV-EPG eintragen, Live TV aktivieren, Catch-up nutzen, Fehler beheben. Jetzt testen.",
+  "h1": "Kodi IPTV einrichten – Live TV mit PVR IPTV Simple Client",
+  "badge": "Kodi Anleitung",
+  "hero_sub": "Windows · Mac · Linux · Android · Raspberry Pi",
+  "lead": "Für <strong>Kodi IPTV</strong> brauchen Sie kein Fremd-Add-on: Der offizielle <strong>PVR IPTV Simple Client</strong> aus dem Kodi-Repository liest Ihren M3U-Link und die XMLTV-Programmdaten. Nach dem Eintragen erscheint im Hauptmenü „TV“ mit Senderliste, Programmraster und – je nach Sender – Catch-up. Die Einrichtung dauert etwa zehn Minuten.",
+  "breadcrumb": "Kodi",
+  "device": "Kodi",
+  "related": ["iptv-m3u-playlist", "iptv-vlc", "iptv-plex-jellyfin", "iptv-windows-pc", "iptv-apps-vergleich", "iptv-kostenlos-testen"]
+}
+-->
+<div class="answer-box"><p><strong>Kurz gesagt:</strong> Kodi (früher XBMC) ist ein kostenloses, quelloffenes Mediacenter. Live-TV funktioniert über PVR-Clients; für IPTV ist das der <strong>PVR IPTV Simple Client</strong>. Er wird mit einem M3U-Link und einer EPG-Adresse gefüttert und macht Kodi zu einem vollwertigen TV-Frontend – auf PC, Mac, Linux, Android-Boxen und dem Raspberry Pi.</p></div>
+
+<h2>Was Kodi für IPTV mitbringt</h2>
+<p>Kodi trennt Bedienoberfläche und Datenquellen. Für Live TV sind sogenannte PVR-Clients zuständig, die Sender und Programmdaten in Kodis einheitliche TV-Ansicht einspeisen. Der Vorteil: Egal ob Sie später einen DVB-Tuner oder IPTV nutzen, die Oberfläche bleibt gleich – mit Kanalliste, Programmraster, Suche, Timern und Kanalgruppen.</p>
+<p>Der PVR IPTV Simple Client wird vom Kodi-Team im offiziellen Repository gepflegt. Sie brauchen daher keine Drittanbieter-Repositorys. Das ist wichtig, denn viele „Kodi IPTV“-Anleitungen im Netz verweisen auf inoffizielle Quellen, deren Add-ons unklarer Herkunft sind und Kodi instabil machen können.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Plattform</th><th>Bezugsquelle für Kodi</th><th>Hinweis</th></tr></thead>
+<tbody>
+<tr><td>Windows</td><td>kodi.tv oder Microsoft Store</td><td>Weitere Optionen am PC: <a href="/iptv-windows-pc">IPTV unter Windows</a></td></tr>
+<tr><td>macOS</td><td>kodi.tv</td><td>Läuft auf Intel- und Apple-Silicon-Macs</td></tr>
+<tr><td>Linux</td><td>Paketverwaltung der Distribution oder kodi.tv</td><td>Ideal für einen Wohnzimmer-PC</td></tr>
+<tr><td>Android, Android TV, Google TV</td><td>Google Play</td><td>Gute Wahl für leistungsstarke <a href="/iptv-android-box">Android-TV-Boxen</a></td></tr>
+<tr><td>Raspberry Pi</td><td>Spezialsysteme wie LibreELEC</td><td>Startet direkt in Kodi, sparsam im Verbrauch</td></tr>
+<tr><td>iPhone, iPad, Apple TV</td><td>Nicht im App Store</td><td>Für Apple-Geräte eignen sich andere Player</td></tr>
+</tbody></table></div>
+
+<h2>Kodi IPTV einrichten: PVR IPTV Simple Client Schritt für Schritt</h2>
+<p>Halten Sie den M3U-Link aus Ihren Zugangsdaten bereit (Variante <code>type=m3u_plus</code>). Die Menübezeichnungen beziehen sich auf die deutsche Oberfläche mit dem Standard-Skin Estuary.</p>
+<ol class="steps">
+<li>Kodi starten, links auf das <strong>Zahnrad</strong> klicken und <strong>Add-ons</strong> öffnen.</li>
+<li><strong>Aus Repository installieren → Kodi Add-on repository → PVR-Clients</strong> wählen.</li>
+<li><strong>PVR IPTV Simple Client</strong> anklicken und <strong>Installieren</strong>. Kodi lädt das Add-on samt Abhängigkeiten.</li>
+<li>Nach der Installation auf <strong>Konfigurieren</strong> gehen. In neueren Kodi-Versionen legen Sie dabei eine „Add-on-Konfiguration“ an – so können Sie später mehrere Zugänge parallel verwalten.</li>
+<li>Im Reiter <strong>Allgemein</strong> den Speicherort auf <strong>Remote-Pfad (Internetadresse)</strong> stellen und bei <strong>M3U-Playlist-URL</strong> Ihren Link einfügen.</li>
+<li>Im Reiter <strong>EPG-Einstellungen</strong> ebenfalls „Remote-Pfad“ wählen und die <strong>XMLTV-URL</strong> eintragen, bei uns üblicherweise <code>http://server-adresse:port/xmltv.php?username=…&amp;password=…</code>.</li>
+<li>Mit OK bestätigen und Kodi <strong>neu starten</strong>. Im Hauptmenü erscheint nun <strong>TV</strong>; beim ersten Öffnen importiert Kodi Sender und Programmdaten.</li>
+</ol>
+<div class="callout"><p><strong>Tipp:</strong> Kodi zeigt den Menüpunkt „TV“ erst, wenn ein PVR-Client aktiv ist. Fehlt er, prüfen Sie unter Einstellungen → Skin-Einstellungen → Hauptmenüeinträge, ob „TV“ eingeblendet ist.</p></div>
+
+<h2>Senderlogos, Gruppen und Catch-up</h2>
+<p>Der Simple Client übernimmt die Gruppen aus dem Attribut <code>group-title</code> der Playlist als Kodi-Kanalgruppen. Wählen Sie in der TV-Ansicht links die Gruppe, um etwa nur deutsche Sender oder nur Dokusender zu sehen. Senderlogos kommen aus dem Attribut <code>tvg-logo</code>; im Reiter <strong>Kanallogos</strong> können Sie festlegen, ob Kodi die Logos aus der Playlist oder aus dem EPG bevorzugt.</p>
+<p>Für die Rückschau gibt es im Add-on einen eigenen Reiter <strong>Catchup</strong>. Wenn ein Sender Catch-up unterstützt, kennzeichnet die Playlist das mit entsprechenden Attributen, und Kodi bietet vergangene Sendungen im Programmraster zum Abspielen an. Aktivieren Sie dort „Catchup aktivieren“ und lassen Sie die übrigen Werte zunächst auf Standard. Welche Attribute eine Playlist enthält, erklärt unser Ratgeber zur <a href="/iptv-m3u-playlist">M3U-Playlist</a>.</p>
+
+<h2>Einstellungen für Kodi Live TV</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Bereich</th><th>Empfehlung</th><th>Wirkung</th></tr></thead>
+<tbody>
+<tr><td>Einstellungen → PVR &amp; Live TV → Programmführer</td><td>EPG-Vorschau auf einige Tage begrenzen</td><td>Schnellerer Import, weniger Speicher</td></tr>
+<tr><td>Simple Client → Allgemein → Cache</td><td>M3U zwischenspeichern aktivieren</td><td>Kodi startet schneller, Liste wird im Hintergrund aktualisiert</td></tr>
+<tr><td>Einstellungen → Player → Videos</td><td>Hardwarebeschleunigung aktiv lassen</td><td>Entlastet die CPU bei HD und HEVC</td></tr>
+<tr><td>Bildwiederholrate an Video anpassen</td><td>„Beim Start/Stopp“</td><td>Gleichmäßigere Bewegung bei 50-Hz-Sendern</td></tr>
+<tr><td>PVR &amp; Live TV → Wiedergabe</td><td>„Beim Start im Vollbild“ nach Geschmack</td><td>Steuert, ob Kodi beim Senderwechsel direkt in den Vollbildmodus geht</td></tr>
+</tbody></table></div>
+<p>Eine schlankere Playlist ist für Kodi besonders wichtig: Der Import von zehntausenden Einträgen samt EPG kann auf einem Raspberry Pi mehrere Minuten dauern. Fragen Sie bei Bedarf eine Liste nur mit den Ländern an, die Sie wirklich schauen. Für die Bandbreite rechnen Sie mit ca. 10 Mbit/s je HD-Stream und ca. 25 Mbit/s für 4K.</p>
+
+<h2>Kodi IPTV: Probleme und Lösungen</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Ursache</th><th>Lösung</th></tr></thead>
+<tbody>
+<tr><td>„Keine Kanäle gefunden“</td><td>URL nicht als Remote-Pfad eingetragen oder fehlerhaft</td><td>Reiter Allgemein prüfen, Link neu einfügen, Kodi neu starten</td></tr>
+<tr><td>Alte Senderliste bleibt trotz Änderung</td><td>Kodi nutzt die zwischengespeicherte Datenbank</td><td>PVR &amp; Live TV → Allgemein → „Daten zurücksetzen“</td></tr>
+<tr><td>Programmraster leer</td><td>EPG-URL fehlt oder <code>tvg-id</code> passt nicht</td><td>XMLTV-URL prüfen, Programmführer-Daten zurücksetzen</td></tr>
+<tr><td>Sender puffert ständig</td><td>WLAN, schwache Hardware</td><td>LAN nutzen, auf Geräten mit wenig Speicher eine kleinere Liste laden</td></tr>
+<tr><td>Add-on deaktiviert sich nach Update</td><td>Inkompatible Fremd-Add-ons</td><td>Nur offizielle Quellen nutzen, Simple Client aktualisieren</td></tr>
+</tbody></table></div>
+<p>Wenn Sie unsicher sind, ob ein Fehler bei Kodi oder beim Stream liegt, öffnen Sie einen einzelnen Sender aus der Playlist in <a href="/iptv-vlc">VLC</a>. Läuft er dort ohne Probleme, liegt die Ursache in der Kodi-Konfiguration.</p>
+
+<h2>Mehrere Kodi-Geräte im Haushalt</h2>
+<p>Viele Nutzer haben Kodi auf mehr als einem Gerät: etwa einen Raspberry Pi im Wohnzimmer und den Laptop im Arbeitszimmer. Jede Kodi-Installation braucht den Simple Client mit denselben Links, die Einrichtung wiederholt sich also. Schneller geht es, wenn Sie die Add-on-Einstellungen notieren oder die Links in einer Textdatei auf dem Handy bereithalten.</p>
+<p>Entscheidend für den Abo-Umfang ist, wie viele Geräte <strong>gleichzeitig</strong> einen Sender abspielen. Kodi selbst baut nur dann eine Verbindung auf, wenn ein Kanal läuft; das Laden der Playlist und des EPG zählt nicht als Stream. Zwei Kodi-Geräte, die parallel fernsehen, benötigen ein Paket für zwei Geräte. Die Staffelung bis zu fünf Verbindungen zeigt die Seite <a href="/iptv-preise">IPTV-Preise</a>.</p>
+
+<h2>Kodi, Kodinerds und andere Lösungen</h2>
+<p>Gerade im deutschsprachigen Raum ist die Kodi-Community groß. Das Forum Kodinerds ist eine bekannte Anlaufstelle für Fragen zu Skins, LibreELEC und PVR-Einstellungen und bietet ein eigenes Repository mit Add-ons aus der Community. Für unseren Zugang benötigen Sie davon nichts – der offizielle Simple Client reicht vollständig aus.</p>
+<p>Kodi ist ideal, wenn Sie ein zentrales Mediacenter für eigene Filme, Musik und Fernsehen möchten. Wer Live TV auf mehrere Geräte im Haus verteilen will, schaut sich zusätzlich Server-Lösungen an, die wir unter <a href="/iptv-plex-jellyfin">IPTV mit Plex und Jellyfin</a> beschreiben. Und wer einfach nur schnell und bequem fernsehen möchte, ist mit einer spezialisierten App oft besser bedient – Vergleichswerte finden Sie im <a href="/iptv-apps-vergleich">Überblick der IPTV-Apps</a>.</p>
+
+<div class="cta-inline"><p>Richten Sie Kodi mit einem echten Zugang ein: 24 Stunden gratis testen, ohne Vertrag und ohne automatische Verlängerung.</p><a href="/iptv-kostenlos-testen">Jetzt kostenlos testen</a></div>
+<!--faq-->
+<h3>Welches Add-on brauche ich für IPTV in Kodi?</h3>
+<p>Den PVR IPTV Simple Client. Er steckt im offiziellen Kodi-Repository unter den PVR-Clients, ist kostenlos und wird vom Kodi-Team gepflegt. Zusätzliche Repositorys oder Fremd-Add-ons sind für unseren Zugang nicht nötig.</p>
+<h3>Kann Kodi einen Xtream-Codes-Login verwenden?</h3>
+<p>Der Simple Client arbeitet mit Playlist-URL und EPG-URL, nicht mit einem Login-Formular. Da wir Ihnen neben den Xtream-Daten immer auch einen M3U-Link schicken, ist das kein Nachteil: Sie erhalten dieselben Sender inklusive Programmdaten.</p>
+<h3>Warum erscheint in Kodi kein Menüpunkt „TV“?</h3>
+<p>Entweder ist der PVR-Client noch nicht aktiviert oder der Eintrag wurde im Skin ausgeblendet. Aktivieren Sie den Simple Client unter Add-ons → Meine Add-ons → PVR-Clients und prüfen Sie die Hauptmenüeinträge in den Skin-Einstellungen.</p>
+<h3>Wie aktualisiere ich die Senderliste in Kodi?</h3>
+<p>Der Simple Client lädt die Playlist beim Start neu. Hängt Kodi an einer alten Liste fest, setzen Sie unter Einstellungen → PVR &amp; Live TV die Kanal- und Programmführer-Daten zurück und starten Kodi neu.</p>
+<h3>Ist Kodi XBMC dasselbe wie Kodi?</h3>
+<p>Ja. Das Projekt hieß ursprünglich Xbox Media Center (XBMC) und wurde später in Kodi umbenannt. Funktionen und Community sind dieselben; der Name XBMC taucht nur noch in älteren Anleitungen auf.</p>
+<h3>Kann ich mit Kodi IPTV aufnehmen?</h3>
+<p>Der Simple Client selbst nimmt nicht auf. Für Aufnahmen und Timer brauchen Sie ein Backend wie einen TV-Server, der die Streams aufzeichnet. Für die meisten Haushalte ist eine App mit eingebauter Aufnahme die einfachere Lösung.</p>
+<h3>Läuft Kodi IPTV auf dem Fire TV Stick?</h3>
+<p>Ja, allerdings ist Kodi nicht im Amazon Appstore gelistet. Die offizielle Android-Version von kodi.tv lässt sich mit der Downloader-App installieren. Auf älteren Sticks läuft der EPG-Import spürbar langsam. Mehr dazu auf unserer Seite zum <a href="/iptv-fire-stick">Fire TV Stick</a>.</p>

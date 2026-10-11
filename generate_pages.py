@@ -228,10 +228,9 @@ def render_country_options():
     for name, code in PINNED_COUNTRIES:
         selected = ' selected' if name == 'Deutschland' else ''
         out.append(f'                                <option value="{name}" data-code="{code}"{selected}>{name} (+{code})</option>')
+    # The rest of WORLD_COUNTRIES is appended client-side by form-countries.js,
+    # so the country names stay out of every page's indexable text.
     out.append('                                <option disabled>──────────</option>')
-    for name, code in WORLD_COUNTRIES:
-        out.append(f'                                <option value="{name}" data-code="{code}">{name} (+{code})</option>')
-    out.append('                                <option value="Andere" data-code="">Andere</option>')
     return '\n'.join(out)
 
 COUNTRY_OPTIONS_HTML = render_country_options()
