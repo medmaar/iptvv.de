@@ -22,3 +22,11 @@
 
 /robots.txt
   Cache-Control: public, max-age=86400
+
+# Build files that are not pages — keep them out of search
+/_template
+  X-Robots-Tag: noindex
+/_template.html
+  X-Robots-Tag: noindex
+/generate_pages.py
+  X-Robots-Tag: noindex

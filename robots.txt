@@ -1,11 +1,7 @@
 User-agent: *
 Allow: /
 
-# Legal pages (noindex anyway, but no crawl needed)
-Disallow: /impressum.html
-Disallow: /datenschutz.html
-Disallow: /agb.html
-Disallow: /dmca.html
+# WhatsApp contact redirect, not a page
 Disallow: /kontakt/wa
 
 # Sitemap
