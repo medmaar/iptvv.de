@@ -33,7 +33,7 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 SITE = 'https://iptvv.de'
 BASE_PAGE = 'iptv-extreme.html'
 BASE_REF = 'c990b02'  # last commit before the content rebuild
-TODAY = '2026-10-11'
+TODAY = '2026-10-13'
 
 # ============================================================
 # PAGE REGISTRY — label used in footer, breadcrumbs and related cards
@@ -146,7 +146,7 @@ def render_footer():
         if hub == 'kauf':
             extra = '\n                        <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>'
         cols.append(f'''                <div>
-                    <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">{title}</h4>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">{title}</p>
                     <ul class="space-y-3">
 {footer_links(hub)}{extra}
                     </ul>
@@ -155,7 +155,7 @@ def render_footer():
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-12">
                 <a href="/de/" class="flex items-center gap-2 mb-4">
-                    <img loading="lazy" src="germany-icon.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">
+                    <img loading="lazy" decoding="async" src="/germany-icon-80.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">
                     <span class="text-xl font-bold">IPTV<span class="text-gradient"> Deutschland</span></span>
                 </a>
                 <p class="text-gray-400 max-w-2xl leading-relaxed text-sm">IPTV Deutschland (iptvv.de) liefert Ihren IPTV-Zugang als M3U-Playlist, Xtream-Codes-Login oder MAG-Portal – passend für Smart TV, Fire TV Stick, Android, Apple-Geräte, PC und Receiver. Support auf Deutsch per WhatsApp.</p>
@@ -166,7 +166,7 @@ def render_footer():
 
             <div class="border-t border-white/10 pt-8 mb-8 text-center">
                 <p class="text-xs text-gray-500 uppercase tracking-wider mb-4">Akzeptierte Zahlungsmethoden</p>
-                <img loading="lazy" src="payment-methods.png" alt="Akzeptierte Zahlungsmethoden: Mastercard, Visa, American Express, PayPal, Klarna, Banküberweisung, Google Pay, Apple Pay" class="w-full max-w-md h-auto mx-auto" style="box-shadow: 0 8px 30px rgba(0,0,0,0.35)">
+                <img loading="lazy" decoding="async" src="/payment-methods-v2.png" width="1570" height="140" alt="Akzeptierte Zahlungsmethoden: Mastercard, Visa, American Express, PayPal, Klarna, Banküberweisung, Google Pay, Apple Pay" class="w-full max-w-md h-auto mx-auto" style="box-shadow: 0 8px 30px rgba(0,0,0,0.35)">
             </div>
 
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8">
@@ -187,9 +187,22 @@ COUNTRY_SEP = '<option disabled>──────────</option>'
 COUNTRY_SCRIPT = '<script src="/form-countries.js"></script>'
 
 
+FONT_CSS = 'https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap'
+FONT_BLOCKING = f'<link href="{FONT_CSS}" rel="stylesheet">'
+FONT_ASYNC = ('<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\n'
+              f'    <link rel="stylesheet" href="{FONT_CSS}" media="print" onload="this.media=\'all\'">\n'
+              f'    <noscript><link rel="stylesheet" href="{FONT_CSS}"></noscript>')
+HEADER_LOGO_RE = re.compile(r'<img (?:loading="lazy" )?src="/?germany-icon\.png" alt="IPTV Deutschland Logo" class="w-10 h-10 object-contain">')
+HEADER_LOGO = '<img src="/germany-icon-80.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">'
+
+
 def apply_sitewide(page):
-    """Shared footer + short inline country list (rest is added by JS)."""
+    """Shared footer + short inline country list (rest is added by JS),
+    non-blocking web font, light header logo, h4 cards -> h3."""
     page = FOOTER_RE.sub(lambda m: render_footer(), page, count=1)
+    page = page.replace(FONT_BLOCKING, FONT_ASYNC, 1)
+    page = HEADER_LOGO_RE.sub(HEADER_LOGO, page)
+    page = re.sub(r'<h4 class="font-bold text-sm">(.*?)</h4>', r'<h3 class="font-bold text-sm">\1</h3>', page)
     # Keep DACH inline; drop the ~200 other <option>s from the HTML.
     page = re.sub(re.escape(COUNTRY_SEP) + r'.*?(?=\s*</select>)', COUNTRY_SEP, page, count=1, flags=re.S)
     if COUNTRY_SEP in page and COUNTRY_SCRIPT not in page:
@@ -250,6 +263,44 @@ def add_heading_ids(body):
 # ============================================================
 # RENDERING
 # ============================================================
+# Outbound references shown under the article ("Quellen"): official vendor
+# pages and neutral authorities only.
+BNA = ('Breitbandmessung der Bundesnetzagentur', 'https://www.breitbandmessung.de/')
+SOURCES = {
+    'was-ist-iptv': [('Internet Protocol Television (Wikipedia)', 'https://de.wikipedia.org/wiki/Internet_Protocol_Television'), BNA],
+    'iptv-legal': [('Urheberrechtsgesetz (gesetze-im-internet.de)', 'https://www.gesetze-im-internet.de/urhg/'),
+                   ('EuGH, Rechtssache C-527/15 (curia.europa.eu)', 'https://curia.europa.eu/juris/liste.jsf?num=C-527/15'),
+                   ('Verbraucherzentrale', 'https://www.verbraucherzentrale.de/')],
+    'iptv-m3u-playlist': [('M3U (Wikipedia)', 'https://de.wikipedia.org/wiki/M3U'), ('RFC 8216: HTTP Live Streaming', 'https://datatracker.ietf.org/doc/html/rfc8216')],
+    'iptv-4k': [BNA, ('High Efficiency Video Coding (Wikipedia)', 'https://de.wikipedia.org/wiki/High_Efficiency_Video_Coding')],
+    'iptv-einrichten': [BNA],
+    'iptv-checker': [BNA],
+    'iptv-vs-kabel': [BNA],
+    'iptv-vlc': [('VLC media player (VideoLAN)', 'https://www.videolan.org/vlc/')],
+    'iptv-kodi': [('Kodi', 'https://kodi.tv/'), ('PVR IPTV Simple Client (Kodi Wiki)', 'https://kodi.wiki/view/Add-on:PVR_IPTV_Simple_Client')],
+    'iptv-plex-jellyfin': [('Jellyfin', 'https://jellyfin.org/'), ('Plex', 'https://www.plex.tv/')],
+    'iptv-tivimate': [('TiviMate (Hersteller)', 'https://tivimate.com/')],
+    'iptv-smarters-pro': [('IPTV Smarters (Hersteller)', 'https://www.iptvsmarters.com/')],
+    'iptv-siptv': [('Smart IPTV (Hersteller)', 'https://siptv.app/')],
+    'iptv-ss-iptv': [('SS IPTV (Hersteller)', 'https://ss-iptv.com/')],
+    'iptv-mag-box': [('Infomir MAG (Hersteller)', 'https://www.infomir.eu/')],
+    'iptv-formuler': [('Formuler (Hersteller)', 'https://www.formuler.tv/')],
+    'iptv-telekom': [('MagentaTV (Telekom)', 'https://www.telekom.de/magenta-tv'), BNA],
+    'iptv-vodafone': [('Vodafone TV', 'https://www.vodafone.de/'), BNA],
+    'iptv-1und1': [('1&1', 'https://www.1und1.de/'), BNA],
+    'iptv-zattoo': [('Zattoo', 'https://zattoo.com/de')],
+    'german-iptv': [('Internet Protocol Television (Wikipedia)', 'https://en.wikipedia.org/wiki/Internet_Protocol_television')],
+}
+
+
+def render_sources(slug, en):
+    items = SOURCES.get(slug)
+    if not items:
+        return ''
+    links = ', '.join(f'<a href="{u}" target="_blank" rel="noopener">{esc(n)}</a>' for n, u in items)
+    return f'\n<p class="sources">{"Sources and further reading" if en else "Quellen und weiterführende Informationen"}: {links}</p>'
+
+
 def render_content(meta, body, faqs, slug):
     en = meta.get('lang') == 'en'
     body, toc = add_heading_ids(body)
@@ -298,7 +349,7 @@ def render_content(meta, body, faqs, slug):
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
             <p class="updated-note">{'Updated' if en else 'Aktualisiert am'} {TODAY[8:10]}.{TODAY[5:7]}.{TODAY[0:4]} · {'IPTV Deutschland editorial team' if en else 'Redaktion IPTV Deutschland'}</p>{toc_html}
             <article class="seo-prose">
-{body}
+{body}{render_sources(slug, en)}
             </article>
         </div>
     </section>
@@ -449,9 +500,11 @@ def build(slug):
     page = re.sub(r'(<meta property="og:locale" content=")[^"]*(">)', r'\g<1>' + ('en_GB' if lang == 'en' else 'de_DE') + r'\g<2>', page, count=1)
     page = replace_ld(page, 'FAQPage', faq_schema(faqs))
     page = replace_ld(page, 'BreadcrumbList', breadcrumb_schema(slug, meta))
-    if 'href="content.css"' not in page:
+    # content.css is cached as immutable, so bump ?v= whenever it changes.
+    page = page.replace('href="content.css"', 'href="/content.css?v=2"')
+    if 'href="/content.css?v=2"' not in page:
         page = page.replace('<link rel="stylesheet" href="style.css">',
-                            '<link rel="stylesheet" href="style.css">\n    <link rel="stylesheet" href="content.css">', 1)
+                            '<link rel="stylesheet" href="style.css">\n    <link rel="stylesheet" href="/content.css?v=2">', 1)
 
     # ---- hero ---- (pages with their own hero layout, like iptv-preise, keep it)
     if not meta.get('keep_hero'):
@@ -493,7 +546,7 @@ def finish(page, meta, body, faqs, slug, out):
     if slug != 'iptv-extreme':
         own = body + ' '.join(q + a for q, a in faqs) + json.dumps(meta, ensure_ascii=False)
         leftovers = [l.strip() for l in page.splitlines()
-                     if 'Extreme' in l and '/iptv-extreme' not in l and l.strip() not in own and 'Extreme' not in own]
+                     if 'Extreme' in l and '/iptv-extreme' not in l and 'related-title' not in l and l.strip() not in own and 'Extreme' not in own]
         if leftovers:
             raise SystemExit(f'{slug}: base-page text left over: {leftovers[:3]}')
     with open(out, 'w', encoding='utf-8') as f:

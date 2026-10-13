@@ -56,3 +56,6 @@
 .related-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
 .related-title { display: block; color: #fff; font-weight: 700; }
 .related-desc { display: block; color: #9ca3af; font-size: 0.85rem; margin-top: 0.2rem; }
+
+.seo-prose .sources { font-size: 0.85rem; color: #6b7280; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; margin-top: 2rem; }
+.seo-prose .sources a { color: #9ca3af; }
