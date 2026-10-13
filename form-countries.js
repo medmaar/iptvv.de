@@ -1,0 +1,22 @@
+// Full country list for the WhatsApp number field. Germany, Austria and
+// Switzerland are in the page HTML; the rest is appended here so ~200
+// country names don't end up in every page's indexable text.
+(function () {
+  var sel = document.getElementById('country');
+  if (!sel) return;
+  var list = [["Afghanistan", "93"], ["Ägypten", "20"], ["Albanien", "355"], ["Algerien", "213"], ["Andorra", "376"], ["Angola", "244"], ["Argentinien", "54"], ["Armenien", "374"], ["Aserbaidschan", "994"], ["Äthiopien", "251"], ["Australien", "61"], ["Bahamas", "1242"], ["Bahrain", "973"], ["Bangladesch", "880"], ["Barbados", "1246"], ["Belarus", "375"], ["Belgien", "32"], ["Belize", "501"], ["Benin", "229"], ["Bhutan", "975"], ["Bolivien", "591"], ["Bosnien und Herzegowina", "387"], ["Botsuana", "267"], ["Brasilien", "55"], ["Brunei", "673"], ["Bulgarien", "359"], ["Burkina Faso", "226"], ["Burundi", "257"], ["Chile", "56"], ["China", "86"], ["Costa Rica", "506"], ["Dänemark", "45"], ["Dominikanische Republik", "1849"], ["Dschibuti", "253"], ["Ecuador", "593"], ["El Salvador", "503"], ["Elfenbeinküste", "225"], ["Eritrea", "291"], ["Estland", "372"], ["Eswatini", "268"], ["Fidschi", "679"], ["Finnland", "358"], ["Frankreich", "33"], ["Gabun", "241"], ["Gambia", "220"], ["Georgien", "995"], ["Ghana", "233"], ["Griechenland", "30"], ["Grenada", "1473"], ["Guatemala", "502"], ["Guinea", "224"], ["Guinea-Bissau", "245"], ["Guyana", "592"], ["Haiti", "509"], ["Honduras", "504"], ["Indien", "91"], ["Indonesien", "62"], ["Irak", "964"], ["Iran", "98"], ["Irland", "353"], ["Island", "354"], ["Israel", "972"], ["Italien", "39"], ["Jamaika", "1876"], ["Japan", "81"], ["Jemen", "967"], ["Jordanien", "962"], ["Kambodscha", "855"], ["Kamerun", "237"], ["Kanada", "1"], ["Kap Verde", "238"], ["Kasachstan", "7"], ["Katar", "974"], ["Kenia", "254"], ["Kirgisistan", "996"], ["Kiribati", "686"], ["Kolumbien", "57"], ["Komoren", "269"], ["Kongo", "242"], ["Kosovo", "383"], ["Kroatien", "385"], ["Kuba", "53"], ["Kuwait", "965"], ["Laos", "856"], ["Lesotho", "266"], ["Lettland", "371"], ["Libanon", "961"], ["Liberia", "231"], ["Libyen", "218"], ["Liechtenstein", "423"], ["Litauen", "370"], ["Luxemburg", "352"], ["Madagaskar", "261"], ["Malawi", "265"], ["Malaysia", "60"], ["Malediven", "960"], ["Mali", "223"], ["Malta", "356"], ["Marokko", "212"], ["Mauretanien", "222"], ["Mauritius", "230"], ["Mexiko", "52"], ["Moldau", "373"], ["Monaco", "377"], ["Mongolei", "976"], ["Montenegro", "382"], ["Mosambik", "258"], ["Myanmar", "95"], ["Namibia", "264"], ["Nepal", "977"], ["Neuseeland", "64"], ["Nicaragua", "505"], ["Niederlande", "31"], ["Niger", "227"], ["Nigeria", "234"], ["Nordkorea", "850"], ["Nordmazedonien", "389"], ["Norwegen", "47"], ["Oman", "968"], ["Pakistan", "92"], ["Palästina", "970"], ["Panama", "507"], ["Papua-Neuguinea", "675"], ["Paraguay", "595"], ["Peru", "51"], ["Philippinen", "63"], ["Polen", "48"], ["Portugal", "351"], ["Ruanda", "250"], ["Rumänien", "40"], ["Russland", "7"], ["Sambia", "260"], ["Samoa", "685"], ["San Marino", "378"], ["Saudi-Arabien", "966"], ["Schweden", "46"], ["Senegal", "221"], ["Serbien", "381"], ["Seychellen", "248"], ["Sierra Leone", "232"], ["Simbabwe", "263"], ["Singapur", "65"], ["Slowakei", "421"], ["Slowenien", "386"], ["Somalia", "252"], ["Spanien", "34"], ["Sri Lanka", "94"], ["Südafrika", "27"], ["Sudan", "249"], ["Südkorea", "82"], ["Südsudan", "211"], ["Suriname", "597"], ["Syrien", "963"], ["Tadschikistan", "992"], ["Taiwan", "886"], ["Tansania", "255"], ["Thailand", "66"], ["Togo", "228"], ["Tonga", "676"], ["Trinidad und Tobago", "1868"], ["Tschad", "235"], ["Tschechien", "420"], ["Tunesien", "216"], ["Türkei", "90"], ["Turkmenistan", "993"], ["Uganda", "256"], ["Ukraine", "380"], ["Ungarn", "36"], ["Uruguay", "598"], ["Usbekistan", "998"], ["Vanuatu", "678"], ["Venezuela", "58"], ["Vereinigte Arabische Emirate", "971"], ["Vereinigte Staaten (USA)", "1"], ["Vereinigtes Königreich (UK)", "44"], ["Vietnam", "84"], ["Zentralafrikanische Republik", "236"], ["Zypern", "357"]];
+  var frag = document.createDocumentFragment();
+  list.forEach(function (c) {
+    var o = document.createElement('option');
+    o.value = c[0];
+    o.dataset.code = c[1];
+    o.textContent = c[0] + ' (+' + c[1] + ')';
+    frag.appendChild(o);
+  });
+  var other = document.createElement('option');
+  other.value = 'Andere';
+  other.dataset.code = '';
+  other.textContent = 'Andere';
+  frag.appendChild(other);
+  sel.appendChild(frag);
+})();

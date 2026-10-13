@@ -1,0 +1,61 @@
+/* Article styles for the guide pages built by build_seo_pages.py.
+   Kept separate from style.css (cached as immutable) so it can ship
+   without a cache-busting rename. Colours follow style.css / tw.css. */
+
+.hero-lead { max-width: 46rem; margin: 0 auto 1rem; color: #d1d5db; font-size: 1rem; line-height: 1.7; }
+.hero-lead a { color: #a5b4fc; text-decoration: underline; text-underline-offset: 2px; }
+
+.updated-note { font-size: 0.8rem; color: #6b7280; margin-bottom: 1.5rem; }
+
+.toc { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; padding: 1.25rem 1.5rem; margin-bottom: 2.5rem; }
+.toc-title { font-weight: 700; color: #fff; margin-bottom: 0.6rem; font-size: 0.95rem; }
+.toc ol { list-style: decimal; padding-left: 1.25rem; margin: 0; columns: 2; column-gap: 2rem; }
+.toc li { color: #6b7280; font-size: 0.9rem; margin-bottom: 0.35rem; break-inside: avoid; }
+.toc a { color: #c7d2fe; }
+.toc a:hover { color: #fff; }
+@media (max-width: 640px) { .toc ol { columns: 1; } }
+
+.seo-prose { color: #9ca3af; font-size: 1rem; line-height: 1.75; }
+.seo-prose > * + * { margin-top: 1rem; }
+.seo-prose h2 { color: #fff; font-size: 1.6rem; line-height: 1.25; font-weight: 900; margin-top: 2.75rem; margin-bottom: 0.25rem; scroll-margin-top: 6rem; }
+.seo-prose h2:first-child { margin-top: 0; }
+.seo-prose h3 { color: #fff; font-size: 1.2rem; font-weight: 700; margin-top: 1.75rem; }
+.seo-prose strong { color: #e5e7eb; font-weight: 600; }
+.seo-prose a { color: #a5b4fc; text-decoration: underline; text-underline-offset: 2px; }
+.seo-prose a:hover { color: #fff; }
+.seo-prose ul, .seo-prose ol { padding-left: 1.4rem; }
+.seo-prose ul { list-style: disc; }
+.seo-prose ol { list-style: decimal; }
+.seo-prose li { margin-top: 0.4rem; }
+.seo-prose li::marker { color: #818cf8; }
+.seo-prose code { background: rgba(255,255,255,0.08); border-radius: 0.35rem; padding: 0.1rem 0.4rem; font-size: 0.88em; color: #e5e7eb; word-break: break-all; }
+
+.seo-prose .table-wrap { overflow-x: auto; border: 1px solid rgba(255,255,255,0.1); border-radius: 1rem; }
+.seo-prose table { width: 100%; border-collapse: collapse; font-size: 0.92rem; min-width: 32rem; }
+.seo-prose th { text-align: left; color: #fff; font-weight: 700; background: rgba(255,255,255,0.06); padding: 0.75rem 1rem; }
+.seo-prose td { padding: 0.7rem 1rem; border-top: 1px solid rgba(255,255,255,0.08); vertical-align: top; }
+
+.seo-prose .answer-box { background: linear-gradient(145deg, rgba(102,126,234,0.14), rgba(118,75,162,0.10)); border: 1px solid rgba(129,140,248,0.35); border-radius: 1rem; padding: 1.1rem 1.4rem; color: #e5e7eb; }
+.seo-prose .callout { background: rgba(255,255,255,0.05); border-left: 3px solid #818cf8; border-radius: 0 0.75rem 0.75rem 0; padding: 0.9rem 1.2rem; }
+.seo-prose .callout-warn { border-left-color: #f59e0b; }
+
+.seo-prose ol.steps { list-style: none; padding-left: 0; counter-reset: step; }
+.seo-prose ol.steps > li { counter-increment: step; position: relative; padding: 0.9rem 1rem 0.9rem 3.4rem; background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: 1rem; margin-top: 0.75rem; }
+.seo-prose ol.steps > li::before { content: counter(step); position: absolute; left: 1rem; top: 0.9rem; width: 1.75rem; height: 1.75rem; border-radius: 9999px; background: linear-gradient(135deg, #667eea, #764ba2); color: #fff; font-weight: 800; font-size: 0.85rem; display: flex; align-items: center; justify-content: center; }
+
+.seo-prose .cta-inline { text-align: center; padding: 1.5rem; border-radius: 1rem; background: rgba(16,185,129,0.08); border: 1px solid rgba(16,185,129,0.3); color: #d1d5db; }
+.seo-prose .cta-inline a { display: inline-block; margin-top: 0.6rem; background: #22c55e; color: #fff; text-decoration: none; font-weight: 700; padding: 0.7rem 1.6rem; border-radius: 9999px; }
+.seo-prose .cta-inline a:hover { background: #16a34a; }
+
+.faq-answer p { color: #9ca3af; line-height: 1.7; font-size: 0.9rem; }
+.faq-answer p + p { margin-top: 0.6rem; }
+.faq-answer a { color: #a5b4fc; text-decoration: underline; }
+
+.related-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(14rem, 1fr)); gap: 1rem; }
+.related-card { display: block; padding: 1.1rem 1.25rem; transition: background 0.2s ease, transform 0.2s ease; }
+.related-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-2px); }
+.related-title { display: block; color: #fff; font-weight: 700; }
+.related-desc { display: block; color: #9ca3af; font-size: 0.85rem; margin-top: 0.2rem; }
+
+.seo-prose .sources { font-size: 0.85rem; color: #6b7280; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 1rem; margin-top: 2rem; }
+.seo-prose .sources a { color: #9ca3af; }

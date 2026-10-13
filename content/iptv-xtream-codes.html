@@ -1,0 +1,136 @@
+<!--meta
+{
+  "title": "Xtream Codes IPTV: Login, Server-URL & M3U-Link erklärt",
+  "description": "Xtream Codes einfach erklärt: Server-URL mit Port, Benutzername, Passwort, Umwandlung in einen M3U-Link, Vorteile für EPG und VOD sowie Fehlerhilfe.",
+  "h1": "Xtream Codes IPTV: Login und Server erklärt",
+  "badge": "Xtream Ratgeber",
+  "hero_sub": "Server-URL · Benutzername · Passwort",
+  "lead": "Ein <strong>Xtream-Codes-Login</strong> besteht aus drei Angaben: Server-URL mit Port, Benutzername und Passwort. Damit ruft eine IPTV-App Sender, Filme, Serien und Programmzeitschrift strukturiert vom Server ab. Aus denselben Daten lässt sich jederzeit ein M3U-Link bilden. Fast alle modernen IPTV-Apps unterstützen dieses Login-Verfahren.",
+  "breadcrumb": "Xtream Codes",
+  "device": "Xtream-Codes-App",
+  "related": ["iptv-m3u-playlist", "iptv-xciptv", "iptv-smarters-pro", "iptv-tivimate", "was-ist-iptv", "iptv-abo"]
+}
+-->
+<div class="answer-box"><p><strong>Kurz gesagt:</strong> „Xtream Codes“ war ursprünglich der Name einer Server-Software für IPTV-Anbieter. Geblieben ist deren Schnittstelle, die heute als De-facto-Standard gilt: Fast jede IPTV-App bietet „Login mit Xtream Codes“ an. Für Sie bedeutet das: Sie tippen drei Werte ein statt eines langen Links und bekommen eine sauber sortierte Oberfläche mit EPG, Filmen und Serien.</p></div>
+
+<h2>Was sind Xtream Codes genau?</h2>
+<p>Hinter dem Begriff stecken drei Ebenen, die im Alltag oft vermischt werden:</p>
+<ul>
+<li><strong>Die frühere Software:</strong> Xtream Codes war ein Verwaltungspanel, mit dem IPTV-Anbieter Zugänge, Server und Sender verwalteten. Der ursprüngliche Entwickler stellte das Produkt 2019 ein. Heute nutzen Anbieter verschiedene Nachfolge- und Eigenentwicklungen.</li>
+<li><strong>Die Schnittstelle (API):</strong> Das Format, in dem eine App beim Server nach Kategorien, Sendern, Filmen und EPG fragt, hat sich als Standard gehalten. Wenn Apps „Xtream Codes API“ schreiben, meinen sie diese Schnittstelle.</li>
+<li><strong>Ihre Zugangsdaten:</strong> Umgangssprachlich heißen auch die drei Login-Werte selbst „Xtream Codes“ oder kurz „XC-Daten“. Die App <a href="/iptv-xciptv">XCIPTV</a> trägt das Kürzel sogar im Namen.</li>
+</ul>
+<p>Wo der Begriff „IPTV-Line“ fällt, ist übrigens einfach ein solcher Zugang gemeint: eine Line ist ein Benutzerkonto mit Benutzername, Passwort, Laufzeit und einer festgelegten Zahl gleichzeitiger Verbindungen.</p>
+
+<h2>Die drei Login-Daten im Detail</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Feld</th><th>Beispiel</th><th>Worauf Sie achten müssen</th></tr></thead>
+<tbody>
+<tr><td>Server-URL</td><td><code>http://server-adresse:8080</code></td><td>Mit <code>http://</code> und Port angeben, ohne Schrägstrich oder Pfad am Ende</td></tr>
+<tr><td>Benutzername</td><td><code>muster123</code></td><td>Groß- und Kleinschreibung beachten, keine Leerzeichen</td></tr>
+<tr><td>Passwort</td><td><code>a8Kx2pQ</code></td><td>Am besten kopieren statt abtippen; Verwechslungsgefahr bei l, I und 1</td></tr>
+<tr><td>Name / Playlist-Name</td><td>„iptvv“</td><td>Frei wählbar, dient nur Ihrer Übersicht in der App</td></tr>
+</tbody></table></div>
+<p>Der <strong>Port</strong> (hier <code>8080</code>) ist Teil der Adresse und darf nicht fehlen. Manche Apps haben dafür kein eigenes Feld – dann gehört er mit Doppelpunkt direkt hinter die Server-Adresse. Diese Angaben senden wir Ihnen nach der Bestellung per WhatsApp; für MAG- und andere Set-Top-Boxen gibt es zusätzlich eine Portal-URL.</p>
+
+<h2>Vom Xtream-Login zum M3U-Link und zurück</h2>
+<p>Xtream-Daten und M3U-Link sind zwei Darstellungen desselben Zugangs. Aus Ihren Login-Daten können Sie den M3U-Link selbst zusammensetzen:</p>
+<p><code>http://server-adresse:8080/get.php?username=BENUTZER&amp;password=PASSWORT&amp;type=m3u_plus&amp;output=ts</code></p>
+<p>Umgekehrt funktioniert es genauso: Haben Sie nur einen M3U-Link, finden Sie darin den Server vor <code>/get.php</code> sowie Benutzername und Passwort hinter <code>username=</code> und <code>password=</code>. Diese drei Werte tragen Sie in eine App mit Xtream-Login ein. Die Programmzeitschrift im XMLTV-Format liegt bei den meisten Servern unter <code>/xmltv.php</code> mit denselben Parametern.</p>
+<h3>Xtream IPTV als M3U: den Link Schritt für Schritt bauen</h3>
+<p>Brauchen Sie für einen Player wie VLC oder Kodi eine M3U-Adresse, haben aber nur die Xtream-Daten, gehen Sie so vor:</p>
+<ol class="steps">
+<li><strong>Server-URL übernehmen:</strong> genau wie geliefert, mit <code>http://</code> und Port, ohne Schrägstrich am Ende, z. B. <code>http://server-adresse:8080</code>.</li>
+<li><strong>Pfad anhängen:</strong> direkt dahinter <code>/get.php?</code> schreiben.</li>
+<li><strong>Zugangsdaten einsetzen:</strong> <code>username=BENUTZER&amp;password=PASSWORT</code> – Groß- und Kleinschreibung exakt übernehmen.</li>
+<li><strong>Format festlegen:</strong> <code>&amp;type=m3u_plus&amp;output=ts</code> anhängen. Den fertigen Link im Browser aufzurufen ist nicht nötig; fügen Sie ihn direkt in den Player ein.</li>
+</ol>
+<div class="table-wrap"><table>
+<thead><tr><th>Parameter</th><th>Wert</th><th>Wirkung</th></tr></thead>
+<tbody>
+<tr><td><code>type</code></td><td><code>m3u_plus</code></td><td>Liste mit Logo, Gruppe und EPG-Kennung – für fast alle Apps richtig</td></tr>
+<tr><td><code>type</code></td><td><code>m3u</code></td><td>Schlanke Liste ohne Zusatzangaben, nur für sehr alte Player</td></tr>
+<tr><td><code>output</code></td><td><code>ts</code></td><td>Streams als MPEG-TS, Standard für Boxen, Android und VLC</td></tr>
+<tr><td><code>output</code></td><td><code>m3u8</code></td><td>Streams als HLS, hilfreich bei manchen Smart-TV- und Apple-Playern</td></tr>
+</tbody></table></div>
+<p>Enthält Ihr Passwort Sonderzeichen wie <code>&amp;</code>, <code>#</code> oder <code>+</code>, können diese den Link „zerbrechen“, weil sie in Web-Adressen eine eigene Bedeutung haben. Schicken Sie uns in diesem Fall eine kurze Nachricht – wir senden Ihnen den fertigen M3U-Link, der bei jeder Bestellung ohnehin mitgeliefert wird.</p>
+<div class="callout"><p><strong>Hinter den Kulissen:</strong> Apps mit Xtream-Login sprechen den Server über die Adresse <code>player_api.php</code> an. Ohne weitere Angaben liefert sie Kontoinformationen wie Ablaufdatum, erlaubte und aktive Verbindungen. Mit Zusatzparametern fragt die App Kategorien, Sender, Filme, Serien und Kurz-EPG getrennt ab. Genau deshalb laden große Kataloge per Xtream schneller als eine riesige M3U-Datei.</p></div>
+
+<h2>Xtream Codes oder M3U: Was ist besser?</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Kriterium</th><th>Xtream-Login</th><th>M3U-Link</th></tr></thead>
+<tbody>
+<tr><td>Eingabe</td><td>Drei kurze Felder</td><td>Ein langer Link</td></tr>
+<tr><td>Filme &amp; Serien</td><td>Eigene Bereiche mit Cover, Staffeln und Beschreibung</td><td>Meist als lange Liste zwischen den Sendern</td></tr>
+<tr><td>Programmzeitschrift</td><td>Wird automatisch mitgeladen</td><td>Oft separat einzutragen</td></tr>
+<tr><td>Ablaufdatum sichtbar</td><td>Ja, in vielen Apps im Kontobereich</td><td>Nein</td></tr>
+<tr><td>Ladezeit bei großem Katalog</td><td>Schnell, Kategorien einzeln</td><td>Langsamer, alles auf einmal</td></tr>
+<tr><td>Kompatibilität</td><td>Die meisten IPTV-Apps</td><td>Praktisch jeder Player, auch VLC und Kodi</td></tr>
+</tbody></table></div>
+<p>Faustregel: Kann Ihre App beides, nehmen Sie Xtream. Für einfache Player, einige Smart-TV-Apps und Mediacenter bleibt M3U die richtige Wahl. Mehr zum Format erklärt unsere Seite zur <a href="/iptv-m3u-playlist">M3U-Playlist</a>.</p>
+
+<h2>Welche Apps unterstützen den Xtream-Login?</h2>
+<p>Den Login per Xtream Codes beherrschen unter anderem <a href="/iptv-smarters-pro">IPTV Smarters Pro</a>, <a href="/iptv-tivimate">TiviMate</a>, <a href="/iptv-xciptv">XCIPTV</a>, <a href="/iptv-implayer">iMPlayer</a> und <a href="/iptv-gse-smart-iptv">GSE Smart IPTV</a>. Nur M3U verstehen dagegen VLC und viele einfache Smart-TV-Player. Einen Gesamtüberblick mit Plattformen und Bezahlmodell gibt der <a href="/iptv-apps-vergleich">IPTV-Apps-Vergleich</a>.</p>
+<ol class="steps">
+<li>In der App „Benutzer hinzufügen“, „Playlist hinzufügen“ oder „Login“ wählen.</li>
+<li>Als Typ <strong>Xtream Codes</strong> bzw. <strong>Xtream API</strong> auswählen.</li>
+<li>Namen, Server-URL mit Port, Benutzername und Passwort eintragen.</li>
+<li>Speichern und warten, bis Live-TV, Filme, Serien und EPG geladen sind.</li>
+</ol>
+
+<h2>Xtream, M3U oder Portal-URL: welcher Zugang für welches Gerät?</h2>
+<p>Mit Ihrer Bestellung erhalten Sie drei Zugangsarten. Welche Sie verwenden, hängt allein vom Gerät und der App ab – der Inhalt dahinter ist derselbe:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Gerät / App</th><th>Empfohlene Zugangsart</th><th>Mehr dazu</th></tr></thead>
+<tbody>
+<tr><td>Fire TV, Android-TV-Box, Google TV</td><td>Xtream-Login in TiviMate, Smarters oder XCIPTV</td><td><a href="/iptv-fire-stick">Fire TV Stick</a></td></tr>
+<tr><td>iPhone, iPad, Apple TV</td><td>Xtream-Login in einer iOS- bzw. tvOS-App</td><td><a href="/iptv-apple-tv">Apple TV</a></td></tr>
+<tr><td>VLC, Kodi, einfache TV-Player</td><td>M3U-Link</td><td><a href="/iptv-kodi">Kodi</a></td></tr>
+<tr><td>MAG-Box, STB-Emulator</td><td>Portal-URL, freigeschaltet über die MAC-Adresse</td><td><a href="/iptv-mag-box">MAG-Box</a></td></tr>
+</tbody></table></div>
+<h3>Zugangsdaten schützen</h3>
+<p>Ihre Xtream-Daten sind so wertvoll wie ein Schlüssel. Wer sie kennt, kann Ihren Zugang auf einem eigenen Gerät nutzen – Ihre Streams brechen dann mit dem Hinweis auf zu viele Verbindungen ab. Speichern Sie die Daten in einem Passwort-Manager oder einer privaten Notiz, schicken Sie keine Bildschirmfotos der Login-Maske weiter und tragen Sie sie nicht auf unbekannten Websites ein. Haben Sie den Verdacht, dass jemand Ihren Zugang mitbenutzt, melden Sie sich bei unserem <a href="/kontakt/wa">Support per WhatsApp</a>.</p>
+
+<h2>Was mit „IPTV-Server“ gemeint ist</h2>
+<p>Ein IPTV-Server ist die Gegenstelle, mit der Ihre App spricht. Er prüft Ihre Zugangsdaten, liefert die Senderliste und leitet beim Umschalten den Stream weiter. Größere Anbieter verteilen die Last auf mehrere Server; die Server-URL in Ihrem Login ist dabei nur der Einstiegspunkt. Fällt einer aus oder ändert sich die Adresse, informieren seriöse Anbieter ihre Kunden und nennen eine neue URL. Ihr Benutzername und Ihr Passwort bleiben in diesem Fall gleich. Wenn Sie in Anleitungen von „IPTV-Servern“ im Plural lesen, sind meist genau diese verteilten Einstiegs- und Streaming-Server gemeint, nicht verschiedene Abos.</p>
+<p>Für Sie spürbar ist die Qualität eines Servers vor allem an zwei Stellen: an der Umschaltzeit zwischen zwei Sendern und daran, ob Streams zur Hauptsendezeit am Abend genauso stabil laufen wie am Nachmittag. Beides lässt sich nur im praktischen Einsatz beurteilen, deshalb lohnt ein Test zu genau den Uhrzeiten, zu denen Sie normalerweise fernsehen.</p>
+
+<h2>IPTV-Lines und Testline: den Zugang vor dem Kauf prüfen</h2>
+<p>Im IPTV-Jargon ist eine <strong>Line</strong> ein einzelnes Konto auf dem Server. Eine <strong>Testline</strong> (auch „Test Line“) ist dasselbe Konto mit kurzer Laufzeit, meist 24 Stunden. Technisch unterscheidet sie sich nicht von einer bezahlten Line: gleiche Server-URL-Struktur, gleiche Apps, gleiche Senderliste. Deshalb ist sie der verlässlichste Weg, einen Anbieter mit Ihrem Gerät und Ihrem Internetanschluss zu beurteilen.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Begriff</th><th>Bedeutung</th><th>Was Sie damit tun</th></tr></thead>
+<tbody>
+<tr><td>Line</td><td>Konto mit Benutzername, Passwort, Ablaufdatum, Verbindungszahl</td><td>Dauerhaft in Ihrer App nutzen</td></tr>
+<tr><td>Testline</td><td>Line mit kurzer Laufzeit zum Ausprobieren</td><td>Gerät, App und Abendstabilität prüfen</td></tr>
+<tr><td>Line-Test / Line-Check</td><td>Abfrage des Kontostatus beim Server</td><td>Ablaufdatum, aktive und erlaubte Verbindungen sehen</td></tr>
+<tr><td>Verbindungen (Connections)</td><td>Anzahl gleichzeitig laufender Streams</td><td>Passend zur Zahl der Fernseher buchen</td></tr>
+</tbody></table></div>
+<p>Eine kostenlose Testline mit Xtream-Daten, M3U-Link und Portal-URL fordern Sie über die Seite <a href="/iptv-kostenlos-testen">IPTV kostenlos testen</a> an. Wie Sie den Status einer Line prüfen – etwa ob sie schon aktiv ist, wann sie abläuft oder ob gerade eine andere Verbindung läuft –, erklärt der Ratgeber <a href="/iptv-checker">IPTV Checker</a>. Viele Apps mit Xtream-Login zeigen dieselben Angaben zusätzlich im Kontobereich.</p>
+
+<h2>Fehlermeldungen beim Xtream-Login</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Meldung / Symptom</th><th>Ursache</th><th>Lösung</th></tr></thead>
+<tbody>
+<tr><td>„Invalid username or password“</td><td>Tippfehler, falsche Groß-/Kleinschreibung</td><td>Daten kopieren statt abtippen</td></tr>
+<tr><td>„Connection failed“ / „Server nicht erreichbar“</td><td>Port fehlt, <code>https</code> statt <code>http</code>, Netz blockiert den Port</td><td>URL exakt wie geliefert eintragen, testweise VPN oder Hotspot</td></tr>
+<tr><td>Login klappt, aber keine Sender</td><td>App hat nur Filme geladen oder Kategorien ausgeblendet</td><td>Inhalte in der App aktualisieren, Filter zurücksetzen</td></tr>
+<tr><td>„Account expired“</td><td>Laufzeit abgelaufen</td><td>Verlängern über <a href="/iptv-abo">IPTV-Abo</a></td></tr>
+<tr><td>„Max connections reached“</td><td>Zu viele Geräte gleichzeitig</td><td>Andere Geräte beenden oder mehr Verbindungen buchen</td></tr>
+</tbody></table></div>
+
+<div class="cta-inline"><p>Erhalten Sie Ihre Xtream-Codes-Daten und den passenden M3U-Link für den 24-Stunden-Test – kostenlos und ohne Vertrag.</p><a href="/iptv-kostenlos-testen">Jetzt kostenlos testen</a></div>
+<!--faq-->
+<h3>Was ist Xtream Codes bei IPTV?</h3>
+<p>Xtream Codes ist ein Anmeldeverfahren für IPTV-Apps. Statt eines langen Playlist-Links geben Sie Server-URL, Benutzername und Passwort ein. Die App lädt damit Sender, Filme, Serien und Programmzeitschrift direkt vom Server. Der Name stammt von einer früheren Verwaltungssoftware für IPTV-Anbieter.</p>
+<h3>Wo finde ich meine Xtream-Codes-Zugangsdaten?</h3>
+<p>Ihre Daten erhalten Sie nach der Bestellung oder beim kostenlosen Test von uns, meist per WhatsApp. Haben Sie nur einen M3U-Link, stehen Server, Benutzername und Passwort darin: der Server vor „/get.php“, die übrigen Werte hinter „username=“ und „password=“.</p>
+<h3>Was bedeutet „IPTV Line“?</h3>
+<p>Eine Line ist ein einzelner IPTV-Zugang: ein Konto mit Benutzername, Passwort, Ablaufdatum und einer festgelegten Zahl gleichzeitiger Verbindungen. Wenn jemand von „mehreren Lines“ spricht, meint er mehrere Konten oder ein Konto mit mehreren Verbindungen.</p>
+<h3>Kann ich Xtream Codes in VLC nutzen?</h3>
+<p>Nicht direkt, VLC kennt kein Login-Formular für Xtream. Setzen Sie aus Ihren Daten einen M3U-Link zusammen oder verwenden Sie den M3U-Link, den wir Ihnen zusätzlich schicken. Diesen öffnen Sie in VLC über „Netzwerkstream öffnen“.</p>
+<h3>Ist Xtream Codes dasselbe wie XCIPTV?</h3>
+<p>Nein. Xtream Codes ist das Anmeldeverfahren bzw. die Schnittstelle, XCIPTV ist eine App, die dieses Verfahren besonders gut unterstützt. Ihre Xtream-Daten funktionieren in XCIPTV genauso wie in Smarters, TiviMate oder iMPlayer.</p>
+<h3>Warum steht in der Server-URL ein Port wie :8080?</h3>
+<p>Der Port gibt an, über welchen „Eingang“ der Server die Anfrage annimmt. Fehlt er, landet die App an der falschen Stelle und meldet einen Verbindungsfehler. Übernehmen Sie die Server-URL deshalb immer genau so, wie Sie sie erhalten haben.</p>
+<h3>Ändern sich meine Daten, wenn der Server wechselt?</h3>
+<p>Benutzername und Passwort bleiben normalerweise gleich, nur die Server-URL kann sich ändern. In diesem Fall bearbeiten Sie in der App den gespeicherten Zugang und tragen die neue Adresse ein. Sender, Favoriten und Einstellungen bleiben in den meisten Apps erhalten.</p>

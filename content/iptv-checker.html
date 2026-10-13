@@ -1,0 +1,105 @@
+<!--meta
+{
+ "title": "IPTV Checker: Line, M3U und Ablaufdatum sicher prüfen",
+ "description": "IPTV Checker ohne Risiko: M3U-Link in VLC testen, Xtream-Login prüfen, Status und Ablaufdatum per player_api auslesen, Fehler verstehen. Gratis testen.",
+ "h1": "IPTV Checker: Zugang, M3U-Link und Line selbst prüfen",
+ "badge": "Zugang prüfen",
+ "hero_sub": "M3U-Test · Xtream-Login · Kontostatus",
+ "lead": "Ein <strong>IPTV Checker</strong> prüft, ob ein Zugang funktioniert: ob der Server antwortet, die Zugangsdaten gültig sind, wann die Line abläuft und wie viele Verbindungen erlaubt sind. Dafür brauchen Sie keine fremde Website. Mit VLC, Ihrer IPTV-App und einer einzigen Adresse im Browser prüfen Sie Ihren Zugang selbst – ohne Ihre Daten aus der Hand zu geben.",
+ "breadcrumb": "IPTV Checker",
+ "device": "IPTV Checker",
+ "related": [
+  "iptv-kostenlos-testen",
+  "iptv-xtream-codes",
+  "iptv-m3u-playlist",
+  "iptv-vlc",
+  "iptv-einrichten",
+  "iptv-4k",
+  "iptv-browser"
+ ]
+}
+-->
+<div class="answer-box"><p><strong>Kurz gesagt:</strong> Für einen zuverlässigen IPTV-Test genügen drei Prüfungen in dieser Reihenfolge: Erstens den M3U-Link in VLC öffnen (spielt ein Sender?), zweitens den Xtream-Login in einer App eintragen (laden Kategorien und EPG?), drittens den Kontostatus über die Server-Schnittstelle abfragen (aktiv, Ablaufdatum, Verbindungen). Damit wissen Sie in wenigen Minuten, ob ein Problem am Zugang, an der App oder an Ihrer Leitung liegt.</p></div>
+
+<h2>Was ein IPTV Checker eigentlich prüft</h2>
+<p>Hinter dem Begriff verbergen sich Werkzeuge, die automatisch an einen IPTV-Server herantreten und dessen Antworten auswerten. Ob als Online-Dienst, als Desktop-Programm oder als Funktion in einer App – technisch prüfen sie immer dieselben vier Ebenen:</p>
+<ul>
+<li><strong>Erreichbarkeit:</strong> Antwortet der Server unter der angegebenen Adresse und dem Port überhaupt?</li>
+<li><strong>Anmeldung:</strong> Akzeptiert der Server Benutzername und Passwort, und ist das Konto aktiv?</li>
+<li><strong>Kontodaten:</strong> Ablaufdatum, erlaubte und gerade aktive Verbindungen, Testzugang ja oder nein.</li>
+<li><strong>Streams:</strong> Lädt die Playlist, und liefern einzelne Sender tatsächlich Bild und Ton?</li>
+</ul>
+<p>Die ersten drei Punkte lassen sich mit einer einzigen Anfrage beantworten. Der vierte – ob ein Sender ruckelfrei läuft – kann kein Automat zuverlässig beurteilen, denn das hängt auch von Ihrem Gerät, Ihrem WLAN und der Uhrzeit ab. Deshalb ist ein Test auf dem Gerät, auf dem Sie später fernsehen, durch nichts zu ersetzen.</p>
+
+<h2>Vorsicht bei Online-Checker-Seiten</h2>
+<div class="callout callout-warn"><p><strong>Wichtig:</strong> Wer seinen M3U-Link oder Xtream-Login in das Eingabefeld einer unbekannten Website kopiert, gibt damit den vollständigen Schlüssel zu seinem Zugang weiter. Der Betreiber der Seite kann die Daten speichern, selbst nutzen oder weitergeben.</p></div>
+<p>Die Folgen bemerken Sie meist erst Tage später: Streams brechen mit dem Hinweis auf zu viele Verbindungen ab, weil fremde Geräte Ihre Line mitbenutzen. Ein „IPTV Checker online“ bietet Ihnen gegenüber den folgenden Methoden keinen Vorteil, denn er fragt dieselbe Schnittstelle ab, die Sie auch selbst aufrufen können. Unser Rat deshalb: Prüfen Sie Ihren Zugang ausschließlich mit Software auf Ihren eigenen Geräten. Sollten Sie Ihre Daten bereits irgendwo eingegeben haben, melden Sie sich beim <a href="/kontakt/wa">Support per WhatsApp</a> und schildern Sie, was passiert ist.</p>
+
+<h2>Methode 1: M3U-Test mit VLC</h2>
+<p>Der VLC Media Player ist kostenlos, quelloffen und für Windows, macOS, Linux, Android und iOS verfügbar (offizielle Quelle: videolan.org bzw. die App-Stores). Er spielt Streams ohne eigene Logik ab und ist deshalb das neutralste Prüfwerkzeug für einen IPTV-M3U-Test.</p>
+<ol class="steps">
+<li>In VLC <strong>Medien → Netzwerkstream öffnen</strong> wählen.</li>
+<li>Den M3U-Link vollständig einfügen und auf <strong>Wiedergabe</strong> klicken.</li>
+<li>In der Wiedergabeliste einen deutschen Vollprogramm-Sender, einen Nachrichtenkanal und einen HD-Sender nacheinander starten.</li>
+<li>Über <strong>Werkzeuge → Codec-Informationen</strong> Auflösung und Codec ablesen – so sehen Sie, ob ein Sender wirklich in Full HD oder <a href="/iptv-4k">4K</a> ankommt.</li>
+</ol>
+<p>Lädt die Liste, aber ein einzelner Sender nicht, liegt das Problem bei diesem Kanal. Lädt gar nichts, prüfen Sie den Link selbst. Einzelheiten zu Puffer und Hardware-Dekodierung stehen in unserer <a href="/iptv-vlc">VLC-Anleitung</a>, Aufbau und Parameter des Links erklärt die Seite zur <a href="/iptv-m3u-playlist">M3U-Playlist</a>.</p>
+
+<h2>Methode 2: Xtream-Login in einer App prüfen</h2>
+<p>VLC zeigt nur, ob Streams laufen. Ob auch Filme, Serien und die Programmzeitschrift korrekt ankommen, sehen Sie erst in einer App mit Xtream-Login, etwa <a href="/iptv-smarters-pro">IPTV Smarters Pro</a> oder <a href="/iptv-tivimate">TiviMate</a>. Tragen Sie Server-URL mit Port, Benutzername und Passwort ein und achten Sie nach dem Laden auf drei Dinge: Erscheinen die Kategorien für Live-TV, Filme und Serien? Zeigt das EPG für die großen deutschen Sender aktuelle Sendungen? Und steht im Konto- oder Profilbereich der App ein Ablaufdatum? Viele Apps zeigen dort genau die Daten an, die auch die folgende Methode liefert. Wie die drei Login-Felder zusammenhängen, beschreibt unser Ratgeber zu <a href="/iptv-xtream-codes">Xtream Codes</a>.</p>
+
+<h2>Methode 3: Kontostatus über player_api.php abfragen</h2>
+<p>Für einen IPTV-Line-Test ohne App öffnen Sie im Browser Ihres eigenen Geräts folgende Adresse, ersetzt durch Ihre Daten:</p>
+<p><code>http://server:port/player_api.php?username=BENUTZER&amp;password=PASSWORT</code></p>
+<p>Der Server antwortet mit einem kurzen Text im JSON-Format. Er enthält zwei Blöcke: <code>user_info</code> mit Ihren Kontodaten und <code>server_info</code> mit technischen Angaben zum Server. Die wichtigsten Felder:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Feld</th><th>Beispielwert</th><th>Bedeutung</th></tr></thead>
+<tbody>
+<tr><td><code>auth</code></td><td><code>1</code></td><td>1 = Anmeldung erfolgreich, 0 = Daten falsch</td></tr>
+<tr><td><code>status</code></td><td><code>Active</code></td><td>Kontozustand; „Expired“ = abgelaufen, „Banned“ oder „Disabled“ = gesperrt</td></tr>
+<tr><td><code>exp_date</code></td><td><code>1798761600</code></td><td>Ablaufdatum als Unix-Zeitstempel (Sekunden seit 1.1.1970); jeder Zeitstempel-Umrechner zeigt das Datum</td></tr>
+<tr><td><code>is_trial</code></td><td><code>0</code></td><td>1 = Testzugang, 0 = reguläres Abo</td></tr>
+<tr><td><code>max_connections</code></td><td><code>2</code></td><td>Wie viele Streams gleichzeitig laufen dürfen</td></tr>
+<tr><td><code>active_cons</code></td><td><code>0</code></td><td>Wie viele Streams in diesem Moment laufen</td></tr>
+<tr><td><code>created_at</code></td><td>Zeitstempel</td><td>Wann der Zugang angelegt wurde</td></tr>
+<tr><td><code>allowed_output_formats</code></td><td><code>["m3u8","ts"]</code></td><td>Welche Stream-Formate der Server ausliefert</td></tr>
+<tr><td><code>server_info</code> → <code>timezone</code></td><td><code>Europe/Berlin</code></td><td>Zeitzone des Servers, relevant für EPG-Zeiten</td></tr>
+</tbody></table></div>
+<p>Besonders aufschlussreich ist der Vergleich von <code>active_cons</code> und <code>max_connections</code>: Zeigt das Feld aktive Verbindungen, obwohl bei Ihnen gerade kein Gerät läuft, nutzt möglicherweise jemand anderes Ihre Daten. Lädt die Seite gar nicht, ist entweder die Adresse falsch oder der Server aus Ihrem Netz nicht erreichbar.</p>
+
+<h2>Geschwindigkeit und Bandbreite prüfen</h2>
+<p>Ein gültiger Zugang ist nur die halbe Miete; ob das Bild ruhig läuft, entscheidet Ihre Leitung. Messen Sie die Geschwindigkeit direkt auf dem Fernsehgerät, nicht am Handy neben dem Router. Auf Fire TV und Android-Boxen gibt es dafür Speedtest-Apps in den offiziellen Stores. Als Richtwert brauchen Sie dauerhaft rund 10 Mbit/s pro HD-Stream und 25 Mbit/s pro 4K-Stream. Messen Sie zusätzlich abends gegen 20 Uhr, wenn die Leitungen am stärksten belastet sind. Liegt der Wert dann deutlich unter der Mittagsmessung, hilft ein LAN-Kabel oder ein größerer Puffer in der App mehr als ein Wechsel des Anbieters.</p>
+
+<h2>Fehlercodes und Meldungen richtig deuten</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Meldung / Code</th><th>Bedeutung</th><th>Was Sie tun</th></tr></thead>
+<tbody>
+<tr><td>401 Unauthorized, <code>auth: 0</code></td><td>Benutzername oder Passwort falsch</td><td>Daten kopieren statt abtippen, Groß- und Kleinschreibung beachten</td></tr>
+<tr><td>403 Forbidden</td><td>Zugriff verweigert, etwa bei gesperrtem Konto oder blockierter IP-Adresse</td><td>Status prüfen, Support kontaktieren</td></tr>
+<tr><td>404 Not Found</td><td>Adresse oder Pfad falsch, z. B. Tippfehler in <code>get.php</code></td><td>Link vollständig neu aus unserer Nachricht übernehmen</td></tr>
+<tr><td>509 / „Max connections reached“</td><td>Mehr Streams gleichzeitig als erlaubt</td><td>Andere Geräte beenden, <code>active_cons</code> prüfen</td></tr>
+<tr><td><code>status: Expired</code></td><td>Laufzeit abgelaufen</td><td>Verlängern über <a href="/iptv-abo">IPTV-Abo</a></td></tr>
+<tr><td>Zeitüberschreitung, keine Antwort</td><td>Server nicht erreichbar oder Port im Netz blockiert</td><td>Anderes Netz testen (Handy-Hotspot), Port prüfen</td></tr>
+<tr><td>Läuft, aber puffert</td><td>Bandbreite zu gering, WLAN gestört</td><td>LAN nutzen, Puffer erhöhen, Speedtest am Gerät</td></tr>
+</tbody></table></div>
+<p>Wie Sie Puffer, Decoder und Stream-Format in der App dauerhaft richtig einstellen, zeigt die Anleitung <a href="/iptv-einrichten">IPTV einrichten</a>.</p>
+
+<h2>Eine Testline von uns prüfen</h2>
+<p>Sie möchten nicht nur Ihren bestehenden Zugang checken, sondern unseren Dienst ausprobieren? Fordern Sie eine <a href="/iptv-kostenlos-testen">kostenlose 24-Stunden-Testline</a> per Formular oder WhatsApp an. Sie erhalten M3U-Link, Xtream-Login und auf Wunsch eine Portal-URL – also alles, um jede der drei Methoden selbst durchzuführen. In der API-Antwort erkennen Sie den Testzugang am Feld <code>is_trial</code>. Der Test verlängert sich nicht automatisch und bindet Sie an keinen Vertrag.</p>
+
+<div class="cta-inline"><p>Prüfen Sie unsere Testline 24 Stunden lang mit VLC, Ihrer Lieblings-App und der player_api – kostenlos und ohne Vertrag.</p><a href="/iptv-kostenlos-testen">Jetzt kostenlos testen</a></div>
+<!--faq-->
+<h3>Ist ein IPTV Checker online sicher?</h3>
+<p>Das hängt vom Betreiber ab, den Sie in der Regel nicht kennen. Jede Seite, der Sie Ihren Link geben, kann ihn speichern und nutzen. Da sich dieselben Informationen über die player_api-Adresse direkt im eigenen Browser abrufen lassen, raten wir von solchen Diensten ab.</p>
+<h3>Wie sehe ich, wann mein IPTV-Zugang abläuft?</h3>
+<p>Entweder im Konto- oder Profilbereich Ihrer IPTV-App oder über die player_api-Abfrage im Feld „exp_date“. Der Wert ist ein Unix-Zeitstempel, den Sie mit einem beliebigen Umrechner in ein Datum übersetzen. Ist dort „null“ eingetragen, hat der Zugang kein festes Ablaufdatum hinterlegt.</p>
+<h3>Wie teste ich eine M3U-Liste am schnellsten?</h3>
+<p>Am PC mit VLC: Netzwerkstream öffnen, Link einfügen, abspielen. Startet ein Sender innerhalb weniger Sekunden, ist der Link gültig. Am Handy funktioniert das genauso in der VLC-App. Kodi oder ein IPTV-Player eignen sich ebenfalls, brauchen aber mehr Einrichtungszeit.</p>
+<h3>Was bedeutet „active_cons“ in der Abfrage?</h3>
+<p>Das Feld zeigt, wie viele Streams in diesem Augenblick über Ihren Zugang laufen. Liegt es über null, obwohl alle Ihre Geräte aus sind, kann eine App im Hintergrund noch verbunden sein – oder jemand nutzt Ihre Daten mit. Im zweiten Fall wenden Sie sich an den Support.</p>
+<h3>Warum funktioniert der Link in VLC, aber nicht in meiner App?</h3>
+<p>Dann sind Zugang und Server in Ordnung, und die Ursache liegt in der App: falsche Zugangsart gewählt, Port vergessen, veralteter Cache oder ein unpassender Decoder. Löschen Sie den Eintrag, legen Sie ihn neu an und wechseln Sie bei schwarzem Bild zwischen Hardware- und Software-Decoder.</p>
+<h3>Kann ein IPTV Tester auch die Bildqualität messen?</h3>
+<p>Nur bedingt. Automatische Tools erkennen, ob ein Stream startet, aber nicht, ob er abends ruckelt. Verlässlicher ist es, die Codec-Informationen in VLC abzulesen und einige Sender zur Hauptsendezeit auf Ihrem eigentlichen Fernsehgerät laufen zu lassen.</p>
+<h3>Wie bekomme ich eine kostenlose Testline zum Prüfen?</h3>
+<p>Über unser Formular oder per WhatsApp auf der Seite zum kostenlosen Test. Sie erhalten die Zugangsdaten meist zügig und können sie 24 Stunden lang auf all Ihren Geräten ausprobieren. Nach Ablauf endet der Zugang automatisch, ohne Kosten oder Kündigung.</p>

@@ -32,7 +32,9 @@
 
     <link rel="stylesheet" href="tw.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
     <link rel="stylesheet" href="style.css">
 
     <!-- Structured Data - Organization -->
@@ -86,7 +88,7 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <a href="/de/" class="flex items-center gap-2">
-                    <img loading="lazy" src="germany-icon.png" alt="IPTV Deutschland Logo" class="w-10 h-10 object-contain">
+                    <img src="/germany-icon-80.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">
                     <div>
                         <span class="text-xl font-bold">IPTV<span class="text-gradient"> Deutschland</span></span>
                         <span class="block text-[10px] text-gray-400 -mt-1">Ihr Premium IPTV Anbieter</span>
@@ -180,92 +182,105 @@
 
 <footer class="border-t border-white/10 py-16">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid md:grid-cols-4 gap-12 mb-12">
-                <div class="md:col-span-2">
-                    <a href="/de/" class="flex items-center gap-2 mb-4">
-                        <img loading="lazy" src="germany-icon.png" alt="IPTV Deutschland Logo" class="w-10 h-10 object-contain">
-                        <span class="text-xl font-bold">IPTV<span class="text-gradient"> Deutschland</span></span>
-                    </a>
-                    <p class="text-gray-400 mb-4 max-w-md leading-relaxed">
-                        <strong>IPTV Deutschland</strong> – Ihr vertrauenswürdiger <strong>IPTV Anbieter in Deutschland</strong>. Wir bieten Premium <strong>IPTV Deutsch</strong> mit über 50.000 Kanälen, 300.000 Filmen & Serien in 4K Qualität. <strong>IPTV Kaufen</strong> war noch nie so einfach und günstig.
-                    </p>
-                    <a href="/kontakt/wa" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-                        WhatsApp Kontakt
-                    </a>
-                </div>
+            <div class="mb-12">
+                <a href="/de/" class="flex items-center gap-2 mb-4">
+                    <img loading="lazy" decoding="async" src="/germany-icon-80.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">
+                    <span class="text-xl font-bold">IPTV<span class="text-gradient"> Deutschland</span></span>
+                </a>
+                <p class="text-gray-400 max-w-2xl leading-relaxed text-sm">IPTV Deutschland (iptvv.de) liefert Ihren IPTV-Zugang als M3U-Playlist, Xtream-Codes-Login oder MAG-Portal – passend für Smart TV, Fire TV Stick, Android, Apple-Geräte, PC und Receiver. Support auf Deutsch per WhatsApp.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-8 mb-12">
                 <div>
-                    <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">IPTV Pakete</h4>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">IPTV kaufen</p>
                     <ul class="space-y-3">
-                        <li><a href="/iptv-kaufen-1-geraet-1-monat" class="text-gray-400 hover:text-white transition text-sm">1 Monat ab 9€</a></li>
-                        <li><a href="/iptv-kaufen-1-geraet-3-monate" class="text-gray-400 hover:text-white transition text-sm">3 Monate ab 29€</a></li>
-                        <li><a href="/iptv-kaufen-1-geraet-6-monate" class="text-gray-400 hover:text-white transition text-sm">6 Monate ab 39€</a></li>
-                        <li><a href="/iptv-kaufen-1-geraet-1-jahr" class="text-gray-400 hover:text-white transition text-sm">1 Jahr ab 49€</a></li>
-                        <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">Kostenlos Testen</a></li>
-                        <li><a href="/de/#preise" class="text-gray-400 hover:text-white transition text-sm">Alle Preise vergleichen</a></li>
+                        <li><a href="/iptv-abo" class="text-gray-400 hover:text-white transition text-sm">IPTV Abo kaufen</a></li>
+                        <li><a href="/iptv-preise" class="text-gray-400 hover:text-white transition text-sm">IPTV Preise</a></li>
+                        <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
+                        <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
+                        <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
+                        <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Informationen</h4>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Apps</p>
                     <ul class="space-y-3">
-                        <li><a href="/de/#vorteile" class="text-gray-400 hover:text-white transition text-sm">Warum IPTV Deutschland</a></li>
-                        <li><a href="/de/#gerate" class="text-gray-400 hover:text-white transition text-sm">Kompatible Geräte</a></li>
-                        <li><a href="/de/#faq" class="text-gray-400 hover:text-white transition text-sm">Häufige Fragen</a></li>
-                        <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
+                        <li><a href="/iptv-apps-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Apps im Vergleich</a></li>
                         <li><a href="/iptv-smarters-pro" class="text-gray-400 hover:text-white transition text-sm">IPTV Smarters Pro</a></li>
-                        <li><a href="/iptv-fire-stick" class="text-gray-400 hover:text-white transition text-sm">IPTV Fire Stick</a></li>
-                        <li><a href="/iptv-smart-tv" class="text-gray-400 hover:text-white transition text-sm">IPTV Smart TV</a></li>
-                        <li><a href="/iptv-tivimate" class="text-gray-400 hover:text-white transition text-sm">IPTV TiviMate</a></li>
-                        <li><a href="/iptv-kodi" class="text-gray-400 hover:text-white transition text-sm">IPTV Kodi</a></li>
-                        <li><a href="/iptv-gse-smart-iptv" class="text-gray-400 hover:text-white transition text-sm">IPTV GSE Smart IPTV</a></li>
-                        <li><a href="/iptv-mag-box" class="text-gray-400 hover:text-white transition text-sm">IPTV MAG Box</a></li>
-                        <li><a href="/iptv-android-box" class="text-gray-400 hover:text-white transition text-sm">IPTV Android Box</a></li>
-                        <li><a href="/iptv-apps-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Apps Vergleich</a></li>
-                        <li><a href="/iptv-apple-tv" class="text-gray-400 hover:text-white transition text-sm">IPTV Apple TV</a></li>
-                        <li><a href="/iptv-vlc" class="text-gray-400 hover:text-white transition text-sm">IPTV VLC Player</a></li>
-                        <li><a href="/iptv-perfect-player" class="text-gray-400 hover:text-white transition text-sm">IPTV Perfect Player</a></li>
+                        <li><a href="/iptv-tivimate" class="text-gray-400 hover:text-white transition text-sm">TiviMate</a></li>
+                        <li><a href="/iptv-xciptv" class="text-gray-400 hover:text-white transition text-sm">XCIPTV Player</a></li>
+                        <li><a href="/iptv-siptv" class="text-gray-400 hover:text-white transition text-sm">Smart IPTV (SIPTV)</a></li>
+                        <li><a href="/iptv-ss-iptv" class="text-gray-400 hover:text-white transition text-sm">SS IPTV</a></li>
+                        <li><a href="/iptv-smartone" class="text-gray-400 hover:text-white transition text-sm">SmartOne IPTV</a></li>
+                        <li><a href="/iptv-flixiptv" class="text-gray-400 hover:text-white transition text-sm">FlixIPTV</a></li>
+                        <li><a href="/iptv-gse-smart-iptv" class="text-gray-400 hover:text-white transition text-sm">GSE Smart IPTV</a></li>
+                        <li><a href="/iptv-implayer" class="text-gray-400 hover:text-white transition text-sm">iMPlayer</a></li>
                         <li><a href="/iptv-extreme" class="text-gray-400 hover:text-white transition text-sm">IPTV Extreme</a></li>
-                        <li><a href="/iptv-stb-emulator" class="text-gray-400 hover:text-white transition text-sm">IPTV STB Emulator</a></li>
-                        <li><a href="/iptv-smartone" class="text-gray-400 hover:text-white transition text-sm">IPTV SmartOne IPTV</a></li>
-                        <li><a href="/iptv-siptv" class="text-gray-400 hover:text-white transition text-sm">IPTV SIPTV</a></li>
-                        <li><a href="/iptv-flixiptv" class="text-gray-400 hover:text-white transition text-sm">IPTV FlixIPTV</a></li>
-                        <li><a href="/iptv-windows-pc" class="text-gray-400 hover:text-white transition text-sm">IPTV Windows PC</a></li>
-                        <li><a href="/iptv-roku" class="text-gray-400 hover:text-white transition text-sm">IPTV Roku</a></li>
-                        <li><a href="/iptv-chromecast" class="text-gray-400 hover:text-white transition text-sm">IPTV Chromecast</a></li>
-                        <li><a href="/iptv-formuler" class="text-gray-400 hover:text-white transition text-sm">IPTV Formuler Box</a></li>
-                        <li><a href="/iptv-legal" class="text-gray-400 hover:text-white transition text-sm">Ist IPTV legal?</a></li>
+                        <li><a href="/iptv-perfect-player" class="text-gray-400 hover:text-white transition text-sm">Perfect Player</a></li>
+                        <li><a href="/iptv-stb-emulator" class="text-gray-400 hover:text-white transition text-sm">STB Emulator</a></li>
+                        <li><a href="/iptv-kodi" class="text-gray-400 hover:text-white transition text-sm">Kodi IPTV</a></li>
+                        <li><a href="/iptv-vlc" class="text-gray-400 hover:text-white transition text-sm">VLC Player</a></li>
+                        <li><a href="/iptv-plex-jellyfin" class="text-gray-400 hover:text-white transition text-sm">Plex &amp; Jellyfin</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Geräte</p>
+                    <ul class="space-y-3">
+                        <li><a href="/iptv-box" class="text-gray-400 hover:text-white transition text-sm">IPTV Box &amp; Stick</a></li>
+                        <li><a href="/iptv-fire-stick" class="text-gray-400 hover:text-white transition text-sm">Fire TV Stick</a></li>
+                        <li><a href="/iptv-android-box" class="text-gray-400 hover:text-white transition text-sm">Android TV Box</a></li>
+                        <li><a href="/iptv-android" class="text-gray-400 hover:text-white transition text-sm">Android Handy &amp; Tablet</a></li>
+                        <li><a href="/iptv-smart-tv" class="text-gray-400 hover:text-white transition text-sm">Smart TV</a></li>
+                        <li><a href="/iptv-samsung-tv" class="text-gray-400 hover:text-white transition text-sm">Samsung TV</a></li>
+                        <li><a href="/iptv-lg-tv" class="text-gray-400 hover:text-white transition text-sm">LG TV</a></li>
+                        <li><a href="/iptv-apple-tv" class="text-gray-400 hover:text-white transition text-sm">Apple TV</a></li>
+                        <li><a href="/iptv-iphone-ipad" class="text-gray-400 hover:text-white transition text-sm">iPhone &amp; iPad</a></li>
+                        <li><a href="/iptv-mac" class="text-gray-400 hover:text-white transition text-sm">Mac &amp; MacBook</a></li>
+                        <li><a href="/iptv-windows-pc" class="text-gray-400 hover:text-white transition text-sm">Windows PC</a></li>
+                        <li><a href="/iptv-browser" class="text-gray-400 hover:text-white transition text-sm">IPTV im Browser</a></li>
+                        <li><a href="/iptv-chromecast" class="text-gray-400 hover:text-white transition text-sm">Chromecast &amp; Google TV</a></li>
+                        <li><a href="/iptv-roku" class="text-gray-400 hover:text-white transition text-sm">Roku</a></li>
+                        <li><a href="/iptv-mag-box" class="text-gray-400 hover:text-white transition text-sm">MAG Box</a></li>
+                        <li><a href="/iptv-formuler" class="text-gray-400 hover:text-white transition text-sm">Formuler Box</a></li>
+                        <li><a href="/iptv-receiver" class="text-gray-400 hover:text-white transition text-sm">IPTV Receiver</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Ratgeber</p>
+                    <ul class="space-y-3">
                         <li><a href="/was-ist-iptv" class="text-gray-400 hover:text-white transition text-sm">Was ist IPTV?</a></li>
-                        <li><a href="/iptv-vs-kabel" class="text-gray-400 hover:text-white transition text-sm">IPTV vs. Kabel TV</a></li>
-                        <li><a href="/iptv-bundesliga" class="text-gray-400 hover:text-white transition text-sm">IPTV Bundesliga</a></li>
-                        <li><a href="/iptv-champions-league" class="text-gray-400 hover:text-white transition text-sm">IPTV Champions League</a></li>
-                        <li><a href="/iptv-abo" class="text-gray-400 hover:text-white transition text-sm">IPTV Abo kaufen</a></li>
-                        <li><a href="/iptv-sky" class="text-gray-400 hover:text-white transition text-sm">IPTV mit Sky</a></li>
-                        <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">IPTV statt Telekom</a></li>
-                        <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">IPTV statt Vodafone</a></li>
-                        <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">IPTV statt 1&amp;1</a></li>
+                        <li><a href="/iptv-m3u-playlist" class="text-gray-400 hover:text-white transition text-sm">M3U Playlist</a></li>
+                        <li><a href="/iptv-xtream-codes" class="text-gray-400 hover:text-white transition text-sm">Xtream Codes</a></li>
+                        <li><a href="/iptv-4k" class="text-gray-400 hover:text-white transition text-sm">IPTV in 4K</a></li>
+                        <li><a href="/iptv-legal" class="text-gray-400 hover:text-white transition text-sm">Ist IPTV legal?</a></li>
+                        <li><a href="/iptv-vs-kabel" class="text-gray-400 hover:text-white transition text-sm">IPTV vs. Kabel</a></li>
                         <li><a href="/iptv-zattoo" class="text-gray-400 hover:text-white transition text-sm">IPTV vs. Zattoo</a></li>
+                        <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
+                        <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
+                        <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Sender &amp; Sport</p>
+                    <ul class="space-y-3">
+                        <li><a href="/iptv-bundesliga" class="text-gray-400 hover:text-white transition text-sm">Bundesliga</a></li>
+                        <li><a href="/iptv-champions-league" class="text-gray-400 hover:text-white transition text-sm">Champions League</a></li>
+                        <li><a href="/iptv-sky" class="text-gray-400 hover:text-white transition text-sm">Sky Kanäle</a></li>
                         <li><a href="/iptv-tuerkische-sender" class="text-gray-400 hover:text-white transition text-sm">Türkische Sender</a></li>
                         <li><a href="/iptv-polnische-sender" class="text-gray-400 hover:text-white transition text-sm">Polnische Sender</a></li>
                         <li><a href="/iptv-russische-sender" class="text-gray-400 hover:text-white transition text-sm">Russische Sender</a></li>
                         <li><a href="/iptv-rumaenische-sender" class="text-gray-400 hover:text-white transition text-sm">Rumänische Sender</a></li>
                         <li><a href="/iptv-albanische-sender" class="text-gray-400 hover:text-white transition text-sm">Albanische Sender</a></li>
-                        <li><a href="/iptv-box" class="text-gray-400 hover:text-white transition text-sm">IPTV Box</a></li>
-                        <li><a href="/iptv-m3u-playlist" class="text-gray-400 hover:text-white transition text-sm">IPTV M3U Playlist</a></li>
-                        <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
-                        <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="border-t border-white/10 pt-8 mb-8 text-center">
                 <p class="text-xs text-gray-500 uppercase tracking-wider mb-4">Akzeptierte Zahlungsmethoden</p>
-                <img loading="lazy" src="payment-methods.png" alt="Akzeptierte Zahlungsmethoden: Mastercard, Visa, American Express, PayPal, Klarna, Banküberweisung, Google Pay, Apple Pay" class="w-full max-w-md h-auto mx-auto" style="box-shadow: 0 8px 30px rgba(0,0,0,0.35)">
-            </div>
-
-            <div class="border-t border-white/10 pt-8 mb-8">
-                <p class="text-xs text-gray-600 leading-relaxed text-center">
-IPTV Deutschland · iptvv.de
-                </p>
+                <img loading="lazy" decoding="async" src="/payment-methods-v2.png" width="1570" height="140" alt="Akzeptierte Zahlungsmethoden: Mastercard, Visa, American Express, PayPal, Klarna, Banküberweisung, Google Pay, Apple Pay" class="w-full max-w-md h-auto mx-auto" style="box-shadow: 0 8px 30px rgba(0,0,0,0.35)">
             </div>
 
             <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8">

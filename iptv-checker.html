@@ -1,0 +1,887 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPTV Checker: Line, M3U und Ablaufdatum sicher prüfen</title>
+    <meta name="description" content="IPTV Checker ohne Risiko: M3U-Link in VLC testen, Xtream-Login prüfen, Status und Ablaufdatum per player_api auslesen, Fehler verstehen. Gratis testen.">
+    <meta name="author" content="IPTV Deutschland">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <link rel="alternate" hreflang="de" href="https://iptvv.de/iptv-checker">
+<link rel="alternate" hreflang="x-default" href="https://iptvv.de/iptv-checker">
+<link rel="canonical" href="https://iptvv.de/iptv-checker">
+    <link rel="icon" type="image/png" href="germany-icon.png">
+    <link rel="shortcut icon" type="image/png" href="germany-icon.png">
+    <link rel="apple-touch-icon" href="germany-icon.png">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://iptvv.de/iptv-checker">
+    <meta property="og:title" content="IPTV Checker: Line, M3U und Ablaufdatum sicher prüfen">
+    <meta property="og:description" content="IPTV Checker ohne Risiko: M3U-Link in VLC testen, Xtream-Login prüfen, Status und Ablaufdatum per player_api auslesen, Fehler verstehen. Gratis testen.">
+    <meta property="og:image" content="https://iptvv.de/og-plan.png">
+    <meta property="og:locale" content="de_DE">
+    <meta property="og:site_name" content="IPTV Deutschland">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="IPTV Checker: Line, M3U und Ablaufdatum sicher prüfen">
+    <meta name="twitter:description" content="IPTV Checker ohne Risiko: M3U-Link in VLC testen, Xtream-Login prüfen, Status und Ablaufdatum per player_api auslesen, Fehler verstehen. Gratis testen.">
+    <meta name="twitter:image" content="https://iptvv.de/og-plan.png">
+
+    <!-- Structured Data - Product -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "name": "IPTV Checker – IPTV Deutschland",
+  "description": "IPTV Checker ohne Risiko: M3U-Link in VLC testen, Xtream-Login prüfen, Status und Ablaufdatum per player_api auslesen, Fehler verstehen. Gratis testen.",
+  "brand": {
+    "@type": "Brand",
+    "name": "IPTV Deutschland"
+  },
+  "offers": {
+    "@type": "Offer",
+    "price": "9",
+    "priceCurrency": "EUR",
+    "availability": "https://schema.org/InStock",
+    "url": "https://iptvv.de/iptv-checker"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "3842",
+    "bestRating": "5"
+  }
+}</script>
+
+    <!-- Structured Data - FAQ -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Ist ein IPTV Checker online sicher?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das hängt vom Betreiber ab, den Sie in der Regel nicht kennen. Jede Seite, der Sie Ihren Link geben, kann ihn speichern und nutzen. Da sich dieselben Informationen über die player_api-Adresse direkt im eigenen Browser abrufen lassen, raten wir von solchen Diensten ab."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie sehe ich, wann mein IPTV-Zugang abläuft?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Entweder im Konto- oder Profilbereich Ihrer IPTV-App oder über die player_api-Abfrage im Feld „exp_date“. Der Wert ist ein Unix-Zeitstempel, den Sie mit einem beliebigen Umrechner in ein Datum übersetzen. Ist dort „null“ eingetragen, hat der Zugang kein festes Ablaufdatum hinterlegt."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie teste ich eine M3U-Liste am schnellsten?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Am PC mit VLC: Netzwerkstream öffnen, Link einfügen, abspielen. Startet ein Sender innerhalb weniger Sekunden, ist der Link gültig. Am Handy funktioniert das genauso in der VLC-App. Kodi oder ein IPTV-Player eignen sich ebenfalls, brauchen aber mehr Einrichtungszeit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was bedeutet „active_cons“ in der Abfrage?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Das Feld zeigt, wie viele Streams in diesem Augenblick über Ihren Zugang laufen. Liegt es über null, obwohl alle Ihre Geräte aus sind, kann eine App im Hintergrund noch verbunden sein – oder jemand nutzt Ihre Daten mit. Im zweiten Fall wenden Sie sich an den Support."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum funktioniert der Link in VLC, aber nicht in meiner App?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Dann sind Zugang und Server in Ordnung, und die Ursache liegt in der App: falsche Zugangsart gewählt, Port vergessen, veralteter Cache oder ein unpassender Decoder. Löschen Sie den Eintrag, legen Sie ihn neu an und wechseln Sie bei schwarzem Bild zwischen Hardware- und Software-Decoder."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ein IPTV Tester auch die Bildqualität messen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Nur bedingt. Automatische Tools erkennen, ob ein Stream startet, aber nicht, ob er abends ruckelt. Verlässlicher ist es, die Codec-Informationen in VLC abzulesen und einige Sender zur Hauptsendezeit auf Ihrem eigentlichen Fernsehgerät laufen zu lassen."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie bekomme ich eine kostenlose Testline zum Prüfen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Über unser Formular oder per WhatsApp auf der Seite zum kostenlosen Test. Sie erhalten die Zugangsdaten meist zügig und können sie 24 Stunden lang auf all Ihren Geräten ausprobieren. Nach Ablauf endet der Zugang automatisch, ohne Kosten oder Kündigung."
+      }
+    }
+  ]
+}</script>
+
+
+    <!-- Structured Data - Organization -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "IPTV Deutschland",
+  "url": "https://iptvv.de/de/",
+  "logo": "https://iptvv.de/germany-icon.png",
+  "description": "Bester IPTV Anbieter in Deutschland – IPTV Kaufen mit +50.000 Kanälen, 4K Qualität, Live Sport, Filme und Serien.",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "contactType": "customer service",
+    "availableLanguage": [
+      "German",
+      "English"
+    ],
+    "url": "https://iptvv.de/kontakt/wa"
+  },
+  "sameAs": [
+    "https://iptvv.de/kontakt/wa"
+  ]
+}</script>
+
+    <link rel="stylesheet" href="tw.css">
+
+    <!-- Structured Data - BreadcrumbList -->
+    <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Startseite",
+      "item": "https://iptvv.de/de/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "IPTV Ratgeber",
+      "item": "https://iptvv.de/was-ist-iptv"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": "IPTV Checker",
+      "item": "https://iptvv.de/iptv-checker"
+    }
+  ]
+}</script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"></noscript>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/content.css?v=2">
+
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": [
+    "WebPage",
+    "Article"
+  ],
+  "name": "IPTV Checker",
+  "headline": "IPTV Checker: Zugang, M3U-Link und Line selbst prüfen",
+  "url": "https://iptvv.de/iptv-checker",
+  "description": "IPTV Checker ohne Risiko: M3U-Link in VLC testen, Xtream-Login prüfen, Status und Ablaufdatum per player_api auslesen, Fehler verstehen. Gratis testen.",
+  "inLanguage": "de-DE",
+  "datePublished": "2026-10-11",
+  "dateModified": "2026-10-13",
+  "isPartOf": {
+    "@type": "WebSite",
+    "name": "iptvv.de",
+    "url": "https://iptvv.de/de/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "IPTV Deutschland",
+    "url": "https://iptvv.de/de/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://iptvv.de/germany-icon.png"
+    }
+  },
+  "about": {
+    "@type": "Thing",
+    "name": "IPTV Checker"
+  },
+  "primaryImageOfPage": {
+    "@type": "ImageObject",
+    "url": "https://iptvv.de/og-plan.png"
+  },
+  "author": {
+    "@type": "Organization",
+    "name": "Redaktion IPTV Deutschland",
+    "url": "https://iptvv.de/de/"
+  }
+}</script>
+</head>
+<body class="gradient-bg text-white overflow-x-hidden">
+
+    <!-- Floating WhatsApp Button -->
+    <a href="/kontakt/wa?msg=Hallo!%20Ich%20habe%20eine%20Frage%20zu%20IPTV%20Checker." target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp Kontakt">
+        <div class="bg-green-500 hover:bg-green-600 rounded-full p-4 shadow-2xl cursor-pointer pulse-glow">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-8 h-8 text-white" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+            </svg>
+        </div>
+    </a>
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <a href="/de/" class="flex items-center gap-2">
+                    <img src="/germany-icon-80.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">
+                    <div>
+                        <span class="text-xl font-bold">IPTV<span class="text-gradient"> Deutschland</span></span>
+                        <span class="block text-[10px] text-gray-400 -mt-1">Ihr Premium IPTV Anbieter</span>
+                    </div>
+                </a>
+                <div class="hidden xl:flex items-center gap-6">
+                    <a href="/de/" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Startseite</a>
+                    <a href="/de/#vorteile" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Vorteile</a>
+                    <a href="/iptv-preise" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Preise</a>
+                    <a href="/iptv-bewertungen" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Bewertungen</a>
+                    <a href="/de/#gerate" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">Geräte</a>
+                    <a href="/de/#faq" class="text-gray-300 hover:text-white transition text-sm font-medium whitespace-nowrap">FAQ</a>
+                    <a href="/iptv-kostenlos-testen" class="bg-green-500 hover:bg-green-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all hover:scale-105 flex items-center gap-2">
+                        Kostenlos Testen
+                    </a>
+                </div>
+                <button id="mobileMenuBtn" class="xl:hidden text-white p-2">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg>
+                </button>
+            </div>
+        </div>
+        <div id="mobileMenu" class="hidden xl:hidden glass mx-4 rounded-2xl p-6 mb-4">
+            <div class="flex flex-col gap-4">
+                <a href="/de/" class="text-gray-300 hover:text-white transition">Startseite</a>
+                <a href="/de/#vorteile" class="text-gray-300 hover:text-white transition">Vorteile</a>
+                <a href="/iptv-preise" class="text-gray-300 hover:text-white transition">Preise</a>
+                <a href="/iptv-bewertungen" class="text-gray-300 hover:text-white transition">Bewertungen</a>
+                <a href="/de/#gerate" class="text-gray-300 hover:text-white transition">Geräte</a>
+                <a href="/de/#faq" class="text-gray-300 hover:text-white transition">FAQ</a>
+                <a href="/iptv-kostenlos-testen" class="bg-green-500 text-white px-6 py-3 rounded-full text-center font-semibold">Kostenlos Testen</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- ======== HERO: TITLE + PRICE ======== -->
+    <section class="hero-bg pt-36 pb-12 relative">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center slide-up">
+            <div class="inline-flex items-center gap-2 glass px-4 py-2 rounded-full mb-6">
+                <span class="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+                <span class="text-sm text-gray-300">Zugang prüfen</span>
+            </div>
+
+            <div class="glass rounded-3xl px-6 py-7 sm:px-10 sm:py-8 mb-4 relative">
+
+                <div class="flex flex-col sm:flex-row items-center sm:justify-between gap-4 sm:gap-8">
+                    <h1 class="text-2xl sm:text-3xl lg:text-4xl font-black leading-tight text-center sm:text-left">IPTV Checker: Zugang, M3U-Link und Line selbst prüfen</h1>
+                    <div class="flex items-baseline gap-1 shrink-0">
+                        <span class="text-5xl sm:text-6xl font-black text-gradient">ab 9</span>
+                        <span class="text-xl text-gray-400">€</span>
+                    </div>
+                </div>
+                <p class="text-sm text-gray-400 text-center sm:text-right mt-3">M3U-Test · Xtream-Login · Kontostatus</p>
+            </div>
+
+            <p class="hero-lead">Ein <strong>IPTV Checker</strong> prüft, ob ein Zugang funktioniert: ob der Server antwortet, die Zugangsdaten gültig sind, wann die Line abläuft und wie viele Verbindungen erlaubt sind. Dafür brauchen Sie keine fremde Website. Mit VLC, Ihrer IPTV-App und einer einzigen Adresse im Browser prüfen Sie Ihren Zugang selbst – ohne Ihre Daten aus der Hand zu geben.</p>
+            <p class="text-sm text-gray-500">+1,5 Millionen zufriedene Kunden · ★★★★★ 4.9/5 Bewertung</p>
+        </div>
+    </section>
+
+    <!-- ======== LEAD FORM ======== -->
+    <section id="angebot" class="py-12">
+        <div class="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="glass rounded-3xl p-8 sm:p-10 slide-up">
+                <div id="formHeader" class="text-center mb-8">
+                    <h2 class="text-2xl sm:text-3xl font-black mb-2"><span class="text-gradient">Jetzt</span> unverbindlich anfragen</h2>
+                    <p class="text-gray-400 text-sm">Füllen Sie das Formular aus – wir melden uns innerhalb weniger Minuten per WhatsApp oder E-Mail bei Ihnen.</p>
+                </div>
+
+                <form id="leadForm" class="space-y-5">
+                    <div>
+                        <label for="first_name" class="form-label">Vorname</label>
+                        <input type="text" id="first_name" name="from_name" class="form-field" placeholder="Ihr Vorname">
+                    </div>
+                    <div>
+                        <label for="email" class="form-label">E-Mail Adresse</label>
+                        <input type="email" id="email" name="from_email" class="form-field" placeholder="ihre@email.de">
+                    </div>
+                    <div>
+                        <label for="whatsappNumber" class="form-label">WhatsApp Nummer</label>
+                        <div class="flex gap-2">
+                            <select id="country" name="country" class="form-field" style="flex: 0 0 44%;">
+
+                                <option value="Deutschland" data-code="49" selected>Deutschland (+49)</option>
+                                <option value="Österreich" data-code="43">Österreich (+43)</option>
+                                <option value="Schweiz" data-code="41">Schweiz (+41)</option>
+                                <option disabled>──────────</option>
+                            
+                            </select>
+                            <input type="tel" id="whatsappNumber" class="form-field flex-1" placeholder="151 23456789">
+                        </div>
+                        <input type="hidden" id="whatsapp" name="phone">
+                        <p class="text-xs text-gray-500 mt-1.5">Vollständige Nummer: <span id="whatsappPreview" class="text-gray-400">+49</span></p>
+                    </div>
+                    <div>
+                        <label for="notes" class="form-label">Anmerkungen</label>
+                        <textarea id="notes" name="message" class="form-field" rows="3" placeholder="z.B. gewünschtes Gerät, Fragen zur Aktivierung ..."></textarea>
+                    </div>
+
+                    <input type="hidden" id="nameMirror" name="name" value="">
+                    <input type="hidden" id="timeField" name="time" value="">
+                    <input type="hidden" name="site_name" value="iptvv.de">
+                    <input type="hidden" name="device" value="IPTV Checker">
+                    <input type="hidden" name="plan" value="IPTV Checker – ab 9 EUR">
+
+                    <button type="submit" id="submitBtn" class="btn-submit w-full">Anfrage senden</button>
+                    <p id="formStatus" class="text-sm text-center min-h-[1.25rem]"></p>
+                    <p class="text-xs text-gray-500 text-center">Oder direkt per <a href="/kontakt/wa?msg=Hallo!%20Ich%20habe%20eine%20Frage%20zu%20IPTV%20Checker." target="_blank" rel="noopener" class="text-green-400 hover:text-green-300 underline">WhatsApp bestellen</a></p>
+                </form>
+
+                <div id="formSuccessPanel" class="hidden text-center py-4">
+                    <div class="w-20 h-20 mx-auto mb-6 rounded-full bg-green-500/15 flex items-center justify-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 text-green-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-black mb-3">Anfrage erfolgreich gesendet!</h3>
+                    <p class="text-gray-300 leading-relaxed mb-4">Vielen Dank! Wir melden uns in Kürze bei Ihnen per WhatsApp oder E-Mail.</p>
+                    <p class="text-gray-400 leading-relaxed mb-6">Bitte schauen Sie in Kürze in Ihr <strong class="text-white">E-Mail-Postfach</strong> – dort finden Sie Ihre Zugangsdaten. Falls Sie dort nichts sehen, prüfen Sie bitte auch Ihren <strong class="text-white">Spam-/Junk-Ordner</strong>.</p>
+                    <a href="/kontakt/wa?msg=Hallo!%20Ich%20habe%20eine%20Frage%20zu%20IPTV%20Checker." target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-green-400 hover:text-green-300 font-semibold text-sm underline">Oder direkt per WhatsApp kontaktieren</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== SEO CONTENT ======== -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p class="updated-note">Aktualisiert am 13.10.2026 · Redaktion IPTV Deutschland</p>
+            <nav class="toc" aria-label="Inhaltsverzeichnis">
+                <p class="toc-title">Inhalt</p>
+                <ol>
+                    <li><a href="#was-ein-iptv-checker-eigentlich-prueft">Was ein IPTV Checker eigentlich prüft</a></li>
+                    <li><a href="#vorsicht-bei-online-checker-seiten">Vorsicht bei Online-Checker-Seiten</a></li>
+                    <li><a href="#methode-1-m3u-test-mit-vlc">Methode 1: M3U-Test mit VLC</a></li>
+                    <li><a href="#methode-2-xtream-login-in-einer-app-pruefen">Methode 2: Xtream-Login in einer App prüfen</a></li>
+                    <li><a href="#methode-3-kontostatus-ueber-player-api-php-abfragen">Methode 3: Kontostatus über player_api.php abfragen</a></li>
+                    <li><a href="#geschwindigkeit-und-bandbreite-pruefen">Geschwindigkeit und Bandbreite prüfen</a></li>
+                    <li><a href="#fehlercodes-und-meldungen-richtig-deuten">Fehlercodes und Meldungen richtig deuten</a></li>
+                    <li><a href="#eine-testline-von-uns-pruefen">Eine Testline von uns prüfen</a></li>
+                </ol>
+            </nav>
+            <article class="seo-prose">
+<div class="answer-box"><p><strong>Kurz gesagt:</strong> Für einen zuverlässigen IPTV-Test genügen drei Prüfungen in dieser Reihenfolge: Erstens den M3U-Link in VLC öffnen (spielt ein Sender?), zweitens den Xtream-Login in einer App eintragen (laden Kategorien und EPG?), drittens den Kontostatus über die Server-Schnittstelle abfragen (aktiv, Ablaufdatum, Verbindungen). Damit wissen Sie in wenigen Minuten, ob ein Problem am Zugang, an der App oder an Ihrer Leitung liegt.</p></div>
+
+<h2 id="was-ein-iptv-checker-eigentlich-prueft">Was ein IPTV Checker eigentlich prüft</h2>
+<p>Hinter dem Begriff verbergen sich Werkzeuge, die automatisch an einen IPTV-Server herantreten und dessen Antworten auswerten. Ob als Online-Dienst, als Desktop-Programm oder als Funktion in einer App – technisch prüfen sie immer dieselben vier Ebenen:</p>
+<ul>
+<li><strong>Erreichbarkeit:</strong> Antwortet der Server unter der angegebenen Adresse und dem Port überhaupt?</li>
+<li><strong>Anmeldung:</strong> Akzeptiert der Server Benutzername und Passwort, und ist das Konto aktiv?</li>
+<li><strong>Kontodaten:</strong> Ablaufdatum, erlaubte und gerade aktive Verbindungen, Testzugang ja oder nein.</li>
+<li><strong>Streams:</strong> Lädt die Playlist, und liefern einzelne Sender tatsächlich Bild und Ton?</li>
+</ul>
+<p>Die ersten drei Punkte lassen sich mit einer einzigen Anfrage beantworten. Der vierte – ob ein Sender ruckelfrei läuft – kann kein Automat zuverlässig beurteilen, denn das hängt auch von Ihrem Gerät, Ihrem WLAN und der Uhrzeit ab. Deshalb ist ein Test auf dem Gerät, auf dem Sie später fernsehen, durch nichts zu ersetzen.</p>
+
+<h2 id="vorsicht-bei-online-checker-seiten">Vorsicht bei Online-Checker-Seiten</h2>
+<div class="callout callout-warn"><p><strong>Wichtig:</strong> Wer seinen M3U-Link oder Xtream-Login in das Eingabefeld einer unbekannten Website kopiert, gibt damit den vollständigen Schlüssel zu seinem Zugang weiter. Der Betreiber der Seite kann die Daten speichern, selbst nutzen oder weitergeben.</p></div>
+<p>Die Folgen bemerken Sie meist erst Tage später: Streams brechen mit dem Hinweis auf zu viele Verbindungen ab, weil fremde Geräte Ihre Line mitbenutzen. Ein „IPTV Checker online“ bietet Ihnen gegenüber den folgenden Methoden keinen Vorteil, denn er fragt dieselbe Schnittstelle ab, die Sie auch selbst aufrufen können. Unser Rat deshalb: Prüfen Sie Ihren Zugang ausschließlich mit Software auf Ihren eigenen Geräten. Sollten Sie Ihre Daten bereits irgendwo eingegeben haben, melden Sie sich beim <a href="/kontakt/wa">Support per WhatsApp</a> und schildern Sie, was passiert ist.</p>
+
+<h2 id="methode-1-m3u-test-mit-vlc">Methode 1: M3U-Test mit VLC</h2>
+<p>Der VLC Media Player ist kostenlos, quelloffen und für Windows, macOS, Linux, Android und iOS verfügbar (offizielle Quelle: videolan.org bzw. die App-Stores). Er spielt Streams ohne eigene Logik ab und ist deshalb das neutralste Prüfwerkzeug für einen IPTV-M3U-Test.</p>
+<ol class="steps">
+<li>In VLC <strong>Medien → Netzwerkstream öffnen</strong> wählen.</li>
+<li>Den M3U-Link vollständig einfügen und auf <strong>Wiedergabe</strong> klicken.</li>
+<li>In der Wiedergabeliste einen deutschen Vollprogramm-Sender, einen Nachrichtenkanal und einen HD-Sender nacheinander starten.</li>
+<li>Über <strong>Werkzeuge → Codec-Informationen</strong> Auflösung und Codec ablesen – so sehen Sie, ob ein Sender wirklich in Full HD oder <a href="/iptv-4k">4K</a> ankommt.</li>
+</ol>
+<p>Lädt die Liste, aber ein einzelner Sender nicht, liegt das Problem bei diesem Kanal. Lädt gar nichts, prüfen Sie den Link selbst. Einzelheiten zu Puffer und Hardware-Dekodierung stehen in unserer <a href="/iptv-vlc">VLC-Anleitung</a>, Aufbau und Parameter des Links erklärt die Seite zur <a href="/iptv-m3u-playlist">M3U-Playlist</a>.</p>
+
+<h2 id="methode-2-xtream-login-in-einer-app-pruefen">Methode 2: Xtream-Login in einer App prüfen</h2>
+<p>VLC zeigt nur, ob Streams laufen. Ob auch Filme, Serien und die Programmzeitschrift korrekt ankommen, sehen Sie erst in einer App mit Xtream-Login, etwa <a href="/iptv-smarters-pro">IPTV Smarters Pro</a> oder <a href="/iptv-tivimate">TiviMate</a>. Tragen Sie Server-URL mit Port, Benutzername und Passwort ein und achten Sie nach dem Laden auf drei Dinge: Erscheinen die Kategorien für Live-TV, Filme und Serien? Zeigt das EPG für die großen deutschen Sender aktuelle Sendungen? Und steht im Konto- oder Profilbereich der App ein Ablaufdatum? Viele Apps zeigen dort genau die Daten an, die auch die folgende Methode liefert. Wie die drei Login-Felder zusammenhängen, beschreibt unser Ratgeber zu <a href="/iptv-xtream-codes">Xtream Codes</a>.</p>
+
+<h2 id="methode-3-kontostatus-ueber-player-api-php-abfragen">Methode 3: Kontostatus über player_api.php abfragen</h2>
+<p>Für einen IPTV-Line-Test ohne App öffnen Sie im Browser Ihres eigenen Geräts folgende Adresse, ersetzt durch Ihre Daten:</p>
+<p><code>http://server:port/player_api.php?username=BENUTZER&amp;password=PASSWORT</code></p>
+<p>Der Server antwortet mit einem kurzen Text im JSON-Format. Er enthält zwei Blöcke: <code>user_info</code> mit Ihren Kontodaten und <code>server_info</code> mit technischen Angaben zum Server. Die wichtigsten Felder:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Feld</th><th>Beispielwert</th><th>Bedeutung</th></tr></thead>
+<tbody>
+<tr><td><code>auth</code></td><td><code>1</code></td><td>1 = Anmeldung erfolgreich, 0 = Daten falsch</td></tr>
+<tr><td><code>status</code></td><td><code>Active</code></td><td>Kontozustand; „Expired“ = abgelaufen, „Banned“ oder „Disabled“ = gesperrt</td></tr>
+<tr><td><code>exp_date</code></td><td><code>1798761600</code></td><td>Ablaufdatum als Unix-Zeitstempel (Sekunden seit 1.1.1970); jeder Zeitstempel-Umrechner zeigt das Datum</td></tr>
+<tr><td><code>is_trial</code></td><td><code>0</code></td><td>1 = Testzugang, 0 = reguläres Abo</td></tr>
+<tr><td><code>max_connections</code></td><td><code>2</code></td><td>Wie viele Streams gleichzeitig laufen dürfen</td></tr>
+<tr><td><code>active_cons</code></td><td><code>0</code></td><td>Wie viele Streams in diesem Moment laufen</td></tr>
+<tr><td><code>created_at</code></td><td>Zeitstempel</td><td>Wann der Zugang angelegt wurde</td></tr>
+<tr><td><code>allowed_output_formats</code></td><td><code>["m3u8","ts"]</code></td><td>Welche Stream-Formate der Server ausliefert</td></tr>
+<tr><td><code>server_info</code> → <code>timezone</code></td><td><code>Europe/Berlin</code></td><td>Zeitzone des Servers, relevant für EPG-Zeiten</td></tr>
+</tbody></table></div>
+<p>Besonders aufschlussreich ist der Vergleich von <code>active_cons</code> und <code>max_connections</code>: Zeigt das Feld aktive Verbindungen, obwohl bei Ihnen gerade kein Gerät läuft, nutzt möglicherweise jemand anderes Ihre Daten. Lädt die Seite gar nicht, ist entweder die Adresse falsch oder der Server aus Ihrem Netz nicht erreichbar.</p>
+
+<h2 id="geschwindigkeit-und-bandbreite-pruefen">Geschwindigkeit und Bandbreite prüfen</h2>
+<p>Ein gültiger Zugang ist nur die halbe Miete; ob das Bild ruhig läuft, entscheidet Ihre Leitung. Messen Sie die Geschwindigkeit direkt auf dem Fernsehgerät, nicht am Handy neben dem Router. Auf Fire TV und Android-Boxen gibt es dafür Speedtest-Apps in den offiziellen Stores. Als Richtwert brauchen Sie dauerhaft rund 10 Mbit/s pro HD-Stream und 25 Mbit/s pro 4K-Stream. Messen Sie zusätzlich abends gegen 20 Uhr, wenn die Leitungen am stärksten belastet sind. Liegt der Wert dann deutlich unter der Mittagsmessung, hilft ein LAN-Kabel oder ein größerer Puffer in der App mehr als ein Wechsel des Anbieters.</p>
+
+<h2 id="fehlercodes-und-meldungen-richtig-deuten">Fehlercodes und Meldungen richtig deuten</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Meldung / Code</th><th>Bedeutung</th><th>Was Sie tun</th></tr></thead>
+<tbody>
+<tr><td>401 Unauthorized, <code>auth: 0</code></td><td>Benutzername oder Passwort falsch</td><td>Daten kopieren statt abtippen, Groß- und Kleinschreibung beachten</td></tr>
+<tr><td>403 Forbidden</td><td>Zugriff verweigert, etwa bei gesperrtem Konto oder blockierter IP-Adresse</td><td>Status prüfen, Support kontaktieren</td></tr>
+<tr><td>404 Not Found</td><td>Adresse oder Pfad falsch, z. B. Tippfehler in <code>get.php</code></td><td>Link vollständig neu aus unserer Nachricht übernehmen</td></tr>
+<tr><td>509 / „Max connections reached“</td><td>Mehr Streams gleichzeitig als erlaubt</td><td>Andere Geräte beenden, <code>active_cons</code> prüfen</td></tr>
+<tr><td><code>status: Expired</code></td><td>Laufzeit abgelaufen</td><td>Verlängern über <a href="/iptv-abo">IPTV-Abo</a></td></tr>
+<tr><td>Zeitüberschreitung, keine Antwort</td><td>Server nicht erreichbar oder Port im Netz blockiert</td><td>Anderes Netz testen (Handy-Hotspot), Port prüfen</td></tr>
+<tr><td>Läuft, aber puffert</td><td>Bandbreite zu gering, WLAN gestört</td><td>LAN nutzen, Puffer erhöhen, Speedtest am Gerät</td></tr>
+</tbody></table></div>
+<p>Wie Sie Puffer, Decoder und Stream-Format in der App dauerhaft richtig einstellen, zeigt die Anleitung <a href="/iptv-einrichten">IPTV einrichten</a>.</p>
+
+<h2 id="eine-testline-von-uns-pruefen">Eine Testline von uns prüfen</h2>
+<p>Sie möchten nicht nur Ihren bestehenden Zugang checken, sondern unseren Dienst ausprobieren? Fordern Sie eine <a href="/iptv-kostenlos-testen">kostenlose 24-Stunden-Testline</a> per Formular oder WhatsApp an. Sie erhalten M3U-Link, Xtream-Login und auf Wunsch eine Portal-URL – also alles, um jede der drei Methoden selbst durchzuführen. In der API-Antwort erkennen Sie den Testzugang am Feld <code>is_trial</code>. Der Test verlängert sich nicht automatisch und bindet Sie an keinen Vertrag.</p>
+
+<div class="cta-inline"><p>Prüfen Sie unsere Testline 24 Stunden lang mit VLC, Ihrer Lieblings-App und der player_api – kostenlos und ohne Vertrag.</p><a href="/iptv-kostenlos-testen">Jetzt kostenlos testen</a></div>
+<p class="sources">Quellen und weiterführende Informationen: <a href="https://www.breitbandmessung.de/" target="_blank" rel="noopener">Breitbandmessung der Bundesnetzagentur</a></p>
+            </article>
+        </div>
+    </section>
+
+    <!-- ======== FAQ ======== -->
+    <section class="py-12">
+        <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-black mb-8 text-center slide-up">Häufige Fragen</h2>
+            <div class="space-y-4">
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Ist ein IPTV Checker online sicher?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Das hängt vom Betreiber ab, den Sie in der Regel nicht kennen. Jede Seite, der Sie Ihren Link geben, kann ihn speichern und nutzen. Da sich dieselben Informationen über die player_api-Adresse direkt im eigenen Browser abrufen lassen, raten wir von solchen Diensten ab.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Wie sehe ich, wann mein IPTV-Zugang abläuft?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Entweder im Konto- oder Profilbereich Ihrer IPTV-App oder über die player_api-Abfrage im Feld „exp_date“. Der Wert ist ein Unix-Zeitstempel, den Sie mit einem beliebigen Umrechner in ein Datum übersetzen. Ist dort „null“ eingetragen, hat der Zugang kein festes Ablaufdatum hinterlegt.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Wie teste ich eine M3U-Liste am schnellsten?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Am PC mit VLC: Netzwerkstream öffnen, Link einfügen, abspielen. Startet ein Sender innerhalb weniger Sekunden, ist der Link gültig. Am Handy funktioniert das genauso in der VLC-App. Kodi oder ein IPTV-Player eignen sich ebenfalls, brauchen aber mehr Einrichtungszeit.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Was bedeutet „active_cons“ in der Abfrage?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Das Feld zeigt, wie viele Streams in diesem Augenblick über Ihren Zugang laufen. Liegt es über null, obwohl alle Ihre Geräte aus sind, kann eine App im Hintergrund noch verbunden sein – oder jemand nutzt Ihre Daten mit. Im zweiten Fall wenden Sie sich an den Support.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Warum funktioniert der Link in VLC, aber nicht in meiner App?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Dann sind Zugang und Server in Ordnung, und die Ursache liegt in der App: falsche Zugangsart gewählt, Port vergessen, veralteter Cache oder ein unpassender Decoder. Löschen Sie den Eintrag, legen Sie ihn neu an und wechseln Sie bei schwarzem Bild zwischen Hardware- und Software-Decoder.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Kann ein IPTV Tester auch die Bildqualität messen?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Nur bedingt. Automatische Tools erkennen, ob ein Stream startet, aber nicht, ob er abends ruckelt. Verlässlicher ist es, die Codec-Informationen in VLC abzulesen und einige Sender zur Hauptsendezeit auf Ihrem eigentlichen Fernsehgerät laufen zu lassen.</p>
+                    </div>
+                </div>
+                <div class="faq-item glass rounded-2xl overflow-hidden slide-up">
+                    <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between font-semibold">
+                        <span>Wie bekomme ich eine kostenlose Testline zum Prüfen?</span>
+                        <span class="faq-icon text-2xl transition-transform">+</span>
+                    </button>
+                    <div class="faq-content hidden px-6 pb-5 faq-answer">
+                        <p>Über unser Formular oder per WhatsApp auf der Seite zum kostenlosen Test. Sie erhalten die Zugangsdaten meist zügig und können sie 24 Stunden lang auf all Ihren Geräten ausprobieren. Nach Ablauf endet der Zugang automatisch, ohne Kosten oder Kündigung.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== RELATED ======== -->
+    <section class="py-12">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-2xl sm:text-3xl font-black mb-6 text-center">Passende Anleitungen</h2>
+            <div class="related-grid">
+                <a href="/iptv-kostenlos-testen" class="related-card glass rounded-2xl">
+                    <span class="related-title">IPTV kostenlos testen</span>
+                    <span class="related-desc">24-Stunden-Test anfordern</span>
+                </a>
+                <a href="/iptv-xtream-codes" class="related-card glass rounded-2xl">
+                    <span class="related-title">Xtream Codes</span>
+                    <span class="related-desc">Server, Benutzername, Passwort</span>
+                </a>
+                <a href="/iptv-m3u-playlist" class="related-card glass rounded-2xl">
+                    <span class="related-title">M3U Playlist</span>
+                    <span class="related-desc">M3U, M3U8 und EPG erklärt</span>
+                </a>
+                <a href="/iptv-vlc" class="related-card glass rounded-2xl">
+                    <span class="related-title">VLC Player</span>
+                    <span class="related-desc">M3U-Playlist am PC abspielen</span>
+                </a>
+                <a href="/iptv-einrichten" class="related-card glass rounded-2xl">
+                    <span class="related-title">IPTV einrichten</span>
+                    <span class="related-desc">Zugangsdaten in jede App eintragen</span>
+                </a>
+                <a href="/iptv-4k" class="related-card glass rounded-2xl">
+                    <span class="related-title">IPTV in 4K</span>
+                    <span class="related-desc">Bandbreite, Geräte und Einstellungen</span>
+                </a>
+                <a href="/iptv-browser" class="related-card glass rounded-2xl">
+                    <span class="related-title">IPTV im Browser</span>
+                    <span class="related-desc">Ohne Installation streamen</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== OTHER PLANS ======== -->
+    <section class="py-12">
+        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center slide-up">
+            <h2 class="text-xl font-bold mb-6 text-gray-300">Beliebteste IPTV Pakete</h2>
+            <div class="flex flex-wrap justify-center gap-3">
+                <a href="/iptv-kaufen-1-geraet-1-monat" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">
+                    <span class="block font-bold text-sm">1 Monat IPTV Abo</span>
+                    <span class="block text-xs text-gray-400">9€</span>
+                </a>
+                <a href="/iptv-kaufen-1-geraet-6-monate" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">
+                    <span class="block font-bold text-sm">6 Monate IPTV Abo</span>
+                    <span class="block text-xs text-gray-400">39€</span>
+                </a>
+                <a href="/iptv-kaufen-1-geraet-1-jahr" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">
+                    <span class="block font-bold text-sm">1 Jahr IPTV Abo</span>
+                    <span class="block text-xs text-gray-400">49€</span>
+                </a>
+                <a href="/iptv-kostenlos-testen" class="glass rounded-2xl px-5 py-3 hover:bg-white/10 transition-all">
+                    <span class="block font-bold text-sm">Kostenlos Testen</span>
+                    <span class="block text-xs text-gray-400">Gratis & unverbindlich</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======== FOOTER ======== -->
+    <footer class="border-t border-white/10 py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-12">
+                <a href="/de/" class="flex items-center gap-2 mb-4">
+                    <img loading="lazy" decoding="async" src="/germany-icon-80.png" alt="IPTV Deutschland Logo" width="40" height="40" class="w-10 h-10 object-contain">
+                    <span class="text-xl font-bold">IPTV<span class="text-gradient"> Deutschland</span></span>
+                </a>
+                <p class="text-gray-400 max-w-2xl leading-relaxed text-sm">IPTV Deutschland (iptvv.de) liefert Ihren IPTV-Zugang als M3U-Playlist, Xtream-Codes-Login oder MAG-Portal – passend für Smart TV, Fire TV Stick, Android, Apple-Geräte, PC und Receiver. Support auf Deutsch per WhatsApp.</p>
+            </div>
+            <div class="grid sm:grid-cols-2 md:grid-cols-5 gap-8 mb-12">
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">IPTV kaufen</p>
+                    <ul class="space-y-3">
+                        <li><a href="/iptv-abo" class="text-gray-400 hover:text-white transition text-sm">IPTV Abo kaufen</a></li>
+                        <li><a href="/iptv-preise" class="text-gray-400 hover:text-white transition text-sm">IPTV Preise</a></li>
+                        <li><a href="/iptv-kostenlos-testen" class="text-gray-400 hover:text-white transition text-sm">IPTV kostenlos testen</a></li>
+                        <li><a href="/iptv-anbieter-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Anbieter Vergleich</a></li>
+                        <li><a href="/iptv-bewertungen" class="text-gray-400 hover:text-white transition text-sm">Kundenbewertungen</a></li>
+                        <li><a href="/german-iptv" class="text-gray-400 hover:text-white transition text-sm">German IPTV (English)</a></li>
+                        <li><a href="/kontakt/wa" target="_blank" rel="noopener" class="text-gray-400 hover:text-white transition text-sm">Kontakt / Support</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Apps</p>
+                    <ul class="space-y-3">
+                        <li><a href="/iptv-apps-vergleich" class="text-gray-400 hover:text-white transition text-sm">IPTV Apps im Vergleich</a></li>
+                        <li><a href="/iptv-smarters-pro" class="text-gray-400 hover:text-white transition text-sm">IPTV Smarters Pro</a></li>
+                        <li><a href="/iptv-tivimate" class="text-gray-400 hover:text-white transition text-sm">TiviMate</a></li>
+                        <li><a href="/iptv-xciptv" class="text-gray-400 hover:text-white transition text-sm">XCIPTV Player</a></li>
+                        <li><a href="/iptv-siptv" class="text-gray-400 hover:text-white transition text-sm">Smart IPTV (SIPTV)</a></li>
+                        <li><a href="/iptv-ss-iptv" class="text-gray-400 hover:text-white transition text-sm">SS IPTV</a></li>
+                        <li><a href="/iptv-smartone" class="text-gray-400 hover:text-white transition text-sm">SmartOne IPTV</a></li>
+                        <li><a href="/iptv-flixiptv" class="text-gray-400 hover:text-white transition text-sm">FlixIPTV</a></li>
+                        <li><a href="/iptv-gse-smart-iptv" class="text-gray-400 hover:text-white transition text-sm">GSE Smart IPTV</a></li>
+                        <li><a href="/iptv-implayer" class="text-gray-400 hover:text-white transition text-sm">iMPlayer</a></li>
+                        <li><a href="/iptv-extreme" class="text-gray-400 hover:text-white transition text-sm">IPTV Extreme</a></li>
+                        <li><a href="/iptv-perfect-player" class="text-gray-400 hover:text-white transition text-sm">Perfect Player</a></li>
+                        <li><a href="/iptv-stb-emulator" class="text-gray-400 hover:text-white transition text-sm">STB Emulator</a></li>
+                        <li><a href="/iptv-kodi" class="text-gray-400 hover:text-white transition text-sm">Kodi IPTV</a></li>
+                        <li><a href="/iptv-vlc" class="text-gray-400 hover:text-white transition text-sm">VLC Player</a></li>
+                        <li><a href="/iptv-plex-jellyfin" class="text-gray-400 hover:text-white transition text-sm">Plex &amp; Jellyfin</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Geräte</p>
+                    <ul class="space-y-3">
+                        <li><a href="/iptv-box" class="text-gray-400 hover:text-white transition text-sm">IPTV Box &amp; Stick</a></li>
+                        <li><a href="/iptv-fire-stick" class="text-gray-400 hover:text-white transition text-sm">Fire TV Stick</a></li>
+                        <li><a href="/iptv-android-box" class="text-gray-400 hover:text-white transition text-sm">Android TV Box</a></li>
+                        <li><a href="/iptv-android" class="text-gray-400 hover:text-white transition text-sm">Android Handy &amp; Tablet</a></li>
+                        <li><a href="/iptv-smart-tv" class="text-gray-400 hover:text-white transition text-sm">Smart TV</a></li>
+                        <li><a href="/iptv-samsung-tv" class="text-gray-400 hover:text-white transition text-sm">Samsung TV</a></li>
+                        <li><a href="/iptv-lg-tv" class="text-gray-400 hover:text-white transition text-sm">LG TV</a></li>
+                        <li><a href="/iptv-apple-tv" class="text-gray-400 hover:text-white transition text-sm">Apple TV</a></li>
+                        <li><a href="/iptv-iphone-ipad" class="text-gray-400 hover:text-white transition text-sm">iPhone &amp; iPad</a></li>
+                        <li><a href="/iptv-mac" class="text-gray-400 hover:text-white transition text-sm">Mac &amp; MacBook</a></li>
+                        <li><a href="/iptv-windows-pc" class="text-gray-400 hover:text-white transition text-sm">Windows PC</a></li>
+                        <li><a href="/iptv-browser" class="text-gray-400 hover:text-white transition text-sm">IPTV im Browser</a></li>
+                        <li><a href="/iptv-chromecast" class="text-gray-400 hover:text-white transition text-sm">Chromecast &amp; Google TV</a></li>
+                        <li><a href="/iptv-roku" class="text-gray-400 hover:text-white transition text-sm">Roku</a></li>
+                        <li><a href="/iptv-mag-box" class="text-gray-400 hover:text-white transition text-sm">MAG Box</a></li>
+                        <li><a href="/iptv-formuler" class="text-gray-400 hover:text-white transition text-sm">Formuler Box</a></li>
+                        <li><a href="/iptv-receiver" class="text-gray-400 hover:text-white transition text-sm">IPTV Receiver</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Ratgeber</p>
+                    <ul class="space-y-3">
+                        <li><a href="/was-ist-iptv" class="text-gray-400 hover:text-white transition text-sm">Was ist IPTV?</a></li>
+                        <li><a href="/iptv-m3u-playlist" class="text-gray-400 hover:text-white transition text-sm">M3U Playlist</a></li>
+                        <li><a href="/iptv-xtream-codes" class="text-gray-400 hover:text-white transition text-sm">Xtream Codes</a></li>
+                        <li><a href="/iptv-4k" class="text-gray-400 hover:text-white transition text-sm">IPTV in 4K</a></li>
+                        <li><a href="/iptv-legal" class="text-gray-400 hover:text-white transition text-sm">Ist IPTV legal?</a></li>
+                        <li><a href="/iptv-vs-kabel" class="text-gray-400 hover:text-white transition text-sm">IPTV vs. Kabel</a></li>
+                        <li><a href="/iptv-zattoo" class="text-gray-400 hover:text-white transition text-sm">IPTV vs. Zattoo</a></li>
+                        <li><a href="/iptv-telekom" class="text-gray-400 hover:text-white transition text-sm">Telekom MagentaTV</a></li>
+                        <li><a href="/iptv-vodafone" class="text-gray-400 hover:text-white transition text-sm">Vodafone TV</a></li>
+                        <li><a href="/iptv-1und1" class="text-gray-400 hover:text-white transition text-sm">1&amp;1 TV</a></li>
+                        <li><a href="/iptv-einrichten" class="text-gray-400 hover:text-white transition text-sm">IPTV einrichten</a></li>
+                        <li><a href="/iptv-checker" class="text-gray-400 hover:text-white transition text-sm">IPTV Checker</a></li>
+                        <li><a href="/iptv-senderliste" class="text-gray-400 hover:text-white transition text-sm">IPTV Senderliste</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <p class="font-bold mb-4 text-sm uppercase tracking-wider text-gray-300">Sender &amp; Sport</p>
+                    <ul class="space-y-3">
+                        <li><a href="/iptv-bundesliga" class="text-gray-400 hover:text-white transition text-sm">Bundesliga</a></li>
+                        <li><a href="/iptv-champions-league" class="text-gray-400 hover:text-white transition text-sm">Champions League</a></li>
+                        <li><a href="/iptv-sky" class="text-gray-400 hover:text-white transition text-sm">Sky Kanäle</a></li>
+                        <li><a href="/iptv-tuerkische-sender" class="text-gray-400 hover:text-white transition text-sm">Türkische Sender</a></li>
+                        <li><a href="/iptv-polnische-sender" class="text-gray-400 hover:text-white transition text-sm">Polnische Sender</a></li>
+                        <li><a href="/iptv-russische-sender" class="text-gray-400 hover:text-white transition text-sm">Russische Sender</a></li>
+                        <li><a href="/iptv-rumaenische-sender" class="text-gray-400 hover:text-white transition text-sm">Rumänische Sender</a></li>
+                        <li><a href="/iptv-albanische-sender" class="text-gray-400 hover:text-white transition text-sm">Albanische Sender</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-white/10 pt-8 mb-8 text-center">
+                <p class="text-xs text-gray-500 uppercase tracking-wider mb-4">Akzeptierte Zahlungsmethoden</p>
+                <img loading="lazy" decoding="async" src="/payment-methods-v2.png" width="1570" height="140" alt="Akzeptierte Zahlungsmethoden: Mastercard, Visa, American Express, PayPal, Klarna, Banküberweisung, Google Pay, Apple Pay" class="w-full max-w-md h-auto mx-auto" style="box-shadow: 0 8px 30px rgba(0,0,0,0.35)">
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4 border-t border-white/10 pt-8">
+                <p class="text-gray-500 text-sm">© 2026 IPTV Deutschland – iptvv.de · Alle Rechte vorbehalten.</p>
+                <div class="flex items-center gap-4 text-gray-500 text-sm">
+                    <a href="/impressum" class="hover:text-white transition">Impressum</a>
+                    <a href="/datenschutz" class="hover:text-white transition">Datenschutz</a>
+                    <a href="/agb" class="hover:text-white transition">AGB</a>
+                    <a href="/dmca" class="hover:text-white transition">DMCA</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/form-countries.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script>
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) { navbar.classList.add('navbar-scrolled'); }
+            else { navbar.classList.remove('navbar-scrolled'); }
+        });
+
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+        mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => mobileMenu.classList.add('hidden')));
+
+        // Scroll animations
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+        }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.slide-up').forEach(el => observer.observe(el));
+
+        // FAQ accordion
+        document.querySelectorAll('.faq-toggle').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                const content = item.querySelector('.faq-content');
+                const icon = btn.querySelector('.faq-icon');
+                const isOpen = !content.classList.contains('hidden');
+                document.querySelectorAll('.faq-content').forEach(c => c.classList.add('hidden'));
+                document.querySelectorAll('.faq-icon').forEach(i => { i.textContent = '+'; i.style.transform = 'rotate(0deg)'; });
+                if (!isOpen) {
+                    content.classList.remove('hidden');
+                    icon.textContent = '−';
+                    icon.style.transform = 'rotate(180deg)';
+                }
+            });
+        });
+
+        // ===== Country code + WhatsApp number sync =====
+        const countrySelect = document.getElementById('country');
+        const whatsappNumberInput = document.getElementById('whatsappNumber');
+        const whatsappHidden = document.getElementById('whatsapp');
+        const whatsappPreview = document.getElementById('whatsappPreview');
+
+        function updateWhatsappValue() {
+            const opt = countrySelect.options[countrySelect.selectedIndex];
+            const code = opt ? opt.dataset.code : '';
+            const numberPart = whatsappNumberInput.value.replace(/^0+/, '').trim();
+            const full = code ? ('+' + code + (numberPart ? ' ' + numberPart : '')) : numberPart;
+            whatsappHidden.value = full;
+            whatsappPreview.textContent = full || '+49';
+        }
+
+        countrySelect.addEventListener('change', updateWhatsappValue);
+        whatsappNumberInput.addEventListener('input', updateWhatsappValue);
+        updateWhatsappValue();
+
+        // ===== EmailJS lead form =====
+        (function () {
+            emailjs.init({ publicKey: 'pKiB2WLLYTKea3AR9' });
+        })();
+
+        const leadForm = document.getElementById('leadForm');
+        const submitBtn = document.getElementById('submitBtn');
+        const formStatus = document.getElementById('formStatus');
+        const formHeader = document.getElementById('formHeader');
+        const formSuccessPanel = document.getElementById('formSuccessPanel');
+        const firstNameInput = document.getElementById('first_name');
+        const nameMirror = document.getElementById('nameMirror');
+        const timeField = document.getElementById('timeField');
+
+        leadForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            updateWhatsappValue();
+            nameMirror.value = firstNameInput.value;
+            timeField.value = new Date().toLocaleString('de-DE', { dateStyle: 'medium', timeStyle: 'short' });
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Wird gesendet ...';
+            formStatus.textContent = '';
+            formStatus.className = 'text-sm text-center min-h-[1.25rem]';
+
+            emailjs.sendForm('service_rmnuog9', 'template_0qhdvki', leadForm)
+                .then(function () {
+                    formHeader.classList.add('hidden');
+                    leadForm.classList.add('hidden');
+                    formSuccessPanel.classList.remove('hidden');
+                    leadForm.reset();
+                    submitBtn.textContent = 'Anfrage senden';
+                    submitBtn.disabled = false;
+                }, function (error) {
+                    const code = error && error.status ? error.status : '?';
+                    const detail = error && error.text ? error.text : (error && error.message ? error.message : 'unbekannt');
+                    formStatus.innerHTML = 'Es gab leider ein Problem beim Senden. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt über WhatsApp.' +
+                        '<br><span class="text-gray-600 text-xs">(Fehlercode: ' + code + ' – ' + detail + ')</span>';
+                    formStatus.classList.add('form-status-error');
+                    submitBtn.textContent = 'Anfrage senden';
+                    submitBtn.disabled = false;
+                    console.error('EmailJS error - status:', code, 'text:', detail, 'full object:', error);
+                });
+        });
+    </script>
+<style>
+.sales-banner{position:fixed;left:18px;bottom:18px;z-index:79;max-width:266px;display:flex;align-items:center;gap:11px;padding:11px 30px 11px 11px;border-radius:12px;background:#ffffff;border:1px solid rgba(0,0,0,0.06);box-shadow:0 16px 34px -12px rgba(0,0,0,0.45),0 2px 6px rgba(0,0,0,0.08);transform:translateY(140%);opacity:0;transition:transform .4s cubic-bezier(.4,0,.2,1),opacity .4s cubic-bezier(.4,0,.2,1);}
+.sales-banner.show{transform:translateY(0);opacity:1;}
+.sales-banner-icon{flex-shrink:0;width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:linear-gradient(150deg,#FFE9A8 0%,#DFAD05 100%);box-shadow:0 0 0 2px rgba(223,173,5,0.15);}
+.sales-banner-title{font-weight:700;font-size:12.5px;line-height:1.35;color:#1A1A1A;}
+.sales-banner-title b{font-weight:800;}
+.sales-banner-text{font-size:10.5px;color:#8A8A8A;margin-top:2px;display:flex;align-items:center;gap:4px;}
+.sales-banner-text::before{content:"";width:6px;height:6px;border-radius:50%;background:#2ECC71;display:inline-block;flex-shrink:0;}
+.sales-banner-close{position:absolute;top:6px;right:8px;background:none;border:none;color:#B8B8B8;font-size:14px;line-height:1;cursor:pointer;padding:3px;}
+.sales-banner-close:hover{color:#666;}
+@media (max-width:600px){.sales-banner{left:12px;bottom:12px;max-width:calc(100% - 96px);padding:10px 26px 10px 10px;}}
+</style>
+<div class="sales-banner" id="salesBanner">
+  <button class="sales-banner-close" id="salesBannerClose" aria-label="Schliessen">&times;</button>
+  <div class="sales-banner-icon">
+    <svg viewBox="0 0 24 24" width="18" height="18" fill="none" aria-hidden="true">
+      <path d="M6 7h12l-1 12.5a2 2 0 0 1-2 1.8H9a2 2 0 0 1-2-1.8L6 7z" stroke="#1A1400" stroke-width="1.6" stroke-linejoin="round"/>
+      <path d="M9 7V6a3 3 0 0 1 6 0v1" stroke="#1A1400" stroke-width="1.6" stroke-linecap="round"/>
+      <path d="M9.5 12.5l1.8 1.8L14.8 11" stroke="#1A1400" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+  </div>
+  <div class="sales-banner-body">
+    <div class="sales-banner-title" id="salesBannerTitle">Neuer Kauf</div>
+    <div class="sales-banner-text" id="salesBannerText">gerade eben</div>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('salesBanner');
+  var closeBtn = document.getElementById('salesBannerClose');
+  var titleEl = document.getElementById('salesBannerTitle');
+  var textEl = document.getElementById('salesBannerText');
+  if(!banner || !titleEl || !textEl) return;
+  if(sessionStorage.getItem('ivde_sales_banner_dismissed') === '1') return;
+
+  var names = ["Alex", "Lukas", "Max", "Jonas", "Felix", "Niklas", "Tim", "Leon", "Julian", "Finn", "Sarah", "Lena", "Julia", "Laura", "Anna", "Nina", "Sophie", "Marie", "Lisa", "Katrin"];
+  var cities = ["München", "Berlin", "Hamburg", "Köln", "Frankfurt", "Stuttgart", "Düsseldorf", "Leipzig", "Dortmund", "Essen", "Bremen", "Dresden", "Hannover", "Nürnberg", "Duisburg", "Bochum", "Wuppertal", "Mannheim", "Karlsruhe", "Münster"];
+  var plans = ["1-Monats-Abo", "3-Monats-Abo", "3-Monats-Abo", "6-Monats-Abo", "6-Monats-Abo", "1-Jahres-Abo", "1-Jahres-Abo", "1-Jahres-Abo", "1-Jahres-Abo", "1-Jahres-Abo"];
+  var timeAgo = ["gerade eben", "vor 2 Minuten", "vor 5 Minuten", "vor 9 Minuten"];
+
+  function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
+
+  var dismissed = false;
+  var lastName = null;
+  var timers = [];
+  function setT(fn, ms){ var id = setTimeout(fn, ms); timers.push(id); return id; }
+
+  function nextNotification(){
+    var name = pick(names);
+    while(name === lastName){ name = pick(names); }
+    lastName = name;
+    var city = pick(cities);
+    var plan = pick(plans);
+    titleEl.innerHTML = '<b>' + name + '</b> aus ' + city + ' hat ein ' + plan + ' gekauft';
+    textEl.textContent = pick(timeAgo);
+  }
+
+  function cycle(){
+    if(dismissed) return;
+    nextNotification();
+    banner.classList.add('show');
+    setT(function(){
+      if(dismissed) return;
+      banner.classList.remove('show');
+      setT(cycle, 3000);
+    }, 5000);
+  }
+
+  setT(cycle, 2000 + Math.floor(Math.random() * 2000));
+
+  if(closeBtn){
+    closeBtn.addEventListener('click', function(){
+      dismissed = true;
+      banner.classList.remove('show');
+      sessionStorage.setItem('ivde_sales_banner_dismissed', '1');
+      timers.forEach(clearTimeout);
+    });
+  }
+})();
+</script>
+</body>
+</html>

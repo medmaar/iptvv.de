@@ -30,3 +30,11 @@
   X-Robots-Tag: noindex
 /generate_pages.py
   X-Robots-Tag: noindex
+/build_seo_pages.py
+  X-Robots-Tag: noindex
+/content/*
+  X-Robots-Tag: noindex
+
+# Small form helper script
+/form-countries.js
+  Cache-Control: public, max-age=86400

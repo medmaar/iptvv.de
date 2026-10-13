@@ -1,0 +1,103 @@
+<!--meta
+{
+  "title": "Plex IPTV & Jellyfin IPTV: Live TV auf dem eigenen Server",
+  "description": "IPTV in Jellyfin und Plex einbinden: M3U-Tuner und XMLTV in Jellyfin, Plex Live TV mit Threadfin oder xTeVe. Anleitung, Grenzen, Tipps. Jetzt testen.",
+  "h1": "Plex IPTV und Jellyfin IPTV – Live TV über den Medienserver",
+  "badge": "Medienserver",
+  "hero_sub": "Jellyfin · Plex · Threadfin · xTeVe",
+  "lead": "<strong>Jellyfin</strong> kann IPTV direkt: Unter Live TV legen Sie einen <strong>M3U-Tuner</strong> mit Ihrem Playlist-Link an und ergänzen eine <strong>XMLTV</strong>-Quelle für das EPG. <strong>Plex</strong> erwartet dagegen einen HDHomeRun-artigen Tuner und setzt Plex Pass voraus; für M3U-Listen braucht es deshalb ein Brückenprogramm wie Threadfin oder xTeVe.",
+  "breadcrumb": "Plex & Jellyfin",
+  "device": "Plex / Jellyfin",
+  "related": ["iptv-kodi", "iptv-m3u-playlist", "iptv-xtream-codes", "iptv-android-box", "iptv-apps-vergleich", "iptv-preise"]
+}
+-->
+<div class="answer-box"><p><strong>Kurz gesagt:</strong> Ein Medienserver bündelt Ihr Fernsehen an einer zentralen Stelle – mit einheitlichem Programmführer, Aufnahmen auf der eigenen Festplatte und Apps für viele Geräte. Am einfachsten gelingt das mit Jellyfin, das M3U-Playlists ohne Umwege akzeptiert. Mit Plex ist es möglich, aber aufwendiger. Für reines Fernsehen auf einem Gerät ist eine normale IPTV-App meist die bessere Wahl.</p></div>
+
+<h2>Wann lohnt sich IPTV über Plex oder Jellyfin?</h2>
+<p>Ein eigener Medienserver ist kein Muss, um IPTV zu schauen. Er bringt aber Vorteile, wenn Sie ohnehin einen Rechner, ein NAS oder einen Mini-PC rund um die Uhr laufen lassen:</p>
+<ul>
+<li><strong>Ein Programmführer für alle Geräte:</strong> Senderauswahl, Favoriten und EPG pflegen Sie einmal auf dem Server; Fernseher, Tablet und Browser zeigen dieselbe Ansicht.</li>
+<li><strong>Aufnahmen zentral speichern:</strong> Der Server zeichnet Sendungen auf seiner Festplatte auf, unabhängig davon, welches Gerät gerade eingeschaltet ist.</li>
+<li><strong>Filmsammlung und Fernsehen in einer App:</strong> Eigene Videos, Musik und Live TV liegen unter einer Oberfläche.</li>
+<li><strong>Umwandlung für schwache Geräte:</strong> Kann ein Abspielgerät einen Stream nicht direkt wiedergeben, rechnet der Server ihn um (Transcoding) – vorausgesetzt, die Hardware ist stark genug.</li>
+</ul>
+<p>Dem stehen Einrichtungsaufwand und laufende Wartung gegenüber. Wer nur auf dem Wohnzimmerfernseher schauen möchte, ist mit einer App wie TiviMate oder dem <a href="/iptv-kodi">Kodi PVR IPTV Simple Client</a> schneller am Ziel.</p>
+
+<h2>Jellyfin vs. Plex: Live TV im Vergleich</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Kriterium</th><th>Jellyfin</th><th>Plex</th></tr></thead>
+<tbody>
+<tr><td>Lizenz</td><td>Kostenlos, quelloffen</td><td>Live TV &amp; DVR nur mit kostenpflichtigem Plex Pass</td></tr>
+<tr><td>M3U-Playlist direkt nutzbar</td><td>Ja, eingebauter M3U-Tuner</td><td>Nein, erwartet HDHomeRun-kompatiblen Tuner</td></tr>
+<tr><td>EPG / Programmführer</td><td>XMLTV-Datei oder -URL</td><td>Plex-eigene Programmdaten oder XMLTV</td></tr>
+<tr><td>Aufnahmen</td><td>Ja, mit Timern und Serienaufnahmen</td><td>Ja, über Plex DVR</td></tr>
+<tr><td>Benötigte Zusatzsoftware</td><td>Keine</td><td>Bridge wie Threadfin oder xTeVe</td></tr>
+<tr><td>Konto beim Hersteller</td><td>Nein, rein lokal</td><td>Plex-Konto erforderlich</td></tr>
+</tbody></table></div>
+
+<h2>Jellyfin IPTV einrichten – Schritt für Schritt</h2>
+<p>Voraussetzung ist ein laufender Jellyfin-Server (Installation über jellyfin.org für Windows, Linux, macOS oder als Docker-Container). Halten Sie Ihren M3U-Link in der Variante <code>type=m3u_plus</code> und die XMLTV-Adresse bereit.</p>
+<ol class="steps">
+<li>Im Browser die Jellyfin-Oberfläche öffnen und als Administrator das <strong>Dashboard</strong> aufrufen.</li>
+<li>Im Menü <strong>Live TV</strong> wählen und bei <strong>Tuner-Geräte</strong> auf das Plus-Symbol klicken.</li>
+<li>Als Tuner-Typ <strong>M3U Tuner</strong> auswählen und unter „Datei oder URL“ den M3U-Link einfügen.</li>
+<li>Das Feld für die <strong>maximale Anzahl gleichzeitiger Streams</strong> auf die Zahl der Geräte in Ihrem Paket setzen – bei einem Ein-Geräte-Abo also auf 1.</li>
+<li>Unter <strong>TV-Guide-Datenanbieter</strong> einen <strong>XMLTV</strong>-Anbieter hinzufügen und die Adresse <code>http://server-adresse:port/xmltv.php?username=…&amp;password=…</code> eintragen.</li>
+<li>Speichern und unter <strong>Geplante Aufgaben</strong> die Aktualisierung der Programmführer-Daten manuell starten. Anschließend erscheint in allen Jellyfin-Apps der Bereich <strong>Live TV</strong>.</li>
+</ol>
+<div class="callout"><p><strong>Tipp:</strong> Importiert Jellyfin den kompletten Zugang mit über 50.000 Live-Sendern, wird der Programmführer unhandlich. Fragen Sie besser eine gefilterte Liste mit den Ländern an, die Sie tatsächlich schauen, oder nutzen Sie einen Filter wie Threadfin vor dem Import.</p></div>
+
+<h2>Plex IPTV mit Threadfin oder xTeVe</h2>
+<p>Plex unterstützt Live TV offiziell über Netzwerk-Tuner nach dem Vorbild der HDHomeRun-Geräte. Eine M3U-Playlist kann Plex nicht direkt als Tuner einlesen. Hier kommen Community-Programme wie <strong>Threadfin</strong> oder dessen Vorgänger <strong>xTeVe</strong> ins Spiel: Sie laden Ihre M3U-Liste und die XMLTV-Daten, lassen Sie die gewünschten Sender auswählen und geben sich gegenüber Plex als HDHomeRun-Tuner im Netzwerk aus.</p>
+<ol class="steps">
+<li><strong>Bridge installieren</strong>, typischerweise als Docker-Container auf demselben Rechner oder NAS wie Plex.</li>
+<li>In der Weboberfläche der Bridge die <strong>M3U-URL</strong> und die <strong>XMLTV-URL</strong> hinterlegen.</li>
+<li>Im Bereich für die Senderzuordnung (Mapping) die gewünschten Sender aktivieren und ihnen die passenden EPG-Einträge zuweisen. Beschränken Sie sich auf eine überschaubare Auswahl – Plex verarbeitet sehr große Kanallisten nur eingeschränkt.</li>
+<li>Die <strong>Anzahl der Tuner</strong> in der Bridge auf die Zahl Ihrer gleichzeitigen Verbindungen setzen.</li>
+<li>In Plex unter <strong>Einstellungen → Live TV &amp; DVR</strong> die Einrichtung starten. Plex findet den virtuellen Tuner meist automatisch; sonst die Adresse der Bridge manuell eingeben.</li>
+<li>Als Programmführer die <strong>XMLTV-Datei</strong> der Bridge angeben, damit Plex die zuvor zugeordneten Programmdaten verwendet.</li>
+</ol>
+<p>Threadfin und xTeVe sind keine offiziellen Plex-Produkte, sondern Open-Source-Werkzeuge aus der Community. Prüfen Sie vor der Installation die Projektseite auf aktuelle Hinweise und laden Sie Container nur aus dem offiziellen Repository des Projekts.</p>
+
+<h2>Mit welchen Geräten schauen Sie anschließend?</h2>
+<p>Ist der Server eingerichtet, greifen Sie über die Client-Apps von Jellyfin bzw. Plex auf Live TV zu. Beide Projekte bieten Apps für Android und Android TV, Fire TV, iPhone und iPad sowie eine Weboberfläche im Browser; Plex ist zusätzlich auf vielen Smart-TV-Plattformen vertreten. Auf den meisten Geräten erscheint Live TV als eigener Bereich mit Programmraster und Aufnahmeliste.</p>
+<p>Bei der Wahl des Abspielgeräts lohnt ein Blick auf die Codecs: Kann der Fernseher den Stream direkt wiedergeben, muss der Server nichts umrechnen, und die Wiedergabe startet schneller. Aktuelle Android-TV-Boxen und das Apple TV dekodieren H.264 und HEVC in der Regel ohne Hilfe. Ältere Smart-TVs zwingen den Server dagegen häufiger zum Transcoding. Möchten Sie auf einzelnen Geräten doch lieber eine klassische Player-App nutzen, finden Sie geeignete Kandidaten im <a href="/iptv-apps-vergleich">Vergleich der IPTV-Apps</a> – Server und App lassen sich problemlos parallel betreiben, solange die Zahl gleichzeitiger Streams passt.</p>
+
+<h2>Gleichzeitige Streams und Bandbreite richtig planen</h2>
+<p>Ein Server ändert nichts daran, wie viele Verbindungen Ihr IPTV-Zugang erlaubt. Jeder Sender, der gerade geschaut <em>oder aufgenommen</em> wird, belegt einen Stream. Läuft im Wohnzimmer ein Film und nimmt der Server parallel eine Sendung auf, sind das zwei Verbindungen.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>Nutzung im Haushalt</th><th>Gleichzeitige Streams</th><th>Bandbreite (ca.)</th></tr></thead>
+<tbody>
+<tr><td>Ein Fernseher, keine Aufnahmen</td><td>1</td><td>10 Mbit/s HD, 25 Mbit/s 4K</td></tr>
+<tr><td>Fernsehen plus eine Aufnahme</td><td>2</td><td>20 Mbit/s bei HD</td></tr>
+<tr><td>Zwei Zimmer schauen, eine Aufnahme läuft</td><td>3</td><td>30 Mbit/s bei HD</td></tr>
+<tr><td>Familie mit Serien-Aufnahmen am Abend</td><td>4–5</td><td>40–50 Mbit/s bei HD</td></tr>
+</tbody></table></div>
+<p>Unsere Pakete reichen von einem bis fünf gleichzeitigen Geräten; die Preise je Laufzeit stehen unter <a href="/iptv-preise">IPTV-Preise</a>. Hinterlegen Sie das Limit unbedingt im Tuner-Feld von Jellyfin bzw. der Bridge – sonst versucht der Server einen zusätzlichen Stream, und die Wiedergabe bricht ab.</p>
+
+<h2>Typische Probleme mit Plex und Jellyfin</h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Symptom</th><th>Ursache</th><th>Lösung</th></tr></thead>
+<tbody>
+<tr><td>Jellyfin: Live TV erscheint nicht</td><td>Programmführer noch nicht aktualisiert</td><td>Geplante Aufgabe „Programmführer aktualisieren“ starten</td></tr>
+<tr><td>Plex findet keinen Tuner</td><td>Bridge in anderem Netzwerk-Modus (Docker)</td><td>Host-Netzwerk nutzen oder Adresse manuell eingeben</td></tr>
+<tr><td>Stream startet, bricht nach Sekunden ab</td><td>Mehr Streams als im Paket erlaubt</td><td>Tuner-Limit anpassen, laufende Aufnahmen prüfen</td></tr>
+<tr><td>Bild ruckelt auf dem Fernseher</td><td>Server rechnet um, CPU überlastet</td><td>Direkte Wiedergabe erlauben, Hardware-Transcoding aktivieren</td></tr>
+<tr><td>Programmdaten fehlen bei vielen Sendern</td><td>Kennungen nicht zugeordnet</td><td>EPG-Zuordnung in Jellyfin bzw. im Mapping der Bridge prüfen</td></tr>
+</tbody></table></div>
+<p>Wer mit <a href="/iptv-xtream-codes">Xtream-Codes-Zugangsdaten</a> arbeitet, kann daraus jederzeit den M3U- und den XMLTV-Link ableiten; die Server selbst brauchen genau diese beiden Adressen. Welche Endgeräte als Client geeignet sind, zeigt unsere Übersicht zu <a href="/iptv-box">IPTV-Boxen und Sticks</a>.</p>
+
+<div class="cta-inline"><p>Probieren Sie IPTV in Jellyfin oder Plex mit einem kostenlosen 24-Stunden-Zugang aus – bei Bedarf mit gefilterter Senderliste.</p><a href="/iptv-kostenlos-testen">Jetzt kostenlos testen</a></div>
+<!--faq-->
+<h3>Kann Plex IPTV ohne Zusatzsoftware abspielen?</h3>
+<p>Für Live TV &amp; DVR erwartet Plex einen Netzwerk-Tuner im Stil eines HDHomeRun. Eine M3U-Playlist lässt sich deshalb nicht direkt eintragen. Mit einer Community-Bridge wie Threadfin oder xTeVe funktioniert es, Voraussetzung ist zusätzlich ein Plex Pass.</p>
+<h3>Ist Jellyfin für IPTV kostenlos?</h3>
+<p>Ja. Jellyfin ist quelloffene Software ohne Lizenzgebühren und ohne Pflichtkonto. Live TV, Programmführer und Aufnahmen sind enthalten. Kosten entstehen nur für die Hardware des Servers und Ihren IPTV-Zugang.</p>
+<h3>Zählt eine Aufnahme als eigenes Gerät?</h3>
+<p>Ja, jede laufende Aufnahme belegt eine Verbindung, genau wie ein geschauter Sender. Wer abends parallel schauen und aufnehmen möchte, benötigt ein Paket mit mindestens zwei gleichzeitigen Geräten.</p>
+<h3>Welche Hardware brauche ich für einen IPTV-Server?</h3>
+<p>Für das bloße Weiterreichen von Streams reicht ein sparsamer Mini-PC oder ein aktuelles NAS. Muss der Server Streams für schwache Geräte umwandeln, ist eine CPU oder Grafikeinheit mit Hardware-Transcoding sinnvoll, besonders bei HEVC und 4K.</p>
+<h3>Was ist der Unterschied zwischen xTeVe und Threadfin?</h3>
+<p>Beide sind Community-Werkzeuge, die M3U und XMLTV für Plex als HDHomeRun-Tuner aufbereiten. Threadfin ist aus xTeVe hervorgegangen und wird als dessen Weiterentwicklung gepflegt. Die Bedienung ist sehr ähnlich.</p>
+<h3>Kann ich Jellyfin Live TV unterwegs nutzen?</h3>
+<p>Technisch ja, wenn Ihr Server von außen erreichbar ist. Achten Sie auf eine sichere Verbindung und eine ausreichende Upload-Rate Ihres Anschlusses. Für unterwegs ist es oft einfacher, direkt eine IPTV-App auf dem Handy zu verwenden.</p>
