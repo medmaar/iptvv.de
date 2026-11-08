@@ -245,173 +245,114 @@ const EMAIL_BRAND = {
         }
       ]
     }
-  ]
+  ],
+  "s": {
+    "bg": "#0F0C29",
+    "glow": "#222553",
+    "glow2": "#1D153A",
+    "mid": "#16132F",
+    "card": "#1B1834",
+    "panel": "#0B091F",
+    "code": "#221F3A",
+    "line": "#312E47",
+    "ink": "#FFFFFF",
+    "body": "#CACAD0",
+    "muted": "#93929F",
+    "accent": "#667EEA",
+    "accent2": "#764BA2",
+    "onAccent": "#FFFFFF",
+    "head": "#292741",
+    "head2": "#303155",
+    "badge": "#2C2E5C",
+    "tag": "#A5B4FC",
+    "link": "#A5B4FC",
+    "pill": false
+  }
 };
 
 // IPTV Deutschland header logo (PNG), served at /email/logo.png for the emails.
 const EMAIL_LOGO_PNG = "iVBORw0KGgoAAAANSUhEUgAAAggAAABICAMAAACk5f0UAAAWfmNhQlgAABZ+anVtYgAAAB5qdW1kYzJwYQARABCAAACqADibcQNjMnBhAAAAFlhqdW1iAAAAR2p1bWRjMm1hABEAEIAAAKoAOJtxA3VybjpjMnBhOmVmOGRkMTY1LWVmODYtNDk3Ni1hMDZjLWZjMWNkM2Y2ZmZhZQAAAAOTanVtYgAAAClqdW1kYzJhcwARABCAAACqADibcQNjMnBhLmFzc2VydGlvbnMAAAAAuGp1bWIAAABEanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5pbmdyZWRpZW50LnYzAAAAABhjMnNoZPrxjqPwpxZRm9B7+JiQEwAAAGxjYm9yo2lkYzpmb3JtYXRpaW1hZ2UvcG5namluc3RhbmNlSUR4LHhtcDppaWQ6ZTM3MDllODgtNzFjOC00YmQ2LTljY2UtN2FiMGIxNWZiNzU4bHJlbGF0aW9uc2hpcGhwYXJlbnRPZgAAAeJqdW1iAAAAQWp1bWRjYm9yABEAEIAAAKoAOJtxE2MycGEuYWN0aW9ucy52MgAAAAAYYzJzaANirrxntK9ES/M82T/0TCMAAAGZY2JvcqJnYWN0aW9uc4KiZmFjdGlvbmtjMnBhLm9wZW5lZGpwYXJhbWV0ZXJzoWtpbmdyZWRpZW50c4GiY3VybHgtc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5pbmdyZWRpZW50LnYzZGhhc2hYIC+00cmHILjGjaGld6FN7xHyHL5BlDs6Y0evWMVZDKQkpGZhY3Rpb254HWNvbS5hbnRocm9waWMuY2xhdWRlLnByb3ZpZGVkanBhcmFtZXRlcnOheB9jb20uYW50aHJvcGljLm9yaWdpbi1jb25maWRlbmNlZ3Vua25vd25rZGVzY3JpcHRpb254ZkNsYXVkZSBwcm92aWRlZCB0aGlzIGZpbGUgYXQgdGhlIHJlcXVlc3Qgb2YgYSB1c2VyIGFuZCBtYXkgaGF2ZSBjcmVhdGVkIG9yIG1vZGlmaWVkIHRoZSBmaWxlIGNvbnRlbnRzLm1zb2Z0d2FyZUFnZW50oWRuYW1lZkNsYXVkZXJhbGxBY3Rpb25zSW5jbHVkZWT1AAAAyGp1bWIAAABAanVtZGNib3IAEQAQgAAAqgA4m3ETYzJwYS5oYXNoLmRhdGEAAAAAGGMyc2iMRBywzOoDN5gMB3tmf8KZAAAAgGNib3KlY2FsZ2ZzaGEyNTZjcGFkTQAAAAAAAAAAAAAAAABkaGFzaFgg9XyiPlXEL1UoEYuITfIXHFmWkkfm1VCl6j9WrzQSQylkbmFtZW5qdW1iZiBtYW5pZmVzdGpleGNsdXNpb25zgaJlc3RhcnQYIWZsZW5ndGgZFooAAAI+anVtYgAAACdqdW1kYzJjbAARABCAAACqADibcQNjMnBhLmNsYWltLnYyAAAAAg9jYm9ypWNhbGdmc2hhMjU2aXNpZ25hdHVyZXhNc2VsZiNqdW1iZj0vYzJwYS91cm46YzJwYTplZjhkZDE2NS1lZjg2LTQ5NzYtYTA2Yy1mYzFjZDNmNmZmYWUvYzJwYS5zaWduYXR1cmVqaW5zdGFuY2VJRHgseG1wOmlpZDplYTg2M2RlNy1jODYxLTQ4OTctOGEzNi1iZmI4OWRjNTBiNWNyY3JlYXRlZF9hc3NlcnRpb25zg6JjdXJseC1zZWxmI2p1bWJmPWMycGEuYXNzZXJ0aW9ucy9jMnBhLmluZ3JlZGllbnQudjNkaGFzaFggL7TRyYcguMaNoaV3oU3vEfIcvkGUOzpjR69YxVkMpCSiY3VybHgqc2VsZiNqdW1iZj1jMnBhLmFzc2VydGlvbnMvYzJwYS5hY3Rpb25zLnYyZGhhc2hYIFlY7XfqfnZ2OKoAnPtx9CWwuA2F8uoNmsGKCXWNN2OlomN1cmx4KXNlbGYjanVtYmY9YzJwYS5hc3NlcnRpb25zL2MycGEuaGFzaC5kYXRhZGhhc2hYICgmdoz63u8lPgYTTEcBLj6F/rqoj2/TvjslPpqtElcndGNsYWltX2dlbmVyYXRvcl9pbmZvo2RuYW1lb0FudGhyb3BpYyBGaWxlc2d2ZXJzaW9uZTEuMC4wa3NwZWNWZXJzaW9uZTIuNC4wAAAQOGp1bWIAAAAoanVtZGMyY3MAEQAQgAAAqgA4m3EDYzJwYS5zaWduYXR1cmUAAAAQCGNib3LShFkCEqIBJhghWQIKMIICBjCCAY2gAwIBAgIUQOWgCu7COdC+uIP6BkIFPWdVEwAwCgYIKoZIzj0EAwMwSTEXMBUGA1UEChMOQW50aHJvcGljLCBQQkMxLjAsBgNVBAMTJUFudGhyb3BpYyBDb250ZW50IENyZWRlbnRpYWxzIFJvb3QgQ0EwHhcNMjYwODA3MTg0MzU2WhcNMjgwODA2MTk0MzU2WjBEMRcwFQYDVQQKEw5BbnRocm9waWMsIFBCQzEpMCcGA1UEAxMgQW50aHJvcGljIENsYXVkZSBDb250ZW50IFNpZ25pbmcwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAASYegpry1AYBRTVNL1CpTlbROnY3dey+UrsF9C3phYrATN3ZHf93Mo8RQN0KOUuOn19P4oWNFWe5n2/She9N7eTo1gwVjAOBgNVHQ8BAf8EBAMCB4AwFQYDVR0lBA4wDAYKKwYBBAGD6F4CATAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFM5R4gSBTmRbI/jjxM+aPpzB11zCMAoGCCqGSM49BAMDA2cAMGQCMDFzHRSeAXrSy1WOzkbhPZ6Km2wGTmZ/2gK18k8BQGXyqz88Rdrz6CTX9flAnYNVxgIwcF9c3fVhqmJKpi+UhasNUMko69cyX6STPfta3Q8EjyzDjzoyrol46FP6VFHhvUcJoWNwYWRZDZ4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA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";
 
 const EMAIL_TEXT = {
+  "subject": "Ihr kostenloser Testzugang bei {brand}",
   "hi": "Hallo {name},",
   "hiAnon": "Hallo,",
-  "w_pre": "Ihre Zugangsdaten sind da. Drei einfache Schritte und Sie schauen.",
-  "w_kicker": "🎉 Gratis-Test · 24 Stunden",
-  "w_title": "Es kann losgehen! Ihr Testzugang ist bereit.",
-  "w_intro": "Alle Sender, Sport, Filme und Serien sind für die nächsten 24 Stunden freigeschaltet. Die Einrichtung dauert etwa 3 Minuten.",
-  "w_mini": [
-    "App holen",
-    "Daten kopieren",
-    "Abspielen"
-  ],
-  "newTitle": "Neu bei IPTV? So funktioniert es",
-  "newText": "Sie schauen {brand} in einer <strong>IPTV-App</strong> auf Ihrem Fernseher, Handy oder Computer, nicht auf einer Webseite. Die Daten unten sind Ihr Schlüssel: Sie tippen oder fügen sie in die App ein, und alle Sender werden freigeschaltet.",
-  "loginTitle": "🔑 Ihre Zugangsdaten",
-  "loginAgain": "🔑 Ihre Zugangsdaten (unverändert)",
-  "loginSub": "Es gibt <strong>zwei Wege</strong> zum Anmelden. Sie brauchen nur <strong>einen</strong>: den, nach dem Ihre App fragt.",
-  "warnTitle": "Das sind keine Webseiten-Links.",
-  "warnText": "Im Browser erscheint eine Fehlerseite, und das ist normal. Kopieren Sie die Daten stattdessen in Ihre IPTV-App. Am Handy: gedrückt halten zum Kopieren.",
-  "opt": "Weg {n}",
-  "or": "ODER",
-  "x_title": "Xtream Codes",
-  "x_badge": "Am einfachsten",
-  "x_for": "Nutzen Sie diesen Weg, wenn Ihre App nach einem <strong>Server</strong> (oder URL), einem <strong>Benutzernamen</strong> und einem <strong>Passwort</strong> fragt. In der App heißt das oft „Xtream Codes“ oder „Xtream Codes API“.",
-  "server1": "Server-URL",
-  "server2": "Ersatz-Server-URL",
-  "server2Note": "nur wenn die erste nicht verbindet",
+  "w_pre": "Ihre Zugangsdaten für den Testzugang.",
+  "w_tag": "Gratis-Test · 24 Stunden",
+  "w_title": "Willkommen bei {brand}",
+  "w_intro": "Ihr Testzugang ist für die nächsten 24 Stunden aktiv. Hier sind Ihre Zugangsdaten.",
+  "xtream": "Xtream Codes",
+  "m3u": "M3U-Playlist",
   "username": "Benutzername",
   "password": "Passwort",
-  "m_title": "M3U-Playlist",
-  "m_for": "Nutzen Sie diesen Weg, wenn Ihre App nach <strong>einem Link</strong> fragt, genannt „Playlist-URL“ oder „M3U-URL“. Benutzername und Passwort sind darin schon enthalten.",
-  "m_label": "M3U-URL",
-  "caseNote": "Alles genau so übernehmen: Groß- und Kleinschreibung zählt, es gibt keine Leerzeichen.",
-  "howTitle": "In 3 Schritten eingerichtet",
+  "server": "Server-URL",
+  "backup": "Ersatz-Server",
+  "copyNote": "Kopieren Sie die Daten in eine IPTV-App. Im Browser funktionieren sie nicht.",
+  "howTitle": "So geht's los",
   "steps": [
-    [
-      "📲",
-      "IPTV-App installieren",
-      "Öffnen Sie den App-Store Ihres Geräts und installieren Sie <strong>IPTV Smarters Pro</strong>, <strong>TiviMate</strong> oder <strong>IBO Player</strong>. Sie laufen auf Firestick, Android TV, Smart-TVs, iPhone, Android und PC."
-    ],
-    [
-      "🔑",
-      "Mit Weg 1 oder 2 anmelden",
-      "Wählen Sie in der App <strong>Xtream Codes</strong> und kopieren Sie Server-URL, Benutzername und Passwort hinein. Fragt die App nur nach einem Playlist-Link, fügen Sie die <strong>M3U-URL</strong> ein."
-    ],
-    [
-      "🍿",
-      "Abspielen",
-      "Öffnen Sie Live-TV, Filme oder Serien und los geht’s. Keine Verbindung? Auf Tippfehler prüfen, dann die Ersatz-Server-URL versuchen."
-    ]
+    "Installieren Sie <strong>IPTV Smarters Pro</strong>, <strong>TiviMate</strong> oder <strong>IBO Player</strong> auf Fernseher, Handy oder Computer.",
+    "Wählen Sie <strong>Xtream Codes</strong> und geben Sie Benutzername, Passwort und Server-URL ein. Oder fügen Sie die M3U-Playlist ein.",
+    "Abspielen und genießen."
   ],
-  "tryTitle": "Probieren Sie das vor Testende aus",
-  "helpSetup": "Hängen geblieben? Wir richten es mit Ihnen ein.",
-  "helpPlans": "Fragen vor dem Abschluss?",
-  "helpChoose": "Nicht sicher, welches Paket passt?",
-  "helpLine": "Antworten Sie auf diese E-Mail oder schreiben Sie uns auf WhatsApp. Echte Menschen, meist innerhalb weniger Minuten.",
-  "signWelcome": "Viel Spaß beim Testen,",
-  "signFollow": "Viele Grüße,",
+  "help": "Brauchen Sie Hilfe? Antworten Sie auf diese E-Mail oder",
+  "wa": "schreiben Sie uns auf WhatsApp",
   "team": "Ihr {brand} Team",
-  "r_pre": "Noch etwa 4 Stunden. Mit einem Abo behalten Sie dieselben Zugangsdaten.",
-  "r_kicker": "⏰ Noch etwa 4 Stunden",
+  "r_pre": "Ihr Testzugang läuft in etwa 4 Stunden ab.",
+  "r_tag": "Noch etwa 4 Stunden",
   "r_title": "Ihr Testzugang endet bald",
-  "r_text": "Gefällt Ihnen {brand}? Schließen Sie jetzt ein Abo ab und schauen Sie ohne Pause weiter. Ihre Zugangsdaten bleiben gleich, Sie müssen nichts neu einrichten.",
-  "f_pre": "Ihr Test ist beendet. Wählen Sie ein Paket und Sie sind in wenigen Minuten wieder dabei.",
-  "f_kicker": "Test beendet",
-  "f_title": "Fehlt es Ihnen schon?",
-  "f_text": "Ihr Gratis-Test ist beendet. Schließen Sie heute ein Abo ab und schauen Sie in wenigen Minuten mit denselben Zugangsdaten weiter, mit allen Sendern, Filmen und Serien.",
-  "f_from": "Pakete ab {price}.",
-  "subscribe": "Pakete ansehen",
-  "plansTitle": "Wählen Sie Ihr Paket",
-  "plansSub": "Tippen Sie auf ein Paket, um direkt zu seiner Seite zu gelangen.",
-  "device1": "1 Gerät",
-  "deviceN": "{n} Geräte",
-  "screens1": "auf einem Bildschirm",
-  "screensN": "auf {n} Bildschirmen gleichzeitig",
+  "r_intro": "Jetzt abonnieren und weiterschauen. Ihre Zugangsdaten bleiben gleich.",
+  "f_pre": "Ihr Testzugang ist abgelaufen.",
+  "f_tag": "Test beendet",
+  "f_title": "Ihr Testzugang ist abgelaufen",
+  "f_intro": "Danke, dass Sie {brand} getestet haben. Mit einem Abo schauen Sie mit denselben Zugangsdaten weiter.",
+  "plans": "Alle Tarife",
   "m1": "1 Monat",
   "mN": "{n} Monate",
-  "year": "1 Jahr",
-  "buy": "Kaufen",
-  "replyYes": "Lieber ohne Formular? Antworten Sie mit <strong>JA</strong> auf diese E-Mail und wir aktivieren Ihr Abo für Sie.",
-  "footerWhy": "Sie erhalten diese E-Mail, weil Sie auf {domain} einen kostenlosen Testzugang angefordert haben.",
-  "plansLink": "Preise",
-  "waText": "Hallo {brand}! Ich habe eine Frage zu meinem Testzugang."
+  "year": "12 Monate",
+  "device1": "1 Gerät",
+  "deviceN": "{n} Geräte",
+  "best": "Bestpreis",
+  "plansTitle": "Wählen Sie Ihr Abo",
+  "plansSub": "Tippen Sie auf einen Preis, um direkt zu bestellen.",
+  "replyYes": "Oder antworten Sie mit <strong>JA</strong> und wir richten alles für Sie ein.",
+  "loginAgain": "Ihre Zugangsdaten",
+  "footer": "Sie erhalten diese E-Mail, weil Sie auf {domain} einen Testzugang angefordert haben."
 };
 
-// Trial email kit: welcome, 4-hours-left reminder and trial-ended follow-up.
-// Look: a bold hero in the site's colours, a short "what is IPTV" explainer, then the logins
-// shown as two clearly separated options (1. Xtream Codes, 2. M3U playlist) in copy-paste
-// boxes. The URLs are plain monospace text, never links: they are split into spans so mail
-// apps do not turn them into links, and a warning says to paste them into an IPTV app.
-// Table-based and inline-styled so it holds up in Gmail, Outlook, Apple Mail and Yahoo.
-// Needs EMAIL_BRAND (site look, plans, contacts) and EMAIL_TEXT (copy) defined above it.
+// Simple trial email kit: logo on a dark brand background, one card with a short welcome,
+// the login details, a 3-line guide and one support line. No emojis.
+// Login values are plain monospace text, never links (split into spans so mail apps don't auto-link).
+// Needs EMAIL_BRAND and EMAIL_TEXT defined above it.
 
 const TK_FONT = "-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',Arial,sans-serif";
 const TK_MONO = "'SFMono-Regular',Menlo,Consolas,'Liberation Mono','Courier New',monospace";
 
-function tkEsc(v) {
-  return String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-}
-
-function tkFmt(str, vars = {}) {
-  return String(str).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m));
-}
-
-function tkT(key, vars = {}) {
-  return tkFmt(EMAIL_TEXT[key], { brand: tkEsc(EMAIL_BRAND.name), domain: EMAIL_BRAND.domain, ...vars });
-}
-
+function tkEsc(v) { return String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c])); }
+function tkFmt(str, vars = {}) { return String(str).replace(/\{(\w+)\}/g, (m, k) => (k in vars ? vars[k] : m)); }
+function tkT(key, vars = {}) { return tkFmt(EMAIL_TEXT[key], { brand: tkEsc(EMAIL_BRAND.name), domain: EMAIL_BRAND.domain, ...vars }); }
 function tkHi(name) {
-  const full = String(name || "").trim();
-  const first = full.split(/\s+/)[0] || "";
+  const full = String(name || "").trim(), first = full.split(/\s+/)[0] || "";
   if (!first || EMAIL_BRAND.noName.includes(full.toLowerCase())) return EMAIL_TEXT.hiAnon;
   return tkFmt(EMAIL_TEXT.hi, { name: tkEsc(first) });
 }
+function tkMoney(n) { const m = EMAIL_BRAND.money; return m.pre + (Number.isInteger(n) ? String(n) : n.toFixed(2).replace(".", m.dec)) + m.post; }
+function tkLink(url, campaign) { const abs = /^https?:/.test(url) ? url : EMAIL_BRAND.url + url; return abs + (abs.includes("?") ? "&" : "?") + "utm_source=trial_email&utm_medium=email&utm_campaign=" + campaign; }
+function tkWa() { return `https://wa.me/${EMAIL_BRAND.wa}?text=${encodeURIComponent(EMAIL_BRAND.name + ": free trial")}`; }
+function tkServers() { return [...new Set([EMAIL_BRAND.host, EMAIL_BRAND.altHost].filter(Boolean))]; }
+function tkM3u(u) { u = String(u || ""); const alt = EMAIL_BRAND.altHost; return alt && u.startsWith(alt + "/") ? EMAIL_BRAND.host + u.slice(alt.length) : u; }
+function tkPlain(v) { return String(v ?? "").split(/(?=[.:/?&=])/).map(p => `<span>${tkEsc(p)}</span>`).join(""); }
 
-function tkMoney(n) {
-  const m = EMAIL_BRAND.money;
-  const s = Number.isInteger(n) ? String(n) : n.toFixed(2).replace(".", m.dec);
-  return m.pre + s + m.post;
-}
-
-function tkLink(url, campaign) {
-  const abs = /^https?:/.test(url) ? url : EMAIL_BRAND.url + url;
-  return abs + (abs.includes("?") ? "&" : "?") + "utm_source=trial_email&utm_medium=email&utm_campaign=" + campaign;
-}
-
-function tkWa() {
-  return `https://wa.me/${EMAIL_BRAND.wa}?text=${encodeURIComponent(tkFmt(EMAIL_TEXT.waText, { brand: EMAIL_BRAND.name }).replace(/&nbsp;/g, " "))}`;
-}
-
-// Trial emails list every portal URL: the main one first, then the backup.
-function tkServers() {
-  return [...new Set([EMAIL_BRAND.host, EMAIL_BRAND.altHost].filter(Boolean))];
-}
-
-// The M3U link always uses the main portal (also for trials stored before the switch).
-function tkM3u(m3uUrl) {
-  const u = String(m3uUrl || ""), alt = EMAIL_BRAND.altHost;
-  return alt && u.startsWith(alt + "/") ? EMAIL_BRAND.host + u.slice(alt.length) : u;
-}
-
-// The site logo is served by this Worker, so it never depends on the website's own hosting.
 function tkLogoResponse(request) {
   if (request.method !== "GET" || new URL(request.url).pathname !== "/email/logo.png") return null;
-  const bin = atob(EMAIL_LOGO_PNG);
-  const bytes = new Uint8Array(bin.length);
+  const bin = atob(EMAIL_LOGO_PNG), bytes = new Uint8Array(bin.length);
   for (let i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
   return new Response(bytes, { headers: { "Content-Type": "image/png", "Cache-Control": "public, max-age=31536000, immutable", "Access-Control-Allow-Origin": "*" } });
 }
 
-// Copy-paste text that must NOT become a link. Mail apps auto-link anything that looks like
-// a URL inside one run of text, so the value is split into spans at every . : / ? & = .
-// Copying still gives the exact value (no hidden characters are added).
-function tkPlain(v) {
-  return String(v ?? "").split(/(?=[.:/?&=])/).map(p => `<span>${tkEsc(p)}</span>`).join("");
-}
+// ── layout ───────────────────────────────────────────────────────────────────
 
-// ── building blocks ───────────────────────────────────────────────────────────
-
-function tkShell(preheader, hero, body) {
-  const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
+function tkShell(preheader, card) {
+  const B = EMAIL_BRAND, S = B.s;
   return `<!DOCTYPE html>
 <html lang="${B.lang}" xmlns="http://www.w3.org/1999/xhtml" xmlns:o="urn:schemas-microsoft-com:office:office">
 <head>
@@ -419,50 +360,41 @@ function tkShell(preheader, hero, body) {
 <meta name="viewport" content="width=device-width,initial-scale=1.0">
 <meta name="x-apple-disable-message-reformatting">
 <meta name="format-detection" content="telephone=no,address=no,email=no,date=no,url=no">
-<meta name="color-scheme" content="light">
-<meta name="supported-color-schemes" content="light">
+<meta name="color-scheme" content="dark">
+<meta name="supported-color-schemes" content="dark">
 <title>${tkEsc(B.name)}</title>
 <style>
   body,table,td,a { -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; }
   table,td { mso-table-lspace:0pt; mso-table-rspace:0pt; }
   img { -ms-interpolation-mode:bicubic; border:0; outline:none; text-decoration:none; }
-  a { text-decoration:none; }
   a[x-apple-data-detectors], .tk-code a, #MessageViewBody .tk-code a { color:inherit !important; text-decoration:none !important; font:inherit !important; pointer-events:none; cursor:text; }
   u + #tk-body .tk-code a { color:inherit !important; text-decoration:none !important; }
   @media only screen and (max-width:620px) {
-    .tk-outer { padding:0 !important; }
-    .tk-card { border-radius:0 !important; }
-    .tk-pad { padding-left:20px !important; padding-right:20px !important; }
-    .tk-box { padding-left:16px !important; padding-right:16px !important; }
+    .tk-outer { padding:28px 12px 8px !important; }
+    .tk-pad { padding-left:22px !important; padding-right:22px !important; }
     .tk-h1 { font-size:26px !important; line-height:32px !important; }
     .tk-half { display:block !important; width:100% !important; padding:0 !important; }
-    .tk-cell { display:inline-block !important; width:50% !important; box-sizing:border-box; }
-    .tk-cl { padding:0 4px 8px 0 !important; }
-    .tk-cr { padding:0 0 8px 4px !important; }
-    .tk-mini { font-size:12px !important; }
-    .tk-big { font-size:15px !important; padding:11px 12px !important; }
+    .tk-panel { padding:18px 14px 8px !important; }
+    .tk-code { font-size:14px !important; padding:11px 12px !important; }
   }
 </style>
 </head>
-<body id="tk-body" style="margin:0;padding:0;width:100%;background-color:${C.page};" bgcolor="${C.page}">
+<body id="tk-body" style="margin:0;padding:0;width:100%;background-color:${S.bg};" bgcolor="${S.bg}">
 <div style="display:none;font-size:1px;line-height:1px;max-height:0;max-width:0;opacity:0;overflow:hidden;mso-hide:all;">${preheader}${"&#847;&zwnj;&nbsp;".repeat(40)}</div>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.page}" style="background-color:${C.page};">
-<tr><td align="center" class="tk-outer" style="padding:28px 10px;">
-<!--[if mso]><table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
-<table role="presentation" class="tk-card" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.card}" style="max-width:600px;background-color:${C.card};border-radius:16px;border-collapse:separate;overflow:hidden;font-family:${TK_FONT};">
-  <tr><td align="center" bgcolor="${C.head}" style="background-color:${C.head};padding:26px 20px ${C.head === C.hero ? "6px" : "22px"};">
-    <a href="${tkLink(B.home, "header")}" target="_blank" style="text-decoration:none;"><img src="${B.logo.src}" width="${B.logo.w}" height="${B.logo.h}" alt="${tkEsc(B.name)}" style="display:block;margin:0 auto;width:${B.logo.w}px;max-width:100%;height:auto;color:${C.head === "#FFFFFF" ? C.ink : "#FFFFFF"};font:700 22px ${TK_FONT};"></a>
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${S.bg}" style="background-color:${S.bg};background-image:linear-gradient(165deg,${S.glow} 0%,${S.bg} 30%,${S.mid} 65%,${S.glow2} 100%);">
+<tr><td align="center" class="tk-outer" style="padding:40px 16px 12px;">
+<!--[if mso]><table role="presentation" width="560" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:560px;font-family:${TK_FONT};">
+  <tr><td align="center" style="padding:0 0 30px;">
+    <a href="${tkLink(B.home, "header")}" target="_blank" style="text-decoration:none;">${S.pill ? `<span style="display:inline-block;padding:12px 22px;border-radius:14px;background-color:#FFFFFF;">` : ""}<img src="${B.logo.src}" width="${B.logo.w}" height="${B.logo.h}" alt="${tkEsc(B.name)}" style="display:block;margin:0 auto;width:${B.logo.w}px;max-width:100%;height:auto;color:#FFFFFF;font:700 24px ${TK_FONT};">${S.pill ? "</span>" : ""}</a>
   </td></tr>
-  ${hero}
-  ${body}
-</table>
-<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="max-width:600px;font-family:${TK_FONT};">
-  <tr><td align="center" style="padding:22px 16px 16px;font-size:12px;line-height:20px;color:${C.muted};">
-    <a href="${tkLink(B.home, "footer")}" target="_blank" style="color:${C.muted};text-decoration:none;">${B.domain}</a>
-    &nbsp;&middot;&nbsp; <a href="${tkLink(B.plansUrl, "footer")}" target="_blank" style="color:${C.muted};text-decoration:none;">${T.plansLink}</a>
-    &nbsp;&middot;&nbsp; <a href="${tkWa()}" target="_blank" style="color:${C.muted};text-decoration:none;">WhatsApp</a>
-    &nbsp;&middot;&nbsp; <a href="mailto:${B.email}" style="color:${C.muted};text-decoration:none;">${B.email}</a><br>
-    ${tkT("footerWhy")}
+  <tr><td bgcolor="${S.card}" style="background-color:${S.card};border:1px solid ${S.line};border-radius:20px;overflow:hidden;">
+    <div style="height:4px;line-height:4px;font-size:4px;background-color:${S.accent};background-image:linear-gradient(90deg,${S.accent} 0%,${S.accent2} 100%);border-radius:20px 20px 0 0;">&nbsp;</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${card}</table>
+  </td></tr>
+  <tr><td align="center" style="padding:24px 16px 28px;font-size:12px;line-height:19px;color:${S.muted};">
+    <a href="${tkLink(B.home, "footer")}" target="_blank" style="color:${S.muted};text-decoration:none;font-weight:600;">${B.domain}</a><br>
+    ${tkT("footer")}
   </td></tr>
 </table>
 <!--[if mso]></td></tr></table><![endif]-->
@@ -472,237 +404,132 @@ function tkShell(preheader, hero, body) {
 </html>`;
 }
 
-function tkRow(inner, pad = "0 40px 28px") {
-  return `<tr><td class="tk-pad" style="padding:${pad};">${inner}</td></tr>`;
-}
+function tkRow(inner, pad = "0 36px 28px") { return `<tr><td class="tk-pad" style="padding:${pad};">${inner}</td></tr>`; }
 
-function tkP(html, style = "") {
-  return `<p style="margin:0 0 14px;font-size:16px;line-height:25px;color:${EMAIL_BRAND.c.body};${style}">${html}</p>`;
-}
-
-function tkH2(text, style = "") {
-  return `<div style="margin:0 0 12px;font-size:20px;line-height:27px;font-weight:800;color:${EMAIL_BRAND.c.ink};${style}">${text}</div>`;
-}
-
-function tkButton(href, label, onHero) {
-  const C = EMAIL_BRAND.c;
-  const bg = onHero ? C.heroBtn : C.btn, fg = onHero ? C.heroOnBtn : C.onBtn;
-  return `
-    <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td align="center" bgcolor="${bg}" style="background-color:${bg};border-radius:999px;">
-        <a href="${href}" target="_blank" style="display:inline-block;padding:15px 30px;font-family:${TK_FONT};font-size:16px;line-height:20px;font-weight:800;color:${fg};text-decoration:none;border-radius:999px;">${label}&nbsp;&rarr;</a>
-      </td>
-    </tr></table>`;
-}
-
-// The big coloured block at the top: a small tag, the headline and one or two lines.
-function tkHero(kicker, title, text, extra = "") {
-  const C = EMAIL_BRAND.c;
-  const grad = C.hero === C.heroEnd ? "" : `background-image:linear-gradient(160deg,${C.hero} 0%,${C.hero} 45%,${C.heroEnd} 100%);`;
-  return `<tr><td class="tk-pad" bgcolor="${C.hero}" style="background-color:${C.hero};${grad}padding:${C.head === C.hero ? "26px" : "34px"} 40px 36px;">
-    <div style="display:inline-block;margin:0 0 16px;padding:6px 12px;border-radius:999px;background-color:${C.tagBg};font-size:12px;line-height:16px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:${C.tagInk};">${kicker}</div>
-    <div class="tk-h1" style="margin:0 0 12px;font-size:32px;line-height:38px;font-weight:800;color:${C.heroInk};">${title}</div>
-    <div style="margin:0;font-size:16px;line-height:25px;color:${C.heroSub};">${text}</div>
-    ${extra}
-  </td></tr>`;
-}
-
-// "1 Get an app → 2 Copy your login → 3 Press play", inside the welcome hero.
-function tkMiniSteps() {
-  const C = EMAIL_BRAND.c;
-  const cells = EMAIL_TEXT.w_mini.map((t, i) => `
-      <td width="33%" valign="top" style="padding:0 ${i < 2 ? 6 : 0}px 0 0;">
-        <div style="padding:12px 8px;border-radius:12px;background-color:${C.tagBg};text-align:center;">
-          <div style="width:26px;height:26px;margin:0 auto 6px;line-height:26px;border-radius:13px;background-color:${C.heroBtn};color:${C.heroOnBtn};font-size:13px;font-weight:800;">${i + 1}</div>
-          <div class="tk-mini" style="font-size:13px;line-height:17px;font-weight:700;color:${C.heroInk};">${t}</div>
-        </div>
-      </td>`).join("");
-  return `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin-top:24px;"><tr>${cells}</tr></table>`;
-}
-
-// Plain-language explainer for people who have never used IPTV.
-function tkExplainer() {
-  const C = EMAIL_BRAND.c;
+// Small tag, headline, one or two short lines.
+function tkTop(tag, title, intro, name) {
+  const S = EMAIL_BRAND.s;
   return tkRow(`
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-      <td width="52" valign="top" style="font-size:34px;line-height:40px;">📺</td>
-      <td valign="top">
-        <div style="margin:0 0 4px;font-size:16px;line-height:23px;font-weight:800;color:${C.ink};">${EMAIL_TEXT.newTitle}</div>
-        <div style="font-size:15px;line-height:23px;color:${C.body};">${tkT("newText")}</div>
-      </td>
-    </tr></table>`, "32px 40px 24px");
+    <div style="margin:0 0 14px;font-size:12px;line-height:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:${S.tag};">${tag}</div>
+    <div class="tk-h1" style="margin:0 0 14px;font-size:30px;line-height:36px;font-weight:800;color:${S.ink};">${title}</div>
+    <div style="font-size:16px;line-height:25px;color:${S.body};"><strong style="color:${S.ink};">${tkHi(name)}</strong><br>${intro}</div>`, "36px 36px 28px");
 }
 
-// One value to copy: a label, then the value in a dashed monospace box.
-function tkField(label, value, note, big) {
-  const C = EMAIL_BRAND.c;
-  return `
-    <div style="margin:0 0 14px;">
-      <div style="margin:0 0 6px;font-size:13px;line-height:18px;font-weight:700;color:${C.ink};">${label}${note ? `<span style="font-weight:400;color:${C.muted};">&nbsp;&middot; ${note}</span>` : ""}</div>
-      <div class="tk-code${big ? " tk-big" : ""}" style="padding:12px 14px;background-color:${C.code};border:2px dashed ${C.codeLine};border-radius:10px;font-family:${TK_MONO};font-size:${big ? 17 : 14}px;line-height:${big ? 24 : 21}px;font-weight:${big ? 700 : 600};color:${C.ink};word-break:break-all;-webkit-user-select:all;user-select:all;">${tkPlain(value)}</div>
+function tkField(label, value) {
+  const S = EMAIL_BRAND.s;
+  return `<div style="margin:0 0 12px;">
+      <div style="margin:0 0 6px;font-size:11px;line-height:14px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:${S.muted};">${label}</div>
+      <div class="tk-code" style="padding:12px 14px;background-color:${S.code};border:1px solid ${S.line};border-radius:10px;font-family:${TK_MONO};font-size:16px;line-height:22px;font-weight:600;color:${S.ink};word-break:break-all;-webkit-user-select:all;user-select:all;">${tkPlain(value)}</div>
     </div>`;
 }
 
-function tkOption(n, title, badge, forText, inner) {
-  const C = EMAIL_BRAND.c, T = EMAIL_TEXT;
-  return `
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.card}" style="background-color:${C.card};border:2px solid ${n === 1 ? C.btn : C.line};border-radius:14px;border-collapse:separate;">
-      <tr><td class="tk-box" style="padding:20px 22px 8px;">
-        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td width="44" valign="middle"><div style="width:34px;height:34px;line-height:34px;border-radius:17px;background-color:${n === 1 ? C.btn : C.ink};color:${n === 1 ? C.onBtn : "#FFFFFF"};font-size:16px;font-weight:800;text-align:center;">${n}</div></td>
-          <td valign="middle">
-            <div style="font-size:12px;line-height:16px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:${C.muted};">${tkFmt(T.opt, { n })}</div>
-            <div style="font-size:19px;line-height:25px;font-weight:800;color:${C.ink};">${title}${badge ? `&nbsp;<span style="display:inline-block;vertical-align:2px;padding:3px 8px;border-radius:999px;background-color:${C.soft};font-size:11px;line-height:14px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;color:${C.accent};">${badge}</span>` : ""}</div>
-          </td>
-        </tr></table>
-        <div style="margin:12px 0 16px;font-size:14px;line-height:21px;color:${C.body};">${forText}</div>
-        ${inner}
-      </td></tr>
-    </table>`;
+function tkGroupTitle(text, first) {
+  const S = EMAIL_BRAND.s;
+  return `<div style="margin:${first ? 0 : "10px"} 0 14px;font-size:14px;line-height:18px;font-weight:800;color:${S.ink};"><span style="display:inline-block;width:8px;height:8px;margin:0 8px 1px 0;border-radius:4px;background-color:${S.accent};"></span>${text}</div>`;
 }
 
-// The login details: the one thing the customer needs from these emails.
-function tkLogins(username, password, m3uUrl, again) {
-  const C = EMAIL_BRAND.c, T = EMAIL_TEXT;
-  const [main, backup] = tkServers();
-  m3uUrl = tkM3u(m3uUrl);
-  const warn = `
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFF7E0" style="background-color:#FFF7E0;border:1px solid #F5D77A;border-radius:12px;border-collapse:separate;margin:0 0 18px;"><tr>
-      <td width="40" valign="top" style="padding:14px 0 14px 16px;font-size:22px;line-height:24px;">⚠️</td>
-      <td valign="top" style="padding:14px 16px 14px 8px;font-size:14px;line-height:21px;color:#5C4400;"><strong style="color:#3D2D00;">${T.warnTitle}</strong><br>${T.warnText}</td>
-    </tr></table>`;
-  // Username and password first, then the portal URLs (main, then backup).
-  const xtream = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-        <td class="tk-half" width="50%" valign="top" style="padding:0 6px 0 0;">${tkField(T.username, username, "", true)}</td>
-        <td class="tk-half" width="50%" valign="top" style="padding:0 0 0 6px;">${tkField(T.password, password, "", true)}</td>
-      </tr></table>`
-    + tkField(T.server1, main, "", true)
-    + (backup ? tkField(T.server2, backup, T.server2Note, true) : "");
-  const or = `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="margin:6px 0;"><tr>
-      <td width="45%" valign="middle"><div style="height:1px;line-height:1px;font-size:1px;background-color:${C.line};">&nbsp;</div></td>
-      <td align="center" style="padding:10px 12px;font-size:13px;line-height:16px;font-weight:800;letter-spacing:1px;color:${C.muted};white-space:nowrap;">${T.or}</td>
-      <td width="45%" valign="middle"><div style="height:1px;line-height:1px;font-size:1px;background-color:${C.line};">&nbsp;</div></td>
-    </tr></table>`;
+// The login details. Username and password first, then servers, then the M3U playlist.
+function tkLogins(username, password, m3uUrl, title) {
+  const S = EMAIL_BRAND.s, T = EMAIL_TEXT, [main, backup] = tkServers();
   return tkRow(`
-    ${tkH2(again ? T.loginAgain : T.loginTitle, "font-size:24px;line-height:31px;margin:0 0 6px;")}
-    ${tkP(T.loginSub, "margin:0 0 18px;font-size:15px;line-height:23px;")}
-    ${warn}
-    ${tkOption(1, T.x_title, T.x_badge, T.x_for, xtream)}
-    ${or}
-    ${tkOption(2, T.m_title, "", T.m_for, tkField(T.m_label, m3uUrl))}
-    <div style="margin:14px 2px 0;font-size:13px;line-height:20px;color:${C.muted};">🔤 ${T.caseNote}</div>`, "4px 40px 32px");
+    ${title ? `<div style="margin:0 0 14px;font-size:18px;line-height:24px;font-weight:800;color:${S.ink};">${title}</div>` : ""}
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${S.panel}" style="background-color:${S.panel};border-radius:14px;"><tr><td class="tk-panel" style="padding:22px 22px 12px;">
+      ${tkGroupTitle(T.xtream, true)}
+      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+        <td class="tk-half" width="50%" valign="top" style="padding:0 6px 0 0;">${tkField(T.username, username)}</td>
+        <td class="tk-half" width="50%" valign="top" style="padding:0 0 0 6px;">${tkField(T.password, password)}</td>
+      </tr></table>
+      ${tkField(T.server, main)}
+      ${backup ? tkField(T.backup, backup) : ""}
+      <div style="height:1px;line-height:1px;font-size:1px;background-color:${S.line};margin:8px 0 18px;">&nbsp;</div>
+      ${tkGroupTitle(T.m3u)}
+      ${tkField("M3U URL", tkM3u(m3uUrl))}
+    </td></tr></table>
+    <div style="margin:12px 2px 0;font-size:13px;line-height:19px;color:${S.muted};">${T.copyNote}</div>`);
 }
 
 function tkSteps() {
-  const C = EMAIL_BRAND.c;
-  const rows = EMAIL_TEXT.steps.map(([icon, title, text], i) => `
-      <tr>
-        <td width="56" valign="top" style="padding:0 0 18px;"><div style="width:44px;height:44px;line-height:44px;border-radius:12px;background-color:${C.soft};font-size:22px;text-align:center;">${icon}</div></td>
-        <td valign="top" style="padding:0 0 18px;font-size:15px;line-height:23px;color:${C.body};"><div style="font-size:16px;line-height:22px;font-weight:800;color:${C.ink};margin:0 0 2px;">${i + 1}. ${title}</div>${text}</td>
-      </tr>`).join("");
-  return tkRow(`<div style="border-top:1px solid ${C.line};padding-top:28px;">${tkH2(EMAIL_TEXT.howTitle, "margin:0 0 18px;")}<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table></div>`, "0 40px 10px");
+  const S = EMAIL_BRAND.s, T = EMAIL_TEXT;
+  const rows = T.steps.map((t, i) => `<tr>
+      <td width="38" valign="top" style="padding:0 0 14px;"><div style="width:26px;height:26px;line-height:26px;border-radius:13px;background-color:${S.accent};color:${S.onAccent};font-size:13px;font-weight:800;text-align:center;">${i + 1}</div></td>
+      <td valign="top" style="padding:2px 0 14px;font-size:15px;line-height:22px;color:${S.body};">${t.replace(/<strong>/g, `<strong style="color:${S.ink};">`)}</td>
+    </tr>`).join("");
+  return tkRow(`<div style="margin:0 0 16px;font-size:18px;line-height:24px;font-weight:800;color:${S.ink};">${T.howTitle}</div>
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0">${rows}</table>`, "6px 36px 16px");
 }
 
-function tkHighlights() {
-  const C = EMAIL_BRAND.c, H = EMAIL_BRAND.highlights || [];
-  if (!H.length) return "";
-  const cells = H.map(([e, t], i) => `<td class="tk-half" width="${Math.floor(100 / H.length)}%" valign="top" style="padding:0 ${i < H.length - 1 ? 8 : 0}px 8px 0;">
-      <div style="padding:14px 12px;border-radius:12px;background-color:${C.box};font-size:14px;line-height:20px;font-weight:700;color:${C.ink};"><span style="font-size:20px;">${e}</span><br>${t}</div></td>`).join("");
-  return tkRow(tkH2(EMAIL_TEXT.tryTitle, "font-size:17px;") + `<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>${cells}</tr></table>`, "0 40px 22px");
+function tkHelp() {
+  const B = EMAIL_BRAND, S = B.s, T = EMAIL_TEXT;
+  return tkRow(`<div style="border-top:1px solid ${S.line};padding-top:22px;font-size:15px;line-height:23px;color:${S.body};">
+      ${T.help} <a href="${tkWa()}" target="_blank" style="color:${S.link};font-weight:700;text-decoration:none;">${T.wa}</a>.<br>
+      <span style="color:${S.ink};font-weight:700;">${tkT("team")}</span>
+    </div>`, "0 36px 34px");
 }
 
-function tkHelp(question, sign) {
-  const B = EMAIL_BRAND, C = B.c;
+function tkButton(href, label) {
+  const S = EMAIL_BRAND.s;
+  return `<table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
+      <td align="center" bgcolor="${S.accent}" style="background-color:${S.accent};border-radius:999px;">
+        <a href="${href}" target="_blank" style="display:inline-block;padding:14px 30px;font-family:${TK_FONT};font-size:16px;line-height:20px;font-weight:800;color:${S.onAccent};text-decoration:none;border-radius:999px;">${label}</a>
+      </td></tr></table>`;
+}
+
+function tkTerm(m) { const T = EMAIL_TEXT; return m === 1 ? T.m1 : m === 12 ? T.year : tkFmt(T.mN, { n: m }); }
+
+function tkPlanRows(plans, campaign) {
+  const S = EMAIL_BRAND.s, T = EMAIL_TEXT, top = Math.max(...plans.map(p => p.months));
+  return plans.map((p, i) => `<tr><td style="${i ? `border-top:1px solid ${S.line};` : ""}padding:0;">
+      <a href="${tkLink(p.url, campaign)}" target="_blank" style="display:block;padding:13px 16px;text-decoration:none;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
+          <td style="font-size:15px;line-height:21px;color:${S.body};">${tkTerm(p.months)}${p.months === top && plans.length > 2 ? `&nbsp; <span style="display:inline-block;padding:2px 8px;border-radius:999px;background-color:${S.badge};font-size:11px;line-height:15px;font-weight:800;color:${S.tag};">${T.best}</span>` : ""}</td>
+          <td align="right" style="font-size:16px;line-height:21px;font-weight:800;color:${S.ink};white-space:nowrap;">${tkMoney(p.price)}&nbsp;<span style="color:${S.tag};">&rsaquo;</span></td>
+        </tr></table></a></td></tr>`).join("");
+}
+
+// Plans as linked rows. all = one block per device count (1 to 5), else the 1-device plans only.
+function tkPlans(campaign, all) {
+  const B = EMAIL_BRAND, S = B.s, T = EMAIL_TEXT;
+  const groups = (all ? B.grid : B.grid.slice(0, 1)).map(g => `
+    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${S.panel}" style="background-color:${S.panel};border:1px solid ${S.line};border-radius:14px;border-collapse:separate;margin:0 0 14px;">
+      ${all ? `<tr><td bgcolor="${S.head}" style="background-color:${S.head};background-image:linear-gradient(90deg,${S.head} 0%,${S.head2} 100%);border-radius:13px 13px 0 0;padding:11px 16px;font-size:15px;line-height:20px;font-weight:800;color:#FFFFFF;"><span style="display:inline-block;width:8px;height:8px;margin:0 8px 1px 0;border-radius:4px;background-color:${S.accent};"></span>${g.devices === 1 ? T.device1 : tkFmt(T.deviceN, { n: g.devices })}</td></tr>` : ""}
+      ${tkPlanRows(g.plans, campaign)}
+    </table>`).join("");
   return tkRow(`
-    <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.box}" style="background-color:${C.box};border-radius:14px;border-collapse:separate;"><tr>
-      <td class="tk-box" style="padding:22px 24px;">
-        <div style="margin:0 0 6px;font-size:17px;line-height:24px;font-weight:800;color:${C.ink};">💬 ${question}</div>
-        <div style="margin:0 0 16px;font-size:15px;line-height:23px;color:${C.body};">${tkT("helpLine")}</div>
-        <table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr>
-          <td bgcolor="#25D366" style="background-color:#25D366;border-radius:999px;"><a href="${tkWa()}" target="_blank" style="display:inline-block;padding:12px 22px;font-size:15px;line-height:20px;font-weight:800;color:#06351B;text-decoration:none;">WhatsApp ${B.waLabel.replace(/ /g, "&nbsp;").replace(/-/g, "&#8209;")}</a></td>
-        </tr></table>
-      </td>
-    </tr></table>
-    <div style="margin:24px 2px 0;font-size:16px;line-height:25px;color:${C.body};">${sign}<br><strong style="color:${C.ink};">${tkT("team")}</strong></div>`, "8px 40px 36px");
-}
-
-function tkTerm(m) {
-  const T = EMAIL_TEXT;
-  return m === 1 ? T.m1 : m === 12 ? T.year : tkFmt(T.mN, { n: m });
-}
-
-// Every plan for 1 to 5 devices, one under the other ("⭐ 1 Device ⭐", then "1 Month: $9" ...).
-// Each line links straight to that plan's page.
-function tkPlans(campaign) {
-  const B = EMAIL_BRAND, C = B.c, T = EMAIL_TEXT;
-  const groups = B.grid.map(g => {
-    const d = g.devices;
-    const rows = g.plans.map((p, i) => `
-        <tr><td style="padding:0;${i ? `border-top:1px solid ${C.line};` : ""}"><a href="${tkLink(p.url, campaign)}" target="_blank" style="display:block;padding:13px 18px;text-decoration:none;">
-          <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>
-            <td style="font-size:16px;line-height:22px;color:${C.ink};"><strong>${tkTerm(p.months)}:</strong>&nbsp;<span style="font-weight:800;">${tkMoney(p.price)}</span></td>
-            <td align="right" style="font-size:14px;line-height:22px;font-weight:800;color:${C.accent};white-space:nowrap;">${T.buy}&nbsp;&rarr;</td>
-          </tr></table>
-        </a></td></tr>`).join("");
-    return `
-      <table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="${C.card}" style="background-color:${C.card};border:1px solid ${C.line};border-radius:14px;border-collapse:separate;margin:0 0 16px;">
-        <tr><td align="center" bgcolor="${C.soft}" style="background-color:${C.soft};border-radius:13px 13px 0 0;padding:12px 18px;border-bottom:1px solid ${C.line};">
-          <div style="font-size:17px;line-height:23px;font-weight:800;color:${C.ink};">⭐ ${d === 1 ? T.device1 : tkFmt(T.deviceN, { n: d })} ⭐</div>
-          <div style="font-size:13px;line-height:18px;color:${C.body};">${d === 1 ? T.screens1 : tkFmt(T.screensN, { n: d })}</div>
-        </td></tr>
-        ${rows}
-      </table>`;
-  }).join("");
-  return tkRow(tkH2(T.plansTitle) + tkP(T.plansSub, "margin:-6px 0 18px;font-size:14px;line-height:21px;") + groups, "32px 40px 12px");
-}
-
-function tkReplyYes() {
-  const B = EMAIL_BRAND, C = B.c;
-  if (!B.replyYes) return "";
-  return tkRow(`<div style="padding:16px 20px;background-color:${C.soft};border-radius:12px;font-size:15px;line-height:23px;color:${C.body};">✋ ${EMAIL_TEXT.replyYes.replace("<strong>", `<strong style="color:${C.ink};">`)}</div>`);
-}
-
-function tkFrom() {
-  const p = Math.min(...EMAIL_BRAND.grid[0].plans.map(x => x.price));
-  return tkT("f_from", { price: tkMoney(p) });
-}
-
-function tkDivider() {
-  return tkRow(`<div style="border-top:1px solid ${EMAIL_BRAND.c.line};font-size:1px;line-height:1px;">&nbsp;</div>`, "4px 40px 28px");
+    ${all ? `<div style="margin:0 0 4px;font-size:18px;line-height:24px;font-weight:800;color:${S.ink};">${T.plansTitle}</div><div style="margin:0 0 16px;font-size:14px;line-height:20px;color:${S.muted};">${T.plansSub}</div>` : ""}
+    ${groups}
+    <div style="padding-top:6px;">${tkButton(tkLink(B.plansUrl, campaign), T.plans)}</div>
+    ${B.replyYes ? `<div style="margin:14px 2px 0;font-size:14px;line-height:21px;color:${S.muted};">${T.replyYes.replace("<strong>", `<strong style="color:${S.ink};">`)}</div>` : ""}`, "0 36px 30px");
 }
 
 // ── the three customer emails ─────────────────────────────────────────────────
 
 function welcomeEmail(name, username, password, m3uUrl) {
   const T = EMAIL_TEXT;
-  return tkShell(T.w_pre,
-    tkHero(T.w_kicker, T.w_title, `<strong style="color:${EMAIL_BRAND.c.heroInk};">${tkHi(name)}</strong><br>${tkT("w_intro")}`, tkMiniSteps()), `
-    ${tkExplainer()}
+  return tkShell(T.w_pre, `
+    ${tkTop(T.w_tag, tkT("w_title"), tkT("w_intro"), name)}
     ${tkLogins(username, password, m3uUrl)}
     ${tkSteps()}
-    ${tkHighlights()}
-    ${tkHelp(T.helpSetup, T.signWelcome)}`);
+    ${tkHelp()}`);
 }
 
 function reminderEmail(name, username, password, m3uUrl) {
   const T = EMAIL_TEXT;
-  return tkShell(T.r_pre,
-    tkHero(T.r_kicker, T.r_title, `<strong style="color:${EMAIL_BRAND.c.heroInk};">${tkHi(name)}</strong><br>${tkT("r_text")}`, `<div style="padding-top:22px;">${tkButton(tkLink(EMAIL_BRAND.plansUrl, "trial_reminder"), T.subscribe, true)}</div>`), `
+  return tkShell(T.r_pre, `
+    ${tkTop(T.r_tag, T.r_title, tkT("r_intro"), name)}
     ${tkPlans("trial_reminder")}
-    ${tkReplyYes()}
-    ${tkDivider()}
-    ${tkLogins(username, password, m3uUrl, true)}
-    ${tkHelp(T.helpPlans, T.signFollow)}`);
+    ${tkLogins(username, password, m3uUrl, T.loginAgain)}
+    ${tkHelp()}`);
 }
 
 function followupEmail(name) {
   const T = EMAIL_TEXT;
-  return tkShell(T.f_pre,
-    tkHero(T.f_kicker, T.f_title, `<strong style="color:${EMAIL_BRAND.c.heroInk};">${tkHi(name)}</strong><br>${tkT("f_text")} ${tkFrom()}`, `<div style="padding-top:22px;">${tkButton(tkLink(EMAIL_BRAND.plansUrl, "trial_followup"), T.subscribe, true)}</div>`), `
-    ${tkPlans("trial_followup")}
-    ${tkReplyYes()}
-    ${tkHelp(T.helpChoose, T.signFollow)}`);
+  return tkShell(T.f_pre, `
+    ${tkTop(T.f_tag, T.f_title, tkT("f_intro"), name)}
+    ${tkPlans("trial_followup", true)}
+    ${tkHelp()}`);
 }
+
+function trialSubject() { return tkT("subject"); }
 
 // ── end trial emails ──
 
@@ -805,7 +632,7 @@ async function handleFetch(request, env) {
     const m3uUrl = `${HOST}/get.php?username=${encodeURIComponent(username)}&password=${encodeURIComponent(password)}&type=m3u_plus&output=ts`;
 
     step = "email_client";
-    const welcomeEmailId = await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
+    const welcomeEmailId = await sendEmail(email, trialSubject(), welcomeEmail(name, username, password, m3uUrl), RESEND_KEY);
     // Update KV with Resend email ID for threaded follow-ups
     if (welcomeEmailId) {
       try {
@@ -864,7 +691,7 @@ async function handleScheduled(env) {
 
     if (!reminder_sent && now >= expiry - FOUR_HOURS && now < expiry) {
       try {
-        await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", reminderEmail(name, username, password, m3uUrl), RESEND_KEY, welcome_email_id);
+        await sendEmail(email, trialSubject(), reminderEmail(name, username, password, m3uUrl), RESEND_KEY, welcome_email_id);
         trial.reminder_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Erinnerung → ${email}`);
@@ -873,7 +700,7 @@ async function handleScheduled(env) {
 
     if (!followup_sent && now >= expiry) {
       try {
-        await sendEmail(email, "Ihr IPTV Deutschland Testzugang ist bereit – 24h Gratis aktiviert ✓", followupEmail(name), RESEND_KEY, welcome_email_id);
+        await sendEmail(email, trialSubject(), followupEmail(name), RESEND_KEY, welcome_email_id);
         trial.followup_sent = true;
         await env.TRIALS.put(key, JSON.stringify(trial), { expirationTtl: 30 * 24 * 60 * 60 });
         console.log(`[cron] Nachfass → ${email}`);
