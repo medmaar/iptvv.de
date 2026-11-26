@@ -223,12 +223,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://iptvv.de/iptv-tuerkische-sender</loc>
-    <lastmod>2026-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
     <loc>https://iptvv.de/iptv-vlc</loc>
     <lastmod>2026-10-11</lastmod>
     <changefreq>monthly</changefreq>

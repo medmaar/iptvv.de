@@ -1,3 +1,8 @@
+# Excluded-market pages removed (SEO market filter, 2026-11-25)
+/iptv-tuerkische-sender /de/ 301
+/iptv-tuerkische-sender/ /de/ 301
+/iptv-tuerkische-sender.html /de/ 301
+
 # ═══════════════════════════════════════════════════════════
 # Cloudflare Pages _redirects
 # ═══════════════════════════════════════════════════════════
